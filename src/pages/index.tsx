@@ -103,6 +103,10 @@ const IndexPage = () => {
         id="search-input"
         onChange={(e) => setQuery(e.target.value.trim())}
         value={query}
+        autoCapitalize="off"
+        autoComplete="off"
+        autoCorrect="off"
+        autoFocus={false}
         placeholder="کلمات را جستجو کنید..."
         classNames={{ base: 'max-w-5xl' }}
         disabled={!words?.rows.length}
@@ -114,7 +118,7 @@ const IndexPage = () => {
           <Table
             shadow="none"
             isStriped
-            layout="fixed"
+            align="center"
             removeWrapper
             isHeaderSticky
             classNames={{ base: 'min-h-[520px] max-h-[520px]' }}>
@@ -132,6 +136,28 @@ const IndexPage = () => {
                         color="primary"
                         isDisabled
                       />
+                    </TableColumn>
+                  );
+                }
+
+                if (column.key === 'pronunciation') {
+                  return (
+                    <TableColumn
+                      key={column.key}
+                      dir="ltr"
+                      align="center">
+                      {column.label}
+                    </TableColumn>
+                  );
+                }
+
+                if (column.key === 'word') {
+                  return (
+                    <TableColumn
+                      key={column.key}
+                      dir="ltr"
+                      align="start">
+                      {column.label}
                     </TableColumn>
                   );
                 }
@@ -166,6 +192,16 @@ const IndexPage = () => {
                               learnWord(item.word, isSelected);
                             }}
                           />
+                        </TableCell>
+                      );
+                    }
+
+                    if (columnKey === 'word') {
+                      return (
+                        <TableCell
+                          align="left"
+                          dir="ltr">
+                          {getKeyValue(item, columnKey)}
                         </TableCell>
                       );
                     }
