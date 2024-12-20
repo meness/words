@@ -5,7 +5,6 @@ import { Spinner } from '@nextui-org/spinner';
 import { getKeyValue, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
 import { useEffect, useMemo, useState, type ReactElement } from 'react';
 import type { ParsedCsv } from '~common/types';
-import { appConfig } from '~configs';
 import { isWordLearned, learnWord, parseCsv } from '~helpers';
 import { FullscreenLayout } from '~layouts';
 
@@ -42,20 +41,12 @@ const IndexPage = () => {
     const fetchCsvFiles = async () => {
       setIsLoading(true);
 
-      await fetch(
-        appConfig.env.onProduction
-          ? process.env.NEXT_PUBLIC_VERCEL_URL + '/assets/csv/words.csv'
-          : '/assets/csv/words.csv'
-      )
+      await fetch(process.env.NEXT_PUBLIC_APP_URL + '/assets/csv/words.csv')
         .then((response) => response.text())
         .then((data) => setWords(parseCsv(data)))
         .catch((error) => console.error('Error fetching words.csv:', error));
 
-      await fetch(
-        appConfig.env.onProduction
-          ? process.env.NEXT_PUBLIC_VERCEL_URL + '/assets/csv/examples.csv'
-          : '/assets/csv/examples.csv'
-      )
+      await fetch(process.env.NEXT_PUBLIC_APP_URL + '/assets/csv/examples.csv')
         .then((response) => response.text())
         .then((data) => setExamples(parseCsv(data)))
         .catch((error) => console.error('Error fetching examples.csv:', error));
