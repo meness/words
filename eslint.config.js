@@ -116,6 +116,6 @@ export default [
   },
   {
     // Ignore certain directories
-    ignores: ['node_modules', '.next']
+    ignores: ['node_modules', '.next', 'public/assets/csv']
   }
 ];

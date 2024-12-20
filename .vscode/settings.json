@@ -55,6 +55,7 @@
     "bunx",
     "chartjs",
     "codegen",
+    "CODEOWNERS",
     "commitlint",
     "consts",
     "copperx",
