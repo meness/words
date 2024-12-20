@@ -21,7 +21,7 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
         titleTemplate="%s - تمرین کلمات"
         description="تمرین کلمات انگلیسی با محوریت حقوقی"
         openGraph={{
-          locale: 'en-US',
+          locale: 'fa-IR',
           title: 'تمرین کلمات',
           description: 'تمرین کلمات انگلیسی با محوریت حقوقی',
           images: []
