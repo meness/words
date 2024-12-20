@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export const middleware = (request: NextRequest) => {
   const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-eval';
@@ -28,4 +28,4 @@ export function middleware(request: NextRequest) {
   response.headers.set('Content-Security-Policy', contentSecurityPolicyHeaderValue);
 
   return response;
-}
+};
