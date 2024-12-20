@@ -35,9 +35,12 @@ const IndexPage = () => {
   const [query, setQuery] = useState('');
   const [words, setWords] = useState<ParsedCsv>();
   const [_, setExamples] = useState<ParsedCsv>();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchCsvFiles = async () => {
+      setIsLoading(true);
+
       await fetch('/assets/csv/words.csv')
         .then((response) => response.text())
         .then((data) => setWords(parseCsv(data)))
@@ -47,6 +50,8 @@ const IndexPage = () => {
         .then((response) => response.text())
         .then((data) => setExamples(parseCsv(data)))
         .catch((error) => console.error('Error fetching examples.csv:', error));
+
+      setIsLoading(false);
     };
 
     fetchCsvFiles();
@@ -70,7 +75,6 @@ const IndexPage = () => {
         value={query}
         placeholder="کلمات را جستجو کنید..."
         classNames={{ base: 'max-w-4xl' }}
-        // classNames={{ input: "w-full p-2 border border-gray-300 rounded" }}
         disabled={!words?.rows.length}
       />
       <Card
@@ -103,7 +107,9 @@ const IndexPage = () => {
               }}
             </TableHeader>
             <TableBody
-              emptyContent="کمی تحمل بفرمایید!"
+              isLoading={isLoading}
+              loadingContent="کمی تحمل بفرمایید!"
+              emptyContent="متاسفانه نتیجه‌ای وجود ندارد!"
               items={query ? filteredWords : (words?.rows ?? [])}>
               {(item) => (
                 <TableRow key={item.word}>
