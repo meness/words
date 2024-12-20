@@ -1,4 +1,4 @@
-export type ParsedCsv = {
+export type ParsedWordsCsv = {
   headers: string[];
   rows: {
     checkbox: string;
