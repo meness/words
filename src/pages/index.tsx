@@ -122,6 +122,7 @@ const IndexPage = () => {
           <Table
             shadow="none"
             isStriped
+            key={Math.random()}
             align="center"
             removeWrapper
             isHeaderSticky
