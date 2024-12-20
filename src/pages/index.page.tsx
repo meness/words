@@ -3,7 +3,6 @@ import { Checkbox } from '@nextui-org/checkbox';
 import { Input } from '@nextui-org/input';
 import { Spinner } from '@nextui-org/spinner';
 import { getKeyValue, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
-import { NextSeo } from 'next-seo';
 import { useEffect, useMemo, useState, type ReactElement } from 'react';
 import type { ParsedCsv } from '~common/types';
 import { isWordLearned, learnWord, parseCsv } from '~helpers';
@@ -68,7 +67,6 @@ const IndexPage = () => {
 
   return (
     <div className="my-10 flex flex-col place-content-center place-items-center gap-6">
-      <NextSeo title="محاسبه" />
       <Input
         type="search"
         id="search-input"

@@ -17,7 +17,7 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <>
       <DefaultSeo
-        title="تمرین کلمات"
+        defaultTitle="تمرین کلمات"
         titleTemplate="%s - تمرین کلمات"
         description="تمرین کلمات انگلیسی با محوریت حقوقی"
         openGraph={{
