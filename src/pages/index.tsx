@@ -195,7 +195,7 @@ const IndexPage = () => {
             page={page}
             initialPage={1}
             total={totalPages}
-            onChange={(newPage) => setPage(newPage)}
+            onChange={setPage}
           />
         </CardBody>
       </Card>
