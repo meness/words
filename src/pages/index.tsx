@@ -35,6 +35,7 @@ const IndexPage = () => {
   const [practicedWordIndex, setPracticedWordIndex] = useState(0);
   const [practicedWordHint, setPracticedWordHint] = useState(false);
   const [hintAlways, setHintAlways] = useState(false);
+  const [reRenderTable, setReRenderTable] = useState(Math.random());
 
   useEffect(() => {
     const fetchCsvFiles = async () => {
@@ -70,6 +71,7 @@ const IndexPage = () => {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
 
+    setReRenderTable(Math.random());
     return query.length
       ? words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).slice(start, end)
       : words.rows.slice(start, end);
@@ -122,7 +124,7 @@ const IndexPage = () => {
           <Table
             shadow="none"
             isStriped
-            key={Math.random()}
+            key={reRenderTable}
             align="center"
             isHeaderSticky
             classNames={{ base: 'min-h-[520px] max-h-[520px]', thead: 'select-none' }}>
@@ -188,11 +190,10 @@ const IndexPage = () => {
         <CardBody>
           <Pagination
             isCompact
-            key={Math.random()}
             dir="ltr"
             showControls
             color="secondary"
-            isDisabled={isLoading}
+            isDisabled={isLoading || !totalPages}
             page={page}
             initialPage={1}
             total={totalPages}
