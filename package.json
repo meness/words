@@ -16,7 +16,6 @@
     "update-browserslist": "npx update-browserslist-db@latest"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.9.1",
     "@next/bundle-analyzer": "15.1.2",
     "@nextui-org/badge": "^2.2.3",
     "@nextui-org/button": "^2.2.7",
@@ -33,6 +32,7 @@
     "@nextui-org/table": "^2.2.6",
     "@nextui-org/theme": "^2.4.3",
     "@react-aria/utils": "^3.26.0",
+    "axios": "^1.7.9",
     "framer-motion": "^11.15.0",
     "next": "15.1.2",
     "next-seo": "^6.6.0",
@@ -44,8 +44,7 @@
     "react-icons": "^5.4.0",
     "reflect-metadata": "^0.2.2",
     "sharp": "^0.33.5",
-    "tailwind-merge": "^2.5.5",
-    "yup": "^1.6.1"
+    "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
@@ -63,14 +62,9 @@
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.6",
     "eslint": "^9.17.0",
-    "eslint-config-next": "15.1.2",
-    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsdoc": "^50.6.1",
     "eslint-plugin-json": "^4.0.1",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-prefer-function-component": "^3.3.0",
     "eslint-plugin-yaml": "^1.0.3",
     "husky": "^9.1.7",
     "jsonc-eslint-parser": "^2.4.0",
