@@ -96,6 +96,7 @@ const IndexPage = () => {
                       <Checkbox
                         size="lg"
                         name="check-all"
+                        id="check-all"
                         color="primary"
                         isDisabled
                       />
@@ -121,6 +122,7 @@ const IndexPage = () => {
                             size="lg"
                             color="success"
                             name="check"
+                            id="check"
                             defaultSelected={isWordLearned(item.word)}
                             onValueChange={(isSelected) => {
                               learnWord(item.word, isSelected);
