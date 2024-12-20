@@ -25,7 +25,7 @@ const nextConfig = {
   // Needs to be disabled for react-beautiful-dnd https://github.com/atlassian/react-beautiful-dnd/issues/2407#issuecomment-1137221247
   reactStrictMode: false,
   compiler: {
-    removeConsole: false
+    removeConsole: process.env.NODE_ENV === 'production'
   }
 };
 
