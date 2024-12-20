@@ -11,7 +11,6 @@ export default {
               stage: 3,
               features: {
                 clamp: true,
-                'logical-properties-and-values': true,
                 'place-properties': true,
                 'system-ui-font-family': true
               },
