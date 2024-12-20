@@ -1,6 +1,7 @@
 import { Card, CardBody } from '@nextui-org/card';
 import { Checkbox } from '@nextui-org/checkbox';
 import { Input } from '@nextui-org/input';
+import { Spinner } from '@nextui-org/spinner';
 import { getKeyValue, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
 import { NextSeo } from 'next-seo';
 import { useEffect, useMemo, useState, type ReactElement } from 'react';
@@ -86,7 +87,7 @@ const IndexPage = () => {
             isStriped
             removeWrapper
             isHeaderSticky
-            classNames={{ base: 'max-h-[520px] overflow-y-auto' }}>
+            classNames={{ base: 'min-h-[520px] max-h-[520px] overflow-y-auto' }}>
             <TableHeader columns={columns}>
               {(column) => {
                 if (column.key === 'checkbox') {
@@ -108,7 +109,7 @@ const IndexPage = () => {
             </TableHeader>
             <TableBody
               isLoading={isLoading}
-              loadingContent="کمی تحمل بفرمایید!"
+              loadingContent={<Spinner />}
               emptyContent="متاسفانه نتیجه‌ای وجود ندارد!"
               items={query ? filteredWords : (words?.rows ?? [])}>
               {(item) => (
