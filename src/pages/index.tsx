@@ -114,6 +114,7 @@ const IndexPage = () => {
           <Table
             shadow="none"
             isStriped
+            layout="fixed"
             removeWrapper
             isHeaderSticky
             classNames={{ base: 'min-h-[520px] max-h-[520px]' }}>
