@@ -41,14 +41,30 @@ const IndexPage = () => {
     const fetchCsvFiles = async () => {
       setIsLoading(true);
 
-      await fetch('/assets/csv/words.csv')
+      await fetch('/assets/csv/words.csv', {
+        headers: {
+          'Cache-Control': 'no-cache'
+        }
+      })
         .then((response) => response.text())
-        .then((data) => setWords(parseCsv(data)))
+        .then((data) => {
+          console.log('fuck data', data);
+          console.log('fuck parsed', parseCsv(data));
+          setWords(parseCsv(data));
+        })
         .catch((error) => console.error('Error fetching words.csv:', error));
 
-      await fetch('/assets/csv/examples.csv')
+      await fetch('/assets/csv/examples.csv', {
+        headers: {
+          'Cache-Control': 'no-cache'
+        }
+      })
         .then((response) => response.text())
-        .then((data) => setExamples(parseCsv(data)))
+        .then((data) => {
+          console.log('fuck data', data);
+          console.log('fuck parsed', parseCsv(data));
+          setExamples(parseCsv(data));
+        })
         .catch((error) => console.error('Error fetching examples.csv:', error));
 
       setIsLoading(false);
