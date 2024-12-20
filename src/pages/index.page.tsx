@@ -41,12 +41,12 @@ const IndexPage = () => {
     const fetchCsvFiles = async () => {
       setIsLoading(true);
 
-      await fetch(process.env.NEXT_PUBLIC_APP_URL + '/assets/csv/words.csv')
+      await fetch('/assets/csv/words.csv')
         .then((response) => response.text())
         .then((data) => setWords(parseCsv(data)))
         .catch((error) => console.error('Error fetching words.csv:', error));
 
-      await fetch(process.env.NEXT_PUBLIC_APP_URL + '/assets/csv/examples.csv')
+      await fetch('/assets/csv/examples.csv')
         .then((response) => response.text())
         .then((data) => setExamples(parseCsv(data)))
         .catch((error) => console.error('Error fetching examples.csv:', error));
@@ -95,6 +95,7 @@ const IndexPage = () => {
                       align="center">
                       <Checkbox
                         size="lg"
+                        name="check-all"
                         color="primary"
                         isDisabled
                       />
@@ -119,6 +120,7 @@ const IndexPage = () => {
                           <Checkbox
                             size="lg"
                             color="success"
+                            name="check"
                             defaultSelected={isWordLearned(item.word)}
                             onValueChange={(isSelected) => {
                               learnWord(item.word, isSelected);
