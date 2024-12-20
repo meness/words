@@ -91,7 +91,7 @@ const IndexPage = () => {
     <div className="my-10 flex flex-col place-content-center place-items-center gap-6">
       <Card
         isDisabled={isLoading}
-        classNames={{ base: 'max-w-5xl', body: 'flex-row gap-2' }}
+        classNames={{ base: 'max-w-5xl select-none', body: 'flex-row gap-2' }}
         fullWidth>
         <CardBody>
           <Input
@@ -125,7 +125,7 @@ const IndexPage = () => {
             key={Math.random()}
             align="center"
             isHeaderSticky
-            classNames={{ base: 'min-h-[520px] max-h-[520px]' }}>
+            classNames={{ base: 'min-h-[520px] max-h-[520px]', thead: 'select-none' }}>
             <TableHeader columns={columns}>
               {({ key, label }) => (
                 <TableColumn
@@ -184,7 +184,7 @@ const IndexPage = () => {
           </Table>
         </CardBody>
       </Card>
-      <Card>
+      <Card classNames={{ base: 'select-none' }}>
         <CardBody>
           <Pagination
             isCompact
@@ -204,6 +204,7 @@ const IndexPage = () => {
         backdrop="blur"
         placement="bottom-center"
         isOpen={isOpen}
+        classNames={{ header: 'select-none' }}
         size="md"
         onClose={() => {
           setPracticedWordIndex(0);
