@@ -29,14 +29,10 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
       />
       <Head>
         <link
-          rel="icon"
+          rel="icon shortcut"
           href="/favicon.ico"
+          type="image/x-icon"
           sizes="any"
-        />
-        <link
-          rel="icon"
-          href="/favicon.svg"
-          type="image/svg+xml"
         />
         <meta
           name="viewport"
