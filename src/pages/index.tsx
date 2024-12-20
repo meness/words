@@ -1,6 +1,7 @@
 import { Card, CardBody } from '@nextui-org/card';
 import { Checkbox } from '@nextui-org/checkbox';
 import { Input } from '@nextui-org/input';
+import { Pagination } from '@nextui-org/pagination';
 import { Spinner } from '@nextui-org/spinner';
 import { getKeyValue, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
 import { useEffect, useMemo, useState, type ReactElement } from 'react';
@@ -8,6 +9,7 @@ import type { ParsedCsv } from '~common/types';
 import { isWordLearned, learnWord, parseCsv } from '~helpers';
 import { FullscreenLayout } from '~layouts';
 
+const rowsPerPage = 50;
 const columns = [
   {
     key: 'checkbox',
@@ -32,6 +34,7 @@ const columns = [
 ];
 
 const IndexPage = () => {
+  const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
   const [words, setWords] = useState<ParsedCsv>();
   const [_, setExamples] = useState<ParsedCsv>();
@@ -57,13 +60,41 @@ const IndexPage = () => {
     fetchCsvFiles();
   }, []);
 
+  useEffect(() => {
+    setPage(1);
+  }, [query]);
+
   const filteredWords = useMemo<ParsedCsv['rows']>(() => {
-    if (!query.trim() || !words?.rows.length) {
+    if (!words?.rows.length) {
       return [];
     }
 
-    return words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase()));
-  }, [query, words]);
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+
+    if (query.length) {
+      return words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).slice(start, end);
+    }
+
+    return words.rows.slice(start, end);
+  }, [query, words?.rows.length, page]);
+
+  const totalPages = useMemo(() => {
+    if (!words?.rows.length) {
+      return 1;
+    }
+
+    if (query.length) {
+      return Math.ceil(
+        words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).length / rowsPerPage
+      );
+    }
+
+    return Math.ceil(words.rows.length / rowsPerPage);
+  }, [
+    words?.rows.length,
+    query.length
+  ]);
 
   return (
     <div className="my-10 flex flex-col place-content-center place-items-center gap-6">
@@ -73,19 +104,19 @@ const IndexPage = () => {
         onChange={(e) => setQuery(e.target.value.trim())}
         value={query}
         placeholder="کلمات را جستجو کنید..."
-        classNames={{ base: 'max-w-4xl' }}
+        classNames={{ base: 'max-w-5xl' }}
         disabled={!words?.rows.length}
       />
       <Card
         fullWidth
-        classNames={{ base: 'max-w-4xl' }}>
+        classNames={{ base: 'max-w-5xl' }}>
         <CardBody>
           <Table
             shadow="none"
             isStriped
             removeWrapper
             isHeaderSticky
-            classNames={{ base: 'min-h-[520px] max-h-[520px] overflow-y-auto' }}>
+            classNames={{ base: 'min-h-[520px] max-h-[520px]' }}>
             <TableHeader columns={columns}>
               {(column) => {
                 if (column.key === 'checkbox') {
@@ -104,14 +135,20 @@ const IndexPage = () => {
                   );
                 }
 
-                return <TableColumn key={column.key}>{column.label}</TableColumn>;
+                return (
+                  <TableColumn
+                    align="start"
+                    key={column.key}>
+                    {column.label}
+                  </TableColumn>
+                );
               }}
             </TableHeader>
             <TableBody
               isLoading={isLoading}
               loadingContent={<Spinner />}
               emptyContent="متاسفانه نتیجه‌ای وجود ندارد!"
-              items={query ? filteredWords : (words?.rows ?? [])}>
+              items={filteredWords}>
               {(item) => (
                 <TableRow key={item.word}>
                   {(columnKey) => {
@@ -132,12 +169,25 @@ const IndexPage = () => {
                       );
                     }
 
-                    return <TableCell>{getKeyValue(item, columnKey)}</TableCell>;
+                    return <TableCell align="right">{getKeyValue(item, columnKey)}</TableCell>;
                   }}
                 </TableRow>
               )}
             </TableBody>
           </Table>
+        </CardBody>
+      </Card>
+      <Card>
+        <CardBody>
+          <Pagination
+            isCompact
+            showControls
+            color="secondary"
+            page={page}
+            initialPage={1}
+            total={totalPages}
+            onChange={(page) => setPage(page)}
+          />
         </CardBody>
       </Card>
     </div>
