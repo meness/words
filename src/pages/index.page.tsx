@@ -34,7 +34,7 @@ const columns = [
 const IndexPage = () => {
   const [query, setQuery] = useState('');
   const [words, setWords] = useState<ParsedCsv>();
-  const [examples, setExamples] = useState<ParsedCsv>();
+  const [_, setExamples] = useState<ParsedCsv>();
 
   useEffect(() => {
     const fetchCsvFiles = async () => {
