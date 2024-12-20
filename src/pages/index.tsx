@@ -90,7 +90,7 @@ const IndexPage = () => {
   return (
     <div className="my-10 flex flex-col place-content-center place-items-center gap-6">
       <Card
-        isDisabled={!words?.rows.length}
+        isDisabled={isLoading}
         classNames={{ base: 'max-w-5xl', body: 'flex-row gap-2' }}
         fullWidth>
         <CardBody>
@@ -192,6 +192,7 @@ const IndexPage = () => {
             dir="ltr"
             showControls
             color="secondary"
+            isDisabled={isLoading}
             page={page}
             initialPage={1}
             total={totalPages}
