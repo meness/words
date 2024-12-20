@@ -11,50 +11,34 @@ import { FullscreenLayout } from '~layouts';
 
 const rowsPerPage = 50;
 const columns = [
-  {
-    key: 'checkbox',
-    label: '✅'
-  },
-  {
-    key: 'word',
-    label: 'کلمه'
-  },
-  {
-    key: 'pronunciation',
-    label: 'تلفظ'
-  },
-  {
-    key: 'translation',
-    label: 'معنای حقوقی'
-  },
-  {
-    key: 'description',
-    label: 'توضیح'
-  }
+  { key: 'checkbox', label: '✅' },
+  { key: 'word', label: 'کلمه' },
+  { key: 'pronunciation', label: 'تلفظ' },
+  { key: 'translation', label: 'معنای حقوقی' },
+  { key: 'description', label: 'توضیح' }
 ];
 
 const IndexPage = () => {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
   const [words, setWords] = useState<ParsedCsv>();
-  const [_, setExamples] = useState<ParsedCsv>();
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchCsvFiles = async () => {
-      setIsLoading(true);
+      try {
+        setIsLoading(true);
 
-      await fetch('/assets/csv/words.csv')
-        .then((response) => response.text())
-        .then((data) => setWords(parseCsv(data)))
-        .catch((error) => console.error('Error fetching words.csv:', error));
+        const wordsResponse = await fetch('/assets/csv/words.csv');
+        const wordsData = await wordsResponse.text();
 
-      await fetch('/assets/csv/examples.csv')
-        .then((response) => response.text())
-        .then((data) => setExamples(parseCsv(data)))
-        .catch((error) => console.error('Error fetching examples.csv:', error));
-
-      setIsLoading(false);
+        setWords(parseCsv(wordsData));
+      } catch {
+        setError('Failed to load words data.');
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     fetchCsvFiles();
@@ -64,7 +48,7 @@ const IndexPage = () => {
     setPage(1);
   }, [query]);
 
-  const filteredWords = useMemo<ParsedCsv['rows']>(() => {
+  const filteredWords = useMemo(() => {
     if (!words?.rows.length) {
       return [];
     }
@@ -72,11 +56,9 @@ const IndexPage = () => {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
 
-    if (query.length) {
-      return words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).slice(start, end);
-    }
-
-    return words.rows.slice(start, end);
+    return query.length
+      ? words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).slice(start, end)
+      : words.rows.slice(start, end);
   }, [query, words?.rows.length, page]);
 
   const totalPages = useMemo(() => {
@@ -84,17 +66,12 @@ const IndexPage = () => {
       return 1;
     }
 
-    if (query.length) {
-      return Math.ceil(
-        words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).length / rowsPerPage
-      );
-    }
+    const filteredCount = query.length
+      ? words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).length
+      : words.rows.length;
 
-    return Math.ceil(words.rows.length / rowsPerPage);
-  }, [
-    words?.rows.length,
-    query.length
-  ]);
+    return Math.ceil(filteredCount / rowsPerPage);
+  }, [words?.rows.length, query.length]);
 
   return (
     <div className="my-10 flex flex-col place-content-center place-items-center gap-6">
@@ -106,7 +83,6 @@ const IndexPage = () => {
         autoCapitalize="off"
         autoComplete="off"
         autoCorrect="off"
-        autoFocus={false}
         placeholder="کلمات را جستجو کنید..."
         classNames={{ base: 'max-w-5xl' }}
         disabled={!words?.rows.length}
@@ -123,90 +99,56 @@ const IndexPage = () => {
             isHeaderSticky
             classNames={{ base: 'min-h-[520px] max-h-[520px]' }}>
             <TableHeader columns={columns}>
-              {(column) => {
-                if (column.key === 'checkbox') {
-                  return (
-                    <TableColumn
-                      key={column.key}
-                      align="center">
-                      <Checkbox
-                        size="lg"
-                        name="check-all"
-                        id="check-all"
-                        color="primary"
-                        isDisabled
-                      />
-                    </TableColumn>
-                  );
-                }
-
-                if (column.key === 'pronunciation') {
-                  return (
-                    <TableColumn
-                      key={column.key}
-                      dir="ltr"
-                      align="center">
-                      {column.label}
-                    </TableColumn>
-                  );
-                }
-
-                if (column.key === 'word') {
-                  return (
-                    <TableColumn
-                      key={column.key}
-                      dir="ltr"
-                      align="start">
-                      {column.label}
-                    </TableColumn>
-                  );
-                }
-
-                return (
-                  <TableColumn
-                    align="start"
-                    key={column.key}>
-                    {column.label}
-                  </TableColumn>
-                );
-              }}
+              {({ key, label }) => (
+                <TableColumn
+                  key={key}
+                  align={['checkbox', 'pronunciation'].includes(key) ? 'center' : 'start'}
+                  dir={key === 'word' || key === 'pronunciation' ? 'ltr' : 'auto'}>
+                  {key === 'checkbox' ? (
+                    <Checkbox
+                      size="lg"
+                      name="check-all"
+                      id="check-all"
+                      color="primary"
+                      isDisabled
+                    />
+                  ) : (
+                    label
+                  )}
+                </TableColumn>
+              )}
             </TableHeader>
             <TableBody
               isLoading={isLoading}
               loadingContent={<Spinner />}
-              emptyContent="متاسفانه نتیجه‌ای وجود ندارد!"
+              emptyContent={
+                !!error ? <div className="text-red-500">{error}</div> : <div>متاسفانه نتیجه‌ای وجود ندارد!</div>
+              }
               items={filteredWords}>
               {(item) => (
                 <TableRow key={item.word}>
                   {(columnKey) => {
-                    if (columnKey === 'checkbox') {
-                      return (
-                        <TableCell align="center">
+                    const isCheckboxColumn = columnKey === 'checkbox';
+                    const isWordColumn = columnKey === 'word';
+
+                    return (
+                      <TableCell
+                        align={isCheckboxColumn ? 'center' : isWordColumn ? 'left' : 'right'}
+                        dir={isWordColumn ? 'ltr' : 'auto'}>
+                        {isCheckboxColumn ? (
                           <Checkbox
                             size="lg"
                             color="success"
                             name="check"
                             id="check"
                             defaultSelected={isWordLearned(item.word)}
-                            onValueChange={(isSelected) => {
-                              learnWord(item.word, isSelected);
-                            }}
+                            onValueChange={(isSelected) => learnWord(item.word, isSelected)}
                           />
-                        </TableCell>
-                      );
-                    }
-
-                    if (columnKey === 'word') {
-                      return (
-                        <TableCell
-                          align="left"
-                          dir="ltr">
-                          {getKeyValue(item, columnKey)}
-                        </TableCell>
-                      );
-                    }
-
-                    return <TableCell align="right">{getKeyValue(item, columnKey)}</TableCell>;
+                        ) : (
+                          getKeyValue(item, columnKey)
+                        )}
+                      </TableCell>
+                    );
                   }}
                 </TableRow>
               )}
@@ -223,7 +165,7 @@ const IndexPage = () => {
             page={page}
             initialPage={1}
             total={totalPages}
-            onChange={(page) => setPage(page)}
+            onChange={(newPage) => setPage(newPage)}
           />
         </CardBody>
       </Card>
