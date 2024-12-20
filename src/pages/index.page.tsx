@@ -43,14 +43,18 @@ const IndexPage = () => {
       setIsLoading(true);
 
       await fetch(
-        appConfig.env.onProduction ? process.env.VERCEL_URL + '/assets/csv/words.csv' : '/assets/csv/words.csv'
+        appConfig.env.onProduction
+          ? process.env.NEXT_PUBLIC_VERCEL_URL + '/assets/csv/words.csv'
+          : '/assets/csv/words.csv'
       )
         .then((response) => response.text())
         .then((data) => setWords(parseCsv(data)))
         .catch((error) => console.error('Error fetching words.csv:', error));
 
       await fetch(
-        appConfig.env.onProduction ? process.env.VERCEL_URL + '/assets/csv/examples.csv' : '/assets/csv/examples.csv'
+        appConfig.env.onProduction
+          ? process.env.NEXT_PUBLIC_VERCEL_URL + '/assets/csv/examples.csv'
+          : '/assets/csv/examples.csv'
       )
         .then((response) => response.text())
         .then((data) => setExamples(parseCsv(data)))
