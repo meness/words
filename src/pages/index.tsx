@@ -9,6 +9,7 @@ import { Progress } from '@nextui-org/progress';
 import { Spinner } from '@nextui-org/spinner';
 import { Switch } from '@nextui-org/switch';
 import { getKeyValue, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useMemo, useState, type ReactElement } from 'react';
 import type { ParsedExamplesCsv, ParsedWordsCsv } from '~common/types';
 import { isWordLearned, learnWord, parseExamplesCsv, parseWordsCsv } from '~helpers';
@@ -244,27 +245,34 @@ const IndexPage = () => {
                     <p>{currentWord?.word}</p>
                     <p className="text-medium">{currentWord?.pronunciation}</p>
                   </div>
-                  {practicedWordHint || hintAlways ? (
-                    <div className="my-2">
-                      <p>
-                        <span className="text-gray-500">معنی حقوقی:</span>&nbsp;{currentWord?.translation}
-                      </p>
-                      <Divider className="my-2" />
-                      <p>
-                        <span className="text-gray-500">توضیح:</span>&nbsp;{currentWord?.description}
-                      </p>
-                      <Divider className="my-2" />
-                      <p>
-                        <span className="text-gray-500">مثال:</span>&nbsp;<span dir="ltr">{example?.example}</span>
-                      </p>
-                      <Divider className="my-2" />
-                      <p>
-                        <span className="text-gray-500">ترجمه:</span>&nbsp;{example?.translation}
-                      </p>
-                    </div>
-                  ) : (
-                    ''
-                  )}
+                  <AnimatePresence>
+                    {(practicedWordHint || hintAlways) && (
+                      <motion.div
+                        key="content"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="my-2"
+                        transition={{ duration: 0.2 }}>
+                        <p>
+                          <span className="text-gray-500">معنی حقوقی:</span>&nbsp;{currentWord?.translation}
+                        </p>
+                        <Divider className="my-2" />
+                        <p>
+                          <span className="text-gray-500">توضیح:</span>&nbsp;{currentWord?.description}
+                        </p>
+                        <Divider className="my-2" />
+                        <p>
+                          <span className="text-gray-500">مثال:</span>&nbsp;
+                          <span dir="ltr">{example?.example}</span>
+                        </p>
+                        <Divider className="my-2" />
+                        <p>
+                          <span className="text-gray-500">ترجمه:</span>&nbsp;{example?.translation}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </ModalBody>
                 <ModalFooter className="flex flex-col gap-4 md:flex-row">
                   <Button
