@@ -117,14 +117,13 @@ const IndexPage = () => {
       </Card>
       <Card
         fullWidth
-        classNames={{ base: 'max-w-5xl' }}>
+        classNames={{ base: 'max-w-5xl', body: 'p-0' }}>
         <CardBody>
           <Table
             shadow="none"
             isStriped
             key={Math.random()}
             align="center"
-            removeWrapper
             isHeaderSticky
             classNames={{ base: 'min-h-[520px] max-h-[520px]' }}>
             <TableHeader columns={columns}>
