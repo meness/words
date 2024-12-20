@@ -189,6 +189,7 @@ const IndexPage = () => {
         <CardBody>
           <Pagination
             isCompact
+            key={Math.random()}
             showControls
             color="secondary"
             page={page}
