@@ -6,5 +6,6 @@ export type ParsedWordsCsv = {
     pronunciation: string;
     translation: string;
     description: string;
+    index: number;
   }[];
 };

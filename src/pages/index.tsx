@@ -18,6 +18,7 @@ import { FullscreenLayout } from '~layouts';
 
 const rowsPerPage = 50;
 const columns = [
+  { key: 'index', label: '#' },
   { key: 'checkbox', label: '✅' },
   { key: 'word', label: 'کلمه' },
   { key: 'pronunciation', label: 'تلفظ' },
@@ -133,8 +134,8 @@ const IndexPage = () => {
               {({ key, label }) => (
                 <TableColumn
                   key={key}
-                  align={['checkbox', 'pronunciation'].includes(key) ? 'center' : 'start'}
-                  dir={key === 'word' || key === 'pronunciation' ? 'ltr' : 'auto'}>
+                  align={['checkbox', 'pronunciation', 'index'].includes(key) ? 'center' : 'start'}
+                  dir={['pronunciation', 'word', 'index'].includes(key) ? 'ltr' : 'auto'}>
                   {key === 'checkbox' ? (
                     <Checkbox
                       size="lg"
@@ -164,7 +165,9 @@ const IndexPage = () => {
 
                     return (
                       <TableCell
-                        align={isCheckboxColumn ? 'center' : isWordColumn ? 'left' : 'right'}
+                        align={
+                          ['checkbox', 'index'].includes(String(columnKey)) ? 'center' : isWordColumn ? 'left' : 'right'
+                        }
                         dir={isWordColumn ? 'ltr' : 'auto'}>
                         {isCheckboxColumn ? (
                           <Checkbox

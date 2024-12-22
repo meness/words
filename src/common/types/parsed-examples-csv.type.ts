@@ -5,5 +5,6 @@ export type ParsedExamplesCsv = {
     word: string;
     example: string;
     translation: string;
+    index: number;
   }[];
 };
