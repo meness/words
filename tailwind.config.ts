@@ -6,7 +6,7 @@ export default {
     './src/pages/**/*.tsx',
     './src/components/**/*.tsx',
     './src/layouts/**/*.tsx',
-    './node_modules/@nextui-org/theme/dist/components/(badge|button|card|chip|divider|input|link|modal|pagination|progress|skeleton|snippet|spinner|toggle|table|ripple|form|popover|checkbox|spacer).js'
+    './node_modules/@nextui-org/theme/dist/components/(avatar|badge|button|card|chip|divider|input|link|modal|navbar|pagination|progress|skeleton|snippet|spinner|toggle|table|ripple|form|popover|checkbox|spacer).js'
   ],
   plugins: [
     nextui({
