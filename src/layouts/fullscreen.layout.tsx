@@ -10,6 +10,7 @@ export const FullscreenLayout = ({ children }: FullscreenLayoutProps) => (
     <Navbar
       isBordered
       position="static"
+      classNames={{ base: 'select-none' }}
       maxWidth="full">
       <NavbarBrand className="flex items-center gap-2">
         <span className="text-4xl">👋</span>
