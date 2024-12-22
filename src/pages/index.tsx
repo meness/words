@@ -97,7 +97,9 @@ const IndexPage = () => {
               className="w-full sm:w-full">
               تمرین&nbsp;{practiceOption[selectedPracticeOption[0]].label}
             </Button>
-            <Dropdown placement="bottom-end">
+            <Dropdown
+              placement="bottom-end"
+              classNames={{ base: 'select-none' }}>
               <DropdownTrigger>
                 <Button
                   isIconOnly
