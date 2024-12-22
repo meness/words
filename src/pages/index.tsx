@@ -1,4 +1,4 @@
-import { Button } from '@nextui-org/button';
+import { Button, ButtonGroup } from '@nextui-org/button';
 import { Card, CardBody } from '@nextui-org/card';
 import { Checkbox } from '@nextui-org/checkbox';
 import { Divider } from '@nextui-org/divider';
@@ -11,6 +11,7 @@ import { Switch } from '@nextui-org/switch';
 import { getKeyValue, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useMemo, useState, type ReactElement } from 'react';
+import { GrNext, GrPrevious } from 'react-icons/gr';
 import type { ParsedExamplesCsv, ParsedWordsCsv } from '~common/types';
 import { isWordLearned, learnWord, parseExamplesCsv, parseWordsCsv } from '~helpers';
 import { FullscreenLayout } from '~layouts';
@@ -281,21 +282,9 @@ const IndexPage = () => {
                 </ModalBody>
                 <ModalFooter className="flex flex-col gap-4 md:flex-row">
                   <Button
-                    color="primary"
-                    fullWidth
-                    variant="shadow"
-                    className="order-2 md:order-1"
-                    isDisabled={practicedWordIndex + 1 === wordsCount}
-                    onPress={() => {
-                      setPracticedWordIndex((prev) => prev + 1);
-                      setPracticedWordHint(false);
-                    }}>
-                    برو کلمه بعدی
-                  </Button>
-                  <Button
                     color="warning"
                     variant="ghost"
-                    className="order-1 md:order-2"
+                    className="order-1 md:order-1"
                     isDisabled={practicedWordHint || hintAlways}
                     fullWidth
                     onPress={() => {
@@ -303,6 +292,31 @@ const IndexPage = () => {
                     }}>
                     راهنمایی بگیر
                   </Button>
+                  <ButtonGroup className="order-2 md:order-1">
+                    <Button
+                      color="primary"
+                      isIconOnly
+                      variant="shadow"
+                      endContent={<GrNext />}
+                      isDisabled={practicedWordIndex === 0}
+                      onPress={() => {
+                        setPracticedWordIndex((prev) => prev - 1);
+                        setPracticedWordHint(false);
+                      }}
+                    />
+                    <Button
+                      color="primary"
+                      variant="shadow"
+                      fullWidth
+                      endContent={<GrPrevious />}
+                      isDisabled={practicedWordIndex + 1 === wordsCount}
+                      onPress={() => {
+                        setPracticedWordIndex((prev) => prev + 1);
+                        setPracticedWordHint(false);
+                      }}>
+                      برو کلمه بعدی
+                    </Button>
+                  </ButtonGroup>
                 </ModalFooter>
               </>
             );
