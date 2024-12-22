@@ -11,10 +11,9 @@ import { useEffect, useMemo, useState, type ReactElement } from 'react';
 import { FaChevronDown, FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import { PRACTICE } from '~common/enums';
 import type { ParsedExamplesCsv, ParsedWordsCsv } from '~common/types';
+import { WordsTable, WordsTablePagination } from '~components';
 import { isWordLearned, learnWord, parseExamplesCsv, parseWordsCsv } from '~helpers';
 import { FullscreenLayout } from '~layouts';
-import { WordsTablePagination } from './_components/words-table-pagination.component';
-import { WordsTable } from './_components/words-table.component';
 
 const rowsPerPage = 50;
 
