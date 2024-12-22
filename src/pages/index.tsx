@@ -1,30 +1,20 @@
 import { Button, ButtonGroup } from '@nextui-org/button';
 import { Card, CardBody } from '@nextui-org/card';
-import { Checkbox } from '@nextui-org/checkbox';
 import { Divider } from '@nextui-org/divider';
 import { Input } from '@nextui-org/input';
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/modal';
-import { Pagination } from '@nextui-org/pagination';
 import { Progress } from '@nextui-org/progress';
-import { Spinner } from '@nextui-org/spinner';
 import { Switch } from '@nextui-org/switch';
-import { getKeyValue, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useMemo, useState, type ReactElement } from 'react';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import type { ParsedExamplesCsv, ParsedWordsCsv } from '~common/types';
-import { isWordLearned, learnWord, parseExamplesCsv, parseWordsCsv } from '~helpers';
+import { parseExamplesCsv, parseWordsCsv } from '~helpers';
 import { FullscreenLayout } from '~layouts';
+import { WordsTablePagination } from './_components/words-table-pagination.component';
+import { WordsTable } from './_components/words-table.component';
 
 const rowsPerPage = 50;
-const columns = [
-  { key: 'index', label: '#' },
-  { key: 'checkbox', label: '✅' },
-  { key: 'word', label: 'کلمه' },
-  { key: 'pronunciation', label: 'تلفظ' },
-  { key: 'translation', label: 'معنای حقوقی' },
-  { key: 'description', label: 'توضیح' }
-];
 
 const IndexPage = () => {
   const [page, setPage] = useState(1);
@@ -37,7 +27,6 @@ const IndexPage = () => {
   const [practicedWordIndex, setPracticedWordIndex] = useState(0);
   const [practicedWordHint, setPracticedWordHint] = useState(false);
   const [hintAlways, setHintAlways] = useState(false);
-  const [reRenderTable, setReRenderTable] = useState(Math.random());
 
   useEffect(() => {
     const fetchCsvFiles = async () => {
@@ -64,20 +53,6 @@ const IndexPage = () => {
   useEffect(() => {
     setPage(1);
   }, [query]);
-
-  const filteredWords = useMemo(() => {
-    if (!words?.rows.length) {
-      return [];
-    }
-
-    const start = (page - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
-
-    setReRenderTable(Math.random());
-    return query.length
-      ? words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).slice(start, end)
-      : words.rows.slice(start, end);
-  }, [query, words?.rows.length, page]);
 
   const totalPages = useMemo(() => {
     if (!words?.rows.length) {
@@ -123,85 +98,22 @@ const IndexPage = () => {
         fullWidth
         classNames={{ base: 'max-w-5xl', body: 'p-0' }}>
         <CardBody>
-          <Table
-            shadow="none"
-            isStriped
-            key={reRenderTable}
-            align="center"
-            isHeaderSticky
-            classNames={{ base: 'min-h-[520px] max-h-[520px]', thead: 'select-none' }}>
-            <TableHeader columns={columns}>
-              {({ key, label }) => (
-                <TableColumn
-                  key={key}
-                  align={['checkbox', 'pronunciation', 'index'].includes(key) ? 'center' : 'start'}
-                  dir={['pronunciation', 'word'].includes(key) ? 'ltr' : 'rtl'}>
-                  {key === 'checkbox' ? (
-                    <Checkbox
-                      size="lg"
-                      name="check-all"
-                      id="check-all"
-                      color="primary"
-                      isDisabled
-                    />
-                  ) : (
-                    label
-                  )}
-                </TableColumn>
-              )}
-            </TableHeader>
-            <TableBody
-              isLoading={isLoading}
-              loadingContent={<Spinner />}
-              emptyContent={
-                !!error ? <div className="text-red-500">{error}</div> : <div>متاسفانه نتیجه‌ای وجود ندارد!</div>
-              }
-              items={filteredWords}>
-              {(item) => (
-                <TableRow key={item.word}>
-                  {(columnKey) => {
-                    const isCheckboxColumn = columnKey === 'checkbox';
-                    const isWordColumn = columnKey === 'word';
-
-                    return (
-                      <TableCell
-                        align={
-                          ['checkbox', 'index'].includes(String(columnKey)) ? 'center' : isWordColumn ? 'left' : 'right'
-                        }
-                        dir={isWordColumn ? 'ltr' : 'auto'}>
-                        {isCheckboxColumn ? (
-                          <Checkbox
-                            size="lg"
-                            color="success"
-                            name="check"
-                            id="check"
-                            defaultSelected={isWordLearned(item.word)}
-                            onValueChange={(isSelected) => learnWord(item.word, isSelected)}
-                          />
-                        ) : (
-                          getKeyValue(item, columnKey)
-                        )}
-                      </TableCell>
-                    );
-                  }}
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
+          <WordsTable
+            words={words}
+            isLoading={isLoading}
+            page={page}
+            query={query}
+            rowsPerPage={rowsPerPage}
+          />
         </CardBody>
       </Card>
       <Card classNames={{ base: 'select-none' }}>
         <CardBody>
-          <Pagination
-            isCompact
-            dir="ltr"
-            showControls
-            color="secondary"
-            isDisabled={isLoading || !totalPages}
+          <WordsTablePagination
+            isLoading={isLoading}
             page={page}
-            initialPage={1}
-            total={totalPages}
-            onChange={setPage}
+            totalPages={totalPages}
+            onPageChange={setPage}
           />
         </CardBody>
       </Card>
