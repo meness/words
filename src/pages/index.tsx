@@ -1,42 +1,24 @@
 import { Button, ButtonGroup } from '@nextui-org/button';
 import { Card, CardBody } from '@nextui-org/card';
-import { Divider } from '@nextui-org/divider';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/dropdown';
 import { Input } from '@nextui-org/input';
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/modal';
-import { Progress } from '@nextui-org/progress';
-import { Switch } from '@nextui-org/switch';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useDisclosure } from '@nextui-org/modal';
 import { useEffect, useMemo, useState, type ReactElement } from 'react';
-import { FaChevronDown, FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
-import { PRACTICE } from '~common/enums';
-import type { ParsedExamplesCsv, ParsedWordsCsv } from '~common/types';
-import { WordsTable, WordsTablePagination } from '~components';
+import { FaChevronDown } from 'react-icons/fa6';
+import { trainOptions } from '~common/consts';
+import { TRAIN } from '~common/enums';
+import { TrainModal, WordsTable, WordsTablePagination } from '~components';
 import { appConfig } from '~configs';
-import { isWordLearned, learnWord } from '~helpers';
 import { useWords } from '~hooks';
 import { FullscreenLayout } from '~layouts';
-
-const practiceOption: Record<PRACTICE, { description: string; label: string; key: PRACTICE }> = {
-  scratch: { label: 'همه کلمات', description: 'همه کلمات را تمرین کن.', key: PRACTICE.SCRATCH },
-  learned: {
-    label: 'کلمات تمرین‌شده',
-    description: 'کلماتی که قبلا تمرین‌شده را تمرین کن.',
-    key: PRACTICE.LEARNED
-  },
-  left: { label: 'کلمات باقی‌مانده', description: 'کلمات باقی‌مانده را تمرین کن.', key: PRACTICE.LEFT }
-};
 
 const IndexPage = () => {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
   const { isOpen, onClose, onOpenChange } = useDisclosure();
-  const [practicedWordIndex, setPracticedWordIndex] = useState(0);
-  const [practicedWordHint, setPracticedWordHint] = useState(false);
-  const [hintAlways, setHintAlways] = useState(false);
   const [reRenderTable, setReRenderTable] = useState(Math.random());
-  const [selectedPracticeOption, setSelectedPracticeOption] = useState<[PRACTICE]>([PRACTICE.SCRATCH]);
-  const { examples, isLoading, words } = useWords();
+  const [selectedTrainOption, setSelectedTrainOption] = useState<[TRAIN]>([TRAIN.SCRATCH]);
+  const { isLoading, words } = useWords();
 
   useEffect(() => {
     setPage(1);
@@ -95,7 +77,7 @@ const IndexPage = () => {
             <Button
               onPress={onOpenChange}
               className="w-full sm:w-full">
-              تمرین&nbsp;{practiceOption[selectedPracticeOption[0]].label}
+              تمرین&nbsp;{trainOptions[selectedTrainOption[0]].label}
             </Button>
             <Dropdown
               placement="bottom-end"
@@ -111,12 +93,12 @@ const IndexPage = () => {
                 disallowEmptySelection
                 aria-label="Merge options"
                 className="max-w-[300px]"
-                selectedKeys={selectedPracticeOption}
+                selectedKeys={selectedTrainOption}
                 selectionMode="single"
                 onSelectionChange={(key) => {
-                  setSelectedPracticeOption([key.currentKey as PRACTICE]);
+                  setSelectedTrainOption([key.currentKey as TRAIN]);
                 }}>
-                {Object.values(practiceOption).map(({ key, description, label }) => (
+                {Object.values(trainOptions).map(({ key, description, label }) => (
                   <DropdownItem
                     key={key}
                     description={description}>
@@ -149,144 +131,17 @@ const IndexPage = () => {
           />
         </CardBody>
       </Card>
-      <Modal
-        backdrop="blur"
-        placement="bottom-center"
+      <TrainModal
+        selectedTrainOption={selectedTrainOption}
         isOpen={isOpen}
-        classNames={{ header: 'select-none' }}
-        size="md"
-        onClose={() => {
-          setPracticedWordIndex(0);
-          setPracticedWordHint(false);
-          setHintAlways(false);
-          onClose();
-        }}>
-        <ModalContent>
-          {() => {
-            let wordsData: ParsedWordsCsv['rows'] = [];
-            let examplesData: ParsedExamplesCsv['rows'] = [];
-            if (selectedPracticeOption[0] === PRACTICE.SCRATCH) {
-              wordsData = words;
-              examplesData = examples;
-            } else if (selectedPracticeOption[0] === PRACTICE.LEARNED) {
-              wordsData = words.filter((row) => isWordLearned(row.word));
-              examplesData = examples.filter((row) => wordsData.some((word) => word.index === row.index));
-            } else if (selectedPracticeOption[0] === PRACTICE.LEFT) {
-              wordsData = words.filter((row) => !isWordLearned(row.word));
-              examplesData = examples.filter((row) => wordsData.some((word) => word.index === row.index));
-            }
-
-            const wordsCount = wordsData.length;
-            const currentWord = wordsData[practicedWordIndex];
-            const example = examplesData[practicedWordIndex];
-
-            return (
-              <>
-                <ModalHeader className="flex items-center gap-3">
-                  <Progress
-                    aria-label="Practicing..."
-                    className="absolute left-0 right-0 top-0 max-w-full"
-                    color="success"
-                    showValueLabel={false}
-                    size="sm"
-                    maxValue={words.length ?? 0}
-                    value={practicedWordIndex + 1}
-                  />
-                  <Switch
-                    color="warning"
-                    defaultSelected={hintAlways}
-                    onValueChange={(isSelected) => {
-                      setHintAlways(isSelected);
-                    }}
-                    size="sm"
-                  />
-                  <p>
-                    تمرین کلمه {practicedWordIndex + 1} از {wordsCount}
-                  </p>
-                </ModalHeader>
-                <ModalBody>
-                  <div
-                    className="text-center text-4xl"
-                    dir="ltr">
-                    <p>{currentWord?.word}</p>
-                    <p className="text-medium">{currentWord?.pronunciation}</p>
-                  </div>
-                  <AnimatePresence>
-                    {(practicedWordHint || hintAlways) && (
-                      <motion.div
-                        key="content"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="my-2"
-                        transition={{ duration: 0.2 }}>
-                        <p>
-                          <span className="text-gray-500">معنی حقوقی:</span>&nbsp;{currentWord?.translation}
-                        </p>
-                        <Divider className="my-2" />
-                        <p>
-                          <span className="text-gray-500">توضیح:</span>&nbsp;{currentWord?.description}
-                        </p>
-                        <Divider className="my-2" />
-                        <p>
-                          <span className="text-gray-500">مثال:</span>&nbsp;
-                          <span dir="ltr">{example?.example}</span>
-                        </p>
-                        <Divider className="my-2" />
-                        <p>
-                          <span className="text-gray-500">ترجمه:</span>&nbsp;{example?.translation}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </ModalBody>
-                <ModalFooter className="flex flex-col gap-4 md:flex-row">
-                  <Button
-                    color="warning"
-                    variant="ghost"
-                    className="order-1 md:order-1"
-                    isDisabled={practicedWordHint || hintAlways}
-                    fullWidth
-                    onPress={() => {
-                      setPracticedWordHint(true);
-                    }}>
-                    راهنمایی بگیر
-                  </Button>
-                  <ButtonGroup className="order-2 md:order-1">
-                    <Button
-                      color="primary"
-                      isIconOnly
-                      variant="shadow"
-                      endContent={<FaChevronRight />}
-                      isDisabled={practicedWordIndex === 0}
-                      onPress={() => {
-                        setPracticedWordIndex((prev) => prev - 1);
-                        setPracticedWordHint(false);
-                      }}
-                    />
-                    <Button
-                      color="primary"
-                      variant="shadow"
-                      fullWidth
-                      endContent={<FaChevronLeft />}
-                      isDisabled={practicedWordIndex + 1 === wordsCount}
-                      onPress={() => {
-                        if (currentWord) {
-                          learnWord(currentWord.word, true);
-                          setReRenderTable(Math.random());
-                        }
-                        setPracticedWordIndex((prev) => prev + 1);
-                        setPracticedWordHint(false);
-                      }}>
-                      برو کلمه بعدی
-                    </Button>
-                  </ButtonGroup>
-                </ModalFooter>
-              </>
-            );
-          }}
-        </ModalContent>
-      </Modal>
+        onClose={onClose}
+        words={words}
+        onNextWord={() => {
+          if (selectedTrainOption[0] !== TRAIN.LEARNED) {
+            setReRenderTable(Math.random());
+          }
+        }}
+      />
     </div>
   );
 };

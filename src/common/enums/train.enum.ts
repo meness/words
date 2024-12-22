@@ -1,4 +1,4 @@
-export enum PRACTICE {
+export enum TRAIN {
   SCRATCH = 'scratch',
   LEARNED = 'learned',
   LEFT = 'left'

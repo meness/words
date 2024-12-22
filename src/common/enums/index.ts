@@ -1,1 +1,1 @@
-export * from './practice.enum';
+export * from './train.enum';

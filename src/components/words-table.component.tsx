@@ -2,11 +2,12 @@ import { Checkbox } from '@nextui-org/checkbox';
 import { getKeyValue } from '@nextui-org/shared-utils';
 import { Spinner } from '@nextui-org/spinner';
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
+import { useEffect, useState } from 'react';
 import { ParsedWordsCsv } from '~common/types';
-import { isWordLearned, learnWord } from '~helpers';
+import { deleteWord, isWordExists, storeWord } from '~helpers';
 
 const columns = [
-  { key: 'index', label: '#' },
+  { key: 'id', label: '#' },
   { key: 'checkbox', label: '✅' },
   { key: 'word', label: 'کلمه' },
   { key: 'pronunciation', label: 'تلفظ' },
@@ -19,65 +20,107 @@ type WordsTableProps = {
   words: ParsedWordsCsv['rows'];
 };
 
-export const WordsTable = ({ isLoading, words }: WordsTableProps) => (
-  <Table
-    shadow="none"
-    isStriped
-    align="center"
-    isHeaderSticky
-    classNames={{ base: 'min-h-[520px] max-h-[520px]', thead: 'select-none' }}>
-    <TableHeader columns={columns}>
-      {({ key, label }) => (
-        <TableColumn
-          key={key}
-          align={['checkbox', 'pronunciation', 'index'].includes(key) ? 'center' : 'start'}
-          dir={['pronunciation', 'word'].includes(key) ? 'ltr' : 'rtl'}>
-          {key === 'checkbox' ? (
-            <Checkbox
-              size="lg"
-              name="check-all"
-              id="check-all"
-              color="primary"
-              isDisabled
-            />
-          ) : (
-            label
-          )}
-        </TableColumn>
-      )}
-    </TableHeader>
-    <TableBody
-      isLoading={isLoading}
-      loadingContent={<Spinner />}
-      emptyContent="متاسفانه نتیجه‌ای وجود ندارد!"
-      items={words}>
-      {(item) => (
-        <TableRow key={item.word}>
-          {(columnKey) => {
-            const isCheckboxColumn = columnKey === 'checkbox';
-            const isWordColumn = columnKey === 'word';
+export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
+  const [reRenderTable, setReRenderTable] = useState(Math.random());
+  const [isLoadingCheckboxes, setIsLoadingCheckboxes] = useState(true);
+  const [checkedWords, setCheckedWords] = useState<Record<number, boolean>>({});
 
-            return (
-              <TableCell
-                align={['checkbox', 'index'].includes(String(columnKey)) ? 'center' : isWordColumn ? 'left' : 'right'}
-                dir={isWordColumn ? 'ltr' : 'rtl'}>
-                {isCheckboxColumn ? (
-                  <Checkbox
-                    size="lg"
-                    color="success"
-                    name="check"
-                    id="check"
-                    defaultSelected={isWordLearned(item.word)}
-                    onValueChange={(isSelected) => learnWord(item.word, isSelected)}
-                  />
-                ) : (
-                  getKeyValue(item, columnKey)
-                )}
-              </TableCell>
-            );
-          }}
-        </TableRow>
-      )}
-    </TableBody>
-  </Table>
-);
+  useEffect(() => {
+    const fetchCheckedStates = async () => {
+      setIsLoadingCheckboxes(true);
+
+      const states: Record<number, boolean> = {};
+
+      for (const word of words) {
+        states[word.id] = await isWordExists(word.id);
+      }
+
+      setCheckedWords(states);
+      setIsLoadingCheckboxes(false);
+      setReRenderTable(Math.random());
+    };
+
+    if (words.length) {
+      fetchCheckedStates();
+    } else {
+      setIsLoadingCheckboxes(false);
+    }
+  }, [words]);
+
+  const handleCheckboxChange = async (item: (typeof words)[number], isSelected: boolean) => {
+    if (isSelected) {
+      await storeWord(item);
+    } else {
+      await deleteWord(item.id);
+    }
+
+    setCheckedWords((prev) => ({ ...prev, [item.id]: isSelected }));
+  };
+
+  return (
+    <Table
+      shadow="none"
+      isStriped
+      align="center"
+      key={reRenderTable}
+      isHeaderSticky
+      classNames={{ base: 'min-h-[520px] max-h-[520px]', thead: 'select-none' }}>
+      <TableHeader columns={columns}>
+        {({ key, label }) => (
+          <TableColumn
+            key={key}
+            align={['checkbox', 'pronunciation', 'index'].includes(key) ? 'center' : 'start'}
+            dir={['pronunciation', 'word'].includes(key) ? 'ltr' : 'rtl'}>
+            {key === 'checkbox' ? (
+              <Checkbox
+                size="lg"
+                name="check-all"
+                id="check-all"
+                color="primary"
+                isDisabled
+              />
+            ) : (
+              label
+            )}
+          </TableColumn>
+        )}
+      </TableHeader>
+      <TableBody
+        isLoading={isLoading || isLoadingCheckboxes}
+        loadingContent={<Spinner />}
+        emptyContent="متاسفانه نتیجه‌ای وجود ندارد!"
+        items={words}>
+        {(item) => (
+          <TableRow key={item.word}>
+            {(columnKey) => {
+              const isCheckboxColumn = columnKey === 'checkbox';
+              const isWordColumn = columnKey === 'word';
+              const isItemChecked = !!checkedWords[item.id];
+
+              return (
+                <TableCell
+                  align={['checkbox', 'index'].includes(String(columnKey)) ? 'center' : isWordColumn ? 'left' : 'right'}
+                  dir={isWordColumn ? 'ltr' : 'rtl'}>
+                  {isCheckboxColumn ? (
+                    <Checkbox
+                      size="lg"
+                      color="success"
+                      name="check"
+                      id="check"
+                      defaultSelected={isItemChecked}
+                      onValueChange={(isSelected) => {
+                        handleCheckboxChange(item, isSelected);
+                      }}
+                    />
+                  ) : (
+                    getKeyValue(item, columnKey)
+                  )}
+                </TableCell>
+              );
+            }}
+          </TableRow>
+        )}
+      </TableBody>
+    </Table>
+  );
+};
