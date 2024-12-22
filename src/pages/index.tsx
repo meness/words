@@ -135,7 +135,7 @@ const IndexPage = () => {
                 <TableColumn
                   key={key}
                   align={['checkbox', 'pronunciation', 'index'].includes(key) ? 'center' : 'start'}
-                  dir={['pronunciation', 'word', 'index'].includes(key) ? 'ltr' : 'auto'}>
+                  dir={['pronunciation', 'word'].includes(key) ? 'ltr' : 'rtl'}>
                   {key === 'checkbox' ? (
                     <Checkbox
                       size="lg"
