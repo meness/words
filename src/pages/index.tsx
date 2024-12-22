@@ -1,20 +1,32 @@
 import { Button, ButtonGroup } from '@nextui-org/button';
 import { Card, CardBody } from '@nextui-org/card';
 import { Divider } from '@nextui-org/divider';
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/dropdown';
 import { Input } from '@nextui-org/input';
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/modal';
 import { Progress } from '@nextui-org/progress';
 import { Switch } from '@nextui-org/switch';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useMemo, useState, type ReactElement } from 'react';
-import { GrNext, GrPrevious } from 'react-icons/gr';
+import { FaChevronDown, FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
+import { PRACTICE } from '~common/enums';
 import type { ParsedExamplesCsv, ParsedWordsCsv } from '~common/types';
-import { learnWord, parseExamplesCsv, parseWordsCsv } from '~helpers';
+import { isWordLearned, learnWord, parseExamplesCsv, parseWordsCsv } from '~helpers';
 import { FullscreenLayout } from '~layouts';
 import { WordsTablePagination } from './_components/words-table-pagination.component';
 import { WordsTable } from './_components/words-table.component';
 
 const rowsPerPage = 50;
+
+const practiceOption: Record<PRACTICE, { description: string; label: string; key: PRACTICE }> = {
+  scratch: { label: 'همه کلمات', description: 'همه کلمات را تمرین کن.', key: PRACTICE.SCRATCH },
+  learned: {
+    label: 'کلمات تمرین‌شده',
+    description: 'کلماتی که قبلا تمرین‌شده را تمرین کن.',
+    key: PRACTICE.LEARNED
+  },
+  left: { label: 'کلمات باقی‌مانده', description: 'کلمات باقی‌مانده را تمرین کن.', key: PRACTICE.LEFT }
+};
 
 const IndexPage = () => {
   const [page, setPage] = useState(1);
@@ -28,6 +40,7 @@ const IndexPage = () => {
   const [practicedWordHint, setPracticedWordHint] = useState(false);
   const [hintAlways, setHintAlways] = useState(false);
   const [reRenderTable, setReRenderTable] = useState(Math.random());
+  const [selectedPracticeOption, setSelectedPracticeOption] = useState<[PRACTICE]>([PRACTICE.SCRATCH]);
 
   useEffect(() => {
     const fetchCsvFiles = async () => {
@@ -101,13 +114,36 @@ const IndexPage = () => {
             placeholder="کلمات را جستجو کنید..."
             classNames={{ base: 'max-w-5xl' }}
           />
-          <Button
+          <ButtonGroup
             variant="shadow"
-            color="primary"
-            onPress={onOpenChange}
-            type="button">
-            تمرین
-          </Button>
+            isDisabled={isLoading}
+            color="primary">
+            <Button onPress={onOpenChange}>تمرین&nbsp;{practiceOption[selectedPracticeOption[0]].label}</Button>
+            <Dropdown placement="bottom-end">
+              <DropdownTrigger>
+                <Button isIconOnly>
+                  <FaChevronDown />
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu
+                disallowEmptySelection
+                aria-label="Merge options"
+                className="max-w-[300px]"
+                selectedKeys={selectedPracticeOption}
+                selectionMode="single"
+                onSelectionChange={(key) => {
+                  setSelectedPracticeOption([key.currentKey as PRACTICE]);
+                }}>
+                {Object.values(practiceOption).map(({ key, description, label }) => (
+                  <DropdownItem
+                    key={key}
+                    description={description}>
+                    {label}
+                  </DropdownItem>
+                ))}
+              </DropdownMenu>
+            </Dropdown>
+          </ButtonGroup>
         </CardBody>
       </Card>
       <Card
@@ -145,9 +181,22 @@ const IndexPage = () => {
         }}>
         <ModalContent>
           {() => {
-            const wordsCount = words?.rows.length ?? 0;
-            const currentWord = words?.rows[practicedWordIndex];
-            const example = examples?.rows[practicedWordIndex];
+            let wordsData: ParsedWordsCsv['rows'] = [];
+            let examplesData: ParsedExamplesCsv['rows'] = [];
+            if (selectedPracticeOption[0] === PRACTICE.SCRATCH) {
+              wordsData = words?.rows ?? [];
+              examplesData = examples?.rows ?? [];
+            } else if (selectedPracticeOption[0] === PRACTICE.LEARNED) {
+              wordsData = words?.rows.filter((row) => isWordLearned(row.word)) ?? [];
+              examplesData = examples?.rows.filter((row) => wordsData.some((word) => word.index === row.index)) ?? [];
+            } else if (selectedPracticeOption[0] === PRACTICE.LEFT) {
+              wordsData = words?.rows.filter((row) => !isWordLearned(row.word)) ?? [];
+              examplesData = examples?.rows.filter((row) => wordsData.some((word) => word.index === row.index)) ?? [];
+            }
+
+            const wordsCount = wordsData.length;
+            const currentWord = wordsData[practicedWordIndex];
+            const example = examplesData[practicedWordIndex];
 
             return (
               <>
@@ -226,7 +275,7 @@ const IndexPage = () => {
                       color="primary"
                       isIconOnly
                       variant="shadow"
-                      endContent={<GrNext />}
+                      endContent={<FaChevronRight />}
                       isDisabled={practicedWordIndex === 0}
                       onPress={() => {
                         setPracticedWordIndex((prev) => prev - 1);
@@ -237,7 +286,7 @@ const IndexPage = () => {
                       color="primary"
                       variant="shadow"
                       fullWidth
-                      endContent={<GrPrevious />}
+                      endContent={<FaChevronLeft />}
                       isDisabled={practicedWordIndex + 1 === wordsCount}
                       onPress={() => {
                         if (currentWord) {
