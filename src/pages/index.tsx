@@ -12,10 +12,10 @@ import { FaChevronDown, FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import { PRACTICE } from '~common/enums';
 import type { ParsedExamplesCsv, ParsedWordsCsv } from '~common/types';
 import { WordsTable, WordsTablePagination } from '~components';
-import { isWordLearned, learnWord, parseExamplesCsv, parseWordsCsv } from '~helpers';
+import { appConfig } from '~configs';
+import { isWordLearned, learnWord } from '~helpers';
+import { useWords } from '~hooks';
 import { FullscreenLayout } from '~layouts';
-
-const rowsPerPage = 50;
 
 const practiceOption: Record<PRACTICE, { description: string; label: string; key: PRACTICE }> = {
   scratch: { label: 'همه کلمات', description: 'همه کلمات را تمرین کن.', key: PRACTICE.SCRATCH },
@@ -30,69 +30,44 @@ const practiceOption: Record<PRACTICE, { description: string; label: string; key
 const IndexPage = () => {
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
-  const [words, setWords] = useState<ParsedWordsCsv>();
-  const [examples, setExamples] = useState<ParsedExamplesCsv>();
-  const [isLoading, setIsLoading] = useState(true);
-  const [_, setError] = useState('');
   const { isOpen, onClose, onOpenChange } = useDisclosure();
   const [practicedWordIndex, setPracticedWordIndex] = useState(0);
   const [practicedWordHint, setPracticedWordHint] = useState(false);
   const [hintAlways, setHintAlways] = useState(false);
   const [reRenderTable, setReRenderTable] = useState(Math.random());
   const [selectedPracticeOption, setSelectedPracticeOption] = useState<[PRACTICE]>([PRACTICE.SCRATCH]);
-
-  useEffect(() => {
-    const fetchCsvFiles = async () => {
-      try {
-        setIsLoading(true);
-
-        const wordsResponse = await fetch('/assets/csv/words.csv');
-        const examplesResponse = await fetch('/assets/csv/examples.csv');
-        const wordsData = await wordsResponse.text();
-        const examplesData = await examplesResponse.text();
-
-        setWords(parseWordsCsv(wordsData));
-        setExamples(parseExamplesCsv(examplesData));
-      } catch {
-        setError('Failed to load words data.');
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchCsvFiles();
-  }, []);
+  const { examples, isLoading, words } = useWords();
 
   useEffect(() => {
     setPage(1);
   }, [query]);
 
   const totalPages = useMemo(() => {
-    if (!words?.rows.length) {
+    if (!words.length) {
       return 1;
     }
 
     const filteredCount = query.length
-      ? words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).length
-      : words.rows.length;
+      ? words.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).length
+      : words.length;
 
-    return Math.ceil(filteredCount / rowsPerPage);
-  }, [words?.rows.length, query.length]);
+    return Math.ceil(filteredCount / appConfig.rowsPerPage);
+  }, [words.length, query.length]);
 
   const filteredWords = useMemo(() => {
-    if (!words?.rows.length) {
+    if (!words.length) {
       return [];
     }
 
-    const start = (page - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
+    const start = (page - 1) * appConfig.rowsPerPage;
+    const end = start + appConfig.rowsPerPage;
 
     setReRenderTable(Math.random());
 
     return query.length
-      ? words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).slice(start, end)
-      : words.rows.slice(start, end);
-  }, [query, words?.rows.length, page]);
+      ? words.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).slice(start, end)
+      : words.slice(start, end);
+  }, [query, words.length, page]);
 
   return (
     <div className="my-10 flex flex-col place-content-center place-items-center gap-6">
@@ -120,7 +95,9 @@ const IndexPage = () => {
             <Button onPress={onOpenChange}>تمرین&nbsp;{practiceOption[selectedPracticeOption[0]].label}</Button>
             <Dropdown placement="bottom-end">
               <DropdownTrigger>
-                <Button isIconOnly>
+                <Button
+                  isIconOnly
+                  variant="flat">
                   <FaChevronDown />
                 </Button>
               </DropdownTrigger>
@@ -183,14 +160,14 @@ const IndexPage = () => {
             let wordsData: ParsedWordsCsv['rows'] = [];
             let examplesData: ParsedExamplesCsv['rows'] = [];
             if (selectedPracticeOption[0] === PRACTICE.SCRATCH) {
-              wordsData = words?.rows ?? [];
-              examplesData = examples?.rows ?? [];
+              wordsData = words;
+              examplesData = examples;
             } else if (selectedPracticeOption[0] === PRACTICE.LEARNED) {
-              wordsData = words?.rows.filter((row) => isWordLearned(row.word)) ?? [];
-              examplesData = examples?.rows.filter((row) => wordsData.some((word) => word.index === row.index)) ?? [];
+              wordsData = words.filter((row) => isWordLearned(row.word));
+              examplesData = examples.filter((row) => wordsData.some((word) => word.index === row.index));
             } else if (selectedPracticeOption[0] === PRACTICE.LEFT) {
-              wordsData = words?.rows.filter((row) => !isWordLearned(row.word)) ?? [];
-              examplesData = examples?.rows.filter((row) => wordsData.some((word) => word.index === row.index)) ?? [];
+              wordsData = words.filter((row) => !isWordLearned(row.word));
+              examplesData = examples.filter((row) => wordsData.some((word) => word.index === row.index));
             }
 
             const wordsCount = wordsData.length;
@@ -206,7 +183,7 @@ const IndexPage = () => {
                     color="success"
                     showValueLabel={false}
                     size="sm"
-                    maxValue={words?.rows.length ?? 0}
+                    maxValue={words.length ?? 0}
                     value={practicedWordIndex + 1}
                   />
                   <Switch
