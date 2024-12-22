@@ -9,7 +9,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useMemo, useState, type ReactElement } from 'react';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import type { ParsedExamplesCsv, ParsedWordsCsv } from '~common/types';
-import { parseExamplesCsv, parseWordsCsv } from '~helpers';
+import { learnWord, parseExamplesCsv, parseWordsCsv } from '~helpers';
 import { FullscreenLayout } from '~layouts';
 import { WordsTablePagination } from './_components/words-table-pagination.component';
 import { WordsTable } from './_components/words-table.component';
@@ -22,11 +22,12 @@ const IndexPage = () => {
   const [words, setWords] = useState<ParsedWordsCsv>();
   const [examples, setExamples] = useState<ParsedExamplesCsv>();
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [_, setError] = useState('');
   const { isOpen, onClose, onOpenChange } = useDisclosure();
   const [practicedWordIndex, setPracticedWordIndex] = useState(0);
   const [practicedWordHint, setPracticedWordHint] = useState(false);
   const [hintAlways, setHintAlways] = useState(false);
+  const [reRenderTable, setReRenderTable] = useState(Math.random());
 
   useEffect(() => {
     const fetchCsvFiles = async () => {
@@ -66,6 +67,21 @@ const IndexPage = () => {
     return Math.ceil(filteredCount / rowsPerPage);
   }, [words?.rows.length, query.length]);
 
+  const filteredWords = useMemo(() => {
+    if (!words?.rows.length) {
+      return [];
+    }
+
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+
+    setReRenderTable(Math.random());
+
+    return query.length
+      ? words.rows.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).slice(start, end)
+      : words.rows.slice(start, end);
+  }, [query, words?.rows.length, page]);
+
   return (
     <div className="my-10 flex flex-col place-content-center place-items-center gap-6">
       <Card
@@ -99,11 +115,9 @@ const IndexPage = () => {
         classNames={{ base: 'max-w-5xl', body: 'p-0' }}>
         <CardBody>
           <WordsTable
-            words={words}
+            key={reRenderTable}
+            words={filteredWords}
             isLoading={isLoading}
-            page={page}
-            query={query}
-            rowsPerPage={rowsPerPage}
           />
         </CardBody>
       </Card>
@@ -226,6 +240,10 @@ const IndexPage = () => {
                       endContent={<GrPrevious />}
                       isDisabled={practicedWordIndex + 1 === wordsCount}
                       onPress={() => {
+                        if (currentWord) {
+                          learnWord(currentWord.word, true);
+                          setReRenderTable(Math.random());
+                        }
                         setPracticedWordIndex((prev) => prev + 1);
                         setPracticedWordHint(false);
                       }}>
