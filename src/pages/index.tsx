@@ -73,7 +73,7 @@ const IndexPage = () => {
     <div className="my-10 flex flex-col place-content-center place-items-center gap-6">
       <Card
         isDisabled={isLoading}
-        classNames={{ base: 'max-w-5xl select-none', body: 'flex-row gap-2' }}
+        classNames={{ base: 'max-w-5xl select-none', body: 'flex-col sm:flex-row gap-2' }}
         fullWidth>
         <CardBody>
           <Input
@@ -92,7 +92,11 @@ const IndexPage = () => {
             variant="shadow"
             isDisabled={isLoading}
             color="primary">
-            <Button onPress={onOpenChange}>تمرین&nbsp;{practiceOption[selectedPracticeOption[0]].label}</Button>
+            <Button
+              onPress={onOpenChange}
+              className="w-full sm:w-full">
+              تمرین&nbsp;{practiceOption[selectedPracticeOption[0]].label}
+            </Button>
             <Dropdown placement="bottom-end">
               <DropdownTrigger>
                 <Button
