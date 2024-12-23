@@ -9,7 +9,7 @@ import { trainOptions } from '~common/consts';
 import { TRAIN } from '~common/enums';
 import { TrainModal, WordsTable, WordsTablePagination } from '~components';
 import { appConfig } from '~configs';
-import { useWords } from '~hooks';
+import { useData } from '~hooks';
 import { FullscreenLayout } from '~layouts';
 
 const IndexPage = () => {
@@ -18,7 +18,7 @@ const IndexPage = () => {
   const { isOpen, onClose, onOpenChange } = useDisclosure();
   const [reRenderTable, setReRenderTable] = useState(Math.random());
   const [selectedTrainOption, setSelectedTrainOption] = useState<[TRAIN]>([TRAIN.SCRATCH]);
-  const { isLoading, words } = useWords();
+  const { isLoading, data: words } = useData();
 
   useEffect(() => {
     setPage(1);

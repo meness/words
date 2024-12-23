@@ -1,1 +1,1 @@
-export * from './use-words.hook';
+export * from './use-data.hook';

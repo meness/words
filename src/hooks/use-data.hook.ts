@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+import { CsvApi } from '~apis';
 import { WordEntity } from '~entities';
 import { isWordExists, parseExamplesCsv, parseWordsCsv } from '~helpers';
 
-export const useWords = () => {
-  const [words, setWords] = useState<WordEntity>([]);
+export const useData = () => {
+  const [data, setData] = useState<WordEntity>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -13,13 +14,13 @@ export const useWords = () => {
         setIsLoading(true);
         setIsError(false);
 
-        const wordsResponse = await fetch('/assets/csv/words.csv');
-        const examplesResponse = await fetch('/assets/csv/examples.csv');
-        const wordsData = await wordsResponse.text();
-        const examplesData = await examplesResponse.text();
-        const examples = parseExamplesCsv(examplesData)['rows'];
-        const mappedWords = await Promise.all(
-          parseWordsCsv(wordsData)['rows'].map<Promise<WordEntity[number]>>(async (row) => {
+        const wordsResponse = await CsvApi.getWords();
+        const examplesResponse = await CsvApi.getExamples();
+        const wordsText = await wordsResponse.text();
+        const examplesText = await examplesResponse.text();
+        const examples = parseExamplesCsv(examplesText)['rows'];
+        const words = await Promise.all(
+          parseWordsCsv(wordsText)['rows'].map<Promise<WordEntity[number]>>(async (row) => {
             const exists = await isWordExists(row.id);
             const { example, translation } = examples.find((example) => example.id === row.id)!;
 
@@ -27,7 +28,7 @@ export const useWords = () => {
           })
         );
 
-        setWords(mappedWords);
+        setData(words);
       } catch {
         setIsError(true);
       } finally {
@@ -38,5 +39,5 @@ export const useWords = () => {
     fetchCsvFiles();
   }, []);
 
-  return { words, isLoading, isError };
+  return { data, isLoading, isError };
 };
