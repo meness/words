@@ -1,5 +1,7 @@
 import 'reflect-metadata';
 
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { NextPage } from 'next';
 import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
@@ -19,7 +21,7 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
       <DefaultSeo
         defaultTitle="تمرین کلمات"
         titleTemplate="%s - تمرین کلمات"
-        description="تمرین کلمات انگلیسی با محوریت حقوقی"
+        description="ابزار رایگان با قابلیت‌های کافی برای تمرین کلمات انگلیسی با محوریت حقوقی"
         openGraph={{
           locale: 'fa-IR',
           title: 'تمرین کلمات',
@@ -47,6 +49,8 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
         </style>
       </Head>
       {getLayout(<Component {...pageProps} />)}
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 };
