@@ -2,5 +2,6 @@ export * from './footer.component';
 export * from './global-error-boundary.component';
 export * from './header.component';
 export * from './logo.component';
+export * from './stats.component';
 export * from './train-modal.component';
 export * from './words-table.component';

@@ -1,13 +1,16 @@
 import { Button, ButtonGroup } from '@nextui-org/button';
-import { Card, CardBody } from '@nextui-org/card';
+import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card';
+import { Divider } from '@nextui-org/divider';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/dropdown';
 import { Input } from '@nextui-org/input';
 import { useDisclosure } from '@nextui-org/modal';
+import Link from 'next/link';
 import { useMemo, useState, type ReactElement } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 import { trainOptions } from '~common/consts';
 import { TRAIN } from '~common/enums';
-import { TrainModal, WordsTable } from '~components';
+import { Stats, TrainModal, WordsTable } from '~components';
+import { appConfig } from '~configs';
 import { useData } from '~hooks';
 import { FullscreenLayout } from '~layouts';
 
@@ -100,6 +103,38 @@ const IndexPage = () => {
             isLoading={isLoading}
           />
         </CardBody>
+      </Card>
+      <Card
+        fullWidth
+        classNames={{
+          base: 'max-w-5xl',
+          body: 'items-center flex justify-center overflow-hidden',
+          header: 'text-large font-bold',
+          footer: 'flex items-center justify-between text-tiny'
+        }}>
+        <CardHeader>آمار تمرین‌ها را داشته باشید</CardHeader>
+        <Divider />
+        <CardBody>
+          <Stats
+            isLoading={isLoading}
+            words={words}
+          />
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <p>
+            <span className="font-bold">{words.length}</span> کلمه در اختیار شماست.
+          </p>
+          <Button
+            as={Link}
+            href={`mailto:${appConfig.developerEmail}`}
+            color="secondary"
+            radius="lg"
+            size="sm"
+            variant="flat">
+            درخواست کلمات بیشتر
+          </Button>
+        </CardFooter>
       </Card>
       <TrainModal
         selectedTrainOption={selectedTrainOption}

@@ -58,3 +58,17 @@ export const isWordExists = async (wordIndex: ParsedWordsCsv['rows'][number]['id
     request.onerror = () => reject(request.error);
   });
 };
+
+export const countWords = async () => {
+  const db = await initDB();
+
+  const transaction = db.transaction(databaseConfig.learnedWordsStoreName, 'readonly');
+  const store = transaction.objectStore(databaseConfig.learnedWordsStoreName);
+
+  return new Promise<number>((resolve, reject) => {
+    const request = store.count();
+
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+};
