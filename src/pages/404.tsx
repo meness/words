@@ -30,7 +30,7 @@ const NotFoundPage = () => (
         <Button
           as={Link}
           size="lg"
-          href={routeConst.index}
+          href={routeConst.home}
           color="primary"
           className="w-full max-w-xs"
           variant="shadow">

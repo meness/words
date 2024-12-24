@@ -90,15 +90,15 @@ export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNext
                       className="my-2"
                       transition={{ duration: 0.2 }}>
                       <p>
-                        <span className="text-gray-500">معنی حقوقی:</span>&nbsp;{currentWord?.translation}
+                        <span className="select-none text-gray-500">معنی حقوقی:</span>&nbsp;{currentWord?.translation}
                       </p>
                       <Divider className="my-2" />
                       <p>
-                        <span className="text-gray-500">توضیح:</span>&nbsp;{currentWord?.description}
+                        <span className="select-none text-gray-500">توضیح:</span>&nbsp;{currentWord?.description}
                       </p>
                       <Divider className="my-2" />
                       <p>
-                        <span className="text-gray-500">مثال:</span>&nbsp;
+                        <span className="select-none text-gray-500">مثال:</span>&nbsp;
                         <span
                           dir="ltr"
                           className="font-inter">
@@ -107,7 +107,7 @@ export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNext
                       </p>
                       <Divider className="my-2" />
                       <p>
-                        <span className="text-gray-500">ترجمه:</span>&nbsp;{currentWord?.translation}
+                        <span className="select-none text-gray-500">ترجمه:</span>&nbsp;{currentWord?.translation}
                       </p>
                     </motion.div>
                   )}

@@ -15,7 +15,7 @@ const InternalServerErrorPage = () => (
           <p>500</p>
         </div>
 
-        <Link href={routeConst.index}>Back home</Link>
+        <Link href={routeConst.home}>Back home</Link>
       </div>
     </div>
   </>

@@ -82,7 +82,7 @@ export class GlobalErrorBoundary extends Component<Props, State> {
               <Button
                 as={Link}
                 size="lg"
-                href={routeConst.index}
+                href={routeConst.home}
                 color="default"
                 fullWidth
                 variant="ghost">
