@@ -4,10 +4,10 @@ export const parseWordsCsv = (data: string): ParsedWordsCsv => {
   const splittedRows = data.split('\n').map((row) => row.split(','));
   const headers = splittedRows[0];
   const rows = splittedRows.slice(1).map<ParsedWordsCsv['rows'][number]>((row, index) => ({
-    word: row[1],
-    pronunciation: row[2],
-    translation: row[3],
-    description: row[4],
+    word: row[0],
+    pronunciation: row[1],
+    translation: row[2],
+    description: row[3],
     id: index + 1
   }));
 
@@ -21,9 +21,9 @@ export const parseExamplesCsv = (data: string): ParsedExamplesCsv => {
   const splittedRows = data.split('\n').map((row) => row.split(','));
   const headers = splittedRows[0];
   const rows = splittedRows.slice(1).map<ParsedExamplesCsv['rows'][number]>((row, index) => ({
-    word: row[1],
-    example: row[2],
-    translation: row[3],
+    word: row[0],
+    example: row[1],
+    translation: row[2],
     id: index + 1
   }));
 
