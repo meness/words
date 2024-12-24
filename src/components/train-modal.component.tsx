@@ -58,7 +58,7 @@ export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNext
                   color="success"
                   showValueLabel={false}
                   size="sm"
-                  maxValue={words.length ?? 0}
+                  maxValue={wordsData.length}
                   value={trainedWordIndex + 1}
                 />
                 <Switch
