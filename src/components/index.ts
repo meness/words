@@ -1,3 +1,4 @@
+export * from './footer.component';
 export * from './global-error-boundary.component';
 export * from './header.component';
 export * from './logo.component';
