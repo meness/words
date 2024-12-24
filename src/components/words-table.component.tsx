@@ -101,6 +101,8 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
                 transition={{ duration: 0.3 }}
                 className="flex w-full justify-center">
                 <Spinner
+                  aria-label="Loading..."
+                  size="sm"
                   color="primary"
                   ref={loaderRef}
                 />
@@ -132,7 +134,13 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
       </TableHeader>
       <TableBody
         isLoading={isLoading || isLoadingCheckboxes}
-        loadingContent={<Spinner />}
+        loadingContent={
+          <Spinner
+            aria-label="Loading..."
+            size="lg"
+            color="primary"
+          />
+        }
         emptyContent="متاسفانه نتیجه‌ای وجود ندارد!"
         items={list.items}>
         {(item) => (
