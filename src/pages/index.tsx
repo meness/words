@@ -3,53 +3,33 @@ import { Card, CardBody } from '@nextui-org/card';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/dropdown';
 import { Input } from '@nextui-org/input';
 import { useDisclosure } from '@nextui-org/modal';
-import { useEffect, useMemo, useState, type ReactElement } from 'react';
+import { useMemo, useState, type ReactElement } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 import { trainOptions } from '~common/consts';
 import { TRAIN } from '~common/enums';
-import { TrainModal, WordsTable, WordsTablePagination } from '~components';
-import { appConfig } from '~configs';
+import { TrainModal, WordsTable } from '~components';
 import { useData } from '~hooks';
 import { FullscreenLayout } from '~layouts';
 
 const IndexPage = () => {
-  const [page, setPage] = useState(1);
   const [query, setQuery] = useState('');
   const { isOpen, onClose, onOpenChange } = useDisclosure();
   const [reRenderTable, setReRenderTable] = useState(Math.random());
   const [selectedTrainOption, setSelectedTrainOption] = useState<[TRAIN]>([TRAIN.SCRATCH]);
   const { isLoading, data: words } = useData();
 
-  useEffect(() => {
-    setPage(1);
-  }, [query]);
-
-  const totalPages = useMemo(() => {
-    if (!words.length) {
-      return 1;
-    }
-
-    const filteredCount = query.length
-      ? words.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).length
-      : words.length;
-
-    return Math.ceil(filteredCount / appConfig.rowsPerPage);
-  }, [words.length, query.length]);
-
   const filteredWords = useMemo(() => {
     if (!words.length) {
       return [];
     }
 
-    const start = (page - 1) * appConfig.rowsPerPage;
-    const end = start + appConfig.rowsPerPage;
-
     setReRenderTable(Math.random());
 
-    return query.length
-      ? words.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())).slice(start, end)
-      : words.slice(start, end);
-  }, [query, words.length, page]);
+    return query.length ? words.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())) : words;
+  }, [
+    query,
+    words.length
+  ]);
 
   return (
     <div className="my-10 flex flex-col place-content-center place-items-center gap-6">
@@ -118,16 +98,6 @@ const IndexPage = () => {
             key={reRenderTable}
             words={filteredWords}
             isLoading={isLoading}
-          />
-        </CardBody>
-      </Card>
-      <Card classNames={{ base: 'select-none' }}>
-        <CardBody>
-          <WordsTablePagination
-            isLoading={isLoading}
-            page={page}
-            totalPages={totalPages}
-            onPageChange={setPage}
           />
         </CardBody>
       </Card>

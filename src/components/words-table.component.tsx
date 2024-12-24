@@ -2,9 +2,13 @@ import { Checkbox } from '@nextui-org/checkbox';
 import { getKeyValue } from '@nextui-org/shared-utils';
 import { Spinner } from '@nextui-org/spinner';
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
+import { useInfiniteScroll } from '@nextui-org/use-infinite-scroll';
+import { useAsyncList } from '@react-stately/data';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { twJoin } from 'tailwind-merge';
-import { ParsedWordsCsv } from '~common/types';
+import { appConfig } from '~configs';
+import { WordEntity } from '~entities';
 import { deleteWord, isWordExists, storeWord } from '~helpers';
 
 const columns = [
@@ -18,13 +22,33 @@ const columns = [
 
 type WordsTableProps = {
   isLoading: boolean;
-  words: ParsedWordsCsv['rows'];
+  words: WordEntity;
 };
 
 export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
   const [reRenderTable, setReRenderTable] = useState(Math.random());
   const [isLoadingCheckboxes, setIsLoadingCheckboxes] = useState(true);
   const [checkedWords, setCheckedWords] = useState<Record<number, boolean>>({});
+  const [hasMore, setHasMore] = useState(false);
+
+  const list = useAsyncList<WordEntity[number], { start: number; end: number }>({
+    async load({ items, cursor }) {
+      setHasMore(items.length !== words.length);
+
+      const nextStart = cursor?.end ?? appConfig.rowsPerPage;
+      const nextEnd = nextStart + appConfig.rowsPerPage;
+
+      return {
+        items: words.slice(cursor?.start ?? 0, cursor?.end ?? appConfig.rowsPerPage),
+        cursor: {
+          start: nextStart,
+          end: nextEnd
+        }
+      };
+    }
+  });
+
+  const [loaderRef, scrollerRef] = useInfiniteScroll({ hasMore, onLoadMore: list.loadMore });
 
   useEffect(() => {
     const fetchCheckedStates = async () => {
@@ -65,6 +89,26 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
       align="center"
       key={reRenderTable}
       isHeaderSticky
+      baseRef={scrollerRef}
+      bottomContent={
+        <div className="flex w-full justify-center">
+          <AnimatePresence>
+            {hasMore && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3 }}
+                className="flex w-full justify-center">
+                <Spinner
+                  color="primary"
+                  ref={loaderRef}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      }
       classNames={{ base: 'min-h-[520px] max-h-[520px]', thead: 'select-none' }}>
       <TableHeader columns={columns}>
         {({ key, label }) => (
@@ -90,7 +134,7 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
         isLoading={isLoading || isLoadingCheckboxes}
         loadingContent={<Spinner />}
         emptyContent="متاسفانه نتیجه‌ای وجود ندارد!"
-        items={words}>
+        items={list.items}>
         {(item) => (
           <TableRow key={item.word}>
             {(columnKey) => {
