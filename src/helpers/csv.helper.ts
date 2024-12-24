@@ -6,7 +6,7 @@ export const parseWordsCsv = (data: string): WordCsv => {
   const rows = splittedRows.slice(1).map<WordCsv['rows'][number]>((row, index) => ({
     word: row[0],
     pronunciation: row[1],
-    translation: row[2],
+    meaning: row[2],
     description: row[3],
     id: index + 1
   }));

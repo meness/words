@@ -3,6 +3,7 @@ export type Word = {
   pronunciation: string;
   description: string;
   id: number;
+  meaning: string;
   example: string;
   translation: string;
 };

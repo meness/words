@@ -3,7 +3,7 @@ export type WordCsv = {
   rows: {
     word: string;
     pronunciation: string;
-    translation: string;
+    meaning: string;
     description: string;
     id: number;
   }[];

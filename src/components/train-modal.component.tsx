@@ -148,7 +148,7 @@ export const TrainModal = ({ isOpen, onClose, trainOption, words, onTrainOptionC
                       transition={{ duration: 0.2 }}>
                       <p>
                         <span className="select-none text-gray-500">معنی حقوقی:</span>&nbsp;
-                        {currentTrainingWord.translation}
+                        {currentTrainingWord.meaning}
                       </p>
                       <Divider className="my-2" />
                       <p>
