@@ -8,25 +8,23 @@ import Link from 'next/link';
 import { useMemo, useState, type ReactElement } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 import { trainOptions } from '~common/consts';
-import { TRAIN } from '~common/enums';
+import { TRAIN_TYPE } from '~common/enums';
 import { Stats, TrainModal, WordsTable } from '~components';
 import { appConfig } from '~configs';
-import { useData } from '~hooks';
+import { useTrainings, useWords } from '~hooks';
 import { FullscreenLayout } from '~layouts';
 
 const IndexPage = () => {
   const [query, setQuery] = useState('');
   const { isOpen, onClose, onOpenChange } = useDisclosure();
-  const [reRenderTable, setReRenderTable] = useState(Math.random());
-  const [selectedTrainOption, setSelectedTrainOption] = useState<[TRAIN]>([TRAIN.SCRATCH]);
-  const { isLoading, data: words } = useData();
+  const [trainOption, setTrainOption] = useState<[TRAIN_TYPE]>([TRAIN_TYPE.SCRATCH]);
+  const { isLoading, data: words } = useWords();
+  const trainings = useTrainings();
 
   const filteredWords = useMemo(() => {
     if (!words.length) {
       return [];
     }
-
-    setReRenderTable(Math.random());
 
     return query.length ? words.filter((word) => word.word.toLowerCase().includes(query.toLowerCase())) : words;
   }, [
@@ -50,7 +48,7 @@ const IndexPage = () => {
             autoCapitalize="off"
             autoComplete="off"
             autoCorrect="off"
-            placeholder="کلمات را جستجو کنید..."
+            placeholder="کلمات را جستجو کنید"
             classNames={{ base: 'max-w-5xl' }}
           />
           <ButtonGroup
@@ -60,7 +58,7 @@ const IndexPage = () => {
             <Button
               onPress={onOpenChange}
               className="w-full sm:w-full">
-              تمرین&nbsp;{trainOptions[selectedTrainOption[0]].label}
+              تمرین&nbsp;{trainOptions[trainOption[0]].label}
             </Button>
             <Dropdown
               placement="bottom-end"
@@ -76,12 +74,13 @@ const IndexPage = () => {
                 disallowEmptySelection
                 aria-label="Merge options"
                 className="max-w-[300px]"
-                selectedKeys={selectedTrainOption}
+                selectedKeys={trainOption}
+                disabledKeys={!trainings.length ? [TRAIN_TYPE.TRAINED] : []}
                 selectionMode="single"
                 onSelectionChange={(key) => {
-                  setSelectedTrainOption([key.currentKey as TRAIN]);
+                  setTrainOption([key.currentKey as TRAIN_TYPE]);
                 }}>
-                {Object.values(trainOptions).map(({ key, description, label }) => (
+                {Object.entries(trainOptions).map(([key, { description, label }]) => (
                   <DropdownItem
                     key={key}
                     description={description}>
@@ -98,7 +97,6 @@ const IndexPage = () => {
         classNames={{ base: 'max-w-5xl', body: 'p-0' }}>
         <CardBody>
           <WordsTable
-            key={reRenderTable}
             words={filteredWords}
             isLoading={isLoading}
           />
@@ -137,14 +135,12 @@ const IndexPage = () => {
         </CardFooter>
       </Card>
       <TrainModal
-        selectedTrainOption={selectedTrainOption}
+        trainOption={trainOption[0]}
         isOpen={isOpen}
         onClose={onClose}
         words={words}
-        onNextWord={() => {
-          if (selectedTrainOption[0] !== TRAIN.LEARNED) {
-            setReRenderTable(Math.random());
-          }
+        onTrainOptionChange={(changedTrainOption) => {
+          setTrainOption([changedTrainOption]);
         }}
       />
     </div>

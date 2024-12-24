@@ -60,6 +60,7 @@
     "consts",
     "copperx",
     "cssnano",
+    "Dexie",
     "Dismissable",
     "endregion",
     "flexbox",

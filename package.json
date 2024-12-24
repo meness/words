@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "15.1.2",
+    "@nextui-org/alert": "^2.2.8",
     "@nextui-org/avatar": "^2.2.4",
     "@nextui-org/badge": "^2.2.3",
     "@nextui-org/button": "^2.2.7",
@@ -46,6 +47,8 @@
     "@vercel/speed-insights": "^1.1.0",
     "axios": "^1.7.9",
     "caniuse-lite": "^1.0.30001690",
+    "dexie": "^4.0.10",
+    "dexie-react-hooks": "^1.1.7",
     "framer-motion": "^11.15.0",
     "next": "15.1.2",
     "next-seo": "^6.6.0",

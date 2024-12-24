@@ -1,27 +1,62 @@
+import { Alert } from '@nextui-org/alert';
 import { Button, ButtonGroup } from '@nextui-org/button';
 import { Divider } from '@nextui-org/divider';
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/modal';
 import { Progress } from '@nextui-org/progress';
 import { Switch } from '@nextui-org/switch';
 import { AnimatePresence, motion } from 'framer-motion';
-import { DispatchWithoutAction, useState } from 'react';
+import { Dispatch, DispatchWithoutAction, useMemo, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
-import { TRAIN } from '~common/enums';
-import { WordEntity } from '~entities';
-import { storeWord } from '~helpers';
+import { TRAIN_TYPE } from '~common/enums';
+import { TrainingWord, Word } from '~common/types';
+import { storeTraining } from '~helpers';
+import { useTrainings } from '~hooks';
 
 type TrainModalProps = {
   isOpen: boolean;
   onClose: DispatchWithoutAction;
-  onNextWord: DispatchWithoutAction;
-  selectedTrainOption: [TRAIN];
-  words: WordEntity;
+  trainOption: TRAIN_TYPE;
+  words: Word[];
+  onTrainOptionChange: Dispatch<TRAIN_TYPE>;
 };
 
-export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNextWord }: TrainModalProps) => {
+export const TrainModal = ({ isOpen, onClose, trainOption, words, onTrainOptionChange }: TrainModalProps) => {
   const [trainedWordIndex, setTrainedWordIndex] = useState(0);
   const [trainedWordHint, setTrainedWordHint] = useState(false);
   const [hintAlways, setHintAlways] = useState(false);
+  const trainings = useTrainings();
+
+  const trainingWords = useMemo<TrainingWord[]>(() => {
+    const data = words.map<TrainingWord>((word) => {
+      const isTrained = trainings.findIndex((training) => training.id === word.id) !== -1;
+
+      return { ...word, trained: isTrained };
+    });
+
+    if (trainOption === TRAIN_TYPE.TRAINED) {
+      return data.filter((word) => word.trained);
+    } else if (trainOption === TRAIN_TYPE.REST) {
+      return data.filter((word) => !word.trained);
+    }
+
+    return data;
+  }, [words, trainings, trainOption]);
+
+  const reset = () => {
+    setTrainedWordIndex(0);
+    setTrainedWordHint(false);
+    setHintAlways(false);
+  };
+
+  const handleNextWordClick = async () => {
+    if (!trainingWords[trainedWordIndex].trained) {
+      await storeTraining(trainingWords[trainedWordIndex]);
+    }
+
+    setTrainedWordIndex((prev) => prev + 1);
+    setTrainedWordHint(false);
+  };
+
   return (
     <Modal
       backdrop="blur"
@@ -30,35 +65,57 @@ export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNext
       classNames={{ header: 'select-none' }}
       size="md"
       onClose={() => {
-        setTrainedWordIndex(0);
-        setTrainedWordHint(false);
-        setHintAlways(false);
+        reset();
         onClose();
       }}>
       <ModalContent>
         {() => {
-          let wordsData: WordEntity = [];
-          if (selectedTrainOption[0] === TRAIN.SCRATCH) {
-            wordsData = words;
-          } else if (selectedTrainOption[0] === TRAIN.LEARNED) {
-            wordsData = words.filter((row) => row.exists);
-          } else if (selectedTrainOption[0] === TRAIN.LEFT) {
-            wordsData = words.filter((row) => !row.exists);
-          }
+          const trainingWordsCount = trainingWords.length;
+          const currentTrainingWord: TrainingWord | undefined = trainingWords[trainedWordIndex];
 
-          const wordsCount = wordsData.length;
-          const currentWord = wordsData[trainedWordIndex];
+          if (!currentTrainingWord) {
+            return (
+              <>
+                <ModalHeader>تمرین کلمات</ModalHeader>
+                <ModalBody>
+                  <Alert
+                    color="primary"
+                    title="هنوز کلمه‌ای تمرین نکردید!"
+                    description="از یکی از دو حالت دیگه تمرین استفاده کنید. وقتی کلمه‌ای را تمرین کردید می‌توانید از این حالت برای تمرین کلمات تمرین‌شده استفاده کنید."
+                  />
+                </ModalBody>
+                <ModalFooter>
+                  <Button
+                    color="primary"
+                    variant="shadow"
+                    fullWidth
+                    onPress={() => {
+                      onTrainOptionChange(TRAIN_TYPE.SCRATCH);
+                    }}>
+                    تمرین همه کلمات
+                  </Button>
+                  <Button
+                    color="default"
+                    variant="ghost"
+                    fullWidth
+                    onPress={onClose}>
+                    بیخیال
+                  </Button>
+                </ModalFooter>
+              </>
+            );
+          }
 
           return (
             <>
               <ModalHeader className="flex items-center gap-3">
                 <Progress
-                  aria-label="Training..."
+                  aria-label="وضعیت پیشرفت تمرین"
                   className="absolute left-0 right-0 top-0 max-w-full"
                   color="success"
                   showValueLabel={false}
                   size="sm"
-                  maxValue={wordsData.length}
+                  maxValue={trainingWords.length}
                   value={trainedWordIndex + 1}
                 />
                 <Switch
@@ -70,15 +127,15 @@ export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNext
                   size="sm"
                 />
                 <p>
-                  تمرین کلمه {trainedWordIndex + 1} از {wordsCount}
+                  تمرین کلمه {trainedWordIndex + 1} از {trainingWordsCount}
                 </p>
               </ModalHeader>
               <ModalBody>
                 <div
                   className="text-center font-inter text-4xl"
                   dir="ltr">
-                  <p className="font-bold">{currentWord?.word}</p>
-                  <p className="text-medium">{currentWord?.pronunciation}</p>
+                  <p className="font-bold">{currentTrainingWord.word}</p>
+                  <p className="text-medium">{currentTrainingWord.pronunciation}</p>
                 </div>
                 <AnimatePresence>
                   {(trainedWordHint || hintAlways) && (
@@ -90,11 +147,12 @@ export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNext
                       className="my-2"
                       transition={{ duration: 0.2 }}>
                       <p>
-                        <span className="select-none text-gray-500">معنی حقوقی:</span>&nbsp;{currentWord?.translation}
+                        <span className="select-none text-gray-500">معنی حقوقی:</span>&nbsp;
+                        {currentTrainingWord.translation}
                       </p>
                       <Divider className="my-2" />
                       <p>
-                        <span className="select-none text-gray-500">توضیح:</span>&nbsp;{currentWord?.description}
+                        <span className="select-none text-gray-500">توضیح:</span>&nbsp;{currentTrainingWord.description}
                       </p>
                       <Divider className="my-2" />
                       <p>
@@ -102,12 +160,12 @@ export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNext
                         <span
                           dir="ltr"
                           className="font-inter">
-                          {currentWord?.example}
+                          {currentTrainingWord.example}
                         </span>
                       </p>
                       <Divider className="my-2" />
                       <p>
-                        <span className="select-none text-gray-500">ترجمه:</span>&nbsp;{currentWord?.translation}
+                        <span className="select-none text-gray-500">ترجمه:</span>&nbsp;{currentTrainingWord.translation}
                       </p>
                     </motion.div>
                   )}
@@ -142,16 +200,8 @@ export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNext
                     variant="shadow"
                     fullWidth
                     endContent={<FaChevronLeft />}
-                    isDisabled={trainedWordIndex + 1 === wordsCount}
-                    onPress={async () => {
-                      if (currentWord && selectedTrainOption[0] !== TRAIN.LEARNED) {
-                        await storeWord(currentWord);
-                      }
-
-                      setTrainedWordIndex((prev) => prev + 1);
-                      setTrainedWordHint(false);
-                      onNextWord();
-                    }}>
+                    isDisabled={trainedWordIndex + 1 === trainingWordsCount}
+                    onPress={handleNextWordClick}>
                     برو کلمه بعدی
                   </Button>
                 </ButtonGroup>

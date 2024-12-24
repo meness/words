@@ -5,15 +5,16 @@ import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from 
 import { useInfiniteScroll } from '@nextui-org/use-infinite-scroll';
 import { useAsyncList } from '@react-stately/data';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { twJoin } from 'tailwind-merge';
+import { Cursor, TableHeaderKeyLabel, TrainingWord, Word } from '~common/types';
 import { appConfig } from '~configs';
-import { WordEntity } from '~entities';
-import { deleteWord, isWordExists, storeWord } from '~helpers';
+import { deleteTraining, storeTraining } from '~helpers';
+import { useTrainings } from '~hooks';
 
-const columns = [
+const columns: TableHeaderKeyLabel<TrainingWord[]>[] = [
   { key: 'id', label: '#' },
-  { key: 'checkbox', label: '✅' },
+  { key: 'trained', label: '✅' },
   { key: 'word', label: 'کلمه' },
   { key: 'pronunciation', label: 'تلفظ' },
   { key: 'translation', label: 'معنای حقوقی' },
@@ -22,16 +23,17 @@ const columns = [
 
 type WordsTableProps = {
   isLoading: boolean;
-  words: WordEntity;
+  words: Word[];
 };
 
 export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
-  const [reRenderTable, setReRenderTable] = useState(Math.random());
-  const [isLoadingCheckboxes, setIsLoadingCheckboxes] = useState(true);
-  const [checkedWords, setCheckedWords] = useState<Record<number, boolean>>({});
   const [hasMore, setHasMore] = useState(false);
+  const trainings = useTrainings();
 
-  const list = useAsyncList<WordEntity[number], { start: number; end: number }>({
+  const list = useAsyncList<TrainingWord, Cursor>({
+    getKey(item) {
+      return getKeyValue(item, 'id');
+    },
     async load({ items, cursor }) {
       setHasMore(items.length !== words.length);
 
@@ -39,7 +41,7 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
       const nextEnd = nextStart + appConfig.rowsPerPage;
 
       return {
-        items: words.slice(cursor?.start ?? 0, cursor?.end ?? appConfig.rowsPerPage),
+        items: trainingWords.slice(cursor?.start ?? 0, cursor?.end ?? appConfig.rowsPerPage),
         cursor: {
           start: nextStart,
           end: nextEnd
@@ -48,38 +50,31 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
     }
   });
 
-  const [loaderRef, scrollerRef] = useInfiniteScroll({ hasMore, onLoadMore: list.loadMore });
-
   useEffect(() => {
-    const fetchCheckedStates = async () => {
-      setIsLoadingCheckboxes(true);
-
-      const states: Record<number, boolean> = {};
-
-      for (const word of words) {
-        states[word.id] = await isWordExists(word.id);
-      }
-
-      setCheckedWords(states);
-      setIsLoadingCheckboxes(false);
-      setReRenderTable(Math.random());
-    };
-
-    if (words.length) {
-      fetchCheckedStates();
-    } else {
-      setIsLoadingCheckboxes(false);
-    }
+    list.reload();
   }, [words]);
+
+  const trainingWords = useMemo<TrainingWord[]>(
+    () =>
+      words.map<TrainingWord>((word) => {
+        const isTrained = trainings.findIndex((training) => training.id === word.id) !== -1;
+        const trainedWord = { ...word, trained: isTrained };
+
+        list.update(word.id, trainedWord);
+
+        return trainedWord;
+      }),
+    [words, trainings]
+  );
+
+  const [loaderRef, scrollerRef] = useInfiniteScroll({ hasMore, onLoadMore: list.loadMore });
 
   const handleCheckboxChange = async (item: (typeof words)[number], isSelected: boolean) => {
     if (isSelected) {
-      await storeWord(item);
+      await storeTraining(item);
     } else {
-      await deleteWord(item.id);
+      await deleteTraining(item.id);
     }
-
-    setCheckedWords((prev) => ({ ...prev, [item.id]: isSelected }));
   };
 
   return (
@@ -87,7 +82,6 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
       shadow="none"
       isStriped
       align="center"
-      key={reRenderTable}
       isHeaderSticky
       baseRef={scrollerRef}
       bottomContent={
@@ -101,7 +95,7 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
                 transition={{ duration: 0.3 }}
                 className="flex w-full justify-center">
                 <Spinner
-                  aria-label="Loading..."
+                  aria-label="در حال بارگذاری"
                   size="sm"
                   color="primary"
                   ref={loaderRef}
@@ -116,9 +110,9 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
         {({ key, label }) => (
           <TableColumn
             key={key}
-            align={['checkbox', 'pronunciation', 'index'].includes(key) ? 'center' : 'start'}
+            align={['trained', 'pronunciation', 'index'].includes(key) ? 'center' : 'start'}
             dir={['pronunciation', 'word'].includes(key) ? 'ltr' : 'rtl'}>
-            {key === 'checkbox' ? (
+            {key === 'trained' ? (
               <Checkbox
                 size="lg"
                 name="check-all"
@@ -133,36 +127,35 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
         )}
       </TableHeader>
       <TableBody
-        isLoading={isLoading || isLoadingCheckboxes}
+        isLoading={isLoading || list.isLoading}
         loadingContent={
           <Spinner
-            aria-label="Loading..."
+            aria-label="در حال بارگذاری"
             size="lg"
             color="primary"
           />
         }
-        emptyContent="متاسفانه نتیجه‌ای وجود ندارد!"
+        emptyContent="چیزی برای نمایش وجود ندارد!"
         items={list.items}>
         {(item) => (
-          <TableRow key={item.word}>
+          <TableRow key={`${item.id}/${item.trained}`}>
             {(columnKey) => {
-              const isCheckboxColumn = columnKey === 'checkbox';
+              const isTrainedColumn = columnKey === 'trained';
               const isWordColumn = columnKey === 'word';
-              const isItemChecked = !!checkedWords[item.id];
               const isEnglishWord = ['word', 'pronunciation'].includes(String(columnKey));
 
               return (
                 <TableCell
-                  align={['checkbox', 'index'].includes(String(columnKey)) ? 'center' : isWordColumn ? 'left' : 'right'}
+                  align={['trained', 'index'].includes(String(columnKey)) ? 'center' : isWordColumn ? 'left' : 'right'}
                   className={twJoin(isEnglishWord ? 'font-inter' : '')}
                   dir={isWordColumn ? 'ltr' : 'rtl'}>
-                  {isCheckboxColumn ? (
+                  {isTrainedColumn ? (
                     <Checkbox
                       size="lg"
                       color="success"
                       name="check"
                       id="check"
-                      defaultSelected={isItemChecked}
+                      defaultSelected={item.trained}
                       onValueChange={(isSelected) => {
                         handleCheckboxChange(item, isSelected);
                       }}

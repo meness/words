@@ -2,32 +2,17 @@ import { Card, CardBody, CardFooter } from '@nextui-org/card';
 import { Chip } from '@nextui-org/chip';
 import { CircularProgress } from '@nextui-org/progress';
 import { Skeleton } from '@nextui-org/skeleton';
-import { useEffect, useState } from 'react';
-import { WordEntity } from '~entities';
-import { countWords } from '~helpers';
+import { Word } from '~common/types';
+import { useTrainings } from '~hooks';
 
-type StatsProps = { isLoading: boolean; words: WordEntity };
+type StatsProps = { isLoading: boolean; words: Word[] };
 
 export const Stats = ({ isLoading, words }: StatsProps) => {
-  const [isLoadingStats, setIsLoadingStats] = useState(true);
-  const [trainedWords, setTrainedWords] = useState(0);
-
-  useEffect(() => {
-    const stats = async () => {
-      setIsLoadingStats(true);
-
-      const count = await countWords();
-
-      setTrainedWords(count);
-      setIsLoadingStats(false);
-    };
-
-    stats();
-  }, []);
+  const trainedWords = useTrainings();
 
   return (
     <Skeleton
-      isLoaded={!isLoading && !isLoadingStats}
+      isLoaded={!isLoading}
       classNames={{ base: 'rounded-large w-fit' }}>
       <Card
         classNames={{
@@ -45,7 +30,7 @@ export const Stats = ({ isLoading, words }: StatsProps) => {
             }}
             showValueLabel={true}
             strokeWidth={4}
-            value={(trainedWords * 100) / words.length}
+            value={(trainedWords.length * 100) / words.length}
           />
         </CardBody>
         <CardFooter>
@@ -55,7 +40,7 @@ export const Stats = ({ isLoading, words }: StatsProps) => {
               content: 'text-white/90 text-small font-semibold'
             }}
             variant="bordered">
-            {trainedWords} کلمه تمرین کردید
+            {trainedWords.length} کلمه تمرین کردید
           </Chip>
         </CardFooter>
       </Card>

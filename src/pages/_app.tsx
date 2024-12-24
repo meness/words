@@ -10,6 +10,7 @@ import { type ReactElement } from 'react';
 import '~assets/css/theme.css';
 import { GlobalErrorBoundary } from '~components';
 import { uiConfig } from '~configs';
+import '~configs/database.config';
 import { ThemeProvider } from '~providers';
 
 const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {

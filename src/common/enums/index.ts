@@ -1,1 +1,1 @@
-export * from './train.enum';
+export * from './train-type.enum';

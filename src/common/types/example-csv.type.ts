@@ -1,4 +1,4 @@
-export type ParsedExamplesCsv = {
+export type ExampleCsv = {
   headers: string[];
   rows: {
     word: string;

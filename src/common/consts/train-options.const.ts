@@ -1,11 +1,10 @@
-import { TRAIN } from '~common/enums';
+import { TRAIN_TYPE } from '~common/enums';
 
-export const trainOptions: Record<TRAIN, { description: string; label: string; key: TRAIN }> = {
-  scratch: { label: 'همه کلمات', description: 'همه کلمات را تمرین کن.', key: TRAIN.SCRATCH },
-  learned: {
+export const trainOptions: Record<TRAIN_TYPE, { description: string; label: string }> = {
+  scratch: { label: 'همه کلمات', description: 'همه کلمات را تمرین کن.' },
+  trained: {
     label: 'کلمات تمرین‌شده',
-    description: 'کلماتی که قبلا تمرین‌شده را تمرین کن.',
-    key: TRAIN.LEARNED
+    description: 'کلماتی که قبلا تمرین‌شده را تمرین کن.'
   },
-  left: { label: 'کلمات باقی‌مانده', description: 'کلمات باقی‌مانده را تمرین کن.', key: TRAIN.LEFT }
+  rest: { label: 'کلمات باقی‌مانده', description: 'کلمات باقی‌مانده را تمرین کن.' }
 };
