@@ -3,6 +3,7 @@ import { getKeyValue } from '@nextui-org/shared-utils';
 import { Spinner } from '@nextui-org/spinner';
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
 import { useEffect, useState } from 'react';
+import { twJoin } from 'tailwind-merge';
 import { ParsedWordsCsv } from '~common/types';
 import { deleteWord, isWordExists, storeWord } from '~helpers';
 
@@ -96,10 +97,12 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
               const isCheckboxColumn = columnKey === 'checkbox';
               const isWordColumn = columnKey === 'word';
               const isItemChecked = !!checkedWords[item.id];
+              const isEnglishWord = ['word', 'pronunciation'].includes(String(columnKey));
 
               return (
                 <TableCell
                   align={['checkbox', 'index'].includes(String(columnKey)) ? 'center' : isWordColumn ? 'left' : 'right'}
+                  className={twJoin(isEnglishWord ? 'font-inter' : '')}
                   dir={isWordColumn ? 'ltr' : 'rtl'}>
                   {isCheckboxColumn ? (
                     <Checkbox

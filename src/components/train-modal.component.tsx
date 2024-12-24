@@ -75,9 +75,9 @@ export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNext
               </ModalHeader>
               <ModalBody>
                 <div
-                  className="text-center text-4xl"
+                  className="text-center font-inter text-4xl"
                   dir="ltr">
-                  <p>{currentWord?.word}</p>
+                  <p className="font-bold">{currentWord?.word}</p>
                   <p className="text-medium">{currentWord?.pronunciation}</p>
                 </div>
                 <AnimatePresence>
@@ -99,7 +99,11 @@ export const TrainModal = ({ isOpen, onClose, selectedTrainOption, words, onNext
                       <Divider className="my-2" />
                       <p>
                         <span className="text-gray-500">مثال:</span>&nbsp;
-                        <span dir="ltr">{currentWord?.example}</span>
+                        <span
+                          dir="ltr"
+                          className="font-inter">
+                          {currentWord?.example}
+                        </span>
                       </p>
                       <Divider className="my-2" />
                       <p>

@@ -31,10 +31,14 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
       />
       <Head>
         <link
-          rel="icon shortcut"
+          rel="icon"
           href="/favicon.ico"
-          type="image/x-icon"
           sizes="any"
+        />
+        <link
+          rel="icon"
+          href="/favicon.svg"
+          type="image/svg+xml"
         />
         <meta
           name="viewport"
@@ -44,6 +48,7 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
           {`
               :root{
                 --yekan-bakh: ${uiConfig.fonts.yekanBakh.style.fontFamily};
+                --inter: ${uiConfig.fonts.inter.style.fontFamily};
               }
           `}
         </style>

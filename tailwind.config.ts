@@ -17,7 +17,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'yekan-bakh': 'var(--yekan-bakh)'
+        'yekan-bakh': 'var(--yekan-bakh)',
+        inter: 'var(--inter)'
       },
       fontSize: {
         '4.5xl': ['42px', '1'],
