@@ -17,6 +17,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 import { HiCurrencyDollar } from 'react-icons/hi2';
+import { ImMobile } from 'react-icons/im';
 import { IoStatsChart } from 'react-icons/io5';
 import { MdChecklist } from 'react-icons/md';
 import { PiExam } from 'react-icons/pi';
@@ -91,6 +92,12 @@ const FeaturesItem = () => {
           startContent={<IoStatsChart className="shrink-0" />}
           description="وضعیت پیشرفت خود را حتی پس از هر آزمون مشاهده کنید.">
           آمار
+        </DropdownItem>
+        <DropdownItem
+          key="design"
+          startContent={<ImMobile className="shrink-0" />}
+          description="حتی با تلفن همراه تجربه خوبی خواهید داشت.">
+          طراحی واکنش‌گرا
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>
