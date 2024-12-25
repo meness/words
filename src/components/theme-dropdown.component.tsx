@@ -20,6 +20,7 @@ export const ThemeDropdown = () => {
 
   return (
     <Dropdown
+      shouldBlockScroll={false}
       type="listbox"
       classNames={{ content: 'min-w-fit' }}>
       <DropdownTrigger>
