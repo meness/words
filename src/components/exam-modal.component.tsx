@@ -302,7 +302,7 @@ export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) 
           const currentTrainingWord: TrainingWord | undefined = trainingWords[trainedWordIndex];
 
           if (!currentTrainingWord) {
-            return <NoTrainingContent onClose={onClose} />;
+            return <NoTrainingContent onClose={handleClose} />;
           }
 
           return (
