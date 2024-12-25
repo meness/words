@@ -272,7 +272,6 @@ export const ExamModal = ({ isOpen, onClose, words }: ExamModalProps) => {
     <Modal
       backdrop="blur"
       placement="bottom-center"
-      hideCloseButton
       isOpen={isOpen}
       classNames={{ base: 'select-none' }}
       size="md"
