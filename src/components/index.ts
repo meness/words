@@ -1,3 +1,4 @@
+export * from './exam-modal.component';
 export * from './footer.component';
 export * from './global-error-boundary.component';
 export * from './header.component';

@@ -143,11 +143,12 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
               const isTrainedColumn = columnKey === 'trained';
               const isWordColumn = columnKey === 'word';
               const isEnglishWord = ['word', 'pronunciation'].includes(String(columnKey));
+              const isNonSelectable = ['id'].includes(String(columnKey));
 
               return (
                 <TableCell
                   align={['trained', 'index'].includes(String(columnKey)) ? 'center' : isWordColumn ? 'left' : 'right'}
-                  className={twJoin(isEnglishWord ? 'font-inter' : '')}
+                  className={twJoin(isEnglishWord && 'font-inter', isNonSelectable && 'select-none')}
                   dir={isWordColumn ? 'ltr' : 'rtl'}>
                   {isTrainedColumn ? (
                     <Checkbox

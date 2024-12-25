@@ -1,3 +1,3 @@
 ## Todo
 
-- <https://dexie.org/docs/Tutorial/React>
+- // TODO Add type of exam: description

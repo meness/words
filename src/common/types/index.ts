@@ -1,4 +1,5 @@
 export * from './cursor.type';
+export * from './exam.type';
 export * from './example-csv.type';
 export * from './key-label.type';
 export * from './nested-key-of.type';

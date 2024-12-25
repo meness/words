@@ -81,6 +81,7 @@ export const TrainModal = ({ isOpen, onClose, trainOption, words, onTrainOptionC
                   <Alert
                     color="primary"
                     title="هنوز کلمه‌ای تمرین نکردید!"
+                    classNames={{ base: 'select-none' }}
                     description="از یکی از دو حالت دیگه تمرین استفاده کنید. وقتی کلمه‌ای را تمرین کردید می‌توانید از این حالت برای تمرین کلمات تمرین‌شده استفاده کنید."
                   />
                 </ModalBody>
@@ -171,7 +172,7 @@ export const TrainModal = ({ isOpen, onClose, trainOption, words, onTrainOptionC
                   )}
                 </AnimatePresence>
               </ModalBody>
-              <ModalFooter className="flex flex-col gap-4 md:flex-row">
+              <ModalFooter className="flex flex-col gap-2 md:flex-row">
                 <Button
                   color="warning"
                   variant="ghost"

@@ -105,7 +105,7 @@ const IndexPage = () => {
       <Card
         fullWidth
         classNames={{
-          base: 'max-w-5xl',
+          base: 'max-w-5xl select-none',
           body: 'items-center flex justify-center overflow-hidden',
           header: 'text-large font-bold',
           footer: 'flex items-center justify-between text-tiny'
