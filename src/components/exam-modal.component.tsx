@@ -54,7 +54,7 @@ const CompletedExamContent = ({
     <ModalBody>
       <Card
         classNames={{
-          base: 'aspect-square place-self-center w-[240px] border-none bg-gradient-to-br from-violet-500 to-fuchsia-500',
+          base: 'aspect-square place-self-center w-[240px] border-none bg-gradient-to-br from-accent-50 to-accent-100',
           body: 'items-center justify-center pb-0',
           footer: 'items-center justify-center pt-0'
         }}>

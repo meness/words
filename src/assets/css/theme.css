@@ -6,6 +6,10 @@
   html {
     @apply scroll-smooth font-yekan-bakh;
   }
+
+  body {
+    @apply bg-[#F5F5F5];
+  }
 }
 
 @layer components {

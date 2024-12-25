@@ -16,7 +16,7 @@ export const Stats = ({ isLoading, words }: StatsProps) => {
       classNames={{ base: 'rounded-large w-fit before:w-fit' }}>
       <Card
         classNames={{
-          base: 'aspect-square w-[240px] border-none bg-gradient-to-br from-violet-500 to-fuchsia-500',
+          base: 'aspect-square w-[240px] border-none bg-gradient-to-br from-accent-50 to-accent-100',
           body: 'items-center justify-center pb-0',
           footer: 'items-center justify-center pt-0'
         }}>
