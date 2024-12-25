@@ -61,6 +61,7 @@ const IndexPage = () => {
               تمرین&nbsp;{trainOptions[trainOption[0]].label}
             </Button>
             <Dropdown
+              shouldBlockScroll={false}
               placement="bottom-end"
               classNames={{ base: 'select-none' }}>
               <DropdownTrigger>

@@ -8,14 +8,13 @@ export const Footer = () => (
     radius="none"
     classNames={{
       base: 'select-none bg-gray-100 text-xs text-gray-500',
-      body: 'text-center flex gap-4 md:gap-0 md:flex-row items-center justify-between'
+      body: 'text-center flex flex-row gap-4 items-center justify-between'
     }}>
     <CardBody>
       <Logo
         width={30}
         classNames={{ wrapper: 'opacity-20' }}
       />
-      <span>این ابزار با قابلیت‌های کافی رایگان در اختیار شماست تا کلمات انگلیسی حقوقی را تمرین کنید.</span>
       <span>توسعه‌یافته با ❤️ در تهران</span>
     </CardBody>
   </Card>
