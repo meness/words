@@ -106,7 +106,7 @@ const IndexPage = () => {
         fullWidth
         classNames={{
           base: 'max-w-5xl select-none',
-          body: 'items-center flex justify-center overflow-hidden',
+          body: 'items-center flex justify-center',
           header: 'text-large font-bold',
           footer: 'flex items-center justify-between text-tiny'
         }}>

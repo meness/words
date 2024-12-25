@@ -13,7 +13,7 @@ export const Stats = ({ isLoading, words }: StatsProps) => {
   return (
     <Skeleton
       isLoaded={!isLoading}
-      classNames={{ base: 'rounded-large w-fit' }}>
+      classNames={{ base: 'rounded-large w-fit before:w-fit' }}>
       <Card
         classNames={{
           base: 'aspect-square w-[240px] border-none bg-gradient-to-br from-violet-500 to-fuchsia-500',

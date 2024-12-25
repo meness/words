@@ -25,7 +25,9 @@ export const Header = () => {
       <NavbarContent
         as="div"
         justify="end">
-        <Skeleton isLoaded={!isLoading}>
+        <Skeleton
+          isLoaded={!isLoading}
+          classNames={{ content: 'w-fit', base: 'rounded-large w-fit before:w-fit' }}>
           <Button
             type="button"
             color="primary"
