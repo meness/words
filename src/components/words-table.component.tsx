@@ -116,8 +116,9 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
               <Checkbox
                 size="lg"
                 name="check-all"
+                defaultSelected
                 id="check-all"
-                color="primary"
+                color="default"
                 isDisabled
               />
             ) : (
