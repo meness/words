@@ -118,7 +118,7 @@ const NoTrainingContent = ({ onClose }: NoTrainingContentProps) => (
     </ModalBody>
     <ModalFooter>
       <Button
-        color="primary"
+        color="default"
         variant="shadow"
         fullWidth
         onPress={onClose}>
