@@ -95,28 +95,11 @@ const IndexPage = () => {
       </Card>
       <Card
         fullWidth
-        classNames={{ base: 'max-w-5xl', body: 'p-0' }}>
+        classNames={{ base: 'max-w-5xl', body: 'p-0', footer: 'flex items-center justify-between text-tiny' }}>
         <CardBody>
           <WordsTable
             words={filteredWords}
             isLoading={isLoading}
-          />
-        </CardBody>
-      </Card>
-      <Card
-        fullWidth
-        classNames={{
-          base: 'max-w-5xl select-none',
-          body: 'items-center flex justify-center',
-          header: 'text-large font-bold',
-          footer: 'flex items-center justify-between text-tiny'
-        }}>
-        <CardHeader>آمار تمرین‌ها را داشته باشید</CardHeader>
-        <Divider />
-        <CardBody>
-          <Stats
-            isLoading={isLoading}
-            words={words}
           />
         </CardBody>
         <Divider />
@@ -134,6 +117,23 @@ const IndexPage = () => {
             درخواست کلمات بیشتر
           </Button>
         </CardFooter>
+      </Card>
+      <Card
+        fullWidth
+        classNames={{
+          base: 'max-w-5xl select-none',
+          body: 'items-center flex justify-center',
+          header: 'text-large font-bold',
+          footer: 'flex items-center justify-between text-tiny'
+        }}>
+        <CardHeader>آمار تمرین‌ها را داشته باشید</CardHeader>
+        <Divider />
+        <CardBody>
+          <Stats
+            isLoading={isLoading}
+            words={words}
+          />
+        </CardBody>
       </Card>
       <TrainModal
         trainOption={trainOption[0]}

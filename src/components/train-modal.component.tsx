@@ -160,13 +160,13 @@ const TrainContent = ({
           color="primary"
           isIconOnly
           variant="shadow"
-          endContent={<FaChevronRight />}
           isDisabled={trainedWordIndex === 0}
           onPress={() => {
             setTrainedWordIndex((prev) => prev - 1);
             setTrainedWordHint(false);
-          }}
-        />
+          }}>
+          <FaChevronRight />
+        </Button>
         <Button
           color="primary"
           variant="shadow"

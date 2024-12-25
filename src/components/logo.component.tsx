@@ -4,7 +4,7 @@ type LogoProps = ImageProps;
 
 export const Logo = (props: LogoProps) => (
   <Image
-    src="/favicon.svg"
+    src="/assets/images/logo.svg"
     radius="none"
     alt="Logo"
     {...props}

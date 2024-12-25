@@ -27,6 +27,7 @@ import { EXAM_TYPE } from '~common/enums';
 import { useWords } from '~hooks';
 import { ExamModal } from './exam-modal.component';
 import { Logo } from './logo.component';
+import { ThemeDropdown } from './theme-dropdown.component';
 
 const FeaturesItem = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -189,6 +190,7 @@ export const Header = () => {
           size="sm"
           src="https://avatars.githubusercontent.com/u/7955356?v=4"
         />
+        <ThemeDropdown />
       </NavbarContent>
       <ExamModal
         isOpen={isOpen}

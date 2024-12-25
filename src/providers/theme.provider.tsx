@@ -13,7 +13,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
       <ThemeProviderOrg
         defaultTheme="light"
         attribute="class"
-        enableSystem={false}>
+        enableSystem>
         {children}
       </ThemeProviderOrg>
     </NextUIProvider>
