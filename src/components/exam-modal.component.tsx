@@ -7,6 +7,7 @@ import { CircularProgress, Progress } from '@nextui-org/progress';
 import { Radio, RadioGroup } from '@nextui-org/radio';
 import { Dispatch, DispatchWithoutAction, SetStateAction, useMemo, useState } from 'react';
 import { FaChevronLeft } from 'react-icons/fa6';
+import { EXAM_TYPE } from '~common/enums';
 import { Exam, TrainingWord, Word } from '~common/types';
 import { deleteTraining } from '~helpers';
 import { useTrainings } from '~hooks';
@@ -16,9 +17,10 @@ type ExamModalProps = {
   isOpen: boolean;
   onClose: DispatchWithoutAction;
   words: Word[];
+  examType: EXAM_TYPE;
 };
 
-type CompletedExamProps = {
+type CompletedExamContentProps = {
   trainingWordsCount: number;
   rightAnswersCount: number;
   handleClose: DispatchWithoutAction;
@@ -26,7 +28,7 @@ type CompletedExamProps = {
   handleTrainWrongAnswers: DispatchWithoutAction;
 };
 
-type NoTrainingProps = { onClose: DispatchWithoutAction };
+type NoTrainingContentProps = { onClose: DispatchWithoutAction };
 
 type ExamContentProps = {
   trainingWords: TrainingWord[];
@@ -37,15 +39,16 @@ type ExamContentProps = {
   setChosenAnswer: Dispatch<SetStateAction<ExamContentProps['chosenAnswer']>>;
   randomAnswers: Word[];
   handleNextExamClick: Dispatch<boolean>;
+  examType: EXAM_TYPE;
 };
 
-const CompletedExam = ({
+const CompletedExamContent = ({
   trainingWordsCount,
   rightAnswersCount,
   handleClose,
   examsWithWrongAnswer,
   handleTrainWrongAnswers
-}: CompletedExamProps) => (
+}: CompletedExamContentProps) => (
   <>
     <ModalHeader>پایان آزمون</ModalHeader>
     <ModalBody>
@@ -102,7 +105,7 @@ const CompletedExam = ({
   </>
 );
 
-const NoTraining = ({ onClose }: NoTrainingProps) => (
+const NoTrainingContent = ({ onClose }: NoTrainingContentProps) => (
   <>
     <ModalHeader>پیشرفت خود را بسنجید</ModalHeader>
     <ModalBody>
@@ -133,7 +136,8 @@ const ExamContent = ({
   chosenAnswer,
   setChosenAnswer,
   randomAnswers,
-  handleNextExamClick
+  handleNextExamClick,
+  examType
 }: ExamContentProps) => (
   <>
     <ModalHeader className="flex items-center gap-3">
@@ -157,14 +161,14 @@ const ExamContent = ({
       </div>
       <div className="my-2">
         <RadioGroup
-          label="معنی کلمه بالا کدام است؟"
+          label={examType === EXAM_TYPE.MEANING ? 'معنی کلمه بالا کدام است؟' : 'توضیح کلمه بالا کدام است؟'}
           value={chosenAnswer}
           onValueChange={setChosenAnswer}>
           {randomAnswers.map((randomAnswer) => (
             <Radio
               key={randomAnswer.id}
               value={String(randomAnswer.id)}>
-              {randomAnswer.meaning}
+              {examType === EXAM_TYPE.MEANING ? randomAnswer.meaning : randomAnswer.description}
             </Radio>
           ))}
         </RadioGroup>
@@ -194,7 +198,7 @@ const ExamContent = ({
   </>
 );
 
-export const ExamModal = ({ isOpen, onClose, words }: ExamModalProps) => {
+export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) => {
   const [trainedWordIndex, setTrainedWordIndex] = useState(0);
   const [exams, setExams] = useState<Exam[]>([]);
   const [chosenAnswer, setChosenAnswer] = useState<string | null>(null);
@@ -285,7 +289,7 @@ export const ExamModal = ({ isOpen, onClose, words }: ExamModalProps) => {
             const rightAnswersCount = trainingWords.length - examsWithWrongAnswer.length;
 
             return (
-              <CompletedExam
+              <CompletedExamContent
                 trainingWordsCount={trainingWordsCount}
                 rightAnswersCount={rightAnswersCount}
                 handleClose={handleClose}
@@ -298,7 +302,7 @@ export const ExamModal = ({ isOpen, onClose, words }: ExamModalProps) => {
           const currentTrainingWord: TrainingWord | undefined = trainingWords[trainedWordIndex];
 
           if (!currentTrainingWord) {
-            return <NoTraining onClose={onClose} />;
+            return <NoTrainingContent onClose={onClose} />;
           }
 
           return (
@@ -311,6 +315,7 @@ export const ExamModal = ({ isOpen, onClose, words }: ExamModalProps) => {
               setChosenAnswer={setChosenAnswer}
               randomAnswers={randomAnswers}
               handleNextExamClick={handleNextExamClick}
+              examType={examType}
             />
           );
         }}

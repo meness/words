@@ -66,13 +66,13 @@ const IndexPage = () => {
               <DropdownTrigger>
                 <Button
                   isIconOnly
-                  variant="flat">
+                  variant="shadow">
                   <FaChevronDown />
                 </Button>
               </DropdownTrigger>
               <DropdownMenu
                 disallowEmptySelection
-                aria-label="Merge options"
+                aria-label="گزینه‌های تمرین"
                 className="max-w-[300px]"
                 selectedKeys={trainOption}
                 disabledKeys={!trainings.length ? [TRAIN_TYPE.TRAINED] : []}

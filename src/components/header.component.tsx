@@ -1,14 +1,20 @@
 import { Avatar } from '@nextui-org/avatar';
-import { Button } from '@nextui-org/button';
+import { Button, ButtonGroup } from '@nextui-org/button';
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/dropdown';
 import { useDisclosure } from '@nextui-org/modal';
 import { Navbar, NavbarBrand, NavbarContent } from '@nextui-org/navbar';
 import { Skeleton } from '@nextui-org/skeleton';
 import Link from 'next/link';
+import { useState } from 'react';
+import { FaChevronDown } from 'react-icons/fa6';
+import { examOptions } from '~common/consts';
+import { EXAM_TYPE } from '~common/enums';
 import { useWords } from '~hooks';
 import { ExamModal } from './exam-modal.component';
 import { Logo } from './logo.component';
 
 export const Header = () => {
+  const [examOption, setExamOption] = useState<[EXAM_TYPE]>([EXAM_TYPE.MEANING]);
   const { isOpen, onClose, onOpenChange } = useDisclosure();
   const { isLoading, data: words } = useWords();
 
@@ -28,13 +34,44 @@ export const Header = () => {
         <Skeleton
           isLoaded={!isLoading}
           classNames={{ content: 'w-fit', base: 'rounded-large w-fit before:w-fit' }}>
-          <Button
-            type="button"
-            color="primary"
-            variant="bordered"
-            onPress={onOpenChange}>
-            آزمون
-          </Button>
+          <ButtonGroup
+            variant="flat"
+            isDisabled={isLoading}
+            color="primary">
+            <Button
+              onPress={onOpenChange}
+              className="w-full sm:w-full">
+              آزمون&nbsp;{examOptions[examOption[0]].label}
+            </Button>
+            <Dropdown
+              placement="bottom-end"
+              classNames={{ base: 'select-none' }}>
+              <DropdownTrigger>
+                <Button
+                  isIconOnly
+                  variant="flat">
+                  <FaChevronDown />
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu
+                disallowEmptySelection
+                aria-label="گزینه‌های آزمون"
+                className="max-w-[300px]"
+                selectedKeys={examOption}
+                selectionMode="single"
+                onSelectionChange={(key) => {
+                  setExamOption([key.currentKey as EXAM_TYPE]);
+                }}>
+                {Object.entries(examOptions).map(([key, { description, label }]) => (
+                  <DropdownItem
+                    key={key}
+                    description={description}>
+                    {label}
+                  </DropdownItem>
+                ))}
+              </DropdownMenu>
+            </Dropdown>
+          </ButtonGroup>
         </Skeleton>
         <Avatar
           as={Link}
@@ -52,6 +89,7 @@ export const Header = () => {
         isOpen={isOpen}
         onClose={onClose}
         words={words}
+        examType={examOption[0]}
       />
     </Navbar>
   );
