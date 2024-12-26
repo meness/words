@@ -3,7 +3,7 @@ import { Button } from '@nextui-org/button';
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/modal';
 import { Progress } from '@nextui-org/progress';
 import { Radio, RadioGroup } from '@nextui-org/radio';
-import { Dispatch, DispatchWithoutAction, SetStateAction, useMemo, useState } from 'react';
+import { Dispatch, DispatchWithoutAction, SetStateAction, useEffect, useMemo, useState } from 'react';
 import { FaChevronLeft } from 'react-icons/fa6';
 import { MdDone } from 'react-icons/md';
 import { EXAM_TYPE } from '~common/enums';
@@ -221,14 +221,22 @@ export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) 
     ]);
   };
 
+  useEffect(() => {
+    const store = async () => {
+      if (isExamCompleted) {
+        await storeExamEntity(exams);
+      }
+    };
+
+    store();
+  }, [isExamCompleted]);
+
   const handleNextExamClick = async (answered: boolean) => {
     saveCurrentExam(answered);
 
     if (trainedWordIndex !== trainingWords.length - 1) {
       setTrainedWordIndex((prev) => prev + 1);
     } else {
-      await storeExamEntity(exams);
-
       setIsExamCompleted(true);
     }
   };
