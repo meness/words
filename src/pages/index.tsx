@@ -4,6 +4,7 @@ import { Divider } from '@nextui-org/divider';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/dropdown';
 import { Input } from '@nextui-org/input';
 import { useDisclosure } from '@nextui-org/modal';
+import { Skeleton } from '@nextui-org/skeleton';
 import Link from 'next/link';
 import { useMemo, useState, type ReactElement } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
@@ -103,20 +104,24 @@ const IndexPage = () => {
           />
         </CardBody>
         <Divider />
-        <CardFooter>
-          <p>
-            <span className="font-bold">{words.length}</span> کلمه در اختیار شماست.
-          </p>
-          <Button
-            as={Link}
-            href={`mailto:${appConfig.developerEmail}`}
-            color="secondary"
-            radius="lg"
-            size="sm"
-            variant="flat">
-            درخواست کلمات بیشتر
-          </Button>
-        </CardFooter>
+        <Skeleton
+          isLoaded={!isLoading}
+          classNames={{ base: 'rounded-b-large w-full' }}>
+          <CardFooter>
+            <p>
+              <span className="font-bold">{words.length}</span> کلمه در اختیار شماست.
+            </p>
+            <Button
+              as={Link}
+              href={`mailto:${appConfig.developerEmail}`}
+              color="secondary"
+              radius="lg"
+              size="sm"
+              variant="flat">
+              درخواست کلمات بیشتر
+            </Button>
+          </CardFooter>
+        </Skeleton>
       </Card>
       <Card
         fullWidth
