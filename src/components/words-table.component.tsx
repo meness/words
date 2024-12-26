@@ -11,6 +11,7 @@ import { Cursor, TableHeaderKeyLabel, TrainingWord, Word } from '~common/types';
 import { appConfig } from '~configs';
 import { deleteTrainingEntity, storeTrainingEntity } from '~helpers';
 import { useTrainingsQuery } from '~hooks';
+import { formatDecimal } from '~utils';
 
 const columns: TableHeaderKeyLabel<TrainingWord[]>[] = [
   { key: 'id', label: '#' },
@@ -151,7 +152,7 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
                   align={['trained', 'index'].includes(String(columnKey)) ? 'center' : isWordColumn ? 'left' : 'right'}
                   className={twJoin(isEnglishWord && 'font-inter', isNonSelectable && 'select-none')}
                   dir={isWordColumn ? 'ltr' : 'rtl'}>
-                  {isTrainedColumn ? (
+                  {isTrainedColumn && (
                     <Checkbox
                       size="lg"
                       color="success"
@@ -162,9 +163,8 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
                         handleCheckboxChange(item, isSelected);
                       }}
                     />
-                  ) : (
-                    getKeyValue(item, columnKey)
                   )}
+                  {columnKey === 'id' ? formatDecimal(getKeyValue(item, columnKey)) : getKeyValue(item, columnKey)}
                 </TableCell>
               );
             }}

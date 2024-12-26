@@ -14,6 +14,7 @@ import { ExamsLineChart, Stat, TrainModal, WordsTable } from '~components';
 import { appConfig } from '~configs';
 import { useTrainingsQuery, useWords } from '~hooks';
 import { FullscreenLayout } from '~layouts';
+import { formatDecimal, formatPercent } from '~utils';
 
 const IndexPage = () => {
   const [query, setQuery] = useState('');
@@ -113,7 +114,7 @@ const IndexPage = () => {
           classNames={{ base: 'rounded-b-large w-full' }}>
           <CardFooter>
             <p>
-              <span className="font-bold">{words.length}</span> کلمه در اختیار شماست.
+              <span className="font-bold">{formatDecimal(words.length)}</span> کلمه در اختیار شماست.
             </p>
             <Button
               as={Link}
