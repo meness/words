@@ -211,22 +211,23 @@ export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) 
   const [isExamCompleted, setIsExamCompleted] = useState(false);
   const trainings = useTrainings();
 
-  const trainingWords = useMemo<TrainingWord[]>(
-    () =>
-      words.flatMap<TrainingWord>((word) => {
-        const isTrained = trainings.findIndex((training) => training.id === word.id) !== -1;
+  const trainingWords = useMemo<TrainingWord[]>(() => {
+    const data = words.flatMap<TrainingWord>((word) => {
+      const isTrained = trainings.findIndex((training) => training.id === word.id) !== -1;
 
-        if (!isTrained) {
-          return [];
-        }
+      if (!isTrained) {
+        return [];
+      }
 
-        return { ...word, trained: isTrained };
-      }),
-    [
-      words,
-      trainings
-    ]
-  );
+      return { ...word, trained: isTrained };
+    });
+
+    return shuffleArray(data);
+  }, [
+    words,
+    trainings,
+    isOpen
+  ]);
 
   const handleClose = () => {
     setTrainedWordIndex(0);
