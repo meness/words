@@ -7,6 +7,7 @@ import { CircularProgress, Progress } from '@nextui-org/progress';
 import { Radio, RadioGroup } from '@nextui-org/radio';
 import { Dispatch, DispatchWithoutAction, SetStateAction, useMemo, useState } from 'react';
 import { FaChevronLeft } from 'react-icons/fa6';
+import { MdDone } from 'react-icons/md';
 import { EXAM_TYPE } from '~common/enums';
 import { Exam, TrainingWord, Word } from '~common/types';
 import { deleteTraining } from '~helpers';
@@ -33,13 +34,13 @@ type NoTrainingContentProps = { onClose: DispatchWithoutAction };
 type ExamContentProps = {
   trainingWords: TrainingWord[];
   trainedWordIndex: number;
-  trainingWordsCount: number;
   currentTrainingWord: TrainingWord;
   chosenAnswer: string | null;
   setChosenAnswer: Dispatch<SetStateAction<ExamContentProps['chosenAnswer']>>;
   randomAnswers: Word[];
   handleNextExamClick: Dispatch<boolean>;
   examType: EXAM_TYPE;
+  exams: Exam[];
 };
 
 const CompletedExamContent = ({
@@ -131,72 +132,77 @@ const NoTrainingContent = ({ onClose }: NoTrainingContentProps) => (
 const ExamContent = ({
   trainingWords,
   trainedWordIndex,
-  trainingWordsCount,
   currentTrainingWord,
   chosenAnswer,
   setChosenAnswer,
   randomAnswers,
   handleNextExamClick,
-  examType
-}: ExamContentProps) => (
-  <>
-    <ModalHeader className="flex items-center gap-3">
-      <Progress
-        aria-label="وضعیت پیشرفت آزمون"
-        className="absolute left-0 right-0 top-0 max-w-full"
-        color="success"
-        showValueLabel={false}
-        size="sm"
-        maxValue={trainingWords.length}
-        value={trainedWordIndex + 1}
-      />
-      سوال {trainedWordIndex + 1} از {trainingWordsCount}
-    </ModalHeader>
-    <ModalBody>
-      <div
-        className="text-center font-inter text-4xl"
-        dir="ltr">
-        <p className="font-bold">{currentTrainingWord.word}</p>
-        <p className="text-medium">{currentTrainingWord.pronunciation}</p>
-      </div>
-      <div className="my-2">
-        <RadioGroup
-          label={examType === EXAM_TYPE.MEANING ? 'معنی کلمه بالا کدام است؟' : 'توضیح کلمه بالا کدام است؟'}
-          value={chosenAnswer}
-          onValueChange={setChosenAnswer}>
-          {randomAnswers.map((randomAnswer) => (
-            <Radio
-              key={randomAnswer.id}
-              value={String(randomAnswer.id)}>
-              {examType === EXAM_TYPE.MEANING ? randomAnswer.meaning : randomAnswer.description}
-            </Radio>
-          ))}
-        </RadioGroup>
-      </div>
-    </ModalBody>
-    <ModalFooter className="flex flex-col gap-2 md:flex-row">
-      <Button
-        color="danger"
-        variant="flat"
-        onPress={() => {
-          handleNextExamClick(false);
-        }}>
-        نمی‌دانم
-      </Button>
-      <Button
-        color="primary"
-        variant="shadow"
-        fullWidth
-        endContent={<FaChevronLeft />}
-        isDisabled={!chosenAnswer}
-        onPress={() => {
-          handleNextExamClick(true);
-        }}>
-        سوال بعدی
-      </Button>
-    </ModalFooter>
-  </>
-);
+  examType,
+  exams
+}: ExamContentProps) => {
+  const trainingWordsCount = trainingWords.length;
+  const isLastExam = exams.length + 1 === trainingWords.length;
+
+  return (
+    <>
+      <ModalHeader className="flex items-center gap-3">
+        <Progress
+          aria-label="وضعیت پیشرفت آزمون"
+          className="absolute left-0 right-0 top-0 max-w-full"
+          color="success"
+          showValueLabel={false}
+          size="sm"
+          maxValue={trainingWords.length}
+          value={trainedWordIndex + 1}
+        />
+        سوال {trainedWordIndex + 1} از {trainingWordsCount}
+      </ModalHeader>
+      <ModalBody>
+        <div
+          className="text-center font-inter text-4xl"
+          dir="ltr">
+          <p className="font-bold">{currentTrainingWord.word}</p>
+          <p className="text-medium">{currentTrainingWord.pronunciation}</p>
+        </div>
+        <div className="my-2">
+          <RadioGroup
+            label={examType === EXAM_TYPE.MEANING ? 'معنی کلمه بالا کدام است؟' : 'توضیح کلمه بالا کدام است؟'}
+            value={chosenAnswer}
+            onValueChange={setChosenAnswer}>
+            {randomAnswers.map((randomAnswer) => (
+              <Radio
+                key={randomAnswer.id}
+                value={String(randomAnswer.id)}>
+                {examType === EXAM_TYPE.MEANING ? randomAnswer.meaning : randomAnswer.description}
+              </Radio>
+            ))}
+          </RadioGroup>
+        </div>
+      </ModalBody>
+      <ModalFooter className="flex flex-col gap-2 md:flex-row">
+        <Button
+          color="danger"
+          variant="flat"
+          onPress={() => {
+            handleNextExamClick(false);
+          }}>
+          نمی‌دانم
+        </Button>
+        <Button
+          color="primary"
+          variant="shadow"
+          fullWidth
+          endContent={isLastExam ? <MdDone /> : <FaChevronLeft />}
+          isDisabled={!chosenAnswer}
+          onPress={() => {
+            handleNextExamClick(true);
+          }}>
+          {isLastExam ? 'ثبت جواب و پایان آزمون' : 'سوال بعدی'}
+        </Button>
+      </ModalFooter>
+    </>
+  );
+};
 
 export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) => {
   const [trainedWordIndex, setTrainedWordIndex] = useState(0);
@@ -309,13 +315,13 @@ export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) 
             <ExamContent
               trainingWords={trainingWords}
               trainedWordIndex={trainedWordIndex}
-              trainingWordsCount={trainingWordsCount}
               currentTrainingWord={currentTrainingWord}
               chosenAnswer={chosenAnswer}
               setChosenAnswer={setChosenAnswer}
               randomAnswers={randomAnswers}
               handleNextExamClick={handleNextExamClick}
               examType={examType}
+              exams={exams}
             />
           );
         }}
