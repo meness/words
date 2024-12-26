@@ -1,18 +1,17 @@
 import { Alert } from '@nextui-org/alert';
 import { Button } from '@nextui-org/button';
-import { Card, CardBody, CardFooter } from '@nextui-org/card';
-import { Chip } from '@nextui-org/chip';
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/modal';
-import { CircularProgress, Progress } from '@nextui-org/progress';
+import { Progress } from '@nextui-org/progress';
 import { Radio, RadioGroup } from '@nextui-org/radio';
 import { Dispatch, DispatchWithoutAction, SetStateAction, useMemo, useState } from 'react';
 import { FaChevronLeft } from 'react-icons/fa6';
 import { MdDone } from 'react-icons/md';
 import { EXAM_TYPE } from '~common/enums';
 import { Exam, TrainingWord, Word } from '~common/types';
-import { deleteTraining } from '~helpers';
-import { useTrainings } from '~hooks';
+import { deleteTrainingEntity, storeExamEntity } from '~helpers';
+import { useTrainingsQuery } from '~hooks';
 import { getRandomIndexes, shuffleArray } from '~utils';
+import { Stat } from './stat.component';
 
 type ExamModalProps = {
   isOpen: boolean;
@@ -52,39 +51,12 @@ const CompletedExamContent = ({
 }: CompletedExamContentProps) => (
   <>
     <ModalHeader>پایان آزمون</ModalHeader>
-    <ModalBody>
-      <Card
-        classNames={{
-          base: 'aspect-square place-self-center w-[240px] border-none bg-gradient-to-br from-accent-50 to-accent-100',
-          body: 'items-center justify-center pb-0',
-          footer: 'items-center justify-center pt-0'
-        }}>
-        <CardBody>
-          <CircularProgress
-            classNames={{
-              svg: 'w-36 aspect-square h-full drop-shadow-md',
-              indicator: 'stroke-white',
-              track: 'stroke-white/10',
-              value: 'text-3xl font-semibold text-white'
-            }}
-            showValueLabel={true}
-            strokeWidth={4}
-            value={(rightAnswersCount * 100) / trainingWordsCount}
-          />
-        </CardBody>
-        <CardFooter>
-          <Chip
-            classNames={{
-              base: 'border-1 border-white/30',
-              content: 'text-white/90 text-small font-semibold'
-            }}
-            variant="bordered">
-            {rightAnswersCount === trainingWordsCount
-              ? 'همه را درست جواب دادید'
-              : `${rightAnswersCount} جواب درست دادید`}
-          </Chip>
-        </CardFooter>
-      </Card>
+    <ModalBody className="place-items-center">
+      <Stat
+        value={(rightAnswersCount * 100) / trainingWordsCount}
+        isLoading={false}>
+        {rightAnswersCount === trainingWordsCount ? 'همه را درست جواب دادید' : `${rightAnswersCount} جواب درست دادید`}
+      </Stat>
     </ModalBody>
     <ModalFooter className="flex flex-col gap-2 md:flex-row">
       <Button
@@ -209,7 +181,7 @@ export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) 
   const [exams, setExams] = useState<Exam[]>([]);
   const [chosenAnswer, setChosenAnswer] = useState<string | null>(null);
   const [isExamCompleted, setIsExamCompleted] = useState(false);
-  const trainings = useTrainings();
+  const trainings = useTrainingsQuery();
 
   const trainingWords = useMemo<TrainingWord[]>(() => {
     const data = words.flatMap<TrainingWord>((word) => {
@@ -255,6 +227,8 @@ export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) 
     if (trainedWordIndex !== trainingWords.length - 1) {
       setTrainedWordIndex((prev) => prev + 1);
     } else {
+      await storeExamEntity(exams);
+
       setIsExamCompleted(true);
     }
   };
@@ -274,7 +248,7 @@ export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) 
   const handleTrainWrongAnswers = async () => {
     const examsWithWrongAnswer = exams.filter((exam) => exam.question.id !== exam.answer?.id);
 
-    await Promise.all(examsWithWrongAnswer.map((exam) => deleteTraining(exam.question.id)));
+    await Promise.all(examsWithWrongAnswer.map((exam) => deleteTrainingEntity(exam.question.id)));
 
     handleClose();
   };

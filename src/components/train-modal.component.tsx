@@ -10,8 +10,8 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import { MdDone } from 'react-icons/md';
 import { TRAIN_TYPE } from '~common/enums';
 import { TrainingWord, Word } from '~common/types';
-import { storeTraining } from '~helpers';
-import { useTrainings } from '~hooks';
+import { storeTrainingEntity } from '~helpers';
+import { useTrainingsQuery } from '~hooks';
 
 type TrainModalProps = {
   isOpen: boolean;
@@ -189,7 +189,7 @@ export const TrainModal = ({ isOpen, onClose, trainOption, words, onTrainOptionC
   const [trainedWordIndex, setTrainedWordIndex] = useState(0);
   const [trainedWordHint, setTrainedWordHint] = useState(false);
   const [hintAlways, setHintAlways] = useState(false);
-  const trainings = useTrainings();
+  const trainings = useTrainingsQuery();
 
   const trainingWords = useMemo<TrainingWord[]>(() => {
     const data = words.map<TrainingWord>((word) => {
@@ -215,7 +215,7 @@ export const TrainModal = ({ isOpen, onClose, trainOption, words, onTrainOptionC
 
   const handleNextWordClick = async () => {
     if (!trainingWords[trainedWordIndex].trained) {
-      await storeTraining(trainingWords[trainedWordIndex]);
+      await storeTrainingEntity(trainingWords[trainedWordIndex]);
     }
 
     setTrainedWordIndex((prev) => prev + 1);

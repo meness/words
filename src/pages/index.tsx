@@ -10,9 +10,9 @@ import { useMemo, useState, type ReactElement } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 import { trainOptions } from '~common/consts';
 import { TRAIN_TYPE } from '~common/enums';
-import { Stats, TrainModal, WordsTable } from '~components';
+import { ExamsLineChart, Stat, TrainModal, WordsTable } from '~components';
 import { appConfig } from '~configs';
-import { useTrainings, useWords } from '~hooks';
+import { useTrainingsQuery, useWords } from '~hooks';
 import { FullscreenLayout } from '~layouts';
 
 const IndexPage = () => {
@@ -20,7 +20,7 @@ const IndexPage = () => {
   const { isOpen, onClose, onOpenChange } = useDisclosure();
   const [trainOption, setTrainOption] = useState<[TRAIN_TYPE]>([TRAIN_TYPE.SCRATCH]);
   const { isLoading, data: words } = useWords();
-  const trainings = useTrainings();
+  const trainings = useTrainingsQuery();
 
   const filteredWords = useMemo(() => {
     if (!words.length) {
@@ -96,7 +96,11 @@ const IndexPage = () => {
       </Card>
       <Card
         fullWidth
-        classNames={{ base: 'max-w-5xl', body: 'p-0', footer: 'flex items-center justify-between text-tiny' }}>
+        classNames={{
+          base: 'max-w-5xl',
+          body: 'p-0',
+          footer: 'flex select-none items-center justify-between text-tiny'
+        }}>
         <CardBody>
           <WordsTable
             words={filteredWords}
@@ -127,17 +131,19 @@ const IndexPage = () => {
         fullWidth
         classNames={{
           base: 'max-w-5xl select-none',
-          body: 'items-center flex justify-center',
+          body: 'items-center flex justify-center flex-row gap-4',
           header: 'text-large font-bold',
           footer: 'flex items-center justify-between text-tiny'
         }}>
-        <CardHeader>آمار تمرین‌ها را داشته باشید</CardHeader>
+        <CardHeader>آمار پیشرفت</CardHeader>
         <Divider />
         <CardBody>
-          <Stats
+          <Stat
             isLoading={isLoading}
-            words={words}
-          />
+            value={(trainings.length * 100) / words.length}>
+            {trainings.length} کلمه تمرین کردید
+          </Stat>
+          <ExamsLineChart />
         </CardBody>
       </Card>
       <TrainModal

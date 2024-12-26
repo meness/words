@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { CsvApi } from '~apis';
 import { Word } from '~common/types';
-import { isTrainingExists } from '~helpers';
+import { isTrainingEntityExists } from '~helpers';
 
 export const useWords = () => {
   const [data, setData] = useState<Word[]>([]);
@@ -19,7 +19,7 @@ export const useWords = () => {
 
         const modifiedData = await Promise.all(
           words.rows.map<Promise<Word>>(async (row) => {
-            const exists = await isTrainingExists(row.id);
+            const exists = await isTrainingEntityExists(row.id);
             const { example, translation } = examples.rows.find((example) => example.id === row.id)!;
 
             return { ...row, exists, example, translation };

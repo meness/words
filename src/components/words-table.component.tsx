@@ -9,8 +9,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { twJoin } from 'tailwind-merge';
 import { Cursor, TableHeaderKeyLabel, TrainingWord, Word } from '~common/types';
 import { appConfig } from '~configs';
-import { deleteTraining, storeTraining } from '~helpers';
-import { useTrainings } from '~hooks';
+import { deleteTrainingEntity, storeTrainingEntity } from '~helpers';
+import { useTrainingsQuery } from '~hooks';
 
 const columns: TableHeaderKeyLabel<TrainingWord[]>[] = [
   { key: 'id', label: '#' },
@@ -28,7 +28,7 @@ type WordsTableProps = {
 
 export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
   const [hasMore, setHasMore] = useState(false);
-  const trainings = useTrainings();
+  const trainings = useTrainingsQuery();
 
   const list = useAsyncList<TrainingWord, Cursor>({
     getKey(item) {
@@ -71,9 +71,9 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
 
   const handleCheckboxChange = async (item: (typeof words)[number], isSelected: boolean) => {
     if (isSelected) {
-      await storeTraining(item);
+      await storeTrainingEntity(item);
     } else {
-      await deleteTraining(item.id);
+      await deleteTrainingEntity(item.id);
     }
   };
 
