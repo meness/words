@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { NextPage } from 'next';
-import { DefaultSeo } from 'next-seo';
+import { DefaultSeo, OrganizationJsonLd } from 'next-seo';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { type ReactElement } from 'react';
@@ -20,15 +20,32 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <>
       <DefaultSeo
-        defaultTitle="تمرین کلمات"
-        titleTemplate="%s - تمرین کلمات"
-        description="ابزار رایگان با قابلیت‌های کافی برای تمرین کلمات انگلیسی با محوریت حقوقی"
+        defaultTitle="تمرین کلمات انگلیسی"
+        titleTemplate="%s - تمرین کلمات انگلیسی"
+        description="کاملا رایگان کلمات انگلیسی را تمرین کنید و از خود آزمون بگیرید."
         openGraph={{
           locale: 'fa-IR',
-          title: 'تمرین کلمات',
-          description: 'تمرین کلمات انگلیسی با محوریت حقوقی',
-          images: []
+          type: 'website',
+          title: 'تمرین کلمات انگلیسی',
+          description: 'کاملا رایگان کلمات انگلیسی را تمرین کنید و از خود آزمون بگیرید.',
+          images: [
+            {
+              url: 'https://wwwords.ir/assets/images/metatag.jpg',
+              alt: 'تمرین کلمات انگلیسی',
+              type: 'image/jpeg'
+            }
+          ]
         }}
+        twitter={{
+          site: 'wwwords_ir',
+          cardType: 'summary_large_image'
+        }}
+      />
+      <OrganizationJsonLd
+        name="تمرین کلمات انگلیسی"
+        url="https://wwwords.ir"
+        logo="https://wwwords.ir/favicon.svg"
+        sameAs={['https://twitter.com/wwwords_ir']}
       />
       <Head>
         <link
