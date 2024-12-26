@@ -27,7 +27,7 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
           locale: 'fa-IR',
           type: 'website',
           title: 'تمرین کلمات انگلیسی',
-          description: 'کاملا رایگان کلمات انگلیسی را تمرین کنید و از خود آزمون بگیرید.',
+          description: 'کاملا رایگان کلمات انگلیسی را تمرین کنید، دایره لغات خود را بزرگتر کنید و از خود آزمون بگیرید.',
           images: [
             {
               url: 'https://wwwords.ir/assets/images/metatag.jpg',
