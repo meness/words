@@ -7,4 +7,5 @@ export * from './logo.component';
 export * from './stat.component';
 export * from './theme-dropdown.component';
 export * from './train-modal.component';
+export * from './trainings-pie-chart.component';
 export * from './words-table.component';

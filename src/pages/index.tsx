@@ -8,11 +8,13 @@ import { Skeleton } from '@nextui-org/skeleton';
 import Link from 'next/link';
 import { useMemo, useState, type ReactElement } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
+import { IoPieChartOutline } from 'react-icons/io5';
+import { PiExam } from 'react-icons/pi';
 import { trainOptions } from '~common/consts';
 import { TRAIN_TYPE } from '~common/enums';
-import { ExamsLineChart, Stat, TrainModal, WordsTable } from '~components';
+import { ExamsLineChart, TrainingPieChart, TrainModal, WordsTable } from '~components';
 import { appConfig } from '~configs';
-import { useTrainingsQuery, useWords } from '~hooks';
+import { useExamsQuery, useTrainingsQuery, useWords } from '~hooks';
 import { FullscreenLayout } from '~layouts';
 import { formatDecimal, formatPercent } from '~utils';
 
@@ -22,6 +24,7 @@ const IndexPage = () => {
   const [trainOption, setTrainOption] = useState<[TRAIN_TYPE]>([TRAIN_TYPE.SCRATCH]);
   const { isLoading, data: words } = useWords();
   const trainings = useTrainingsQuery();
+  const exams = useExamsQuery();
 
   const filteredWords = useMemo(() => {
     if (!words.length) {
@@ -35,10 +38,10 @@ const IndexPage = () => {
   ]);
 
   return (
-    <div className="my-10 flex flex-col place-content-center place-items-center gap-6">
+    <div className="mx-auto my-10 flex max-w-5xl flex-col place-content-center place-items-center gap-6">
       <Card
         isDisabled={isLoading}
-        classNames={{ base: 'max-w-5xl select-none', body: 'flex-col sm:flex-row gap-2' }}
+        classNames={{ base: 'select-none', body: 'flex-col sm:flex-row gap-2' }}
         fullWidth>
         <CardBody>
           <Input
@@ -51,7 +54,6 @@ const IndexPage = () => {
             autoComplete="off"
             autoCorrect="off"
             placeholder="کلمات را جستجو کنید"
-            classNames={{ base: 'max-w-5xl' }}
           />
           <ButtonGroup
             variant="shadow"
@@ -98,7 +100,6 @@ const IndexPage = () => {
       <Card
         fullWidth
         classNames={{
-          base: 'max-w-5xl',
           body: 'p-0',
           footer: 'flex select-none items-center justify-between text-tiny'
         }}>
@@ -128,25 +129,53 @@ const IndexPage = () => {
           </CardFooter>
         </Skeleton>
       </Card>
-      <Card
-        fullWidth
-        classNames={{
-          base: 'max-w-5xl select-none',
-          body: 'items-center flex justify-center flex-row gap-4',
-          header: 'text-large font-bold',
-          footer: 'flex items-center justify-between text-tiny'
-        }}>
-        <CardHeader>آمار پیشرفت</CardHeader>
-        <Divider />
-        <CardBody>
-          <Stat
-            isLoading={isLoading}
-            value={(trainings.length * 100) / words.length}>
-            {trainings.length} کلمه تمرین کردید
-          </Stat>
-          <ExamsLineChart />
-        </CardBody>
-      </Card>
+      <Divider />
+      <div className="flex w-full flex-col gap-2 md:flex-row">
+        <Card
+          classNames={{
+            base: 'select-none h-fit p-1',
+            header: 'text-large font-bold flex items-center gap-2',
+            body: 'flex gap-3 flex-row'
+          }}>
+          <CardHeader>
+            <IoPieChartOutline className="h-6 w-6 text-blue-500" />
+            آمار تمرین‌ها
+          </CardHeader>
+          <CardBody>
+            <div className="flex flex-col items-start justify-between gap-1">
+              <p className="text-2xl font-bold">{formatPercent(trainings.length / words.length)}</p>
+              <p className="text-small text-default-400">
+                باقی‌مانده&nbsp;
+                <span className="font-bold text-foreground">{formatDecimal(words.length - trainings.length)}</span>
+                &nbsp;کلمه
+              </p>
+            </div>
+            <TrainingPieChart />
+          </CardBody>
+        </Card>
+        <Card
+          fullWidth
+          classNames={{
+            base: 'select-none max-w-full',
+            header: 'text-large font-bold flex items-center gap-2',
+            body: 'w-full h-fit',
+            footer: 'flex select-none items-center justify-between text-tiny'
+          }}>
+          <CardHeader>
+            <PiExam className="h-6 w-6 text-purple-500" />
+            پیشرفت آزمون‌ها
+          </CardHeader>
+          <CardBody>
+            <ExamsLineChart />
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <p>
+              <span className="font-bold">{formatDecimal(exams.length)}</span> مرتبه جمعا آزمون دادید.
+            </p>
+          </CardFooter>
+        </Card>
+      </div>
       <TrainModal
         trainOption={trainOption[0]}
         isOpen={isOpen}
