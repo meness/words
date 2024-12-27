@@ -18,12 +18,13 @@ import { appConfig } from '~configs';
 import { getIsNoticeAlertVisible, storeIsNoticeAlertVisible } from '~helpers';
 import { useExamsQuery, useTrainingsQuery, useWords } from '~hooks';
 import { FullscreenLayout } from '~layouts';
+import { useConfigStore } from '~stores';
 import { formatDecimal, formatPercent } from '~utils';
 
 const IndexPage = () => {
   const [query, setQuery] = useState('');
   const { isOpen, onClose, onOpenChange } = useDisclosure();
-  const [trainOption, setTrainOption] = useState<[TRAIN_TYPE]>([TRAIN_TYPE.SCRATCH]);
+  const { trainType, setTrainType } = useConfigStore((state) => state);
   const { isLoading, data: words } = useWords();
   const trainings = useTrainingsQuery();
   const exams = useExamsQuery();
@@ -95,7 +96,7 @@ const IndexPage = () => {
             <Button
               onPress={onOpenChange}
               className="w-full sm:w-full">
-              تمرین&nbsp;{trainOptions[trainOption[0]].label}
+              تمرین&nbsp;{trainOptions[trainType].label}
             </Button>
             <Dropdown
               shouldBlockScroll={false}
@@ -112,11 +113,11 @@ const IndexPage = () => {
                 disallowEmptySelection
                 aria-label="گزینه‌های تمرین"
                 className="max-w-[300px]"
-                selectedKeys={trainOption}
+                selectedKeys={[trainType]}
                 disabledKeys={!trainings.length ? [TRAIN_TYPE.TRAINED] : []}
                 selectionMode="single"
                 onSelectionChange={(key) => {
-                  setTrainOption([key.currentKey as TRAIN_TYPE]);
+                  setTrainType(key.currentKey as TRAIN_TYPE);
                 }}>
                 {Object.entries(trainOptions).map(([key, { description, label }]) => (
                   <DropdownItem
@@ -210,12 +211,12 @@ const IndexPage = () => {
         </Card>
       </div>
       <TrainModal
-        trainOption={trainOption[0]}
+        trainOption={trainType}
         isOpen={isOpen}
         onClose={onClose}
         words={words}
         onTrainOptionChange={(changedTrainOption) => {
-          setTrainOption([changedTrainOption]);
+          setTrainType(changedTrainOption);
         }}
       />
     </div>
