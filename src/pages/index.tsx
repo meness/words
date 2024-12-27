@@ -1,3 +1,4 @@
+import { Alert } from '@nextui-org/alert';
 import { Button, ButtonGroup } from '@nextui-org/button';
 import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/card';
 import { Divider } from '@nextui-org/divider';
@@ -6,7 +7,7 @@ import { Input } from '@nextui-org/input';
 import { useDisclosure } from '@nextui-org/modal';
 import { Skeleton } from '@nextui-org/skeleton';
 import Link from 'next/link';
-import { useMemo, useState, type ReactElement } from 'react';
+import { useEffect, useMemo, useState, type ReactElement } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 import { IoPieChartOutline } from 'react-icons/io5';
 import { PiExam } from 'react-icons/pi';
@@ -14,6 +15,7 @@ import { trainOptions } from '~common/consts';
 import { TRAIN_TYPE } from '~common/enums';
 import { ExamsLineChart, TrainingPieChart, TrainModal, WordsTable } from '~components';
 import { appConfig } from '~configs';
+import { getIsNoticeAlertVisible, storeIsNoticeAlertVisible } from '~helpers';
 import { useExamsQuery, useTrainingsQuery, useWords } from '~hooks';
 import { FullscreenLayout } from '~layouts';
 import { formatDecimal, formatPercent } from '~utils';
@@ -25,6 +27,7 @@ const IndexPage = () => {
   const { isLoading, data: words } = useWords();
   const trainings = useTrainingsQuery();
   const exams = useExamsQuery();
+  const [isNoticeAlertVisible, setIsNoticeAlertVisible] = useState(false);
 
   const filteredWords = useMemo(() => {
     if (!words.length) {
@@ -37,8 +40,38 @@ const IndexPage = () => {
     words.length
   ]);
 
+  useEffect(() => {
+    setIsNoticeAlertVisible(getIsNoticeAlertVisible());
+  }, []);
+
+  const handleDismissNoticeAlert = () => {
+    setIsNoticeAlertVisible(false);
+    storeIsNoticeAlertVisible(false);
+  };
+
   return (
     <div className="mx-auto my-10 flex max-w-5xl flex-col place-content-center place-items-center gap-6">
+      <Alert
+        title="توجه"
+        color="primary"
+        variant="bordered"
+        isVisible={isNoticeAlertVisible}
+        classNames={{
+          title: 'font-bold text-medium',
+          iconWrapper: 'mb-auto text-white',
+          base: 'select-none flex items-center'
+        }}
+        endContent={
+          <Button
+            color="primary"
+            size="sm"
+            onPress={handleDismissNoticeAlert}
+            variant="solid">
+            متوجه شدم
+          </Button>
+        }
+        description="این ابزار رایگان به شما کمک می‌کند دایره لغات انگلیسی خود را تقویت کنید. تمرکز فعلی بر کلمات تخصصی حقوق، به‌ویژه تجارت بین‌الملل و سایر زیرشاخه‌ها است."
+      />
       <Card
         isDisabled={isLoading}
         classNames={{ base: 'select-none', body: 'flex-col sm:flex-row gap-2' }}
