@@ -9,7 +9,7 @@ import Head from 'next/head';
 import { type ReactElement } from 'react';
 import '~assets/css/theme.css';
 import { GlobalErrorBoundary } from '~components';
-import { uiConfig } from '~configs';
+import { appConfig, uiConfig } from '~configs';
 import '~configs/database.config';
 import { ThemeProvider } from '~providers';
 
@@ -20,18 +20,18 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <>
       <DefaultSeo
-        defaultTitle="تمرین کلمات انگلیسی"
-        titleTemplate="%s - تمرین کلمات انگلیسی"
-        description="کاملا رایگان کلمات انگلیسی را تمرین کنید و از خود آزمون بگیرید."
+        defaultTitle="تمرین کلمات انگلیسی حقوقی"
+        titleTemplate="%s - تمرین کلمات انگلیسی حقوقی"
+        description={appConfig.meta.description}
         openGraph={{
           locale: 'fa-IR',
           type: 'website',
-          title: 'تمرین کلمات انگلیسی',
-          description: 'کاملا رایگان کلمات انگلیسی را تمرین کنید، دایره لغات خود را بزرگتر کنید و از خود آزمون بگیرید.',
+          title: appConfig.meta.title,
+          description: appConfig.meta.description,
           images: [
             {
               url: 'https://wwwords.ir/assets/images/metatag.jpg',
-              alt: 'تمرین کلمات انگلیسی',
+              alt: appConfig.meta.title,
               type: 'image/jpeg'
             }
           ]
@@ -42,7 +42,7 @@ const AppPage = ({ Component, pageProps }: AppPropsWithLayout) => {
         }}
       />
       <OrganizationJsonLd
-        name="تمرین کلمات انگلیسی"
+        name={appConfig.meta.title}
         url="https://wwwords.ir"
         logo="https://wwwords.ir/favicon.svg"
         sameAs={['https://twitter.com/wwwords_ir']}
