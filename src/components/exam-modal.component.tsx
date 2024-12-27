@@ -86,8 +86,8 @@ const NoTrainingContent = ({ onClose }: NoTrainingContentProps) => (
     <ModalBody>
       <Alert
         color="primary"
-        title="هنوز کلمه‌ای تمرین نکردید!"
-        classNames={{ base: 'select-none' }}
+        variant="bordered"
+        classNames={{ iconWrapper: 'text-white', base: 'select-none' }}
         description="ابتدا چند کلمه‌ای تمرین کنید سپس پیشرفت خود را با این ابزار بسنجید."
       />
     </ModalBody>
