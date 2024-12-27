@@ -204,7 +204,7 @@ const IndexPage = () => {
           <Divider />
           <CardFooter>
             <p>
-              <span className="font-bold">{formatDecimal(exams.length)}</span> مرتبه جمعا آزمون دادید.
+              <span className="font-bold">{formatDecimal(exams.length)}</span> مرتبه تا کنون آزمون دادید.
             </p>
           </CardFooter>
         </Card>

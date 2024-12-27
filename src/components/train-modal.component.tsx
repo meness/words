@@ -61,7 +61,7 @@ const NoTrainingContent = ({ onClose, onTrainOptionChange }: NoTrainingContentPr
         variant="ghost"
         fullWidth
         onPress={onClose}>
-        بیخیال
+        بعدا ادامه می‌دهم
       </Button>
     </ModalFooter>
   </>
