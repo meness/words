@@ -10,7 +10,7 @@ import { EXAM_TYPE } from '~common/enums';
 import { Exam, TrainingWord, Word } from '~common/types';
 import { deleteTrainingEntity, storeExamEntity } from '~helpers';
 import { useTrainingsQuery } from '~hooks';
-import { getRandomIndexes, shuffleArray } from '~utils';
+import { formatDecimal, getRandomIndexes, shuffleArray } from '~utils';
 import { Stat } from './stat.component';
 
 type ExamModalProps = {
@@ -55,7 +55,9 @@ const CompletedExamContent = ({
       <Stat
         value={(rightAnswersCount * 100) / trainingWordsCount}
         isLoading={false}>
-        {rightAnswersCount === trainingWordsCount ? 'همه را درست جواب دادید' : `${rightAnswersCount} جواب درست دادید`}
+        {rightAnswersCount === trainingWordsCount
+          ? 'همه را درست جواب دادید'
+          : `${formatDecimal(rightAnswersCount)} جواب درست دادید`}
       </Stat>
     </ModalBody>
     <ModalFooter className="flex flex-col gap-2 md:flex-row">
@@ -127,7 +129,7 @@ const ExamContent = ({
           maxValue={trainingWords.length}
           value={trainedWordIndex + 1}
         />
-        سوال {trainedWordIndex + 1} از {trainingWordsCount}
+        سوال {formatDecimal(trainedWordIndex + 1)} از {formatDecimal(trainingWordsCount)}
       </ModalHeader>
       <ModalBody>
         <div

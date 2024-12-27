@@ -12,6 +12,7 @@ import { TRAIN_TYPE } from '~common/enums';
 import { TrainingWord, Word } from '~common/types';
 import { storeTrainingEntity } from '~helpers';
 import { useTrainingsQuery } from '~hooks';
+import { formatDecimal } from '~utils';
 
 type TrainModalProps = {
   isOpen: boolean;
@@ -102,7 +103,7 @@ const TrainContent = ({
           size="sm"
         />
         <p>
-          تمرین کلمه {trainedWordIndex + 1} از {trainingWordsCount}
+          تمرین کلمه {formatDecimal(trainedWordIndex + 1)} از {formatDecimal(trainingWordsCount)}
         </p>
       </ModalHeader>
       <ModalBody>
@@ -156,7 +157,7 @@ const TrainContent = ({
           onPress={() => {
             setTrainedWordHint(true);
           }}>
-          راهنمایی بگیر
+          راهنمایی
         </Button>
         <ButtonGroup className="order-2 md:order-1">
           <Button
