@@ -1,3 +1,5 @@
+'use client';
+
 import Dexie from 'dexie';
 import { ExamsDbTable } from '~entities/exams-db-table.entity';
 import { TrainingsDbTable } from '~entities/trainings-db-table.entity';
