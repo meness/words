@@ -16,6 +16,7 @@ import {
 } from '@heroui/navbar';
 import { Skeleton } from '@heroui/skeleton';
 import { motion } from 'motion/react';
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 import { HiCurrencyDollar } from 'react-icons/hi2';
@@ -28,9 +29,13 @@ import { RiEnglishInput } from 'react-icons/ri';
 import { examOption } from '~common/consts/exam-option.const';
 import { EXAM_TYPE } from '~common/enums/exam-type.enum';
 import { useWords } from '~hooks/use-words.hook';
-import { ExamModal } from './exam-modal.component';
 import { Logo } from './logo.component';
-import { ThemeDropdown } from './theme-dropdown.component';
+
+const ThemeDropdown = dynamic(() => import('./theme-dropdown.component').then((module) => module.ThemeDropdown), {
+  ssr: false
+});
+
+const ExamModal = dynamic(() => import('./exam-modal.component').then((module) => module.ExamModal), { ssr: false });
 
 type FeaturesDropdownItem = { id: string; icon: IconType; description: string; label: string };
 

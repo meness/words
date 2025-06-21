@@ -8,6 +8,7 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@heroui/d
 import { Input } from '@heroui/input';
 import { useDisclosure } from '@heroui/modal';
 import { Skeleton } from '@heroui/skeleton';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
@@ -17,7 +18,6 @@ import { useShallow } from 'zustand/shallow';
 import { trainOption } from '~common/consts/train-option.const';
 import { TRAIN_TYPE } from '~common/enums/train-type.enum';
 import { ExamsLineChart } from '~components/exams-line-chart.component';
-import { TrainModal } from '~components/train-modal.component';
 import { TrainingPieChart } from '~components/trainings-pie-chart.component';
 import { WordsTable } from '~components/words-table.component';
 import { app } from '~configs/app.config';
@@ -27,6 +27,10 @@ import { useTrainings } from '~hooks/use-trainings.hook';
 import { useWords } from '~hooks/use-words.hook';
 import { usePreferences } from '~stores/preferences.store';
 import { formatDecimal, formatPercent } from '~utils/number.util';
+
+const TrainModal = dynamic(() => import('~components/train-modal.component').then((module) => module.TrainModal), {
+  ssr: false
+});
 
 const HomePage = () => {
   const [query, setQuery] = useState('');
