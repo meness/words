@@ -19,8 +19,9 @@
     "davidanson.vscode-markdownlint",
     "dsznajder.es7-react-js-snippets",
     "wallabyjs.console-ninja",
-    "imgildev.vscode-auto-barrel",
     "streetsidesoftware.code-spell-checker-persian",
-    "mechatroner.rainbow-csv"
+    "mechatroner.rainbow-csv",
+    "vitest.explorer",
+    "streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries"
   ]
 }

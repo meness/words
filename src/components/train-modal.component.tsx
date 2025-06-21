@@ -1,18 +1,20 @@
-import { Alert } from '@nextui-org/alert';
-import { Button, ButtonGroup } from '@nextui-org/button';
-import { Divider } from '@nextui-org/divider';
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/modal';
-import { Progress } from '@nextui-org/progress';
-import { Switch } from '@nextui-org/switch';
-import { AnimatePresence, motion } from 'framer-motion';
+import { Alert } from '@heroui/alert';
+import { Button, ButtonGroup } from '@heroui/button';
+import { Divider } from '@heroui/divider';
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@heroui/modal';
+import { Progress } from '@heroui/progress';
+import { Switch } from '@heroui/switch';
+import { AnimatePresence } from 'motion/react';
+import * as motion from 'motion/react-client';
 import { Dispatch, DispatchWithoutAction, SetStateAction, useMemo, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import { MdDone } from 'react-icons/md';
-import { TRAIN_TYPE } from '~common/enums';
-import { TrainingWord, Word } from '~common/types';
-import { storeTrainingEntity } from '~helpers';
-import { useTrainingsQuery } from '~hooks';
-import { formatDecimal } from '~utils';
+import { TRAIN_TYPE } from '~common/enums/train-type.enum';
+import { TrainingWord } from '~common/types/training-word.type';
+import { Word } from '~common/types/word.type';
+import { storeTrainingEntity } from '~helpers/database.helper';
+import { useTrainings } from '~hooks/use-trainings.hook';
+import { formatDecimal } from '~utils/number.util';
 
 type TrainModalProps = {
   isOpen: boolean;
@@ -87,7 +89,7 @@ const TrainContent = ({
       <ModalHeader className="flex items-center gap-3">
         <Progress
           aria-label="وضعیت پیشرفت تمرین"
-          className="absolute left-0 right-0 top-0 max-w-full"
+          className="absolute start-0 end-0 top-0 max-w-full"
           color="success"
           showValueLabel={false}
           size="sm"
@@ -108,7 +110,7 @@ const TrainContent = ({
       </ModalHeader>
       <ModalBody>
         <div
-          className="text-center font-inter text-4xl"
+          className="font-inter text-center text-4xl"
           dir="ltr">
           <p className="font-bold">{currentTrainingWord.word}</p>
           <p className="text-medium">{currentTrainingWord.pronunciation}</p>
@@ -123,16 +125,16 @@ const TrainContent = ({
               className="my-2"
               transition={{ duration: 0.2 }}>
               <p>
-                <span className="select-none text-gray-500">معنی حقوقی:</span>&nbsp;
+                <span className="text-gray-500 select-none">معنی حقوقی:</span>&nbsp;
                 {currentTrainingWord.meaning}
               </p>
               <Divider className="my-2" />
               <p>
-                <span className="select-none text-gray-500">توضیح:</span>&nbsp;{currentTrainingWord.description}
+                <span className="text-gray-500 select-none">توضیح:</span>&nbsp;{currentTrainingWord.description}
               </p>
               <Divider className="my-2" />
               <p>
-                <span className="select-none text-gray-500">مثال:</span>&nbsp;
+                <span className="text-gray-500 select-none">مثال:</span>&nbsp;
                 <span
                   dir="ltr"
                   className="font-inter">
@@ -141,7 +143,7 @@ const TrainContent = ({
               </p>
               <Divider className="my-2" />
               <p>
-                <span className="select-none text-gray-500">ترجمه:</span>&nbsp;{currentTrainingWord.translation}
+                <span className="text-gray-500 select-none">ترجمه:</span>&nbsp;{currentTrainingWord.translation}
               </p>
             </motion.div>
           )}
@@ -190,7 +192,7 @@ export const TrainModal = ({ isOpen, onClose, trainOption, words, onTrainOptionC
   const [trainedWordIndex, setTrainedWordIndex] = useState(0);
   const [trainedWordHint, setTrainedWordHint] = useState(false);
   const [hintAlways, setHintAlways] = useState(false);
-  const trainings = useTrainingsQuery();
+  const trainings = useTrainings();
 
   const trainingWords = useMemo<TrainingWord[]>(() => {
     const data = words.map<TrainingWord>((word) => {

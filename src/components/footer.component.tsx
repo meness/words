@@ -1,5 +1,5 @@
-import { Card, CardBody } from '@nextui-org/card';
-import { Divider } from '@nextui-org/divider';
+import { Card, CardBody } from '@heroui/card';
+import { Divider } from '@heroui/divider';
 import { Logo } from './logo.component';
 
 export const Footer = () => (

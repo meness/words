@@ -6,12 +6,13 @@ import typescriptParser from '@typescript-eslint/parser';
 import jsdoc from 'eslint-plugin-jsdoc';
 import jsonPlugin from 'eslint-plugin-json';
 import prettier from 'eslint-plugin-prettier';
-import yamlPlugin from 'eslint-plugin-yaml';
+import yamlPlugin from 'eslint-plugin-yml';
 import globals from 'globals';
 import jsonParser from 'jsonc-eslint-parser';
-import yamlParser from 'yaml-eslint-parser';
 
 export default [
+  // YAML specific configuration
+  ...yamlPlugin.configs['flat/recommended'],
   {
     // Common configuration for all file types
     files: ['**/*.{js,ts,tsx,json,yml,yaml}'],
@@ -94,16 +95,6 @@ export default [
       '@stylistic/lines-between-class-members': 'warn',
       'jsdoc/check-param-names': 'off',
       'default-case': 'off'
-    }
-  },
-  {
-    // YAML specific configuration
-    files: ['**/*.{yml,yaml}'],
-    languageOptions: {
-      parser: yamlParser
-    },
-    plugins: {
-      yaml: yamlPlugin
     }
   },
   {

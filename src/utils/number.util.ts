@@ -16,11 +16,12 @@ export const getRandomIndexes = (min: number, max: number, exclude: number, coun
   return Array.from(result);
 };
 
-export const formatDecimal = (decimal: number) => Intl.NumberFormat('fa-IR', { style: 'decimal' }).format(decimal);
+export const formatDecimal = (value: number, locale: Intl.LocalesArgument = 'fa-IR') =>
+  Intl.NumberFormat(locale, { style: 'decimal' }).format(value);
 
-export const formatPercent = (percent: number) =>
-  Intl.NumberFormat('fa-IR', {
+export const formatPercent = (value: number, locale: Intl.LocalesArgument = 'fa-IR') =>
+  Intl.NumberFormat(locale, {
     maximumFractionDigits: 2,
     minimumFractionDigits: 0,
     style: 'percent'
-  }).format(percent);
+  }).format(value);

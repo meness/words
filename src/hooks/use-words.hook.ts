@@ -1,7 +1,9 @@
+'use client';
+
 import { useEffect, useState } from 'react';
-import { CsvApi } from '~apis';
-import { Word } from '~common/types';
-import { isTrainingEntityExists } from '~helpers';
+import { Word } from '~common/types/word.type';
+import { isTrainingEntityExists } from '~helpers/database.helper';
+import { CsvService } from '~services/csv.service';
 
 export const useWords = () => {
   const [data, setData] = useState<Word[]>([]);
@@ -14,8 +16,8 @@ export const useWords = () => {
         setIsLoading(true);
         setIsError(false);
 
-        const words = await CsvApi.getWords();
-        const examples = await CsvApi.getExamples();
+        const words = await CsvService.getWords();
+        const examples = await CsvService.getExamples();
 
         const modifiedData = await Promise.all(
           words.rows.map<Promise<Word>>(async (row) => {

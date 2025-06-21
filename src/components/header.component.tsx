@@ -1,8 +1,10 @@
-import { Avatar } from '@nextui-org/avatar';
-import { Button, ButtonGroup } from '@nextui-org/button';
-import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/dropdown';
-import { Link } from '@nextui-org/link';
-import { useDisclosure } from '@nextui-org/modal';
+'use client';
+
+import { Avatar } from '@heroui/avatar';
+import { Button, ButtonGroup } from '@heroui/button';
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@heroui/dropdown';
+import { Link } from '@heroui/link';
+import { useDisclosure } from '@heroui/modal';
 import {
   Navbar,
   NavbarBrand,
@@ -11,31 +13,53 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle
-} from '@nextui-org/navbar';
-import { Skeleton } from '@nextui-org/skeleton';
-import { motion } from 'framer-motion';
+} from '@heroui/navbar';
+import { Skeleton } from '@heroui/skeleton';
+import { motion } from 'motion/react';
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 import { HiCurrencyDollar } from 'react-icons/hi2';
 import { ImMobile } from 'react-icons/im';
 import { IoStatsChart } from 'react-icons/io5';
+import { IconType } from 'react-icons/lib';
 import { MdChecklist } from 'react-icons/md';
 import { PiExam } from 'react-icons/pi';
 import { RiEnglishInput } from 'react-icons/ri';
-import { examOptions } from '~common/consts';
-import { EXAM_TYPE } from '~common/enums';
-import { useWords } from '~hooks';
+import { examOption } from '~common/consts/exam-option.const';
+import { EXAM_TYPE } from '~common/enums/exam-type.enum';
+import { useWords } from '~hooks/use-words.hook';
 import { ExamModal } from './exam-modal.component';
 import { Logo } from './logo.component';
 import { ThemeDropdown } from './theme-dropdown.component';
 
+type FeaturesDropdownItem = { id: string; icon: IconType; description: string; label: string };
+
+const featuresDropdownItems: FeaturesDropdownItem[] = [
+  { id: 'words', icon: RiEnglishInput, description: 'تعداد کلمات به زودی افزایش می‌یابد.', label: '۵۱۷ کلمه' },
+  { id: 'training', icon: MdChecklist, description: 'کلمات را به ۳ روش ساده تمرین کنید.', label: 'تمرین کلمات' },
+  { id: 'exams', icon: PiExam, description: 'به ۲ روش از خود آزمون بگیرید.', label: 'آزمون' },
+  {
+    id: 'free',
+    icon: HiCurrencyDollar,
+    description: 'تمام قابلیت‌ها رایگان در اختیار شما قرار دارد.',
+    label: 'کاملا رایگان'
+  },
+  {
+    id: 'stats',
+    icon: IoStatsChart,
+    description: 'وضعیت پیشرفت خود را پس از هر آزمون مشاهده کنید.',
+    label: 'آمار'
+  },
+  { id: 'design', icon: ImMobile, description: 'حتی با تلفن همراه تجربه خوبی خواهید داشت.', label: 'طراحی واکنش‌گرا' }
+];
+
 const FeaturesItem = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { isOpen: isDropdownOpen, onOpenChange: onDropdownOpenChange } = useDisclosure({ defaultOpen: false });
 
   return (
     <Dropdown
       shouldBlockScroll={false}
-      onOpenChange={setIsDropdownOpen}>
+      onOpenChange={onDropdownOpenChange}>
       <NavbarItem>
         <DropdownTrigger>
           <Button
@@ -64,51 +88,27 @@ const FeaturesItem = () => {
         itemClasses={{
           base: 'gap-4'
         }}>
-        <DropdownItem
-          key="training"
-          startContent={<RiEnglishInput className="shrink-0" />}
-          description="تعداد کلمات به زودی افزایش می‌یابد.">
-          ۵۱۷ کلمه
-        </DropdownItem>
-        <DropdownItem
-          key="training"
-          startContent={<MdChecklist className="shrink-0" />}
-          description="کلمات را به ۳ روش ساده تمرین کنید.">
-          تمرین کلمات
-        </DropdownItem>
-        <DropdownItem
-          key="exams"
-          startContent={<PiExam className="shrink-0" />}
-          description="به ۲ روش از خود آزمون بگیرید.">
-          آزمون
-        </DropdownItem>
-        <DropdownItem
-          key="free"
-          startContent={<HiCurrencyDollar className="shrink-0" />}
-          description="تمام قابلیت‌ها رایگان در اختیار شما قرار دارد.">
-          کاملا رایگان
-        </DropdownItem>
-        <DropdownItem
-          key="stats"
-          startContent={<IoStatsChart className="shrink-0" />}
-          description="وضعیت پیشرفت خود را حتی پس از هر آزمون مشاهده کنید.">
-          آمار
-        </DropdownItem>
-        <DropdownItem
-          key="design"
-          startContent={<ImMobile className="shrink-0" />}
-          description="حتی با تلفن همراه تجربه خوبی خواهید داشت.">
-          طراحی واکنش‌گرا
-        </DropdownItem>
+        {featuresDropdownItems.map(({ id, icon: Icon, description, label }) => (
+          <DropdownItem
+            key={id}
+            startContent={<Icon className="shrink-0" />}
+            description={description}>
+            {label}
+          </DropdownItem>
+        ))}
       </DropdownMenu>
     </Dropdown>
   );
 };
 
 export const Header = () => {
-  const [examOption, setExamOption] = useState<[EXAM_TYPE]>([EXAM_TYPE.MEANING]);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isOpen, onClose, onOpenChange } = useDisclosure();
+  const [selectedExamOption, setSelectedExamOption] = useState<[EXAM_TYPE]>([EXAM_TYPE.MEANING]);
+  const { isOpen: isMenuOpen, onOpenChange: onMenuOpenChange } = useDisclosure({ defaultOpen: false });
+  const {
+    isOpen: isExamModalOpen,
+    onClose,
+    onOpenChange: onExamModalOpenChange
+  } = useDisclosure({ defaultOpen: false });
   const { isLoading, data: words } = useWords();
 
   return (
@@ -117,7 +117,7 @@ export const Header = () => {
       position="static"
       classNames={{ base: 'select-none' }}
       maxWidth="full"
-      onMenuOpenChange={setIsMenuOpen}>
+      onMenuOpenChange={onMenuOpenChange}>
       <NavbarMenuToggle
         aria-label={isMenuOpen ? 'منوی بسته شود' : 'منوی باز شود'}
         className="sm:hidden"
@@ -144,9 +144,9 @@ export const Header = () => {
             isDisabled={isLoading}
             color="primary">
             <Button
-              onPress={onOpenChange}
+              onPress={onExamModalOpenChange}
               className="w-full sm:w-full">
-              آزمون&nbsp;{examOptions[examOption[0]].label}
+              آزمون&nbsp;{examOption[selectedExamOption[0]].label}
             </Button>
             <Dropdown
               shouldBlockScroll={false}
@@ -163,12 +163,12 @@ export const Header = () => {
                 disallowEmptySelection
                 aria-label="گزینه‌های آزمون"
                 className="max-w-[300px]"
-                selectedKeys={examOption}
+                selectedKeys={selectedExamOption}
                 selectionMode="single"
                 onSelectionChange={(key) => {
-                  setExamOption([key.currentKey as EXAM_TYPE]);
+                  setSelectedExamOption([key.currentKey as EXAM_TYPE]);
                 }}>
-                {Object.entries(examOptions).map(([key, { description, label }]) => (
+                {Object.entries(examOption).map(([key, { description, label }]) => (
                   <DropdownItem
                     key={key}
                     description={description}>
@@ -193,10 +193,10 @@ export const Header = () => {
         <ThemeDropdown />
       </NavbarContent>
       <ExamModal
-        isOpen={isOpen}
+        isOpen={isExamModalOpen}
         onClose={onClose}
         words={words}
-        examType={examOption[0]}
+        examType={selectedExamOption[0]}
       />
     </Navbar>
   );

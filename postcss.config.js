@@ -2,21 +2,7 @@ export default {
   plugins:
     process.env.NODE_ENV === 'production'
       ? [
-          ['postcss-import', { path: ['./src/assets/css'] }],
-          'tailwindcss',
-          [
-            'postcss-preset-env',
-            {
-              minimumVendorImplementations: 2,
-              stage: 3,
-              features: {
-                clamp: true,
-                'place-properties': true,
-                'system-ui-font-family': true
-              },
-              autoprefixer: { flexbox: false }
-            }
-          ],
+          '@tailwindcss/postcss',
           [
             'cssnano',
             {
@@ -24,5 +10,5 @@ export default {
             }
           ]
         ]
-      : [['postcss-import', { path: ['./src/assets/css'] }], 'tailwindcss', ['autoprefixer', { flexbox: false }]]
+      : ['@tailwindcss/postcss']
 };

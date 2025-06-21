@@ -1,17 +1,22 @@
-import { Alert } from '@nextui-org/alert';
-import { Button } from '@nextui-org/button';
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/modal';
-import { Progress } from '@nextui-org/progress';
-import { Radio, RadioGroup } from '@nextui-org/radio';
+'use client';
+
+import { Alert } from '@heroui/alert';
+import { Button } from '@heroui/button';
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@heroui/modal';
+import { Progress } from '@heroui/progress';
+import { Radio, RadioGroup } from '@heroui/radio';
 import { Dispatch, DispatchWithoutAction, SetStateAction, useEffect, useMemo, useState } from 'react';
 import { FaChevronLeft } from 'react-icons/fa6';
 import { MdDone } from 'react-icons/md';
-import { EXAM_TYPE } from '~common/enums';
-import { Exam, TrainingWord, Word } from '~common/types';
-import { deleteTrainingEntity, storeExamEntity } from '~helpers';
-import { useTrainingsQuery } from '~hooks';
-import { formatDecimal, getRandomIndexes, shuffleArray } from '~utils';
-import { Stat } from './stat.component';
+import { EXAM_TYPE } from '~common/enums/exam-type.enum';
+import { Exam } from '~common/types/exam.type';
+import { TrainingWord } from '~common/types/training-word.type';
+import { Word } from '~common/types/word.type';
+import { deleteTrainingEntity, storeExamEntity } from '~helpers/database.helper';
+import { useTrainings } from '~hooks/use-trainings.hook';
+import { shuffleArray } from '~utils/array.util';
+import { formatDecimal, getRandomIndexes } from '~utils/number.util';
+import { Stats } from './stats.component';
 
 type ExamModalProps = {
   isOpen: boolean;
@@ -52,13 +57,13 @@ const CompletedExamContent = ({
   <>
     <ModalHeader>پایان آزمون</ModalHeader>
     <ModalBody className="place-items-center">
-      <Stat
+      <Stats
         value={(rightAnswersCount * 100) / trainingWordsCount}
         isLoading={false}>
         {rightAnswersCount === trainingWordsCount
           ? 'همه را درست جواب دادید'
           : `${formatDecimal(rightAnswersCount)} جواب درست دادید`}
-      </Stat>
+      </Stats>
     </ModalBody>
     <ModalFooter className="flex flex-col gap-2 md:flex-row">
       <Button
@@ -88,7 +93,7 @@ const NoTrainingContent = ({ onClose }: NoTrainingContentProps) => (
         color="primary"
         variant="bordered"
         classNames={{ iconWrapper: 'text-white', base: 'select-none' }}
-        description="ابتدا چند کلمه‌ای تمرین کنید سپس پیشرفت خود را با این ابزار بسنجید."
+        description="ابتدا چند کلمه تمرین کنید سپس پیشرفت خود را با این ابزار بسنجید."
       />
     </ModalBody>
     <ModalFooter>
@@ -122,7 +127,7 @@ const ExamContent = ({
       <ModalHeader className="flex items-center gap-3">
         <Progress
           aria-label="وضعیت پیشرفت آزمون"
-          className="absolute left-0 right-0 top-0 max-w-full"
+          className="absolute start-0 end-0 top-0 max-w-full"
           color="success"
           showValueLabel={false}
           size="sm"
@@ -133,7 +138,7 @@ const ExamContent = ({
       </ModalHeader>
       <ModalBody>
         <div
-          className="text-center font-inter text-4xl"
+          className="font-inter text-center text-4xl"
           dir="ltr">
           <p className="font-bold">{currentTrainingWord.word}</p>
           <p className="text-medium">{currentTrainingWord.pronunciation}</p>
@@ -183,7 +188,7 @@ export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) 
   const [exams, setExams] = useState<Exam[]>([]);
   const [chosenAnswer, setChosenAnswer] = useState<string | null>(null);
   const [isExamCompleted, setIsExamCompleted] = useState(false);
-  const trainings = useTrainingsQuery();
+  const trainings = useTrainings();
 
   const trainingWords = useMemo<TrainingWord[]>(() => {
     const data = words.flatMap<TrainingWord>((word) => {
@@ -197,11 +202,7 @@ export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) 
     });
 
     return shuffleArray(data);
-  }, [
-    words,
-    trainings,
-    isOpen
-  ]);
+  }, [words, trainings, isOpen]);
 
   const handleClose = () => {
     setTrainedWordIndex(0);

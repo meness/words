@@ -1,11 +1,11 @@
-const onProduction = process.env.NEXT_PUBLIC_APP_ENV === 'production';
-const onStaging = process.env.NEXT_PUBLIC_APP_ENV === 'staging';
-const onDevelopment = process.env.NEXT_PUBLIC_APP_ENV === 'development';
-const onProductionOrStaging = onProduction || onStaging;
+const isProduction = process.env.NEXT_PUBLIC_APP_ENV === 'production';
+const isStaging = process.env.NEXT_PUBLIC_APP_ENV === 'staging';
+const isDevelopment = process.env.NEXT_PUBLIC_APP_ENV === 'development';
+const isProductionOrStaging = isProduction || isStaging;
 
-export const env = {
-  onDevelopment,
-  onProductionOrStaging,
-  onProduction,
-  onStaging
+export const envs = {
+  isDevelopment,
+  isProductionOrStaging,
+  isProduction,
+  isStaging
 };

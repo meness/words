@@ -1,17 +1,22 @@
-import { Checkbox } from '@nextui-org/checkbox';
-import { getKeyValue } from '@nextui-org/shared-utils';
-import { Spinner } from '@nextui-org/spinner';
-import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/table';
-import { useInfiniteScroll } from '@nextui-org/use-infinite-scroll';
+'use client';
+
+import { Checkbox } from '@heroui/checkbox';
+import { getKeyValue } from '@heroui/shared-utils';
+import { Spinner } from '@heroui/spinner';
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@heroui/table';
+import { useInfiniteScroll } from '@heroui/use-infinite-scroll';
 import { useAsyncList } from '@react-stately/data';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useState } from 'react';
 import { twJoin } from 'tailwind-merge';
-import { Cursor, TableHeaderKeyLabel, TrainingWord, Word } from '~common/types';
-import { appConfig } from '~configs';
-import { deleteTrainingEntity, storeTrainingEntity } from '~helpers';
-import { useTrainingsQuery } from '~hooks';
-import { formatDecimal } from '~utils';
+import { Cursor } from '~common/types/cursor.type';
+import { TableHeaderKeyLabel } from '~common/types/table-header-key-label.type';
+import { TrainingWord } from '~common/types/training-word.type';
+import { Word } from '~common/types/word.type';
+import { app } from '~configs/app.config';
+import { deleteTrainingEntity, storeTrainingEntity } from '~helpers/database.helper';
+import { useTrainings } from '~hooks/use-trainings.hook';
+import { formatDecimal } from '~utils/number.util';
 
 const columns: TableHeaderKeyLabel<TrainingWord[]>[] = [
   { key: 'id', label: '#' },
@@ -29,7 +34,7 @@ type WordsTableProps = {
 
 export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
   const [hasMore, setHasMore] = useState(false);
-  const trainings = useTrainingsQuery();
+  const trainings = useTrainings();
 
   const list = useAsyncList<TrainingWord, Cursor>({
     getKey(item) {
@@ -38,11 +43,11 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
     async load({ items, cursor }) {
       setHasMore(items.length !== words.length);
 
-      const nextStart = cursor?.end ?? appConfig.rowsPerPage;
-      const nextEnd = nextStart + appConfig.rowsPerPage;
+      const nextStart = cursor?.end ?? app.rowsPerPage;
+      const nextEnd = nextStart + app.rowsPerPage;
 
       return {
-        items: trainingWords.slice(cursor?.start ?? 0, cursor?.end ?? appConfig.rowsPerPage),
+        items: trainingWords.slice(cursor?.start ?? 0, cursor?.end ?? app.rowsPerPage),
         cursor: {
           start: nextStart,
           end: nextEnd
@@ -82,6 +87,7 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
     <Table
       shadow="none"
       isStriped
+      aria-label="جدول کلمات"
       align="center"
       isHeaderSticky
       baseRef={scrollerRef}

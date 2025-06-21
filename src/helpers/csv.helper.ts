@@ -1,4 +1,5 @@
-import type { ExampleCsv, WordCsv } from '~common/types';
+import { ExampleCsv } from '~common/types/example-csv.type';
+import { WordCsv } from '~common/types/word-csv.type';
 
 export const parseWordsCsv = (data: string): WordCsv => {
   const splittedRows = data.split('\n').map((row) => row.split(','));

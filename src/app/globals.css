@@ -1,0 +1,37 @@
+/* stylelint-disable-next-line import-notation */
+@import 'tailwindcss';
+
+@plugin '../../heroui.config.ts';
+
+@plugin 'tailwind-scrollbar' {
+  nocompatible: true;
+}
+
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-inter: var(--nextjs-font-inter), sans-serif;
+  --font-yekan-bakh: var(--nextjs-font-yekan-bakh), sans-serif;
+}
+
+@layer base {
+  html {
+    @apply scrollbar-thumb-white/30 scrollbar-track-transparent scroll-smooth;
+
+    scrollbar-gutter: stable;
+  }
+
+  * {
+    @apply scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thin font-yekan-bakh;
+  }
+
+  body {
+    @apply bg-[#f5f5f5] dark:bg-[#1a1a1a];
+  }
+}
+
+@layer components {
+  /* empty */
+}

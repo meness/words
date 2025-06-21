@@ -1,7 +1,7 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts';
 import { useTrainingsPieChartData } from '~hooks/use-trainings-pie-chart-data.hook';
 
-const colors = ['hsl(var(--nextui-primary-500))', 'hsl(var(--nextui-default-200))'];
+const colors = ['hsl(var(--heroui-primary-500))', 'hsl(var(--heroui-default-200))'];
 
 export const TrainingPieChart = () => {
   const data = useTrainingsPieChartData();

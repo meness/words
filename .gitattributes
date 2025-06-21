@@ -1,62 +1,63 @@
-## GITATTRIBUTES FOR WEB PROJECTS
-#
-# These settings are for any web project.
+## GITATTRIBUTES FOR NEXT.JS PROJECT WITH BUN
 #
 # Details per file setting:
-#   text    These files should be normalized (i.e. convert CRLF to LF).
-#   binary  These files are binary and should be left untouched.
+#   text    Normalized (CRLF -> LF) for consistency across platforms.
+#   binary  Left untouched (no normalization or diff).
+#   eol=lf  Enforces LF line endings for text files.
 #
-# Note that binary is a macro for -text -diff.
+# Note: 'binary' is a macro for '-text -diff'.
 ######################################################################
 
-# Auto detect
-##   Handle line endings automatically for files detected as
-##   text and leave all files detected as binary untouched.
-##   This will handle all files NOT defined below.
+# Auto-detect text files and normalize line endings, leave binaries untouched
 *                 text=auto
 
 # Source code
 *.css             text eol=lf
 *.html            text diff=html eol=lf
 *.js              text eol=lf
+*.jsx             text eol=lf
 *.json            text eol=lf
-*.scss            text diff=css eol=lf
 *.ts              text eol=lf
 *.tsx             text eol=lf
 
-# Docker
-Dockerfile        text eol=lf
+# SVG as text (for editing and diffing in a React app)
+*.svg             text eol=lf
+
+# Video and audio files (binary)
+*.mp4             binary
+*.webm            binary
+*.mov             binary
+*.avi             binary
+*.mp3             binary
+*.wav             binary
+
+# Animation files (binary)
+*.lottie          binary
+
+# Config files
+.gitattributes    text eol=lf
+.gitignore        text eol=lf
+*.yml             text eol=lf
+bun.lockb         binary
+.npmrc            text eol=lf
+.prettierignore   text eol=lf
+.browserslistrc   text eol=lf
 
 # Documentation
 *.md              text eol=lf
 
-# Configs
-.env              text eol=lf
-.gitattributes    text eol=lf
-package-lock.json text -diff eol=lf
-*.toml            text eol=lf
-*.yml             text eol=lf
-
-# Graphics
+# Graphics (binary)
 *.ico             binary
 *.jpg             binary
 *.png             binary
-# SVG treated as an asset (binary) by default.
-*.svg             text eol=lf
-# If you want to treat it as binary,
-# use the following line instead.
-# *.svg           binary
 *.webp            binary
 
-# Fonts
+# Fonts (binary)
 *.ttf             binary
 *.eot             binary
 *.otf             binary
 *.woff            binary
 *.woff2           binary
 
-# RC files (like .babelrc or .eslintrc)
+# RC files (e.g., .eslintrc, .prettierrc)
 *.*rc             text eol=lf
-
-# Ignore files (like .npmignore or .gitignore)
-*.*ignore         text eol=lf

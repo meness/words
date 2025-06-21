@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import { useTrainingsQuery } from './use-trainings-query.hook';
+import { useTrainings } from './use-trainings.hook';
 import { useWords } from './use-words.hook';
 
 export const useTrainingsPieChartData = () => {
-  const trainings = useTrainingsQuery();
+  const trainings = useTrainings();
   const { data: words } = useWords();
 
   const data = useMemo(() => {

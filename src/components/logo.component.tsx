@@ -1,4 +1,4 @@
-import { Image, ImageProps } from '@nextui-org/image';
+import { Image, ImageProps } from '@heroui/image';
 
 type LogoProps = ImageProps;
 

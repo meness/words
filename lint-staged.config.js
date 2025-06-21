@@ -1,8 +1,6 @@
+/** @type {import('lint-staged').Configuration} */
 export default {
-  '*.css': ['stylelint --fix', 'prettier --write'],
-  '*.{ts,tsx,js,json,yml}': [
-    'eslint --cache',
-    'prettier --check'
-  ],
+  '*.css': ['prettier --check', 'stylelint'],
+  '*.{ts,tsx,js,jsx,json,yml}': ['prettier --check', 'eslint --cache'],
   '*.{md,svg}': ['prettier --check']
 };

@@ -4,8 +4,8 @@ export default {
   formatter: '@commitlint/format',
   rules: {
     'type-enum': [2, 'always', ['fix', 'ui', 'refactor', 'feat', 'chore', 'test', 'revert', 'perf', 'ci', 'docs']],
-    'subject-max-length': [2, 'always', 72],
-    'body-max-length': [2, 'always', 80],
+    'subject-max-length': [2, 'always', 50],
+    'body-max-length': [2, 'always', 72],
     'subject-case': [1, 'always', 'lower-case']
   },
   defaultIgnores: false,

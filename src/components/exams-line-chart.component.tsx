@@ -1,9 +1,10 @@
-import { Chip, ChipProps } from '@nextui-org/chip';
-import { Tooltip as NextTooltip } from '@nextui-org/tooltip';
+import { Alert } from '@heroui/alert';
+import { Chip, ChipProps } from '@heroui/chip';
+import { Tooltip as NextTooltip } from '@heroui/tooltip';
 import { Bar, ComposedChart, Line, ResponsiveContainer, Tooltip, TooltipProps, XAxis, YAxis } from 'recharts';
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
-import { useExamsLineChartData } from '~hooks';
-import { formatDecimal } from '~utils';
+import { useExamsLineChartData } from '~hooks/use-exams-line-chart-data.hook';
+import { formatDecimal } from '~utils/number.util';
 
 type CustomTooltipProps = TooltipProps<ValueType, NameType>;
 
@@ -44,6 +45,20 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => (
 export const ExamsLineChart = () => {
   const data = useExamsLineChartData();
 
+  if (!data.length) {
+    return (
+      <div>
+        <Alert
+          variant="bordered"
+          hideIconWrapper
+          classNames={{ description: 'text-info-500', base: 'select-none text-info-500 text-right border-info-500' }}
+          title="توجه"
+          description="هنوز آزمونی انجام ندادید."
+        />
+      </div>
+    );
+  }
+
   return (
     <ResponsiveContainer
       width="100%"
@@ -65,19 +80,19 @@ export const ExamsLineChart = () => {
         <Bar
           dataKey="total"
           barSize={30}
-          fill="hsl(var(--nextui-primary-500))"
+          fill="hsl(var(--heroui-primary-500))"
           name="آزمون"
         />
         <Line
           type="monotone"
           dataKey="mistakes"
-          stroke="hsl(var(--nextui-danger-500))"
+          stroke="hsl(var(--heroui-danger-500))"
           name="جواب اشتباه"
         />
         <Line
           type="monotone"
           dataKey="accuracies"
-          stroke="hsl(var(--nextui-success-500))"
+          stroke="hsl(var(--heroui-success-500))"
           name="جواب درست"
         />
       </ComposedChart>

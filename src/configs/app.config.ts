@@ -1,4 +1,4 @@
-export const appConfig = {
+export const app = {
   rowsPerPage: 50,
   developerEmail: 'aesshoferi@gmail.com',
   meta: {

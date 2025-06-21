@@ -1,4 +1,4 @@
-export const routeConst = {
+export const route = {
   notFound: '/404',
   home: '/'
 };

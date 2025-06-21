@@ -1,5 +1,7 @@
 {
   "bracketSameLine": true,
+  "jsonRecursiveSort": true,
+  "jsonSortOrder": "{\"*\": \"lexical\"}",
   "jsxSingleQuote": false,
   "overrides": [
     {

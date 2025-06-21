@@ -1,26 +1,22 @@
 import { useMemo } from 'react';
-import { useExamsQuery } from './use-exams-query.hook';
+import { formatDate } from '~utils/date.util';
+import { useExams } from './use-exams.hook';
 
 export const useExamsLineChartData = () => {
-  const exams = useExamsQuery();
+  const exams = useExams();
 
   const data = useMemo(() => {
     const grouped = exams.reduce(
       (acc, entity) => {
-        const month = Intl.DateTimeFormat('fa-IR', {
-          calendar: 'persian',
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric'
-        }).format(entity.createdAt);
+        const month = formatDate(entity.createdAt);
 
         if (!acc[month]) {
           acc[month] = { total: 0, mistakes: 0, accuracies: 0 };
         }
 
         acc[month].total += 1;
-        acc[month].mistakes += entity.exam.filter((exam) => exam.question.id !== exam.answer?.id).length;
-        acc[month].accuracies += entity.exam.filter((exam) => exam.question.id === exam.answer?.id).length;
+        acc[month].mistakes += entity.exams.filter((exam) => exam.question.id !== exam.answer?.id).length;
+        acc[month].accuracies += entity.exams.filter((exam) => exam.question.id === exam.answer?.id).length;
 
         return acc;
       },

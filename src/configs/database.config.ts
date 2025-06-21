@@ -1,16 +1,17 @@
 import Dexie from 'dexie';
-import { ExamsTableEntity, TrainingsTableEntity } from '~entities';
+import { ExamsDbTable } from '~entities/exams-db-table.entity';
+import { TrainingsDbTable } from '~entities/trainings-db-table.entity';
 
-export const databaseConfig = new Dexie('w', { autoOpen: true, cache: 'immutable' }) as Dexie & {
-  trainings: TrainingsTableEntity;
-  exams: ExamsTableEntity;
+export const database = new Dexie('w', { autoOpen: true, cache: 'immutable' }) as Dexie & {
+  trainings: TrainingsDbTable;
+  exams: ExamsDbTable;
 };
 
-databaseConfig.version(1).stores({
+database.version(1).stores({
   trainings: '++id'
 });
 
-databaseConfig.version(2).stores({
+database.version(2).stores({
   trainings: '++id',
   exams: '++id'
 });
