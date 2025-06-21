@@ -63,6 +63,18 @@ const nextConfig = {
   reactStrictMode: false,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production'
+  },
+  async headers() {
+    return [
+      {
+        source: '/assets/csv/:path*',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: 'https://wwwords.ir' },
+          { key: 'Access-Control-Allow-Methods', value: 'GET' },
+          { key: 'Access-Control-Allow-Headers', value: 'Content-Type' }
+        ]
+      }
+    ];
   }
 };
 
