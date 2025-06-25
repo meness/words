@@ -63,7 +63,14 @@ const nextConfig = {
   reactStrictMode: false,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production'
-  }
+  },
+  redirects: async () => [
+    {
+      source: '/w',
+      destination: '/',
+      permanent: true
+    }
+  ]
 };
 
 const withBundleAnalyzer = nextBundleAnalyzer({

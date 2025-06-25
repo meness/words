@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Word } from '~common/types/word.type';
-import { isTrainingEntityExists } from '~helpers/database.helper';
+import { combineCsvData } from '~helpers/database.helper';
 import { CsvService } from '~services/csv.service';
 
 export const useWords = () => {
@@ -18,17 +18,9 @@ export const useWords = () => {
 
         const words = await CsvService.getWords();
         const examples = await CsvService.getExamples();
+        const combinedData = await combineCsvData(words, examples);
 
-        const modifiedData = await Promise.all(
-          words.rows.map<Promise<Word>>(async (row) => {
-            const exists = await isTrainingEntityExists(row.id);
-            const { example, translation } = examples.rows.find((example) => example.id === row.id)!;
-
-            return { ...row, exists, example, translation };
-          })
-        );
-
-        setData(modifiedData);
+        setData(combinedData);
       } catch {
         setIsError(true);
       } finally {

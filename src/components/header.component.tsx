@@ -128,7 +128,9 @@ export const Header = () => {
         className="sm:hidden"
       />
       <NavbarBrand className="flex items-center gap-2">
-        <Logo width={50} />
+        <Link href="/">
+          <Logo width={50} />
+        </Link>
       </NavbarBrand>
       <NavbarContent
         justify="center"

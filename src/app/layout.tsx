@@ -19,12 +19,6 @@ const AppLayout = ({ children }: PropsWithChildren) => (
     className={twJoin(ui.fonts.yekanBakh.variable, ui.fonts.inter.variable)}>
     <body>
       <ThemeProvider>
-        {/* <OrganizationJsonLd
-          name={appConfig.meta.title}
-          url="https://wwwords.ir"
-          logo="https://wwwords.ir/favicon.svg"
-          sameAs={['https://twitter.com/wwwords_ir']}
-        /> */}
         <MainContainer>{children}</MainContainer>
       </ThemeProvider>
       <Analytics
@@ -38,8 +32,8 @@ const AppLayout = ({ children }: PropsWithChildren) => (
 
 export const metadata: Metadata = {
   title: {
-    default: 'تمرین کلمات انگلیسی حقوقی',
-    template: '%s - تمرین کلمات انگلیسی حقوقی'
+    default: 'آموزش زبان انگلیسی',
+    template: '%s | آموزش زبان انگلیسی'
   },
   description: app.meta.description,
   openGraph: {

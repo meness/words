@@ -1,4 +1,5 @@
 export const route = {
   notFound: '/404',
-  home: '/'
+  home: '/',
+  word: (word: string) => `/w/${encodeURIComponent(word).toLowerCase()}`
 };
