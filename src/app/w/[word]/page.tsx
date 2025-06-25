@@ -73,7 +73,7 @@ const WordPage = async ({ params }: PageParams<{ word: string }>) => {
             key={randomWord.id}
             as={Link}
             href={route.word(randomWord.word)}
-            className="w-full overflow-hidden rounded-xl bg-white shadow-lg">
+            className="w-full overflow-hidden rounded-xl bg-white shadow-lg !transition-opacity">
             <CardHeader className="flex flex-col items-start bg-gradient-to-r from-gray-500 to-gray-700 p-6 text-white">
               <h1
                 className="font-inter text-end text-3xl font-extrabold"
