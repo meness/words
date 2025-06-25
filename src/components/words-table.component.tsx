@@ -1,6 +1,7 @@
 'use client';
 
 import { Checkbox } from '@heroui/checkbox';
+import { Link } from '@heroui/link';
 import { getKeyValue } from '@heroui/shared-utils';
 import { Spinner } from '@heroui/spinner';
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@heroui/table';
@@ -9,6 +10,7 @@ import { useAsyncList } from '@react-stately/data';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useState } from 'react';
 import { twJoin } from 'tailwind-merge';
+import { route } from '~common/consts/route.const';
 import { Cursor } from '~common/types/cursor.type';
 import { TableHeaderKeyLabel } from '~common/types/table-header-key-label.type';
 import { TrainingWord } from '~common/types/training-word.type';
@@ -170,7 +172,17 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
                       }}
                     />
                   )}
-                  {columnKey === 'id' ? formatDecimal(getKeyValue(item, columnKey)) : getKeyValue(item, columnKey)}
+                  {columnKey === 'id' ? (
+                    formatDecimal(getKeyValue(item, columnKey))
+                  ) : columnKey === 'word' ? (
+                    <Link
+                      href={route.word(item.word)}
+                      target="_blank">
+                      {getKeyValue(item, columnKey)}
+                    </Link>
+                  ) : (
+                    getKeyValue(item, columnKey)
+                  )}
                 </TableCell>
               );
             }}
