@@ -115,7 +115,7 @@ export const generateMetadata = async ({ params }: PageParams<{ word: string }>)
   return {
     title: `معنی ${foundWord?.word ?? decodedWord}`,
     description: foundWord?.description,
-    keywords: [foundWord?.word ?? decodedWord]
+    keywords: ['آموزش زبان انگلیسی', `معنی ${foundWord?.word ?? decodedWord}`, 'معانی کلمات انگلیسی']
   };
 };
 
