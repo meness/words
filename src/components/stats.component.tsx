@@ -10,13 +10,8 @@ export const Stats = ({ isLoading, value, children }: StatsProps) => (
   <Skeleton
     isLoaded={!isLoading}
     classNames={{ base: 'rounded-large w-fit before:w-fit' }}>
-    <Card
-      classNames={{
-        base: 'aspect-square w-[240px] border-none bg-gradient-to-br from-primary-50 to-primary-100',
-        body: 'items-center justify-center pb-0',
-        footer: 'items-center justify-center pt-0'
-      }}>
-      <CardBody>
+    <Card className="from-primary-50 to-primary-100 aspect-square w-[240px] border-none bg-gradient-to-br">
+      <CardBody className="items-center justify-center pb-0">
         <CircularProgress
           classNames={{
             svg: 'w-36 aspect-square h-full drop-shadow-md',
@@ -29,7 +24,7 @@ export const Stats = ({ isLoading, value, children }: StatsProps) => (
           value={value}
         />
       </CardBody>
-      <CardFooter>
+      <CardFooter className="items-center justify-center pt-0">
         <Chip
           classNames={{
             base: 'border-1 border-white/30',

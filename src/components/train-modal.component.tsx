@@ -43,9 +43,8 @@ const NoTrainingContent = ({ onClose, onTrainOptionChange }: NoTrainingContentPr
     <ModalHeader>تمرین کلمات</ModalHeader>
     <ModalBody>
       <Alert
-        color="primary"
         variant="bordered"
-        classNames={{ iconWrapper: 'text-white', base: 'select-none' }}
+        classNames={{ base: 'select-none' }}
         description="از یکی از دو حالت دیگه تمرین استفاده کنید. وقتی کلمه‌ای را تمرین کردید می‌توانید از این حالت برای تمرین کلمات تمرین‌شده استفاده کنید."
       />
     </ModalBody>

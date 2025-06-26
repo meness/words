@@ -90,9 +90,8 @@ const NoTrainingContent = ({ onClose }: NoTrainingContentProps) => (
     <ModalHeader>پیشرفت خود را بسنجید</ModalHeader>
     <ModalBody>
       <Alert
-        color="primary"
         variant="bordered"
-        classNames={{ iconWrapper: 'text-white', base: 'select-none' }}
+        classNames={{ base: 'select-none' }}
         description="ابتدا چند کلمه تمرین کنید سپس پیشرفت خود را با این ابزار بسنجید."
       />
     </ModalBody>

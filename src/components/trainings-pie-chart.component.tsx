@@ -8,7 +8,8 @@ export const TrainingPieChart = () => {
 
   return (
     <ResponsiveContainer
-      width={300}
+      width="100%"
+      className="max-w-full"
       aspect={1}>
       <PieChart>
         <Pie

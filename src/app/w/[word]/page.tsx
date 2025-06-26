@@ -36,7 +36,10 @@ const WordPage = async ({ params }: PageParams<{ word: string }>) => {
   return (
     <div className="my-7 flex flex-col items-center justify-center space-y-6 bg-gray-100 p-4">
       {/* Main Word Card */}
-      <Card className="w-full max-w-2xl overflow-hidden rounded-xl bg-white shadow-lg">
+      <Card
+        shadow="md"
+        radius="lg"
+        className="w-full max-w-2xl overflow-hidden bg-white">
         <CardHeader className="from-primary-500 to-primary-900 flex flex-col items-start bg-gradient-to-r p-6 text-white">
           <h1
             className="font-inter text-end text-3xl font-extrabold"
@@ -71,20 +74,24 @@ const WordPage = async ({ params }: PageParams<{ word: string }>) => {
         {randomWords?.map((randomWord) => (
           <Card
             key={randomWord.id}
+            shadow="md"
+            radius="lg"
             as={Link}
             href={route.word(randomWord.word)}
-            className="w-full overflow-hidden rounded-xl bg-white shadow-lg !transition-opacity">
-            <CardHeader className="flex flex-col items-start bg-gradient-to-r from-gray-500 to-gray-700 p-6 text-white">
-              <h1
+            className="w-full overflow-hidden bg-white !transition-opacity">
+            <CardHeader
+              as="h4"
+              className="flex flex-col items-start bg-gradient-to-r from-gray-500 to-gray-700 p-6 text-white">
+              <div
                 className="font-inter text-end text-3xl font-extrabold"
                 dir="ltr">
                 {randomWord.word}
                 <p className="text-medium">{randomWord.pronunciation}</p>
-              </h1>
-              <h2 className="mt-2 text-lg">
+              </div>
+              <div className="mt-2 text-lg">
                 به معنی <strong className="font-bold">{randomWord.meaning}</strong>
-              </h2>
-              <h3 className="mt-1 text-sm text-gray-200">{randomWord.description}</h3>
+              </div>
+              <div className="mt-1 text-sm text-gray-200">{randomWord.description}</div>
             </CardHeader>
             <CardBody className="space-y-4 p-6">
               <div className="border-l-4 border-blue-500 pl-4">

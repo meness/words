@@ -63,31 +63,32 @@ const HomePage = () => {
   return (
     <div className="mx-auto my-10 flex max-w-5xl flex-col place-content-center place-items-center gap-6">
       <Alert
-        title="توجه"
-        color="primary"
         variant="bordered"
+        hideIconWrapper
+        hideIcon
         isVisible={isNoticeAlertVisible}
         classNames={{
           title: 'font-bold text-medium',
-          iconWrapper: 'mb-auto text-white',
-          base: 'select-none flex items-center'
+          base: 'select-none flex gap-2 items-center flex-col sm:flex-row'
         }}
         endContent={
           <Button
-            color="primary"
             size="sm"
             onPress={dismissNoticeAlert}
+            className="w-full sm:w-fit"
             variant="solid">
             متوجه شدم
           </Button>
         }
-        description="این ابزار رایگان به شما کمک می‌کند دایره لغات انگلیسی خود را تقویت کنید. تمرکز فعلی بر کلمات تخصصی حقوق، به‌ویژه تجارت بین‌الملل و سایر زیرشاخه‌ها است."
+        description="این ابزار رایگان و ساده کمک می‌کند کلمات انگلیسی بیشتری یاد بگیرید. تمرکز فعلی ابزار بر کلمات تخصصی حقوق، به‌ویژه تجارت بین‌الملل و سایر زیرشاخه‌ها است."
       />
       <Card
+        shadow="md"
+        radius="lg"
         isDisabled={isLoading}
-        classNames={{ base: 'select-none', body: 'flex-col sm:flex-row gap-2' }}
+        className="select-none"
         fullWidth>
-        <CardBody>
+        <CardBody className="flex-col gap-2 sm:flex-row">
           <Input
             type="search"
             id="search-input"
@@ -142,12 +143,11 @@ const HomePage = () => {
         </CardBody>
       </Card>
       <Card
+        shadow="md"
+        radius="lg"
         fullWidth
-        classNames={{
-          body: 'p-0',
-          footer: 'flex select-none items-center justify-between text-tiny'
-        }}>
-        <CardBody>
+        className="select-none">
+        <CardBody className="p-0">
           <WordsTable
             words={filteredWords}
             isLoading={isLoading}
@@ -157,7 +157,7 @@ const HomePage = () => {
         <Skeleton
           isLoaded={!isLoading}
           classNames={{ base: 'rounded-b-large w-full' }}>
-          <CardFooter>
+          <CardFooter className="text-tiny flex items-center justify-between select-none">
             <p>
               <span className="font-bold">{formatDecimal(words.length)}</span> کلمه در اختیار شماست.
             </p>
@@ -174,38 +174,37 @@ const HomePage = () => {
         </Skeleton>
       </Card>
       <Divider />
-      <div className="flex w-full flex-col gap-2 md:flex-row">
+      <div className="grid w-full grid-cols-1 gap-2 sm:grid-cols-6">
         <Card
-          classNames={{
-            base: 'select-none h-fit p-1',
-            header: 'text-large font-bold flex items-center gap-2',
-            body: 'flex gap-3 flex-row'
-          }}>
-          <CardHeader>
+          shadow="md"
+          radius="lg"
+          fullWidth
+          className="col-span-full p-1 select-none sm:col-span-2">
+          <CardHeader
+            as="h4"
+            className="text-large flex items-center gap-2 font-bold">
             <IoPieChartOutline className="h-6 w-6 text-blue-500" />
-            آمار تمرین‌ها
+            آمار تمرین‌ها:&nbsp;{formatPercent(trainings.length / words.length)}
           </CardHeader>
           <CardBody>
-            <div className="flex flex-col items-start justify-between gap-1">
-              <p className="text-2xl font-bold">{formatPercent(trainings.length / words.length)}</p>
-              <p className="text-small text-default-400">
-                باقی‌مانده&nbsp;
-                <span className="text-foreground font-bold">{formatDecimal(words.length - trainings.length)}</span>
-                &nbsp;کلمه
-              </p>
-            </div>
             <TrainingPieChart />
           </CardBody>
+          <Divider />
+          <CardFooter className="text-tiny text-default-400 select-none">
+            <p>
+              <span className="text-foreground font-bold">{formatDecimal(words.length - trainings.length)} کلمه</span>
+              &nbsp;باقی مانده است.
+            </p>
+          </CardFooter>
         </Card>
         <Card
+          shadow="md"
+          radius="lg"
           fullWidth
-          classNames={{
-            base: 'select-none max-w-full',
-            header: 'text-large font-bold flex items-center gap-2',
-            body: 'w-full h-fit',
-            footer: 'flex select-none items-center justify-between text-tiny'
-          }}>
-          <CardHeader>
+          className="col-span-full select-none sm:col-span-4">
+          <CardHeader
+            as="h4"
+            className="text-large flex items-center gap-2 font-bold">
             <PiExam className="h-6 w-6 text-purple-500" />
             پیشرفت آزمون‌ها
           </CardHeader>
@@ -213,9 +212,10 @@ const HomePage = () => {
             <ExamsLineChart />
           </CardBody>
           <Divider />
-          <CardFooter>
+          <CardFooter className="text-tiny text-default-400 flex items-center justify-between select-none">
             <p>
-              <span className="font-bold">{formatDecimal(exams.length)}</span> مرتبه تا کنون آزمون دادید.
+              <span className="text-foreground font-bold">{formatDecimal(exams.length)} مرتبه</span> تا کنون آزمون
+              دادید.
             </p>
           </CardFooter>
         </Card>

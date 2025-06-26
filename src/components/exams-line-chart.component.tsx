@@ -50,9 +50,7 @@ export const ExamsLineChart = () => {
       <div>
         <Alert
           variant="bordered"
-          hideIconWrapper
-          classNames={{ description: 'text-info-500', base: 'select-none text-info-500 text-right border-info-500' }}
-          title="توجه"
+          classNames={{ base: 'select-none' }}
           description="هنوز آزمونی انجام ندادید."
         />
       </div>
@@ -62,8 +60,9 @@ export const ExamsLineChart = () => {
   return (
     <ResponsiveContainer
       width="100%"
-      minHeight={400}
-      height="100%">
+      minHeight={200}
+      height="100%"
+      className="max-h-full">
       <ComposedChart
         width={400}
         height={400}
