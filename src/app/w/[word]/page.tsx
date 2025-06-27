@@ -118,11 +118,24 @@ export const generateMetadata = async ({ params }: PageParams<{ word: string }>)
   const { word } = await params;
   const decodedWord = decodeURIComponent(word);
   const [foundWord] = await fetchWord(decodedWord);
+  const title = `معنی ${foundWord?.word ?? decodedWord}`;
+  const description = `${foundWord?.word ?? decodedWord} به معنی ${foundWord?.meaning} است. ${foundWord?.description}`;
 
   return {
-    title: `معنی ${foundWord?.word ?? decodedWord}`,
-    description: foundWord?.description,
-    keywords: ['آموزش زبان انگلیسی', `معنی ${foundWord?.word ?? decodedWord}`, 'معانی کلمات انگلیسی']
+    title,
+    description,
+    keywords: [
+      'آموزش زبان انگلیسی',
+      `معنی ${foundWord?.word ?? decodedWord}`,
+      `ترجمه ${foundWord?.word ?? decodedWord}`,
+      `${foundWord?.word ?? decodedWord} meaning`
+    ],
+    openGraph: {
+      locale: 'fa-IR',
+      type: 'website',
+      title: `${title} | آموزش زبان انگلیسی`,
+      description
+    }
   };
 };
 
