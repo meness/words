@@ -125,10 +125,11 @@ export const generateMetadata = async ({ params }: PageParams<{ word: string }>)
     title,
     description,
     keywords: [
-      'آموزش زبان انگلیسی',
       `معنی ${foundWord?.word ?? decodedWord}`,
       `ترجمه ${foundWord?.word ?? decodedWord}`,
-      `${foundWord?.word ?? decodedWord} meaning`
+      `تلفظ ${foundWord?.word ?? decodedWord}`,
+      `${foundWord?.word ?? decodedWord} meaning`,
+      `${foundWord?.word ?? decodedWord} pronunciation`
     ],
     openGraph: {
       locale: 'fa-IR',
