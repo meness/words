@@ -16,8 +16,7 @@ type PosterProps = { word: Word | undefined };
 
 const fetchWord = async (word: string) => {
   const words = await CsvService.getWords();
-  const examples = await CsvService.getExamples();
-  const combinedData = await combineCsvData(words, examples);
+  const combinedData = await combineCsvData(words);
   return combinedData.find((data) => data.word.toLowerCase() === word.toLowerCase());
 };
 

@@ -17,8 +17,7 @@ export const useWords = () => {
         setIsError(false);
 
         const words = await CsvService.getWords();
-        const examples = await CsvService.getExamples();
-        const combinedData = await combineCsvData(words, examples);
+        const combinedData = await combineCsvData(words);
 
         setData(combinedData);
       } catch {

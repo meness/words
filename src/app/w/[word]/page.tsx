@@ -11,8 +11,7 @@ import { getRandomWordsExcludingIndex } from '~utils/array.util';
 
 const fetchWord = async (word: string): Promise<[Word | null, Array<Word> | null]> => {
   const words = await CsvService.getWords();
-  const examples = await CsvService.getExamples();
-  const combinedData = await combineCsvData(words, examples);
+  const combinedData = await combineCsvData(words);
 
   const currentWord = combinedData.find((data) => data.word.toLowerCase() === word.toLowerCase());
 

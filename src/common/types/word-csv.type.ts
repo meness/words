@@ -5,6 +5,8 @@ export type WordCsv = {
     pronunciation: string;
     meaning: string;
     description: string;
+    example: string;
+    translation: string;
     id: number;
   }[];
 };

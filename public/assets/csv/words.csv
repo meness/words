@@ -1,518 +1,818 @@
-کلمه انگلیسی,تلفظ,معنای حقوقی فارسی,توضیح مختصر
-Arbitration,aar·buh·tray·shn,داوری حقوقی,فرآیندی که طی آن اختلافات به یک داور بی‌طرف سپرده می‌شود.
-Jurisdiction,jur·uhs·dik·shn,صلاحیت قضایی,اختیارات قانونی یک دادگاه یا مقام قضایی برای رسیدگی به یک دعوی.
-Breach,breech,نقض تعهد,عمل یا ترک عملی که خلاف یک تعهد قراردادی یا قانونی است.
-Contract,kon·trakt,قرارداد الزام‌آور,توافقی بین دو یا چند طرف که الزام‌آور است.
-Litigation,li·tuh·gay·shn,رسیدگی قضایی,فرایند طرح دعوی در دادگاه برای حل یک اختلاف.
-Negligence,neg·luh·jns,سهل‌انگاری,عدم رعایت احتیاط‌های متعارف که باعث ضرر به دیگران شود.
-Liability,lie·uh·bil·uh·tee,مسئولیت,تعهد قانونی برای جبران خسارت.
-Indemnity,in·dem·nuh·tee,غرامت,تعهد به جبران خسارت‌های وارده به طرف دیگر.
-Sovereignty,sov·ruhn·tee,حاکمیت,قدرت مطلق و قانونی یک دولت در سرزمین خود.
-Clause,klawz,بند,بخش یا ماده‌ای از یک قرارداد یا قانون.
-Force Majeure,fors·muh·zhoor,قوه قاهره,شرایط غیرقابل‌پیش‌بینی که اجرای قرارداد را غیرممکن می‌کند.
-Sanctions,sangk·shnz,تحریم‌ها,اقدامات تنبیهی اقتصادی یا سیاسی که علیه یک کشور اعمال می‌شود.
-Compliance,kuhm·plie·uhns,تبعیت,رعایت قوانین، مقررات یا تعهدات قراردادی.
-Equity,ek·wuh·tee,انصاف,اصول عدالت که فراتر از قوانین خشک است.
-Tort,tort,مسئولیت مدنی,عملی که باعث خسارت به دیگری شود و مسئولیت مدنی ایجاد کند.
-Trademark,trayd·maark,علامت تجاری,نشانه‌ای که محصولات یا خدمات یک شرکت را از دیگران متمایز می‌کند.
-Insolvency,in·sol·vuhn·see,ورشکستگی,وضعیتی که در آن بدهی‌های یک فرد یا شرکت بیشتر از دارایی‌های آن است.
-Fiduciary,fih·doo·shee·eh·ree,امانت‌دار,شخصی که وظیفه‌ای قانونی برای حفاظت از منافع دیگری دارد.
-Annex,an·eks,پیوست,سندی که به قرارداد یا توافقنامه اضافه می‌شود.
-Ratification,ra·tuh·fuh·kay·shn,تصویب,تأیید رسمی یک قرارداد یا معاهده توسط یک نهاد قانونی.
-Settlement,set·uhl·muhnt,تسویه,حل و فصل اختلافات بدون مراجعه به دادگاه.
-Trade,trayd,تجارت,فعالیت خرید و فروش کالا یا خدمات.
-Treaty,tree·tee,معاهده,توافق رسمی بین دولت‌ها.
-Waiver,way·vr,اسقاط حق,صرف‌نظر کردن داوطلبانه از یک حق یا ادعا.
-Adjudication,ar·joo·di·kay·shn,رسیدگی قضایی,تصمیم‌گیری قانونی توسط یک دادگاه.
-Affidavit,af·ih·day·vit,سوگندنامه,بیانیه کتبی که تحت سوگند ارائه می‌شود.
-Amendment,uh·men·dment,اصلاحیه,تغییر یا الحاق به یک سند قانونی یا قانون.
-Antitrust,an·tee·trust,ضد انحصار,قوانینی که به محدود کردن انحصارهای تجاری می‌پردازند.
-Assignment,uh·sine·muhnt,انتقال,واگذاری حق یا مسئولیت به دیگری.
-Bailment,bayl·muhnt,امانت,قراردادی که طی آن یک کالا برای نگهداری به دیگری سپرده می‌شود.
-Bankruptcy,bank·rup·see,ورشکستگی,وضعیتی که در آن یک فرد یا شرکت قادر به پرداخت بدهی‌ها نیست.
-Beneficiary,ben·uh·fish·ee·eh·ree,ذی‌نفع,شخصی که از یک قرارداد، وصیت‌نامه یا امانت بهره‌مند می‌شود.
-Caveat,kav·ee·at,اخطار,اخطاری که در آن احتیاط لازم توصیه می‌شود.
-Collateral,kuh·lat·uh·rul,وثیقه,دارایی ارائه‌شده برای تضمین بازپرداخت وام.
-Common Law,kah·muhn law,حقوق عرفی,سیستم حقوقی مبتنی بر رویه‌های قضایی و نه قوانین مدون.
-Consideration,kuhn·sid·uh·ray·shn,عوض,چیزی که برای الزام‌آور بودن قرارداد ارائه می‌شود.
-Covenant,kuh·vuh·nuhnt,پیمان,توافق‌نامه‌ای الزام‌آور میان طرفین.
-Damages,dam·uh·juhz,خسارت,جبران مالی برای ضرری که وارد شده است.
-Debenture,dih·ben·chur,اوراق قرضه,سندی که بیانگر بدهی شرکت به دارنده آن است.
-Decree,dih·kree,حکم,دستور قانونی صادرشده توسط دادگاه.
-Defamation,def·uh·may·shn,افترا,آسیب به شهرت فرد از طریق اظهارات نادرست.
-Deposition,dep·uh·zih·shn,شهادت‌نامه,اظهارات تحت سوگند گرفته‌شده در خارج از دادگاه.
-Dissolution,dih·suh·loo·shn,انحلال,پایان دادن به موجودیت یک شرکت یا قرارداد.
-Due Diligence,doo·dih·luh·juhns,بررسی لازم,ارزیابی دقیق پیش از ورود به یک معامله یا قرارداد.
-Easement,eez·muhnt,حق ارتفاق,حقی که به صاحب ملکی اجازه استفاده محدود از ملک دیگری را می‌دهد.
-Encumbrance,en·kuhm·bruhns,مانع قانونی,هرگونه محدودیت قانونی بر مالکیت ملک.
-Enforcement,en·fors·muhnt,اجرا,عملی که برای اجباری کردن تبعیت از قانون یا حکم صورت می‌گیرد.
-Escrow,es·kroh,سپرده,حساب یا قراردادی که در آن وجه یا اسناد نگهداری می‌شود تا شرایطی محقق شوند.
-Exclusion,eks·kloo·zhuhn,استثنا,مواردی که از تعهدات یا پوشش قراردادی مستثنی شده‌اند.
-Fiduciary Duty,fih·doo·shee·eh·ree doo·tee,وظیفه امانت‌داری,وظیفه قانونی یا اخلاقی برای حفاظت از منافع دیگری.
-Fraud,frahd,کلاهبرداری,عمل نادرست عمدی برای فریب و کسب سود ناعادلانه.
-Franchise,fran·chaiz,امتیاز,مجوزی که به یک شخص برای استفاده از برند و سیستم یک شرکت داده می‌شود.
-Good Faith,good fayth,حسن نیت,رفتار صادقانه و بدون قصد فریب.
-Grievance,gree·vuhns,شکایت,ادعای ناراحتی یا ضرر توسط یک طرف.
-Habeas Corpus,hey·bee·uhs kor·puhs,حق آزادی از بازداشت غیرقانونی,حکم دادگاه برای ارائه فرد بازداشتی در دادگاه.
-Hold Harmless,hohld har·muh·luhs,تعهد عدم مسئولیت,تعهدی که یک طرف را از ضرر یا مسئولیت محافظت می‌کند.
-Injunction,in·juhnk·shn,دستور قضایی,حکمی که یک طرف را از انجام یک عمل باز می‌دارد.
-Intellectual Property,in·tuh·lek·shoo·uhl prop·uh·tee,مالکیت فکری,حقوق قانونی بر خلاقیت‌های فکری مانند اختراعات و آثار ادبی.
-Joint Venture,joynt ven·chur,مشارکت مشترک,همکاری تجاری بین دو یا چند طرف برای هدف خاص.
-Jurisprudence,jur·is·proo·dns,فلسفه حقوق,علم یا نظریه قانون.
-Lien,leen,حق توقیف,حقی که به طلبکار برای نگهداری یا فروش دارایی بدهکار داده می‌شود.
-Mediation,mee·dee·ay·shn,میانجی‌گری,حل و فصل اختلافات با کمک یک میانجی بی‌طرف.
-Merger,mur·jur,ادغام,ترکیب دو یا چند شرکت در یک شرکت واحد.
-Misrepresentation,mis·rep·ruh·zen·tay·shn,ارائه نادرست,اطلاعات نادرست یا گمراه‌کننده که موجب خسارت شود.
-Moot Point,moot poynt,موضوع بحث‌برانگیز,مسئله‌ای که دیگر مرتبط یا مهم نیست.
-Partnership,part·nr·ship,مشارکت,رابطه‌ای قانونی بین دو یا چند نفر برای انجام کسب‌وکار.
-Perjury,pur·juh·ree,شهادت دروغ,ارائه اطلاعات نادرست تحت سوگند.
-Plaintiff,playn·tiff,خواهان,شخصی که دعوا را در دادگاه مطرح می‌کند.
-Precedent,pres·uh·duhnt,سابقه قضایی,حکمی که در پرونده‌های مشابه بعدی راهنما است.
-Quorum,kwor·uhm,نصاب,حداقل تعداد اعضای حاضر برای تصمیم‌گیری قانونی.
-Remedy,rem·uh·dee,جبران,وسیله‌ای برای اصلاح یا جبران یک تخلف قانونی.
-Rescission,ree·si·zhuhn,فسخ,باطل کردن یک قرارداد یا معامله.
-Statute,stat·choot,قانون مدون,قانونی که توسط مجلس تصویب شده است.
-Subpoena,suh·pee·nuh,احضاریه,دستور قضایی برای حضور در دادگاه یا ارائه اسناد.
-United Nations,yoo·nuh·ted ney·shnz,سازمان ملل متحد,سازمانی بین‌المللی برای حفظ صلح و همکاری میان کشورها.
-Obstacle,ob·sta·kl,مانع,چیزی که مانع پیشرفت یا موفقیت می‌شود.
-Commission,kuh·mi·shn,کمیسیون,نهادی که وظایف خاصی را برای تصمیم‌گیری یا تحقیق برعهده دارد.
-Create,kree·ayt,ایجاد کردن,به‌وجود آوردن یا تولید چیزی.
-Secure,si·kyoor,امن کردن,ایمن کردن یا حفاظت از چیزی.
-Release,ri·lees,آزاد کردن,رها کردن یا آزادسازی چیزی.
-Facilitate,fuh·sil·i·teyt,تسهیل کردن,آسان‌تر کردن یا ساده‌سازی یک فرایند.
-Popular,pah·pyoo·ler,محبوب,چیزی که میان عموم مردم مورد علاقه است.
-Communication,kuh·myoo·ni·kay·shn,ارتباطات,انتقال اطلاعات بین افراد یا گروه‌ها.
-Consumer,kuhn·soo·mer,مصرف‌کننده,کسی که کالاها یا خدمات را مصرف می‌کند.
-Storage,stohr·ij,ذخیره‌سازی,فرایند یا محلی برای نگهداری چیزها.
-Consume,kuhn·soom,مصرف کردن,استفاده یا بهره‌برداری از چیزی.
-Interchange,in·tr·chang·j,تبادل,تعویض یا جابه‌جایی چیزها.
-Commerce,kaw·muh·rs,بازرگانی,فعالیت‌های مرتبط با خریدوفروش کالا یا خدمات.
-Assess,uh·ses,ارزیابی,سنجش یا تخمین ارزش یا شرایط چیزی.
-Commercial,kuh·mer·shl,تجاری,مرتبط با تجارت یا کسب‌وکار.
-Value,val·yoo,ارزش,اهمیت یا بهای چیزی.
-Protection,pruh·tek·shn,حمایت,تلاش برای ایمن نگه‌داشتن یا محافظت از چیزی.
-Message,meh·sij,پیام,اطلاعات منتقل‌شده بین دو یا چند فرد.
-Protect,pruh·tekt,محافظت کردن,حفاظت یا دفاع از چیزی.
-Environment,en·vai·ruhn·ment,محیط زیست,شرایط یا فضایی که زندگی در آن جریان دارد.
-Model law,maw·duhl law,قانون نمونه,مجموعه‌ای از قوانین پیشنهادی برای تطبیق و استفاده در کشورهای مختلف.
-Intend,in·tend,قصد داشتن,داشتن نیت یا برنامه برای انجام کاری.
-Intention,in·ten·shn,قصد,هدف یا نیت انجام کاری.
-Provide,pruh·vahyd,ارائه دادن,دادن یا فراهم کردن چیزی.
-National,nash·nuhl,ملی,مربوط به یک کشور خاص.
-Nation,ney·shn,ملت,گروهی از افراد که کشور را تشکیل می‌دهند.
-International,in·ter·nash·nuhl,بین‌المللی,مربوط به روابط یا تعاملات میان کشورها.
-Specific,spuh·sif·ik,خاص,مشخص یا متمایز.
-Specifically,spuh·sif·ik·lee,به‌طور خاص,با تأکید یا به‌طور دقیق.
-Area,air·ee·uh,منطقه,بخش یا فضای خاصی از یک مکان.
-Carriage,kar·ij,حمل و نقل,فرایند جابه‌جایی کالاها یا افراد.
-Good (n),guhd,کالا (اسم),محصول یا چیزی که خریدوفروش می‌شود.
-Good (adj),guhd,خوب (صفت),چیزی که مطلوب یا سودمند است.
-Refer,ri·fer,اشاره کردن,ارجاع دادن یا ذکر چیزی.
-Legislation,lej·is·ley·shn,قانون‌گذاری,فرایند ایجاد و تصویب قوانین.
-Instead,in·sted,به‌جای,گزینه‌ای دیگر برای جایگزینی.
-Legislature,lej·is·ley·cher,مجلس,نهادی که قوانین را وضع می‌کند.
-Deal,deel,توافق,توافق یا معامله بین طرفین.
-Legislate,lej·is·leyt,قانون وضع کردن,ایجاد قوانین از طریق مرجع قانونی.
-Principle,prin·suh·pl,اصل,قاعده یا حقیقت اساسی.
-Template,tem·pleyt,الگو,مدلی برای استفاده یا تکرار.
-Functional,fuhngk·shn·l,کارکردی,مرتبط با عملکرد یا کاربرد.
-Acceptable,ak·sep·tuh·bl,قابل قبول,مورد پذیرش یا مناسب.
-Functionally,fuhngk·shn·l·ee,به‌صورت کارکردی,مرتبط با کاربرد عملی.
-Accept,ak·sept,قبول کردن,پذیرش یا تأیید چیزی.
-Equivalence,i·kwiv·uh·lens,برابری,حالت یا کیفیت برابر بودن.
-Rule (n),rool,قاعده (اسم),مقرراتی که باید رعایت شوند.
-Equivalent,i·kwiv·uh·luhnt,معادل,چیزی که برابر یا هم‌ارزش با چیز دیگری است.
-Rule (v),rool,قاعده (فعل),حکم کردن یا کنترل کردن.
-Media,mee·dee·uh,رسانه,ابزاری برای انتقال اطلاعات و اخبار.
-Remove,ri·moov,برداشتن,حذف یا جابه‌جایی چیزی.
-Transaction,tranz·ak·shn,معامله,عملیات مالی یا مبادله‌ای بین طرفین.
-Legal,lee·gl,قانونی,مطابق با قانون یا مربوط به قانون.
-Traditional,truh·dish·nuhl,سنتی,وابسته به رسوم یا عادات کهن.
-Treat,treet,درمان,مراقبت یا بهبود یک وضعیت یا مشکل.
-Expression,ek·spre·shn,بیان,روش یا شیوه انتقال احساس یا تفکر.
-Equally,ee·kwuh·lee,به‌طور برابر,به‌صورت مساوی یا بدون تفاوت.
-Gain,geyn,به‌دست آوردن,به دست آوردن یا کسب چیزی.
-Permeate,pur·mee·ayt,نفوذ,جذب شدن یا تأثیر گذاشتن در عمق چیزی.
-Significant,sig·nif·i·knt,قابل توجه,چیزی که اهمیت یا تأثیر زیادی دارد.
-Based on,beysd on,بر اساس,متکی یا مرتبط به چیزی.
-Drafting,draf·ting,پیش‌نویس,تهیه یا نوشتن نسخه اولیه از یک سند.
-Underlying,uhn·der·lai·ing,زیربنا,پایه یا اساس چیزی.
-Process,praw·ses,فرایند,مراحل یا گام‌هایی برای دستیابی به یک هدف.
-Neutrality,noo·tral·i·tee,بی‌طرفی,حالت یا موقعیت بی‌طرف بودن.
-Attend,uh·tend,حضور,شرکت کردن در یک جلسه یا رویداد.
-Response,ree·spawns,پاسخ,عکس‌العمل یا جواب به چیزی.
-Representative,rep·ruh·zen·tuh·tiv,نماینده,کسی که از طرف گروهی عمل می‌کند.
-Recognition,rek·uhg·nish·n,شناخت,پذیرش یا تأیید چیزی.
-Over,oh·ver,روی,عبارت از اتمام یا تمام شدن چیزی.
-General,jen·r·uhl,عمومی,مرتبط با همه یا مشترک میان افراد.
-Organization,awr·guh·ni·zay·shn,سازمان,گروهی که برای اهداف مشخصی کار می‌کند.
-Sentence,sen·tuhns,حکم,تصمیم قانونی که توسط دادگاه صادر می‌شود.
-Alternative,awl·tuhr·nuh·tiv,جایگزین,گزینه‌ای دیگر به‌جای چیزی.
-Mentally disordered,men·tuh·lee dis·awrd·rd,اختلال روانی,وضعیتی که در آن فرد دچار مشکلات ذهنی است.
-Reciprocity,ree·craw·pruh·suh·tee,معامله به مثل,تعاملی که بر پایه توازن و عدالت است.
-Offender,aw·fen·der,مجرم,کسی که عمل خلاف قانون انجام داده است.
-Impose,im·poze,تحمیل کردن,اعمال چیزی با زور یا اجبار.
-Remain,ree·meyn,باقی ماندن,ادامه دادن یا ماندن در یک وضعیت.
-Obligation,ob·lig·ay·shn,تعهد,وظیفه‌ای که باید انجام شود.
-Controversy,kon·tro·vuh·see,اختلاف,مباحثه یا مشاجره در مورد یک موضوع.
-Division,dih·vizh·n,تقسیم,جداسازی یا توزیع چیزی.
-Correspond,kuhr·uh·spawnd,مطابقت,تطابق یا ارتباط با چیزی.
-Treatment,treet·muhnt,درمان,فرایند بهبود یا رسیدگی به مشکل.
-Independent,in·di·pen·duhnt,مستقل,وابسته به خود و بدون نیاز به دیگران.
-Approach,uh·proach,رویکرد,روش یا نگرش به یک مسئله.
-Inquiry,in·kwai·ree,تحقیق,بررسی دقیق یا پرسش در مورد موضوعی.
-Essential,ih·sen·shl,ضروری,چیزی که بسیار مهم و حیاتی است.
-Committee,kuh·mi·tee,کمیته,گروه رسمی برای بررسی و تصمیم‌گیری.
-Framework,frey·mwork,چارچوب,ساختار یا قالبی برای طرح یا برنامه.
-Recommendation,rek·uh·men·day·shn,توصیه,پیشنهاد برای انجام یک عمل.
-Recognize,rek·uhg·nahyz,تشخیص دادن,شناختن یا قبول کردن چیزی.
-Authority,aw·thor·uh·tee,اختیار,قدرت یا حق قانونی برای تصمیم‌گیری.
-Discretion,dih·skresh·uhn,اختیار قانونی,آزادی در انتخاب یا تصمیم‌گیری.
-Compulsory,kuhm·pul·suh·ree,اجباری,چیزی که الزامی یا ناگزیر است.
-Detain,dee·teyn,بازداشت,نگه داشتن فرد به‌طور موقت.
-Prison,pri·zn,زندان,محلی برای نگهداری افراد قانون‌شکن.
-Proportionality,pruh·pawr·shuh·nal·i·tee,تناسب,توازن در شدت پاسخ‌ها یا مجازات‌ها.
-Reassert,ree·uh·sert,بازآوری,احیای دوباره چیزی که از بین رفته است.
-Constraint,kuhn·streynt,محدودیت,قید یا مانعی که جلوی انجام کاری را می‌گیرد.
-Evident,ev·i·duhnt,آشکار,چیزی که واضح و روشن است.
-Chiefly,cheef·lee,عمدتاً,بیشتر یا در درجه اول.
-Firmly,furm·lee,محکم,با قدرت و ثبات.
-Discrimination,dih·skrim·uh·nay·shn,تبعیض,رفتار ناعادلانه بر اساس عوامل خاص.
-Equal,ee·kwuhl,برابر,وضعیت برابر بودن در حقوق یا فرصت‌ها.
-Principal,prin·suh·pl,اصلی,چیزی که اصلی یا مهم‌تر است.
-Govern,guhv·ern,حکومت کردن,اداره کردن یا کنترل یک سیستم.
-Restrictive,ri·strik·tiv,محدودکننده,چیزی که آزادی را محدود می‌کند.
-Prosecutor,praw·si·kyoo·ter,دادستان,فردی که نماینده دولت در پرونده‌های کیفری است و اتهامات را پیگیری می‌کند.
-Chief Prosecutor,cheef praw·si·kyoo·ter,دادستان کل,بالاترین مقام در میان دادستان‌ها، که بر کل فرآیند دادستانی نظارت می‌کند.
-Function,fuhngk·shn,وظیفه,نقش یا وظیفه‌ای که کسی در یک سیستم یا سازمان دارد.
-Local Prosecutor,loh·kuhl praw·si·kyoo·ter,دادستان محلی,دادستانی که مسئولیت پیگیری پرونده‌های یک منطقه خاص را دارد.
-Constitutional,kon·stuh·too·shn·l,مطابق با قانون اساسی,منطبق بر اصول یا احکام قانون اساسی یک کشور.
-Decline,dih·klahyn,کاهش دادن,کاهش، رد کردن یا امتناع از انجام کاری.
-Separation of powers,sep·uh·ray·shn uhv pow·erz,جدایی قوا,تفکیک وظایف میان سه قوه اصلی دولت: مقننه، مجریه و قضاییه.
-File,fyl,ثبت کردن,ارائه درخواست، شکایت یا سند رسمی در دادگاه.
-Charge,chahrj,اتهام,بیانی که در آن فردی به نقض قانون متهم می‌شود.
-Court,kort,دادگاه,محلی رسمی برای حل اختلافات حقوقی یا بررسی جرایم.
-Individual,in·di·vid·joo·uhl,فرد,شخصی که به‌عنوان یک واحد مستقل شناخته می‌شود.
-Compete,kuhm·peet,رقابت کردن,تلاش برای برتری یافتن در برابر دیگران.
-Case,kays,پرونده,مسئله یا موضوعی که در دادگاه مورد بررسی قرار می‌گیرد.
-Loyalty,loy·uhl·tee,وفاداری,تعهد و وفاداری به یک فرد، سازمان یا کشور.
-Announce,uh·nouns,اعلام کردن,بیان عمومی اطلاعات یا تصمیمی جدید.
-Duty,doo·tee,وظیفه,مسئولیتی که برعهده فرد گذاشته شده است.
-Policy,paw·luh·see,سیاست,قوانین یا اصول کلی برای راهنمایی تصمیمات و اقدامات.
-Vote,voht,رأی,بیان رسمی حمایت یا مخالفت با موضوعی خاص.
-Apply,uh·plahy,درخواست دادن,ارائه تقاضا یا اقدام برای به‌دست آوردن چیزی.
-Adopt,uh·dawpt,پذیرفتن,پذیرش رسمی یک قانون، ایده یا روش.
-Entire,en·tyr,کامل,کل یا تمامی چیزی بدون هیچ بخش از دست رفته.
-Derive from,dih·rayv frum,مشتق شدن از,نشأت گرفته یا گرفته شده از چیزی.
-Category,kat·uh·gaw·ree,دسته‌بندی,گروه یا مجموعه‌ای از موارد مشابه.
-Code,kohd,قانون,مجموعه‌ای مدون از قوانین یا اصول.
-Legitimate,luh·ji·tuh·mit,مشروع,مطابق با قانون یا قابل پذیرش.
-Enforce,en·fors,اجرا کردن,وادار کردن به رعایت قوانین یا مقررات.
-Legitimacy,luh·ji·tuh·muh·see,مشروعیت,وضعیت قانونی یا قابل قبول بودن.
-Funding,fuhnd·ing,تأمین مالی,منابع مالی فراهم‌شده برای پروژه یا هدف خاص.
-Dispute,dih·spyoot,اختلاف,بحث یا مناقشه درباره یک مسئله.
-Sufficient,suh·fish·nt,کافی,به مقدار لازم یا مطلوب.
-Rely on,ri·ly awn,وابسته بودن به,اتکا یا اعتماد به چیزی.
-Allocate,al·uh·kayt,اختصاص دادن,تقسیم منابع یا زمان برای هدفی خاص.
-Argument,ahr·gyoo·muhnt,استدلال,بیانی منطقی برای حمایت از یک نظر.
-Scarce,skairs,کمیاب,چیزی که به سختی یافت می‌شود.
-Means of,meenz uhv,وسایل,ابزار یا روش برای رسیدن به هدف.
-Activity,ak·tiv·uh·tee,فعالیت,عملی که به هدف خاصی اختصاص دارد.
-Promote,pruh·moht,ترویج کردن,تشویق یا پشتیبانی برای افزایش چیزی.
-Distinction,duh·stink·shn,تمایز,تفاوت مشخص بین دو موضوع.
-Executive,eg·zek·yoo·tiv,قوه مجریه,شاخه‌ای از دولت که قوانین را اجرا می‌کند.
-Rebuttable,ri·buht·uh·bl,قابل انکار,فرضی که ممکن است با دلایل قوی رد شود.
-Legislative,lej·is·lay·tiv,قوه مقننه,شاخه‌ای از دولت که قوانین را وضع می‌کند.
-Presumption,pri·zuhmp·shn,فرض,نتیجه‌گیری مقدماتی بر اساس شواهد.
-Justify,juhs·tuh·fahy,توجیه کردن,ارائه دلیل برای منطقی جلوه دادن عمل یا تصمیمی.
-Imprisonment,im·priz·uhn·muhnt,حبس,نگه‌داشتن فرد در بازداشتگاه به‌عنوان مجازات.
-Length,lengkth,مدت,مدت زمانی که یک فعالیت یا وضعیت ادامه دارد.
-Suspended,suh·spen·did,تعلیقی,حکمی که اجرای آن به‌صورت موقت متوقف شده است.
-Intermittent,in·tur·mit·nt,متناوب,حکمی که در فواصل زمانی مشخص اعمال می‌شود.
-Custody,kuhs·tuh·dee,بازداشت,نگه‌داری فرد تحت نظر مقامات.
-Immediate,ih·mee·dee·uht,فوری,بدون تأخیر یا در اسرع وقت.
-Mind to,maynd too,قصد داشتن,داشتن نیت یا هدف برای انجام کاری.
-Ground,grawnd,مبنای قانونی,دلیلی که از یک تصمیم حقوقی حمایت می‌کند.
-Comply with,kuhm·plai with,رعایت کردن,پایبندی به قوانین یا مقررات.
-Community,kuh·myoo·ni·tee,جامعه,گروهی از افراد با علایق مشترک.
-Convert,kuhn·vurt,تبدیل کردن,تغییر وضعیت یا شکل چیزی به چیزی دیگر.
-Court of appeal,kort uhv uh·peel,دادگاه تجدیدنظر,دادگاهی که تصمیمات دادگاه‌های پایین‌تر را بررسی می‌کند.
-Amount to,uh·mount too,معادل بودن,منجر شدن به نتیجه‌ای برابر با شرایط خاص.
-Assault,uh·sawlt,حمله یا تعرض,استفاده از خشونت یا تهدید برای آسیب رساندن به دیگران.
-Stalking,staw·king,تعقیب مزاحم,پیگیری آزاردهنده یا مزاحمت مداوم برای فردی.
-Confirm,kuhn·firm,تأیید کردن,اثبات یا اعلام صحت چیزی.
-Offence,uh·fens,جرم,عملی که قوانین را نقض می‌کند.
-Commit,kuh·mit,ارتکاب کردن,انجام یک عمل غیرقانونی یا مجرمانه.
-Accompany,uh·kuhm·puh·nee,همراهی کردن,بودن یا رفتن با کسی.
-Contrary,kon·truh·ree,برخلاف,مخالف یا ضد یک موقعیت خاص.
-Menacing,men·uh·sing,تهدیدآمیز,نشان‌دهنده رفتار یا گفتار خطرناک.
-Violent,vye·uh·luhnt,خشونت‌آمیز,استفاده از زور یا خشونت شدید.
-Judge,juhj,قاضی,فردی که مسئول تصمیم‌گیری در دعاوی حقوقی یا کیفری است.
-Prevent,pree·vent,جلوگیری کردن,مانع وقوع یک اتفاق شدن.
-Potential,puh·ten·shl,بالقوه,دارای ظرفیت برای وقوع یا تحقق چیزی.
-Accrue,uh·kroo,انباشت,تجمع یا افزایش تدریجی.
-Harm,harm,آسیب,آسیب فیزیکی، مالی یا روانی به فرد یا اموال.
-Defendant,dih·fen·duhnt,متهم,فردی که علیه او در دادگاه شکایتی مطرح شده است.
-Annoy,uh·noy,آزار دادن,ایجاد ناراحتی یا مزاحمت برای فردی.
-Constitute,kon·stuh·toot,تشکیل دادن,ایجاد یا به وجود آوردن چیزی.
-Assize,uh·size,دادگاه جنایی,دادگاه‌هایی که به جرایم جدی رسیدگی می‌کنند.
-Statement,stayt·muhnt,اظهار,بیان رسمی یا ارائه اطلاعات به صورت کتبی یا شفاهی.
-Threat,thret,تهدید,اظهار یا اقدامی که قصد آسیب یا خطر را نشان می‌دهد.
-Confront,kuhn·fruhnt,روبه‌رو شدن,مواجهه مستقیم با یک مشکل یا چالش.
-Ethical,eh·thuh·kl,اخلاقی,مطابق با اصول و ارزش‌های اخلاقی.
-Contest,kon·test,مجادله یا اختلاف,رقابت یا اختلاف‌نظر بین طرفین.
-Determinative,dih·tur·muh·nuh·tiv,تعیین‌کننده,چیزی که نقش نهایی در تصمیم‌گیری یا نتیجه دارد.
-Statutory,sta·choo·tuh·ree,قانونی یا بر اساس قانون,مربوط به قوانین یا مقررات تصویب‌شده.
-Provision,pruh·vizh·uhn,مقررات,بندی در یک سند قانونی که شرایط یا الزامات را مشخص می‌کند.
-Deal with,deel with,برخورد کردن با,رسیدگی یا مدیریت یک موضوع یا مشکل.
-Determine,dih·tur·min,تعیین کردن,مشخص کردن یا تصمیم‌گیری در مورد یک موضوع.
-Priority,prai·awr·uh·tee,اولویت,چیزی که اهمیت بیشتری دارد و باید زودتر انجام شود.
-Guidance,guy·duhns,راهنمایی,ارائه کمک یا مشاوره برای تصمیم‌گیری یا اقدام.
-Fulfil,fuhl·fil,انجام دادن تعهد,برآوردن یا انجام تعهدات یا مسئولیت‌ها.
-Judicial,joo·dish·uhl,قضایی,مرتبط با قضاوت، دادگاه یا سیستم قضایی.
-Material,muh·teer·ee·uhl,مادی,مربوط به اهمیت یا شواهد فیزیکی و ملموس.
-Faith,feyth,ایمان,باور قوی یا اعتماد به کسی یا چیزی.
-Assessment,uh·ses·muhnt,ارزیابی,فرایند بررسی یا سنجش موضوعی.
-Relevant,rel·uh·vuhnt,مرتبط,مرتبط با موضوع یا شرایط خاص.
-Various,vair·ee·uhs,متعدد,چیزهایی که از نظر نوع یا شکل متفاوت هستند.
-Consider,kuhn·sid·ur,در نظر گرفتن,تفکر یا بررسی دقیق درباره چیزی.
-Coherence,koh·heer·uhns,انسجام,هماهنگی یا ارتباط منطقی بین اجزا.
-Consistency,kuhn·sis·tuhn·see,یکپارچگی,ثبات یا تطابق با اصول مشابه.
-Precisely,pruh·sahys·lee,به‌طور دقیق,با دقت بالا و وضوح کامل.
-Survey,sur·vay,بررسی یا ارزیابی,جمع‌آوری اطلاعات یا ارزیابی وضعیت.
-Conduct,kuhn·duhkt,هدایت کردن یا انجام دادن,مدیریت یا اجرای یک فعالیت.
-Attempt,uh·tempt,تلاش کردن,تلاش برای رسیدن به یک هدف، حتی اگر موفق نشود.
-Ascertain,as·sur·tayn,اطمینان حاصل کردن,کسب اطلاعات دقیق یا اثبات حقیقت.
-Achieve,uh·cheev,دستیابی به هدف,رسیدن به یک هدف یا نتیجه مطلوب.
-Sophistication,suh·fis·tuh·kay·shn,پیچیدگی یا پیشرفت,توسعه یا پیچیدگی در تفکر، طراحی یا مهارت.
-Origin,aw·ruhn·jin,منشأ یا خاستگاه,نقطه شروع یا سرچشمه یک ایده یا عمل.
-Scale,skayl,مقیاس یا اندازه,اندازه‌گیری یا مقایسه کمیت یا کیفیت.
-Devise,dih·vayz,ابداع کردن,ایجاد یا طراحی چیزی جدید.
-Claim,klaym,ادعا,اظهار یا تقاضا برای چیزی که به فرد تعلق دارد.
-Occupation,ok·yoo·pay·shn,شغل,فعالیت یا حرفه‌ای که فرد انجام می‌دهد.
-Standing,stan·ding,موقعیت,وضعیت یا اعتبار فرد در جامعه یا در قانون.
-Citizen,si·tuh·zn,شهروند,فردی که تابعیت یک کشور را دارد.
-Author,aw·thor,مولف یا نویسنده,فردی که اثری را نوشته یا خلق کرده است.
-Rational,rash·nuhl,معقول یا منطقی,بر اساس عقلانیت و منطق.
-Remark,ruh·mark,اظهار یا بیان,گفتار یا اظهار رسمی یا غیررسمی.
-Concordance,kuhn·kawr·dns,همخوانی یا تطابق,هماهنگی یا توافق بین عناصر مختلف.
-Touchstone,tuhch·stohn,معیار ارزیابی,معیاری برای سنجش کیفیت یا درستی چیزی.
-Gravity,grav·i·tee,اهمیت یا جدیت,اهمیت زیاد یا ماهیت جدی یک موضوع.
-Judiciary,joo·di·shuh·ree,قضا,سیستم یا مقام‌های قضایی مسئول اجرای قانون.
-Inconsistency,in·kuhn·sih·sten·see,ناسازگاری,عدم هماهنگی یا تطابق.
-Particularly,pahr·ti·ku·ler·lee,به‌ویژه,به‌صورت خاص یا مشخص.
-Allegation,al·uh·geɪ·shn,اتهام,ادعایی رسمی درباره رفتار نادرست یا جرم.
-Role,rohl,نقش,وظیفه یا عملکرد مشخص در یک سیستم.
-Corruption,kuh·rup·shn,فساد,سوءاستفاده از قدرت برای منافع شخصی.
-Complement,kom·pluh·ment,تکمیل,چیزی که دیگری را کامل یا بهبود می‌بخشد.
-Accountability,uh·kown·tuh·bil·uh·tee,مسئولیت‌پذیری,پاسخگویی نسبت به اعمال یا تصمیمات.
-Orient,aw·ree·ent,جهت‌گیری,تنظیم یا تعیین جهت.
-Branch,bran(t)ch,شاخة,بخش یا قسمت یک سازمان یا سیستم.
-Element,el·uh·muhnt,عنصر,جزئی از یک کل.
-Resolution flourish,rez·uh·loo·shn flo͞o·rish,رشد راه‌حل,روند توسعه یا تقویت راه‌حل‌ها.
-Notably,noh·tuh·blee,به‌ویژه,به‌صورت برجسته یا خاص.
-Conciliation,kuhn·suh·lee·ay·shn,آشتی,تلاش برای حل اختلافات و برقراری صلح.
-Arbitrator,ahr·bih·truh·ter,داور,فردی که در اختلاف به عنوان قاضی بی‌طرف عمل می‌کند.
-Merely,mer·lee,فقط,تنها یا صرفاً.
-Regulation,reg·yuh·lay·shn,قوانین,قواعد یا دستورالعمل‌های رسمی.
-Manner,man·er,روش,شیوه یا طریقه انجام کاری.
-Implement,im·ple·ment,اجرا,به‌کارگیری یا انجام چیزی.
-Agency,ey·juhn·see,سازمان,نهادی که وظایف خاصی را انجام می‌دهد.
-Interpret,in·ter·pret,تفسیر,بیان یا توضیح معنای چیزی.
-Conceive,kuhn·seev,مفروض داشتن,ایجاد یا تصور ایده‌ای در ذهن.
-Prophecy,proh·fuh·see,پیشگویی,پیش‌بینی وقایع آینده.
-Fair,fair,عادلانه,بر اساس انصاف و عدالت.
-Predict,pri·dikt,پیش‌بینی,تخمین یا پیش‌بینی چیزی در آینده.
-Undue,uhn·doo,غیرموجه,بدون توجیه منطقی یا لازم.
-Delay,dih·lay,تاخیر,تعویق در انجام یک عمل یا رویداد.
-Afford,uh·ford,تأمین کردن,داشتن توان مالی یا ظرفیت برای انجام چیزی.
-Cost,kawst,هزینه,مبلغ یا بهایی که باید پرداخت شود.
-Parcel,par·suhl,بسته,محموله یا بسته‌بندی کالا.
-Departed from,dih·pahr·tid fruhm,دور شدن از,ترک کردن یک روش یا مسیر.
-Identify,ahy·den·tify,شناسایی,تشخیص یا شناخت یک شخص، شیء یا وضعیت.
-Innocence,in·uh·suhns,بی‌گناهی,وضعیتی که در آن فرد مرتکب جرم نشده است.
-Trial,trahyl,محاکمه,رسیدگی قضایی به یک دعوی یا اتهام.
-Impartial,im·pahr·shuhl,بی‌طرف,بدون تعصب یا جانبداری.
-Party,pahr·tee,طرف,یکی از افراد یا گروه‌های درگیر در یک موضوع یا اختلاف.
-Deny,dih·nai,انکار کردن,رد کردن یا عدم پذیرش چیزی.
-Accuser,uh·kyoo·zər,اتهام‌زننده,فردی که ادعایی علیه دیگری مطرح می‌کند.
-Burden of proof,bur·dn uhv proof,بار اثبات,مسئولیت ارائه شواهد برای اثبات یک ادعا.
-Testimony,tes·tuh·moh·nee,شهادت,اظهاراتی که یک شاهد ارائه می‌دهد.
-Witness,wit·ness,شاهد,فردی که واقعه‌ای را مشاهده کرده و درباره آن گواهی می‌دهد.
-Circumstantial,sur·kum·stan·shuhl,مشروط,شواهدی که غیرمستقیم به یک نتیجه اشاره دارند.
-Inadmissible,in·ad·muh·suh·buhl,قابل قبول نیست,شواهدی که در دادگاه پذیرفته نمی‌شوند.
-Demand,dih·mand,تقاضا,درخواست رسمی یا شدید برای چیزی.
-Oath,oʊθ,قسم,تعهد رسمی برای گفتن حقیقت.
-Swore,swɔr,قسم خورده,تعهد رسمی برای انجام یا رعایت چیزی.
-Dismiss the case,dihs·mis thuh kays,رد کردن پرونده,مختومه کردن پرونده توسط قاضی.
-Orally,aw·ruh·lee,شفاهی,اظهارات یا شهادت به صورت کلامی.
-Conclusive,kuhn·klu·siv,قطعی,نهایی و غیرقابل تردید.
-Guilty,gil·tee,گناهکار,فردی که مرتکب جرم شده است.
-Verdict,vur·dikt,رای,تصمیم نهایی دادگاه.
-Appellate,uh·pel·it,فرجامی,مرتبط با تجدیدنظر در یک حکم یا تصمیم.
-Ruler,roo·ler,حاکم,فردی با قدرت برای مدیریت یا حکومت.
-Agreement,uh·gree·muhnt,توافق,توافق رسمی بین طرفین.
-Foresee,fohr·see,پیش‌بینی,پیش‌بینی وقوع یک رویداد.
-Unforeseen,uhn·fuh·seen,غیرقابل پیش‌بینی,چیزی که پیش‌بینی نشده است.
-Contingency,kuhn·tin·juhn·see,شرط احتمالی,رویدادی که ممکن است تحت شرایط خاص رخ دهد.
-Attainment,uh·teyn·muhnt,دستیابی,فرایند رسیدن به هدف یا نتیجه.
-Purpose,pur·puhs,هدف,دلیل یا انگیزه انجام یک عمل.
-Discharge,dis·chahrj,خارج کردن,رهایی از تعهد یا مسئولیت.
-Lay down,lay down,تعیین کردن,مشخص کردن قوانین یا شرایط.
-Absolute contract,ab·sol·yoot kon·trakt,قرارداد مطلق,قراردادی بدون شرایط یا محدودیت.
-Amount,uh·mount,مقدار,اندازه یا میزان چیزی.
-Cast,kast,شکل,ایجاد یا طراحی چیزی برای یک هدف خاص.
-Bind,bahynd,بستن,تعهد قانونی یا الزام‌آور ایجاد کردن.
-Escape,ih·skayp,فرار کردن,رهایی از وضعیت یا مسئولیت خاص.
-Futile,fyoo·tl,بی‌فایده,عملی که فاقد نتیجه مثبت باشد یا هیچ سودی نداشته باشد.
-Alleged,uh·lejd,متهم شده,ادعایی که هنوز ثابت نشده است.
-Justification,juhs·tuh·fi·kay·shuhn,توجیه,دلیلی برای توضیح یا دفاع از یک عمل یا تصمیم.
-Harsh,hahrsh,سخت,به شدت سخت، خشن یا غیرمنصفانه.
-Guard,gahrd,نگهبانی,محافظت از چیزی یا مراقبت از آن.
-Express,ik·spres,صریح,بیان مستقیم و شفاف چیزی.
-Stipulation,stip·yuh·lay·shuhn,شرط,شرط یا قیدی که در یک قرارداد ذکر شده است.
-Undertake,uhn·der·teyk,تعهد کردن,قبول کردن انجام یک مسئولیت یا وظیفه.
-Unconditional,uhn·kuhn·dih·shuh·nl,بدون قید و شرط,بدون هیچ پیش‌شرط یا محدودیتی.
-Complain,kuhm·pleyn,شکایت کردن,بیان نارضایتی یا اعتراض به یک وضعیت.
-Advantage,ad·van·tij,مزیت,فایده یا برتری نسبت به دیگران.
-For instance,fawr in·stuhns,به عنوان مثال,ذکر مثالی برای توضیح یک موضوع.
-Nonetheless,nuhn·the·less,با این حال,با وجود مشکلات یا موانع.
-Liable,lahy·uh·buhl,مسئول,مسئولیت قانونی برای یک عمل یا پیامد آن.
-Practice party,prak·tis pahr·tee,طرف عملی,طرفی که در یک اقدام یا قرارداد مشارکت دارد.
-Insert,in·surt,قرار دادن,وارد کردن یا اضافه کردن چیزی به یک محل یا سند.
-Extent,ik·stent,دامنه,محدوده یا میزان یک چیز.
-Embody,em·bah·dee,نمادین,بیان یا تجسم یک ایده یا مفهوم در عمل.
-Arrest,uh·rest,بازداشت,گرفتن یا متوقف کردن قانونی یک شخص به دلیل تخلف.
-Scope,skohp,دامنه,محدوده یا گستره اختیارات یا فعالیت.
-Property,prop·er·tee,ملکیت,دارایی یا چیزی که متعلق به کسی است.
-Obstruction,uhb·struk·shuhn,مانع,چیزی که جلوی انجام یک کار را می‌گیرد.
-Execution,ek·suh·kew·shuhn,اجرا,عمل انجام یا پیاده‌سازی چیزی.
-Conviction,kuhn·vik·shuhn,محکومیت,حکم قانونی علیه فردی که مقصر شناخته شده است.
-Consequently,kon·si·kwent·lee,در نتیجه,به دنبال یک عمل یا اتفاق.
-Combination,kuhm·buh·nay·shuhn,ترکیب,ادغام چندین عنصر با هم.
-Trespass,tres·pass,تجاوز,ورود غیرمجاز به ملک یا دارایی دیگران.
-Doubt,doubt,شک,عدم اطمینان یا باور به یک چیز.
-Facet,fa·set,جنبه,یک جنبه یا بخش از یک موضوع.
-Appreciate,uh·pree·shee·ayt,قدردانی کردن,تشخیص ارزش یا اهمیت چیزی.
-Supremacy,soo·prem·uh·see,عالی بودن,برتری یا قدرت بالاتر نسبت به دیگران.
-Prerogative,pruh·rog·uh·tiv,اختیار,حق یا امتیاز ویژه برای کسی.
-Appropriation,uh·proh·pree·ay·shuhn,اختصاص,اختصاص دادن چیزی برای استفاده خاص.
-Good,gʊd,کالا,چیزی که می‌توان خرید یا فروخت.
-Quantity,kwon·ti·tee,مقدار,مقدار یا حجم مشخص از یک چیز.
-Calculate,kal·kyuh·leyt,محاسبه کردن,تعیین مقدار یا ارزش چیزی.
-Sub-sell,suhb·sel,زیر فروش,فروختن کالا به دیگران پس از خرید آن.
-Entitle to,in·tahyl tu,حق‌دار کردن,دادن حق به کسی برای استفاده از چیزی.
-Vessel,ves·uhl,کشتی,وسیله حمل‌ونقل آبی.
-Sailing,seyl·ing,ناوبری,حرکت قایق یا کشتی در آب.
-Cargo,kar·goh,محصولات,کالاهایی که توسط کشتی یا وسیله نقلیه حمل می‌شوند.
-Pass up,pas uhp,رد کردن,فرصت یا پیشنهادی را نپذیرفتن.
-String,string,رشته,یک سری یا مجموعه‌ای از موارد به هم پیوسته.
-Contractual,kuhn·trak·chuhl,قراردادی,مربوط به توافقات قانونی.
-Description,dih·skrip·shuhn,شرح,تعریف یا توضیح مشخصات چیزی.
-Trader,trey·der,تاجر,شخصی که در تجارت کالا شرکت می‌کند.
-Necessity,nuh·ses·i·tee,ضرورت,چیزی که لازم و ضروری است.
-Take interest,teyk in·tuh·rest,اخذ علاقه,ابراز علاقه به یک موضوع یا فعالیت.
-Parallel,par·uh·lel,موازی,چیزهایی که در یک راستا بدون تقاطع حرکت می‌کنند.
-Diverge,dih·vurj,انحراف,جدا شدن از مسیر اصلی یا اختلاف مسیر.
-Unification,yoo·nuh·fi·kay·shuhn,اتحاد,عمل یکی کردن یا متحد شدن.
-Set up,set uhp,راه‌اندازی,ایجاد یا شروع چیزی جدید.
-Membership,mem·bur·ship,عضویت,وابستگی به یک گروه یا سازمان.
-Enlarge,en·lahrj,گسترش,بزرگ‌تر کردن یا افزایش دامنه.
-Edition,ih·dish·uhn,نسخه,نسخه خاص از یک کتاب یا نشریه.
-Approve,uh·proov,تأیید,پذیرفتن یا تصویب چیزی.
-Wind,wihnd,باد,جریان هوا یا نسیم.
-Strike,strajk,ضربه,عمل وارد کردن ضربه یا اقدام ناگهانی.
-Respective,ri·spek·tiv,متناسب,مربوط به هر فرد یا مورد خاص.
-Respected,ri·spek·tid,محترم,کسی که مورد احترام است.
-Freehold,free·hohld,مالکیت آزاد,مالکیت کامل بدون محدودیت زمانی.
-Acquire for,uh·kwahyuhr fawr,اکتساب برای,به دست آوردن چیزی برای یک هدف خاص.
-Accordance with,uh·kawr·dns wihth,طبق توافق با,انجام یا پیروی از چیزی بر اساس قوانین یا توافق.
-Scheme,skeem,طرح,برنامه یا نقشه‌ای برای رسیدن به هدف.
-Permission,per·mish·uhn,اجازه,اجازه برای انجام یک عمل خاص.
-Transfer,trans·fur,انتقال,جابجایی چیزی از یک شخص به دیگری.
-Obtain,ob·teyn,دریافت کردن,به دست آوردن یا کسب چیزی.
-Restrain,ri·strain,محدود کردن,جلوگیری از انجام یا کنترل چیزی.
-Revise,ri·vahyz,بازنگری,اصلاح یا تجدیدنظر روی چیزی.
-Restitution,res·ti·tyoo·shuhn,استرداد,بازگرداندن یا جبران خسارت.
-Admiration,ad·muh·rey·shuhn,تحسین,احساس احترام یا علاقه به کسی یا چیزی.
-Envy,en·vee,حسادت,احساس نارضایتی نسبت به موفقیت یا ویژگی‌های دیگران.
-Enthrall,en·thrawl,مجذوب کردن,شیفته یا گرفتار کردن کسی به چیزی.
-Reject,ri·jekt,رد کردن,نپذیرفتن چیزی.
-Imply,im·plahy,دلالت کردن,بیان غیرمستقیم یا اشاره به چیزی.
-Awarding,uh·wor·ding,اهدا,دادن جایزه یا پاداش به کسی.
-Quantum meruit,kwon·tum mer·wit,مقدار عادلانه,مقدار منطقی یا عادلانه خدمات انجام شده.
-Stamp,stamp,مهری,مهر یا علامتی برای تأیید رسمی چیزی.
-Lag,lag,تاخیر,به تعویق افتادن یا کندی در انجام چیزی.
-Woefully,woef·uh·lee,به طور وحشتناکی,به شکل ناراحت‌کننده یا ناامیدکننده.
-Remarkable,ri·mark·uh·buhl,قابل توجه,چیزی که به خاطر ویژگی‌های خاص برجسته است.
-Rigorous,rig·er·uhs,سختگیر,نیازمند دقت زیاد یا رعایت کامل قوانین.
-Enlighten,en·lahyt·uhn,روشن کردن,آگاه کردن یا توضیح چیزی برای دیگران.
-Accelerate,ak·sel·uh·reyt,شتاب دادن,افزایش سرعت انجام کاری.
-Burst,burst,انفجار,ترکیدن یا باز شدن ناگهانی.
-Factually,fak·choo·uh·lee,از نظر واقعیت,بر اساس حقایق و اطلاعات واقعی.
-Fortunate,for·chuh·nit,خوش شانس,در شرایط خوشایند و مساعد قرار گرفتن.
-Swap,swop,تعویض,مبادله یا جایگزینی چیزی با چیز دیگر.
-Ongoing,on·goh·ing,در حال انجام,چیزی که هنوز ادامه دارد.
-Tax,taks,مالیات,مبلغی که به دولت پرداخت می‌شود.
-Spate,speyt,سیل,هجوم یا مقدار زیاد چیزی در مدت کوتاه.
-Spawn,spawn,تولید کردن,ایجاد یا تولید چیزی جدید.
-Path-breaking,path·brey·king,شکست مرزها,ایجاد تغییرات نوآورانه.
-Confer,kuhn·fur,اعطا کردن,دادن امتیاز یا حق به کسی.
-Manifestation,man·uh·fuh·stay·shuhn,بیان,بروز یا نمایش چیزی به‌طور واضح.
-Supervisory,soo·per·vahy·zoh·ree,نظارتی,مربوط به نظارت یا کنترل بر عملکرد دیگران.
-Ultra vires,uhl·truh vye·reez,خارج از اختیارات,عملی که فراتر از اختیارات قانونی یک نهاد یا مقام باشد.
-Excess,ek·ses,اضافه,میزان یا مقدار بیشتری از حد مجاز.
-Convey,kuhn·vey,انتقال دادن,عمل جابجایی یا انتقال یک حق یا ملک به دیگران.
-Rather,rath·er,به‌جای,به معنای اینکه چیزی یا کسی به‌جای چیز دیگری ترجیح داده می‌شود.
-Exercise of powers,ek·ser·sahyz uhv pow·urz,استفاده از قدرت‌ها,استفاده از اختیارات یا قدرت‌هایی که به یک مقام یا نهاد داده شده است.
-Spell out,spel owt,وضوح بخشیدن,بیان واضح و دقیق نکات یا شرایط.
-Spelt out,spelt owt,وضوح یافته,بیان واضح و مشخص نکات یا شرایط به طور کتبی.
-Avoid,uh·void,اجتناب کردن,اجتناب از انجام یک عمل یا فعالیت.
-Expedite,ek·spuh·dahyt,تسریع کردن,تسریع در انجام فرآیندها یا فعالیت‌ها.
-Condemn,kuhn·dem,محکوم کردن,محکوم کردن یک عمل یا رفتار به دلیل غیرقانونی یا غیراخلاقی بودن.
-Exclude,ik·sklood,استثنا کردن,عمل حذف یا کنار گذاشتن یک فرد یا چیز از یک گروه یا دسته.
-Otherwise,uh·thur·waiz,در غیر این صورت,بیانگر این است که در غیر این صورت، شرایط متفاوت خواهد بود.
-Frequently,free·kwent·lee,به‌طور مکرر,به معنای اینکه چیزی به طور مکرر و مداوم اتفاق می‌افتد.
-Purport,pur·port,مفاد داشتن,عمل نشان دادن یا بیان یک هدف یا نیت.
-Take charge,teyk chahrj,کنترل گرفتن,عمل مسئولیت گرفتن و هدایت یک وضعیت یا گروه.
-Hire,hahyur,استخدام کردن,عمل استخدام یک فرد برای انجام کار خاص.
-Contain,kuhn·teyn,در بر داشتن,حمل یا دربر داشتن چیزی.
-Ignorance,ig·nuh·runs,نادانی,عدم دانش یا آگاهی درباره یک موضوع.
-Overlap,oh·vur·lap,پوشش,تداخل یا همپوشانی بین دو یا چند موضوع یا مسئله.
-Emergent,ih·mur·juhnt,نوظهور,عمل یا وضعیتی که به سرعت در حال رشد یا توسعه است.
-Theme,theme,موضوع,موضوع یا ایده‌ای که در یک بحث یا اثر هنری مورد توجه است.
-Divergent,dih·vur·juhnt,متنوع,مربوط به موارد یا موضوعات متفاوت یا مختلف.
-Promisor,prom·ih·sor,متعهد,فردی که متعهد به انجام یک عمل خاص است.
-Verify,ver·uh·fahy,تأیید کردن,عمل تأیید یا تصدیق صحت یک اطلاعات یا سند.
-Substantive,suhb·stan·tiv,ماده‌ای,مربوط به مباحث اساسی یا محتوای اصلی یک موضوع.
-Discourse,dis·kawrs,گفتگو,گفتگو یا تبادل نظر بین دو یا چند طرف.
-Primary,prahy·mer·ee,اولیه,نخستین یا اصلی‌ترین چیزی که در نظر گرفته می‌شود.
-Expressly,ik·spres·lee,صریحاً,به وضوح و به طور خاص بیان شده است.
-Designate,dih·zig·neyt,معین کردن,عمل تعیین یا مشخص کردن یک شخص یا چیز.
-Subsidiary,suhb·sid·ee·er·ee,فرعی,شرکتی که تحت کنترل یک شرکت مادر عمل می‌کند.
-Implicit,im·pli·kit,ضمنی,چیزی که به وضوح بیان نشده اما در مفهوم نهفته است.
-Hierarchy,hahy·uh·rahr·kee,سلسله مراتب,ساختار یا نظم سازمانی که در آن مقام‌ها و مسئولیت‌ها طبقه‌بندی می‌شوند.
-Concrete,kon·krit,ملموس,چیزی که دارای شکل یا فرم فیزیکی و واقعی است.
-Tribunal,tri·byoo·nuhl,دادگاه,مؤسسه‌ای که وظیفه رسیدگی به دعاوی حقوقی را دارد.
-Addition,uh·dish·uhn,افزودن,افزودن چیزی به مجموعه‌ای از اشیاء یا اطلاعات.
-Consent,kuhn·sent,رضایت,اجازه‌ای که به یک عمل یا رفتار داده می‌شود.
-Consensual,kuhn·sen·shoo·uhl,موافقتی,مربوط به توافقی که به‌طور مستقیم بین طرفین انجام می‌شود.
-Preserve,pri·zurv,حفظ کردن,عمل نگهداری و حفظ چیزی برای استفاده در آینده.
-Trace,treys,ردیابی,عمل ردیابی یا پیگیری یک رویداد، عمل یا اثر قانونی.
-Straightforward,streyt·fawr·d,ساده و واضح,عملی که به آسانی قابل درک و بدون پیچیدگی است.
-Vary,vair·ee,تنوع,وجود تغییرات یا اختلاف در شرایط، قیمت‌ها یا وضعیت‌ها.
-Multistate,muhl·ti·steyt,چندایالتی,مربوط به چندین ایالت یا حوزه قضایی مختلف.
-Praetor peregrini,pree·tor per·eh·gree·nee,فرماندار خارجی,فرماندار یا مقام قضایی که به مسائل مربوط به اتباع خارجی رسیدگی می‌کند.
-Jus gentium,yoos jen·tee·uhm,حقوق ملت‌ها,مجموعه‌ای از اصول و قواعد حقوقی که در بین ملت‌ها پذیرفته شده است.
-Flexible,flek·suh·buhl,انعطاف‌پذیر,قابلیت تغییر یا تنظیم بر اساس شرایط.
-Loosely,loose·lee,سست,به طور غیررسمی یا نامنظم.
-Thus,thuhs,بنابراین,به همین دلیل یا بنابراین.
-Adjudicate,uh·jood·i·keyt,داوری کردن,عمل تصمیم‌گیری در مورد یک اختلاف یا پرونده قانونی.
-Emerge,ih·murj,ظهور,عملی که در آن چیزی به طور ناگهانی یا به تدریج به وجود می‌آید یا بروز می‌کند.
-Field,feeld,زمینه,منطقه‌ای از مطالعه یا فعالیت خاص.
-Basis,beys·is,پایه,مبانی یا اصول اساسی که چیزی بر اساس آن ساخته می‌شود.
-Perceive,per·seev,ادراک,عمل دریافتن یا درک کردن چیزی از طریق حس یا فکر.
-Rigid,rij·id,سخت,حالت یا وضعیتی که غیرقابل انعطاف یا تغییر است.
-Pioneer,pee·on·eer,پیشگام,فردی که در زمینه‌ای جدید پیشگام است یا ایده‌های نوآورانه‌ای ارائه می‌دهد.
-Landmark,land·mark,نقطه عطف، سرنوشت‌ساز,نقطه‌ای که در آن یک تغییر یا پیشرفت قابل توجهی رخ می‌دهد.
-Essay,es·ey,مقاله,نوشته‌ای تحلیلی یا تبیینی درباره یک موضوع خاص.
+WORD,PRONUNCIATION,MEANING,DESCRIPTION,EXAMPLE,EXAMPLE_TRANSLATION,TAGS
+Arbitration,aar·buh·tray·shn,داوری حقوقی,فرآیندی که طی آن اختلافات به یک داور بی‌طرف سپرده می‌شود.,The dispute was resolved through arbitration to avoid court proceedings.,اختلاف از طریق داوری حل شد تا از دادرسی قضایی جلوگیری شود.,LAW
+Jurisdiction,jur·uhs·dik·shn,صلاحیت قضایی,اختیارات قانونی یک دادگاه یا مقام قضایی برای رسیدگی به یک دعوی.,The court has jurisdiction over criminal cases in this region.,دادگاه صلاحیت رسیدگی به پرونده‌های کیفری در این منطقه را دارد.,LAW
+Breach,breech,نقض تعهد,عمل یا ترک عملی که خلاف یک تعهد قراردادی یا قانونی است.,Delaying payment is a breach of the agreed terms.,تاخیر در پرداخت نقض مفاد توافق‌شده است.,LAW
+Contract,kon·trakt,قرارداد الزام‌آور,توافقی بین دو یا چند طرف که الزام‌آور است.,The contract was signed by both parties last week.,قرارداد هفته گذشته توسط هر دو طرف امضا شد.,LAW
+Litigation,li·tuh·gay·shn,رسیدگی قضایی,فرایند طرح دعوی در دادگاه برای حل یک اختلاف.,The company is involved in litigation over environmental violations.,شرکت درگیر دعاوی حقوقی به دلیل تخلفات زیست‌محیطی است.,LAW
+Negligence,neg·luh·jns,سهل‌انگاری,عدم رعایت احتیاط‌های متعارف که باعث ضرر به دیگران شود.,The accident occurred due to the driver’s negligence.,تصادف به دلیل سهل‌انگاری راننده رخ داد.,LAW
+Liability,lie·uh·bil·uh·tee,مسئولیت,تعهد قانونی برای جبران خسارت.,The tenant is liable for any damages caused to the property.,مستاجر مسئول خسارات وارده به ملک است.,LAW
+Indemnity,in·dem·nuh·tee,غرامت,تعهد به جبران خسارت‌های وارده به طرف دیگر.,The contract includes an indemnity clause for unforeseen damages.,قرارداد شامل بندی برای جبران خسارات غیرمنتظره است.,LAW
+Sovereignty,sov·ruhn·tee,حاکمیت,قدرت مطلق و قانونی یک دولت در سرزمین خود.,The sovereignty of each state must be respected in international law.,حاکمیت هر دولت باید در حقوق بین‌الملل محترم شمرده شود.,LAW
+Clause,klawz,بند,بخش یا ماده‌ای از یک قرارداد یا قانون.,The agreement includes a confidentiality clause.,توافق شامل یک بند محرمانگی است.,LAW
+Force Majeure,fors·muh·zhoor,قوه قاهره,شرایط غیرقابل‌پیش‌بینی که اجرای قرارداد را غیرممکن می‌کند.,The company invoked the force majeure clause during the natural disaster.,شرکت بند فورس ماژور را در طول فاجعه طبیعی اعمال کرد.,LAW
+Sanctions,sangk·shnz,تحریم‌ها,اقدامات تنبیهی اقتصادی یا سیاسی که علیه یک کشور اعمال می‌شود.,The government imposed sanctions on the company for violating trade laws.,دولت به دلیل نقض قوانین تجاری، تحریم‌هایی علیه شرکت اعمال کرد.,LAW
+Compliance,kuhm·plie·uhns,تبعیت,رعایت قوانین، مقررات یا تعهدات قراردادی.,The organization must ensure compliance with new regulations.,سازمان باید از انطباق با مقررات جدید اطمینان حاصل کند.,LAW
+Equity,ek·wuh·tee,انصاف,اصول عدالت که فراتر از قوانین خشک است.,The court’s decision aimed to promote equity between the parties.,تصمیم دادگاه برای ترویج عدالت بین طرفین بود.,LAW
+Tort,tort,مسئولیت مدنی,عملی که باعث خسارت به دیگری شود و مسئولیت مدنی ایجاد کند.,The case involves a tort claim for personal injury.,پرونده شامل شکایتی از نوع خسارت شخصی است.,LAW
+Trademark,trayd·maark,علامت تجاری,نشانه‌ای که محصولات یا خدمات یک شرکت را از دیگران متمایز می‌کند.,The logo was registered as a trademark to protect the brand.,لوگو به عنوان علامت تجاری ثبت شد تا از برند محافظت کند.,LAW
+Insolvency,in·sol·vuhn·see,ورشکستگی,وضعیتی که در آن بدهی‌های یک فرد یا شرکت بیشتر از دارایی‌های آن است.,The company declared insolvency due to financial losses.,شرکت به دلیل زیان‌های مالی اعلام ورشکستگی کرد.,LAW
+Fiduciary,fih·doo·shee·eh·ree,امانت‌دار,شخصی که وظیفه‌ای قانونی برای حفاظت از منافع دیگری دارد.,The trustee has a fiduciary duty to act in the beneficiary’s best interests.,امین موظف است به نفع ذینفع عمل کند.,LAW
+Annex,an·eks,پیوست,سندی که به قرارداد یا توافقنامه اضافه می‌شود.,The document included an annex outlining additional terms.,سند شامل ضمیمه‌ای بود که شرایط اضافی را مشخص می‌کرد.,LAW
+Ratification,ra·tuh·fuh·kay·shn,تصویب,تأیید رسمی یک قرارداد یا معاهده توسط یک نهاد قانونی.,The treaty required ratification by the legislature.,پیمان نیاز به تصویب مجلس داشت.,LAW
+Settlement,set·uhl·muhnt,تسویه,حل و فصل اختلافات بدون مراجعه به دادگاه.,The parties reached a settlement after months of negotiation.,طرفین پس از ماه‌ها مذاکره به توافق رسیدند.,LAW
+Trade,trayd,تجارت,فعالیت خرید و فروش کالا یا خدمات.,The new trade policy aims to boost exports.,سیاست تجاری جدید با هدف افزایش صادرات است.,LAW
+Treaty,tree·tee,معاهده,توافق رسمی بین دولت‌ها.,The treaty between the two nations was signed last year.,پیمان بین دو ملت سال گذشته امضا شد.,LAW
+Waiver,way·vr,اسقاط حق,صرف‌نظر کردن داوطلبانه از یک حق یا ادعا.,The client signed a waiver to release the company from liability.,مشتری با امضای ابراء شرکت را از مسئولیت آزاد کرد.,LAW
+Adjudication,ar·joo·di·kay·shn,رسیدگی قضایی,تصمیم‌گیری قانونی توسط یک دادگاه.,The adjudication process resolved the dispute efficiently.,فرآیند رسیدگی به اختلاف به کارآمدی حل و فصل شد.,LAW
+Affidavit,af·ih·day·vit,سوگندنامه,بیانیه کتبی که تحت سوگند ارائه می‌شود.,The affidavit was submitted as evidence in the trial.,گواهی‌نامه به عنوان مدرک در دادگاه ارائه شد.,LAW
+Amendment,uh·men·dment,اصلاحیه,تغییر یا الحاق به یک سند قانونی یا قانون.,The amendment clarified ambiguities in the original law.,اصلاحیه ابهامات در قانون اصلی را روشن کرد.,LAW
+Antitrust,an·tee·trust,ضد انحصار,قوانینی که به محدود کردن انحصارهای تجاری می‌پردازند.,Antitrust laws prevent companies from forming monopolies.,قوانین ضد انحصار از تشکیل انحصار جلوگیری می‌کنند.,LAW
+Assignment,uh·sine·muhnt,انتقال,واگذاری حق یا مسئولیت به دیگری.,The assignment transferred ownership of the property to the buyer.,واگذاری مالکیت ملک به خریدار انتقال یافت.,LAW
+Bailment,bayl·muhnt,امانت,قراردادی که طی آن یک کالا برای نگهداری به دیگری سپرده می‌شود.,The bailment agreement outlined the conditions for storing goods.,قرارداد نگهداری کالاها شرایط مشخصی را تعیین کرده بود.,LAW
+Bankruptcy,bank·rup·see,ورشکستگی,وضعیتی که در آن یک فرد یا شرکت قادر به پرداخت بدهی‌ها نیست.,The company filed for bankruptcy after accumulating significant debt.,شرکت پس از انباشتن بدهی‌های قابل توجه اعلام ورشکستگی کرد.,LAW
+Beneficiary,ben·uh·fish·ee·eh·ree,ذی‌نفع,شخصی که از یک قرارداد، وصیت‌نامه یا امانت بهره‌مند می‌شود.,The beneficiary received the funds from the trust.,ذینفع وجوه را از صندوق دریافت کرد.,LAW
+Caveat,kav·ee·at,اخطار,اخطاری که در آن احتیاط لازم توصیه می‌شود.,The contract includes a caveat regarding late payments.,قرارداد شامل یک اخطار در مورد پرداخت‌های دیرهنگام است.,LAW
+Collateral,kuh·lat·uh·rul,وثیقه,دارایی ارائه‌شده برای تضمین بازپرداخت وام.,The borrower offered collateral to secure the loan.,وام‌گیرنده برای تضمین وام وثیقه ارائه کرد.,LAW
+Common Law,kah·muhn law,حقوق عرفی,سیستم حقوقی مبتنی بر رویه‌های قضایی و نه قوانین مدون.,The decision relied on principles of common law.,تصمیم بر اصول حقوق عرفی استوار بود.,LAW
+Consideration,kuhn·sid·uh·ray·shn,عوض,چیزی که برای الزام‌آور بودن قرارداد ارائه می‌شود.,The consideration for the contract was clearly stated as monetary payment.,عوض قرارداد به صورت واضح به عنوان پرداخت پولی بیان شد.,LAW
+Covenant,kuh·vuh·nuhnt,پیمان,توافق‌نامه‌ای الزام‌آور میان طرفین.,The covenant required the tenant to maintain the property.,عهدنامه مستاجر را ملزم به حفظ ملک می‌کرد.,LAW
+Damages,dam·uh·juhz,خسارت,جبران مالی برای ضرری که وارد شده است.,The court awarded damages for the plaintiff’s financial losses.,دادگاه خسارت‌های مالی را به شاکی اعطا کرد.,LAW
+Debenture,dih·ben·chur,اوراق قرضه,سندی که بیانگر بدهی شرکت به دارنده آن است.,The company issued debentures to raise capital.,شرکت برای جمع‌آوری سرمایه اوراق قرضه صادر کرد.,LAW
+Decree,dih·kree,حکم,دستور قانونی صادرشده توسط دادگاه.,The court issued a decree ordering the immediate release of funds.,دادگاه حکمی صادر کرد که دستور انتشار فوری وجوه را می‌داد.,LAW
+Defamation,def·uh·may·shn,افترا,آسیب به شهرت فرد از طریق اظهارات نادرست.,The article contained defamatory statements about the politician.,مقاله شامل مطالب توهین‌آمیز علیه سیاستمدار بود.,LAW
+Deposition,dep·uh·zih·shn,شهادت‌نامه,اظهارات تحت سوگند گرفته‌شده در خارج از دادگاه.,The deposition provided critical testimony for the case.,گواهی ارائه شده شهادت مهمی برای پرونده بود.,LAW
+Dissolution,dih·suh·loo·shn,انحلال,پایان دادن به موجودیت یک شرکت یا قرارداد.,The dissolution of the partnership was finalized last month.,انحلال شراکت ماه گذشته نهایی شد.,LAW
+Due Diligence,doo·dih·luh·juhns,بررسی لازم,ارزیابی دقیق پیش از ورود به یک معامله یا قرارداد.,Due diligence was conducted before the merger.,پیش از ادغام، بررسی‌های لازم انجام شد.,LAW
+Easement,eez·muhnt,حق ارتفاق,حقی که به صاحب ملکی اجازه استفاده محدود از ملک دیگری را می‌دهد.,The property owner granted an easement for the utility lines.,مالک ملک برای خطوط خدماتی حق عبور اعطا کرد.,LAW
+Encumbrance,en·kuhm·bruhns,مانع قانونی,هرگونه محدودیت قانونی بر مالکیت ملک.,The house was sold with an encumbrance related to unpaid taxes.,خانه با یک بار مالیاتی پرداخت‌نشده فروخته شد.,LAW
+Enforcement,en·fors·muhnt,اجرا,عملی که برای اجباری کردن تبعیت از قانون یا حکم صورت می‌گیرد.,The enforcement of the new law will begin next year.,اجرای قانون جدید از سال آینده آغاز می‌شود.,LAW
+Escrow,es·kroh,سپرده,حساب یا قراردادی که در آن وجه یا اسناد نگهداری می‌شود تا شرایطی محقق شوند.,The funds were held in escrow until the contract was completed.,وجوه در حساب امانی نگهداری شد تا قرارداد تکمیل شود.,LAW
+Exclusion,eks·kloo·zhuhn,استثنا,مواردی که از تعهدات یا پوشش قراردادی مستثنی شده‌اند.,The policy includes an exclusion for pre-existing conditions.,سیاست شامل استثنایی برای شرایط پیشین است.,LAW
+Fiduciary Duty,fih·doo·shee·eh·ree doo·tee,وظیفه امانت‌داری,وظیفه قانونی یا اخلاقی برای حفاظت از منافع دیگری.,The board members have a fiduciary duty to act in the best interests of the company.,اعضای هیئت مدیره وظیفه امانی دارند که در راستای منافع شرکت عمل کنند.,LAW
+Fraud,frahd,کلاهبرداری,عمل نادرست عمدی برای فریب و کسب سود ناعادلانه.,The company was accused of fraud for falsifying financial reports.,شرکت به دلیل جعل گزارش‌های مالی به کلاهبرداری متهم شد.,LAW
+Franchise,fran·chaiz,امتیاز,مجوزی که به یک شخص برای استفاده از برند و سیستم یک شرکت داده می‌شود.,A franchise agreement allows one party to use another’s business model and brand.,قرارداد فرانچایز به یک طرف اجازه می‌دهد که از مدل کسب‌وکار و برند طرف دیگر استفاده کند.,LAW
+Good Faith,good fayth,حسن نیت,رفتار صادقانه و بدون قصد فریب.,Both parties entered into the agreement in good faith.,هر دو طرف با حسن نیت وارد توافق شدند.,LAW
+Grievance,gree·vuhns,شکایت,ادعای ناراحتی یا ضرر توسط یک طرف.,The employee filed a grievance against the company for unfair treatment.,کارمند شکایتی علیه شرکت به دلیل رفتار ناعادلانه ثبت کرد.,LAW
+Habeas Corpus,hey·bee·uhs kor·puhs,حق آزادی از بازداشت غیرقانونی,حکم دادگاه برای ارائه فرد بازداشتی در دادگاه.,Habeas Corpus ensures a person cannot be detained unlawfully without trial.,حبس‌کورپوس تضمین می‌کند که شخصی به‌صورت غیرقانونی بدون محاکمه بازداشت نشود.,LAW
+Hold Harmless,hohld har·muh·luhs,تعهد عدم مسئولیت,تعهدی که یک طرف را از ضرر یا مسئولیت محافظت می‌کند.,The contractor agreed to hold harmless the property owner for any damages.,پیمانکار توافق کرد که مالک ملک را از هرگونه خسارت مصون بدارد.,LAW
+Injunction,in·juhnk·shn,دستور قضایی,حکمی که یک طرف را از انجام یک عمل باز می‌دارد.,The court issued an injunction to prevent the demolition of the historic building.,دادگاه حکم توقف تخریب ساختمان تاریخی را صادر کرد.,LAW
+Intellectual Property,in·tuh·lek·shoo·uhl prop·uh·tee,مالکیت فکری,حقوق قانونی بر خلاقیت‌های فکری مانند اختراعات و آثار ادبی.,The company registered its new invention as intellectual property.,شرکت اختراع جدید خود را به عنوان مالکیت فکری ثبت کرد.,LAW
+Joint Venture,joynt ven·chur,مشارکت مشترک,همکاری تجاری بین دو یا چند طرف برای هدف خاص.,The two firms entered into a joint venture to develop a new technology.,دو شرکت وارد سرمایه‌گذاری مشترک برای توسعه فناوری جدید شدند.,LAW
+Jurisprudence,jur·is·proo·dns,فلسفه حقوق,علم یا نظریه قانون.,Jurisprudence evolves with new court decisions interpreting the law.,علم حقوق با تصمیمات جدید دادگاه در تفسیر قانون تکامل می‌یابد.,LAW
+Lien,leen,حق توقیف,حقی که به طلبکار برای نگهداری یا فروش دارایی بدهکار داده می‌شود.,The bank placed a lien on the property due to unpaid debts.,بانک به دلیل بدهی‌های پرداخت‌نشده بر روی ملک حق تصرف قرار داد.,LAW
+Mediation,mee·dee·ay·shn,میانجی‌گری,حل و فصل اختلافات با کمک یک میانجی بی‌طرف.,The parties decided to resolve their conflict through mediation.,طرفین تصمیم گرفتند که اختلاف خود را از طریق میانجیگری حل کنند.,LAW
+Merger,mur·jur,ادغام,ترکیب دو یا چند شرکت در یک شرکت واحد.,The merger between the two companies created a new industry leader.,ادغام دو شرکت یک رهبر جدید در صنعت ایجاد کرد.,LAW
+Misrepresentation,mis·rep·ruh·zen·tay·shn,ارائه نادرست,اطلاعات نادرست یا گمراه‌کننده که موجب خسارت شود.,The seller was accused of misrepresentation for providing false product information.,فروشنده به دلیل ارائه اطلاعات نادرست در مورد محصول به فریب‌کاری متهم شد.,LAW
+Moot Point,moot poynt,موضوع بحث‌برانگیز,مسئله‌ای که دیگر مرتبط یا مهم نیست.,The court dismissed the case as it was a moot point.,دادگاه پرونده را به دلیل عدم موضوعیت رد کرد.,LAW
+Partnership,part·nr·ship,مشارکت,رابطه‌ای قانونی بین دو یا چند نفر برای انجام کسب‌وکار.,The two firms formed a partnership to share resources and expertise.,دو شرکت برای اشتراک منابع و تخصص شراکت تشکیل دادند.,LAW
+Perjury,pur·juh·ree,شهادت دروغ,ارائه اطلاعات نادرست تحت سوگند.,The witness committed perjury by lying under oath.,شاهد با دروغ‌گویی تحت سوگند مرتکب شهادت کذب شد.,LAW
+Plaintiff,playn·tiff,خواهان,شخصی که دعوا را در دادگاه مطرح می‌کند.,The plaintiff claimed damages for breach of contract.,خواهان ادعای خسارت به دلیل نقض قرارداد کرد.,LAW
+Precedent,pres·uh·duhnt,سابقه قضایی,حکمی که در پرونده‌های مشابه بعدی راهنما است.,The precedent set by this case will influence future legal decisions.,تصمیمات این پرونده در آینده بر تصمیمات قانونی تأثیرگذار خواهد بود.,LAW
+Quorum,kwor·uhm,نصاب,حداقل تعداد اعضای حاضر برای تصمیم‌گیری قانونی.,The meeting could not proceed as there was no quorum.,جلسه به دلیل عدم وجود حدنصاب ادامه نیافت.,LAW
+Remedy,rem·uh·dee,جبران,وسیله‌ای برای اصلاح یا جبران یک تخلف قانونی.,The court provided a remedy to compensate the injured party.,دادگاه برای جبران خسارت به طرف آسیب‌دیده یک راه حل ارائه کرد.,LAW
+Rescission,ree·si·zhuhn,فسخ,باطل کردن یک قرارداد یا معامله.,The buyer requested rescission of the contract due to defects in the product.,خریدار درخواست فسخ قرارداد به دلیل نقص کالا را داد.,LAW
+Statute,stat·choot,قانون مدون,قانونی که توسط مجلس تصویب شده است.,The statute outlines the penalties for tax evasion.,قانون مجازات‌های فرار مالیاتی را مشخص می‌کند.,LAW
+Subpoena,suh·pee·nuh,احضاریه,دستور قضایی برای حضور در دادگاه یا ارائه اسناد.,The lawyer served a subpoena to the witness to appear in court.,وکیل به شاهد برای حضور در دادگاه احضاریه تحویل داد.,LAW
+United Nations,yoo·nuh·ted ney·shnz,سازمان ملل متحد,سازمانی بین‌المللی برای حفظ صلح و همکاری میان کشورها.,The United Nations works to promote peace and cooperation worldwide.,سازمان ملل برای ارتقای صلح و همکاری در جهان تلاش می‌کند.,LAW
+Obstacle,ob·sta·kl,مانع,چیزی که مانع پیشرفت یا موفقیت می‌شود.,The obstacle to progress was the lack of proper legal documentation.,مانع پیشرفت، عدم وجود مستندات قانونی مناسب بود.,LAW
+Commission,kuh·mi·shn,کمیسیون,نهادی که وظایف خاصی را برای تصمیم‌گیری یا تحقیق برعهده دارد.,The commission investigated allegations of corruption.,کمیسیون اتهامات فساد را بررسی کرد.,LAW
+Create,kree·ayt,ایجاد کردن,به‌وجود آوردن یا تولید چیزی.,The law aims to create a fair and equitable society.,قانون به دنبال ایجاد جامعه‌ای عادلانه و منصفانه است.,LAW
+Secure,si·kyoor,امن کردن,ایمن کردن یا حفاظت از چیزی.,The company implemented measures to secure customer data.,شرکت اقداماتی برای ایمن‌سازی داده‌های مشتریان اجرا کرد.,LAW
+Release,ri·lees,آزاد کردن,رها کردن یا آزادسازی چیزی.,The judge ordered the release of the detained journalist.,قاضی دستور آزادی روزنامه‌نگار بازداشت‌شده را صادر کرد.,LAW
+Facilitate,fuh·sil·i·teyt,تسهیل کردن,آسان‌تر کردن یا ساده‌سازی یک فرایند.,Mediation helped facilitate the resolution of the labor dispute.,میانجیگری به حل اختلاف کارگری کمک کرد.,LAW
+Popular,pah·pyoo·ler,محبوب,چیزی که میان عموم مردم مورد علاقه است.,The new policy became popular among small business owners.,سیاست جدید در میان صاحبان کسب‌وکارهای کوچک محبوب شد.,LAW
+Communication,kuh·myoo·ni·kay·shn,ارتباطات,انتقال اطلاعات بین افراد یا گروه‌ها.,Effective communication is crucial in contract negotiations.,ارتباط مؤثر در مذاکرات قراردادی حیاتی است.,LAW
+Consumer,kuhn·soo·mer,مصرف‌کننده,کسی که کالاها یا خدمات را مصرف می‌کند.,The consumer has the right to know what is in the products they purchase.,مصرف‌کننده حق دارد بداند که در محصولاتی که خریداری می‌کند چه چیزی وجود دارد.,LAW
+Storage,stohr·ij,ذخیره‌سازی,فرایند یا محلی برای نگهداری چیزها.,The company ensured the safe storage of confidential information.,شرکت از ذخیره امن اطلاعات محرمانه اطمینان حاصل کرد.,LAW
+Consume,kuhn·soom,مصرف کردن,استفاده یا بهره‌برداری از چیزی.,The product is designed to consume less energy.,این محصول طراحی شده است که انرژی کمتری مصرف کند.,LAW
+Interchange,in·tr·chang·j,تبادل,تعویض یا جابه‌جایی چیزها.,The law promotes the interchange of goods and services between countries.,قانون تبادل کالاها و خدمات بین کشورها را ارتقا می‌دهد.,LAW
+Commerce,kaw·muh·rs,بازرگانی,فعالیت‌های مرتبط با خریدوفروش کالا یا خدمات.,Commerce thrives in an environment with clear and fair regulations.,تجارت در محیطی با مقررات شفاف و عادلانه رونق می‌یابد.,LAW
+Assess,uh·ses,ارزیابی,سنجش یا تخمین ارزش یا شرایط چیزی.,The court will assess the damages caused by the breach of contract.,دادگاه خسارات ناشی از نقض قرارداد را ارزیابی خواهد کرد.,LAW
+Commercial,kuh·mer·shl,تجاری,مرتبط با تجارت یا کسب‌وکار.,Commercial agreements must comply with trade laws.,قراردادهای تجاری باید با قوانین تجارت مطابقت داشته باشند.,LAW
+Value,val·yoo,ارزش,اهمیت یا بهای چیزی.,The property’s value increased after the renovations.,ارزش ملک پس از بازسازی افزایش یافت.,LAW
+Protection,pruh·tek·shn,حمایت,تلاش برای ایمن نگه‌داشتن یا محافظت از چیزی.,Consumer protection laws safeguard buyers against fraud.,قوانین حمایت از مصرف‌کننده، خریداران را در برابر کلاهبرداری محافظت می‌کند.,LAW
+Message,meh·sij,پیام,اطلاعات منتقل‌شده بین دو یا چند فرد.,The lawyer sent a formal message to the opposing counsel.,وکیل پیام رسمی به مشاور مخالف ارسال کرد.,LAW
+Protect,pruh·tekt,محافظت کردن,حفاظت یا دفاع از چیزی.,The law aims to protect vulnerable populations from exploitation.,قانون هدف دارد تا از جمعیت‌های آسیب‌پذیر در برابر سوءاستفاده محافظت کند.,LAW
+Environment,en·vai·ruhn·ment,محیط زیست,شرایط یا فضایی که زندگی در آن جریان دارد.,Environmental laws are essential for protecting natural resources.,قوانین محیط‌زیست برای حفاظت از منابع طبیعی ضروری هستند.,LAW
+Model law,maw·duhl law,قانون نمونه,مجموعه‌ای از قوانین پیشنهادی برای تطبیق و استفاده در کشورهای مختلف.,The model law serves as a template for countries to draft their own regulations.,قانون نمونه به عنوان الگویی برای کشورها در تدوین قوانین خود عمل می‌کند.,LAW
+Intend,in·tend,قصد داشتن,داشتن نیت یا برنامه برای انجام کاری.,The company does not intend to violate any labor laws.,شرکت قصد ندارد هیچ‌یک از قوانین کار را نقض کند.,LAW
+Intention,in·ten·shn,قصد,هدف یا نیت انجام کاری.,The intention of the regulation is to ensure workplace safety.,هدف این مقررات تضمین ایمنی در محل کار است.,LAW
+Provide,pruh·vahyd,ارائه دادن,دادن یا فراهم کردن چیزی.,The law provides guidelines for fair trade practices.,قانون دستورالعمل‌هایی برای شیوه‌های تجارت منصفانه ارائه می‌دهد.,LAW
+National,nash·nuhl,ملی,مربوط به یک کشور خاص.,National laws protect the sovereignty of each country.,قوانین ملی از حاکمیت هر کشور محافظت می‌کنند.,LAW
+Nation,ney·shn,ملت,گروهی از افراد که کشور را تشکیل می‌دهند.,Each nation has its own constitution and legal system.,هر ملت دارای قانون اساسی و سیستم حقوقی مختص به خود است.,LAW
+International,in·ter·nash·nuhl,بین‌المللی,مربوط به روابط یا تعاملات میان کشورها.,International treaties govern trade between countries.,معاهدات بین‌المللی تجارت بین کشورها را تنظیم می‌کنند.,LAW
+Specific,spuh·sif·ik,خاص,مشخص یا متمایز.,The contract includes a specific clause on dispute resolution.,قرارداد شامل یک بند خاص در مورد حل اختلاف است.,LAW
+Specifically,spuh·sif·ik·lee,به‌طور خاص,با تأکید یا به‌طور دقیق.,The regulation specifically mentions environmental standards.,مقررات به طور مشخص استانداردهای زیست‌محیطی را ذکر کرده است.,LAW
+Area,air·ee·uh,منطقه,بخش یا فضای خاصی از یک مکان.,This area falls under federal jurisdiction.,این منطقه تحت صلاحیت فدرال قرار می‌گیرد.,LAW
+Carriage,kar·ij,حمل و نقل,فرایند جابه‌جایی کالاها یا افراد.,The carriage of goods must comply with transportation laws.,حمل کالا باید با قوانین حمل‌ونقل مطابقت داشته باشد.,LAW
+Good (n),guhd,کالا (اسم),محصول یا چیزی که خریدوفروش می‌شود.,The company ensures the quality of the good before shipment.,شرکت کیفیت کالا را قبل از حمل تضمین می‌کند.,LAW
+Good (adj),guhd,خوب (صفت),چیزی که مطلوب یا سودمند است.,The good condition of the contract is crucial for enforcement.,شرط خوب قرارداد برای اجرای آن حیاتی است.,LAW
+Refer,ri·fer,اشاره کردن,ارجاع دادن یا ذکر چیزی.,The agreement refers to the laws of the contracting state.,توافق به قوانین کشور طرف قرارداد اشاره می‌کند.,LAW
+Legislation,lej·is·ley·shn,قانون‌گذاری,فرایند ایجاد و تصویب قوانین.,New legislation aims to improve workers’ rights.,قوانین جدید به دنبال بهبود حقوق کارگران هستند.,LAW
+Instead,in·sted,به‌جای,گزینه‌ای دیگر برای جایگزینی.,Mediation was used instead of litigation.,به جای دادخواهی از میانجیگری استفاده شد.,LAW
+Legislature,lej·is·ley·cher,مجلس,نهادی که قوانین را وضع می‌کند.,The legislature passed a bill to reform tax laws.,قوه مقننه لایحه‌ای برای اصلاح قوانین مالیاتی تصویب کرد.,LAW
+Deal,deel,توافق,توافق یا معامله بین طرفین.,The company made a deal to settle the lawsuit.,شرکت برای حل دعوی توافق کرد.,LAW
+Legislate,lej·is·leyt,قانون وضع کردن,ایجاد قوانین از طریق مرجع قانونی.,Governments legislate to protect consumer interests.,دولت‌ها قوانین را برای حفاظت از منافع مصرف‌کننده وضع می‌کنند.,LAW
+Principle,prin·suh·pl,اصل,قاعده یا حقیقت اساسی.,The principle of equality is fundamental in law.,اصل برابری در قانون اساسی است.,LAW
+Template,tem·pleyt,الگو,مدلی برای استفاده یا تکرار.,The agreement serves as a template for future contracts.,این توافق به عنوان الگویی برای قراردادهای آینده عمل می‌کند.,LAW
+Functional,fuhngk·shn·l,کارکردی,مرتبط با عملکرد یا کاربرد.,The software is functional but lacks user-friendly features.,نرم‌افزار کارآمد است اما ویژگی‌های کاربرپسند ندارد.,LAW
+Acceptable,ak·sep·tuh·bl,قابل قبول,مورد پذیرش یا مناسب.,The terms are acceptable to both parties.,شرایط برای هر دو طرف قابل قبول است.,LAW
+Functionally,fuhngk·shn·l·ee,به‌صورت کارکردی,مرتبط با کاربرد عملی.,The system works functionally but needs optimization.,سیستم به طور عملکردی کار می‌کند اما نیاز به بهینه‌سازی دارد.,LAW
+Accept,ak·sept,قبول کردن,پذیرش یا تأیید چیزی.,The buyer accepts the terms and conditions of the sale.,خریدار شرایط و ضوابط فروش را پذیرفت.,LAW
+Equivalence,i·kwiv·uh·lens,برابری,حالت یا کیفیت برابر بودن.,Equivalence in trade terms ensures fairness in agreements.,برابری در شرایط تجاری عدالت در توافقات را تضمین می‌کند.,LAW
+Rule (n),rool,قاعده (اسم),مقرراتی که باید رعایت شوند.,The new rule prohibits smoking in public spaces.,قانون جدید سیگار کشیدن در مکان‌های عمومی را ممنوع می‌کند.,LAW
+Equivalent,i·kwiv·uh·luhnt,معادل,چیزی که برابر یا هم‌ارزش با چیز دیگری است.,The equivalent clause in this agreement is less restrictive.,بند معادل در این قرارداد کمتر محدودکننده است.,LAW
+Rule (v),rool,قاعده (فعل),حکم کردن یا کنترل کردن.,The court ruled in favor of the plaintiff.,دادگاه به نفع خواهان حکم داد.,LAW
+Media,mee·dee·uh,رسانه,ابزاری برای انتقال اطلاعات و اخبار.,Media coverage influences public perception of legal cases.,پوشش رسانه‌ای بر درک عمومی از پرونده‌های حقوقی تأثیر می‌گذارد.,LAW
+Remove,ri·moov,برداشتن,حذف یا جابه‌جایی چیزی.,The court ordered to remove the misleading advertisements.,دادگاه دستور داد تبلیغات گمراه‌کننده حذف شوند.,LAW
+Transaction,tranz·ak·shn,معامله,عملیات مالی یا مبادله‌ای بین طرفین.,The transaction was completed according to legal requirements.,معامله مطابق با الزامات قانونی انجام شد.,LAW
+Legal,lee·gl,قانونی,مطابق با قانون یا مربوط به قانون.,Legal counsel was provided to the defendant.,مشاوره حقوقی به متهم ارائه شد.,LAW
+Traditional,truh·dish·nuhl,سنتی,وابسته به رسوم یا عادات کهن.,Traditional practices were integrated into modern legal frameworks.,روش‌های سنتی در چارچوب‌های حقوقی مدرن ادغام شدند.,LAW
+Treat,treet,درمان,مراقبت یا بهبود یک وضعیت یا مشکل.,The court will treat both parties equally.,دادگاه با هر دو طرف به صورت برابر برخورد خواهد کرد.,LAW
+Expression,ek·spre·shn,بیان,روش یا شیوه انتقال احساس یا تفکر.,Freedom of expression is protected under the constitution.,آزادی بیان تحت قانون اساسی محافظت می‌شود.,LAW
+Equally,ee·kwuh·lee,به‌طور برابر,به‌صورت مساوی یا بدون تفاوت.,The law applies equally to everyone.,قانون به طور برابر برای همه اعمال می‌شود.,LAW
+Gain,geyn,به‌دست آوردن,به دست آوردن یا کسب چیزی.,The plaintiff seeks to gain compensation for damages.,خواهان به دنبال جبران خسارت است.,LAW
+Permeate,pur·mee·ayt,نفوذ,جذب شدن یا تأثیر گذاشتن در عمق چیزی.,The contract’s terms permeate all aspects of the partnership.,شرایط قرارداد در همه جنبه‌های همکاری نفوذ دارد.,LAW
+Significant,sig·nif·i·knt,قابل توجه,چیزی که اهمیت یا تأثیر زیادی دارد.,This clause is significant for the case’s outcome.,این بند برای نتیجه پرونده اهمیت زیادی دارد.,LAW
+Based on,beysd on,بر اساس,متکی یا مرتبط به چیزی.,The decision was based on the evidence presented.,تصمیم بر اساس شواهد ارائه شده گرفته شد.,LAW
+Drafting,draf·ting,پیش‌نویس,تهیه یا نوشتن نسخه اولیه از یک سند.,Drafting the agreement required legal expertise.,تدوین قرارداد نیاز به تخصص حقوقی داشت.,LAW
+Underlying,uhn·der·lai·ing,زیربنا,پایه یا اساس چیزی.,The underlying principle of the law is fairness.,اصل اساسی این قانون عدالت است.,LAW
+Process,praw·ses,فرایند,مراحل یا گام‌هایی برای دستیابی به یک هدف.,The arbitration process was efficient and unbiased.,فرآیند داوری کارآمد و بی‌طرفانه بود.,LAW
+Neutrality,noo·tral·i·tee,بی‌طرفی,حالت یا موقعیت بی‌طرف بودن.,Neutrality is a key element in international law.,بی‌طرفی عنصر کلیدی در قانون بین‌المللی است.,LAW
+Attend,uh·tend,حضور,شرکت کردن در یک جلسه یا رویداد.,The lawyer will attend the hearing tomorrow.,وکیل فردا در جلسه دادرسی حاضر خواهد شد.,LAW
+Response,ree·spawns,پاسخ,عکس‌العمل یا جواب به چیزی.,The response from the court clarified the legal position.,پاسخ دادگاه موضع حقوقی را روشن کرد.,LAW
+Representative,rep·ruh·zen·tuh·tiv,نماینده,کسی که از طرف گروهی عمل می‌کند.,The representative presented the case on behalf of the company.,نماینده پرونده را به نمایندگی از شرکت ارائه کرد.,LAW
+Recognition,rek·uhg·nish·n,شناخت,پذیرش یا تأیید چیزی.,The recognition of foreign judgments is essential in trade law.,شناخت احکام خارجی در قانون تجارت ضروری است.,LAW
+Over,oh·ver,روی,عبارت از اتمام یا تمام شدن چیزی.,The dispute was over intellectual property rights.,اختلاف بر سر حقوق مالکیت معنوی بود.,LAW
+General,jen·r·uhl,عمومی,مرتبط با همه یا مشترک میان افراد.,The contract includes general terms and conditions.,قرارداد شامل شرایط و ضوابط کلی است.,LAW
+Organization,awr·guh·ni·zay·shn,سازمان,گروهی که برای اهداف مشخصی کار می‌کند.,The organization advocates for human rights globally.,سازمان در سطح جهانی از حقوق بشر دفاع می‌کند.,LAW
+Sentence,sen·tuhns,حکم,تصمیم قانونی که توسط دادگاه صادر می‌شود.,The sentence issued was proportionate to the crime.,حکم صادر شده متناسب با جرم بود.,LAW
+Alternative,awl·tuhr·nuh·tiv,جایگزین,گزینه‌ای دیگر به‌جای چیزی.,Arbitration was chosen as an alternative to court litigation.,برای جایگزینی دادرسی، داوری انتخاب شد.,LAW
+Mentally disordered,men·tuh·lee dis·awrd·rd,اختلال روانی,وضعیتی که در آن فرد دچار مشکلات ذهنی است.,Mentally disordered individuals may require special legal protections.,افراد مبتلا به اختلالات روانی ممکن است به حمایت‌های قانونی خاص نیاز داشته باشند.,LAW
+Reciprocity,ree·craw·pruh·suh·tee,معامله به مثل,تعاملی که بر پایه توازن و عدالت است.,Reciprocity is a key principle in international treaties.,اصل مقابله به مثل یک اصل کلیدی در معاهدات بین‌المللی است.,LAW
+Offender,aw·fen·der,مجرم,کسی که عمل خلاف قانون انجام داده است.,The offender was sentenced to community service.,مجرم به خدمات اجتماعی محکوم شد.,LAW
+Impose,im·poze,تحمیل کردن,اعمال چیزی با زور یا اجبار.,The court may impose a fine for non-compliance.,دادگاه ممکن است جریمه‌ای برای عدم رعایت قوانین اعمال کند.,LAW
+Remain,ree·meyn,باقی ماندن,ادامه دادن یا ماندن در یک وضعیت.,The accused will remain in custody until the trial.,متهم تا زمان محاکمه در بازداشت خواهد ماند.,LAW
+Obligation,ob·lig·ay·shn,تعهد,وظیفه‌ای که باید انجام شود.,The contract establishes an obligation to deliver the goods.,قرارداد تعهدی برای تحویل کالاها ایجاد می‌کند.,LAW
+Controversy,kon·tro·vuh·see,اختلاف,مباحثه یا مشاجره در مورد یک موضوع.,The controversy over the law led to public debates.,بحث و جدل در مورد این قانون منجر به بحث‌های عمومی شد.,LAW
+Division,dih·vizh·n,تقسیم,جداسازی یا توزیع چیزی.,The division of assets was handled through mediation.,تقسیم اموال از طریق میانجیگری انجام شد.,LAW
+Correspond,kuhr·uh·spawnd,مطابقت,تطابق یا ارتباط با چیزی.,The terms of the contract correspond to the regulations.,شرایط قرارداد با مقررات مطابقت دارد.,LAW
+Treatment,treet·muhnt,درمان,فرایند بهبود یا رسیدگی به مشکل.,Treatment of prisoners must align with human rights standards.,رفتار با زندانیان باید با استانداردهای حقوق بشر همخوانی داشته باشد.,LAW
+Independent,in·di·pen·duhnt,مستقل,وابسته به خود و بدون نیاز به دیگران.,An independent body was assigned to investigate the case.,یک نهاد مستقل برای بررسی پرونده منصوب شد.,LAW
+Approach,uh·proach,رویکرد,روش یا نگرش به یک مسئله.,The court adopted a new approach to resolve the issue.,دادگاه رویکرد جدیدی برای حل موضوع اتخاذ کرد.,LAW
+Inquiry,in·kwai·ree,تحقیق,بررسی دقیق یا پرسش در مورد موضوعی.,The judge initiated an inquiry into the allegations.,قاضی تحقیقاتی درباره اتهامات آغاز کرد.,LAW
+Essential,ih·sen·shl,ضروری,چیزی که بسیار مهم و حیاتی است.,Legal representation is essential in complex cases.,نمایندگی قانونی در پرونده‌های پیچیده ضروری است.,LAW
+Committee,kuh·mi·tee,کمیته,گروه رسمی برای بررسی و تصمیم‌گیری.,The committee proposed several legal reforms.,کمیته پیشنهادات متعددی برای اصلاح قوانین ارائه کرد.,LAW
+Framework,frey·mwork,چارچوب,ساختار یا قالبی برای طرح یا برنامه.,The framework of the law was established decades ago.,چهارچوب قانون چندین دهه پیش تعیین شد.,LAW
+Recommendation,rek·uh·men·day·shn,توصیه,پیشنهاد برای انجام یک عمل.,The judge followed the recommendation of the legal advisor.,قاضی از توصیه مشاور حقوقی پیروی کرد.,LAW
+Recognize,rek·uhg·nahyz,تشخیص دادن,شناختن یا قبول کردن چیزی.,The court recognizes the defendant’s rights.,دادگاه حقوق متهم را به رسمیت می‌شناسد.,LAW
+Authority,aw·thor·uh·tee,اختیار,قدرت یا حق قانونی برای تصمیم‌گیری.,Authority to enforce the law lies with the police.,اختیار اجرای قانون در دست پلیس است.,LAW
+Discretion,dih·skresh·uhn,اختیار قانونی,آزادی در انتخاب یا تصمیم‌گیری.,Judges have discretion in determining sentences.,قضات در تعیین مجازات‌ها اختیار دارند.,LAW
+Compulsory,kuhm·pul·suh·ree,اجباری,چیزی که الزامی یا ناگزیر است.,Paying taxes is compulsory by law.,پرداخت مالیات به موجب قانون اجباری است.,LAW
+Detain,dee·teyn,بازداشت,نگه داشتن فرد به‌طور موقت.,The suspect was detained for questioning.,مظنون برای بازجویی بازداشت شد.,LAW
+Prison,pri·zn,زندان,محلی برای نگهداری افراد قانون‌شکن.,The offender served time in prison for the crime.,مجرم برای جرم خود در زندان دوران محکومیت گذراند.,LAW
+Proportionality,pruh·pawr·shuh·nal·i·tee,تناسب,توازن در شدت پاسخ‌ها یا مجازات‌ها.,The sentence reflects the principle of proportionality.,حکم، اصل تناسب را بازتاب می‌دهد.,LAW
+Reassert,ree·uh·sert,بازآوری,احیای دوباره چیزی که از بین رفته است.,The prosecutor reasserted the charges during the hearing.,دادستان در جلسه دادرسی اتهامات را مجدداً تأیید کرد.,LAW
+Constraint,kuhn·streynt,محدودیت,قید یا مانعی که جلوی انجام کاری را می‌گیرد.,The new policy imposes constraints on media freedom.,سیاست جدید محدودیت‌هایی بر آزادی رسانه‌ها اعمال می‌کند.,LAW
+Evident,ev·i·duhnt,آشکار,چیزی که واضح و روشن است.,The evidence against the defendant was evident.,شواهد علیه متهم واضح بود.,LAW
+Chiefly,cheef·lee,عمدتاً,بیشتر یا در درجه اول.,The case was chiefly about breach of contract.,پرونده عمدتاً مربوط به نقض قرارداد بود.,LAW
+Firmly,furm·lee,محکم,با قدرت و ثبات.,The lawyer firmly argued the client’s case.,وکیل به صورت قاطع از پرونده موکل دفاع کرد.,LAW
+Discrimination,dih·skrim·uh·nay·shn,تبعیض,رفتار ناعادلانه بر اساس عوامل خاص.,Discrimination is prohibited under constitutional law.,تبعیض تحت قانون اساسی ممنوع است.,LAW
+Equal,ee·kwuhl,برابر,وضعیت برابر بودن در حقوق یا فرصت‌ها.,Everyone is equal before the law.,همه در برابر قانون برابرند.,LAW
+Principal,prin·suh·pl,اصلی,چیزی که اصلی یا مهم‌تر است.,The principal issue was resolved in the court.,مسئله اصلی در دادگاه حل شد.,LAW
+Govern,guhv·ern,حکومت کردن,اداره کردن یا کنترل یک سیستم.,The constitution governs the structure of the government.,قانون اساسی ساختار دولت را اداره می‌کند.,LAW
+Restrictive,ri·strik·tiv,محدودکننده,چیزی که آزادی را محدود می‌کند.,The new rule has a restrictive impact on businesses.,قانون جدید تأثیر محدودکننده‌ای بر کسب‌وکارها دارد.,LAW
+Prosecutor,praw·si·kyoo·ter,دادستان,فردی که نماینده دولت در پرونده‌های کیفری است و اتهامات را پیگیری می‌کند.,The prosecutor presented strong evidence against the accused.,دادستان شواهد قوی علیه متهم ارائه کرد.,LAW
+Chief Prosecutor,cheef praw·si·kyoo·ter,دادستان کل,بالاترین مقام در میان دادستان‌ها، که بر کل فرآیند دادستانی نظارت می‌کند.,The chief prosecutor addressed the media after the trial.,دادستان کل پس از محاکمه با رسانه‌ها صحبت کرد.,LAW
+Function,fuhngk·shn,وظیفه,نقش یا وظیفه‌ای که کسی در یک سیستم یا سازمان دارد.,The primary function of a judge is to ensure justice.,وظیفه اصلی قاضی تضمین عدالت است.,LAW
+Local Prosecutor,loh·kuhl praw·si·kyoo·ter,دادستان محلی,دادستانی که مسئولیت پیگیری پرونده‌های یک منطقه خاص را دارد.,The local prosecutor filed charges against the company.,دادستان محلی علیه شرکت اتهاماتی مطرح کرد.,LAW
+Constitutional,kon·stuh·too·shn·l,مطابق با قانون اساسی,منطبق بر اصول یا احکام قانون اساسی یک کشور.,The constitutional rights of citizens must be upheld.,حقوق اساسی شهروندان باید حفظ شود.,LAW
+Decline,dih·klahyn,کاهش دادن,کاهش، رد کردن یا امتناع از انجام کاری.,The company declined to comment on the allegations.,شرکت از اظهار نظر در مورد اتهامات خودداری کرد.,LAW
+Separation of powers,sep·uh·ray·shn uhv pow·erz,جدایی قوا,تفکیک وظایف میان سه قوه اصلی دولت: مقننه، مجریه و قضاییه.,The separation of powers ensures checks and balances in governance.,تفکیک قوا موجب توازن و نظارت در حکومت می‌شود.,LAW
+File,fyl,ثبت کردن,ارائه درخواست، شکایت یا سند رسمی در دادگاه.,The lawyer will file a petition on behalf of the client.,وکیل به نمایندگی از موکل دادخواستی تنظیم خواهد کرد.,LAW
+Charge,chahrj,اتهام,بیانی که در آن فردی به نقض قانون متهم می‌شود.,The defendant faced multiple charges in the case.,متهم با اتهامات متعددی در این پرونده روبرو شد.,LAW
+Court,kort,دادگاه,محلی رسمی برای حل اختلافات حقوقی یا بررسی جرایم.,The court adjourned the hearing to a later date.,دادگاه جلسه رسیدگی را به تاریخ دیگری موکول کرد.,LAW
+Individual,in·di·vid·joo·uhl,فرد,شخصی که به‌عنوان یک واحد مستقل شناخته می‌شود.,Each individual is entitled to a fair trial.,هر فرد حق دارد از یک دادرسی عادلانه برخوردار باشد.,LAW
+Compete,kuhm·peet,رقابت کردن,تلاش برای برتری یافتن در برابر دیگران.,The companies compete for government contracts.,شرکت‌ها برای قراردادهای دولتی رقابت می‌کنند.,LAW
+Case,kays,پرونده,مسئله یا موضوعی که در دادگاه مورد بررسی قرار می‌گیرد.,The court ruled in favor of the plaintiff in the case.,دادگاه به نفع خواهان در این پرونده رأی داد.,LAW
+Loyalty,loy·uhl·tee,وفاداری,تعهد و وفاداری به یک فرد، سازمان یا کشور.,Employees must show loyalty to their employers.,کارمندان باید به کارفرمایان خود وفاداری نشان دهند.,LAW
+Announce,uh·nouns,اعلام کردن,بیان عمومی اطلاعات یا تصمیمی جدید.,The government announced new laws to regulate the industry.,دولت قوانین جدیدی برای تنظیم صنعت اعلام کرد.,LAW
+Duty,doo·tee,وظیفه,مسئولیتی که برعهده فرد گذاشته شده است.,Duty to report fraud lies with the auditors.,مسئولیت گزارش تقلب بر عهده حسابرسان است.,LAW
+Policy,paw·luh·see,سیاست,قوانین یا اصول کلی برای راهنمایی تصمیمات و اقدامات.,The new policy aims to reduce tax evasion.,سیاست جدید هدف کاهش فرار مالیاتی را دنبال می‌کند.,LAW
+Vote,voht,رأی,بیان رسمی حمایت یا مخالفت با موضوعی خاص.,Citizens vote to elect their representatives.,شهروندان برای انتخاب نمایندگان خود رأی می‌دهند.,LAW
+Apply,uh·plahy,درخواست دادن,ارائه تقاضا یا اقدام برای به‌دست آوردن چیزی.,The law will apply to all residents equally.,قانون به طور مساوی برای همه ساکنان اعمال خواهد شد.,LAW
+Adopt,uh·dawpt,پذیرفتن,پذیرش رسمی یک قانون، ایده یا روش.,The council adopted a resolution to address climate change.,شورا قطعنامه‌ای برای مقابله با تغییرات اقلیمی تصویب کرد.,LAW
+Entire,en·tyr,کامل,کل یا تمامی چیزی بدون هیچ بخش از دست رفته.,The entire document was reviewed by legal experts.,کل سند توسط کارشناسان حقوقی بررسی شد.,LAW
+Derive from,dih·rayv frum,مشتق شدن از,نشأت گرفته یا گرفته شده از چیزی.,The principle derives from international conventions.,این اصل از کنوانسیون‌های بین‌المللی نشأت می‌گیرد.,LAW
+Category,kat·uh·gaw·ree,دسته‌بندی,گروه یا مجموعه‌ای از موارد مشابه.,This category includes all types of criminal offenses.,این دسته شامل همه انواع جرایم کیفری است.,LAW
+Code,kohd,قانون,مجموعه‌ای مدون از قوانین یا اصول.,The penal code outlines the consequences of breaking the law.,قانون جزا پیامدهای نقض قانون را مشخص می‌کند.,LAW
+Legitimate,luh·ji·tuh·mit,مشروع,مطابق با قانون یا قابل پذیرش.,The company’s actions are legitimate under current regulations.,اقدامات شرکت تحت مقررات فعلی قانونی است.,LAW
+Enforce,en·fors,اجرا کردن,وادار کردن به رعایت قوانین یا مقررات.,Authorities will enforce the new labor laws strictly.,مقامات قوانین جدید کار را به شدت اجرا خواهند کرد.,LAW
+Legitimacy,luh·ji·tuh·muh·see,مشروعیت,وضعیت قانونی یا قابل قبول بودن.,The legitimacy of the decision was challenged in court.,مشروعیت تصمیم در دادگاه به چالش کشیده شد.,LAW
+Funding,fuhnd·ing,تأمین مالی,منابع مالی فراهم‌شده برای پروژه یا هدف خاص.,The funding for the project was approved by the legislature.,بودجه پروژه توسط قوه مقننه تصویب شد.,LAW
+Dispute,dih·spyoot,اختلاف,بحث یا مناقشه درباره یک مسئله.,The dispute between the two companies was settled in arbitration.,اختلاف بین دو شرکت در داوری حل شد.,LAW
+Sufficient,suh·fish·nt,کافی,به مقدار لازم یا مطلوب.,The evidence provided was sufficient to convict the defendant.,شواهد ارائه‌شده برای محکومیت متهم کافی بود.,LAW
+Rely on,ri·ly awn,وابسته بودن به,اتکا یا اعتماد به چیزی.,The court relied on precedent to make its ruling.,دادگاه برای صدور حکم به سوابق قبلی استناد کرد.,LAW
+Allocate,al·uh·kayt,اختصاص دادن,تقسیم منابع یا زمان برای هدفی خاص.,The government allocated resources for disaster relief.,دولت منابعی برای امدادرسانی در بلایا تخصیص داد.,LAW
+Argument,ahr·gyoo·muhnt,استدلال,بیانی منطقی برای حمایت از یک نظر.,The lawyer presented a strong argument in defense of his client.,وکیل دفاع قوی در حمایت از موکل خود ارائه کرد.,LAW
+Scarce,skairs,کمیاب,چیزی که به سختی یافت می‌شود.,Access to justice is scarce in some rural areas.,دسترسی به عدالت در برخی مناطق روستایی کم است.,LAW
+Means of,meenz uhv,وسایل,ابزار یا روش برای رسیدن به هدف.,Education is a means of achieving social justice.,آموزش وسیله‌ای برای تحقق عدالت اجتماعی است.,LAW
+Activity,ak·tiv·uh·tee,فعالیت,عملی که به هدف خاصی اختصاص دارد.,The activity was deemed illegal under local laws.,این فعالیت تحت قوانین محلی غیرقانونی تلقی شد.,LAW
+Promote,pruh·moht,ترویج کردن,تشویق یا پشتیبانی برای افزایش چیزی.,The campaign aims to promote awareness of human rights.,این کمپین به افزایش آگاهی درباره حقوق بشر می‌پردازد.,LAW
+Distinction,duh·stink·shn,تمایز,تفاوت مشخص بین دو موضوع.,The law makes a clear distinction between theft and burglary.,قانون تفاوت روشنی بین سرقت و دزدی شبانه قائل می‌شود.,LAW
+Executive,eg·zek·yoo·tiv,قوه مجریه,شاخه‌ای از دولت که قوانین را اجرا می‌کند.,The executive branch implements the laws passed by the legislature.,شاخه اجرایی قوانین تصویب‌شده توسط قوه مقننه را اجرا می‌کند.,LAW
+Rebuttable,ri·buht·uh·bl,قابل انکار,فرضی که ممکن است با دلایل قوی رد شود.,The contract includes a rebuttable presumption of compliance.,قرارداد شامل فرض قابل رد شدن از رعایت قانون است.,LAW
+Legislative,lej·is·lay·tiv,قوه مقننه,شاخه‌ای از دولت که قوانین را وضع می‌کند.,The legislative assembly passed a new healthcare bill.,مجمع قانون‌گذاری لایحه جدید بهداشت و درمان را تصویب کرد.,LAW
+Presumption,pri·zuhmp·shn,فرض,نتیجه‌گیری مقدماتی بر اساس شواهد.,The presumption of innocence is a fundamental legal principle.,فرض بی‌گناهی یک اصل بنیادی حقوقی است.,LAW
+Justify,juhs·tuh·fahy,توجیه کردن,ارائه دلیل برای منطقی جلوه دادن عمل یا تصمیمی.,The lawyer worked to justify the client’s actions.,وکیل برای توجیه اقدامات موکل خود تلاش کرد.,LAW
+Imprisonment,im·priz·uhn·muhnt,حبس,نگه‌داشتن فرد در بازداشتگاه به‌عنوان مجازات.,The sentence included imprisonment for five years.,حکم شامل حبس به مدت پنج سال بود.,LAW
+Length,lengkth,مدت,مدت زمانی که یک فعالیت یا وضعیت ادامه دارد.,The length of the trial caused significant delays.,طولانی بودن دادگاه باعث تأخیرهای چشمگیر شد.,LAW
+Suspended,suh·spen·did,تعلیقی,حکمی که اجرای آن به‌صورت موقت متوقف شده است.,The judge ordered a suspended sentence for the offender.,قاضی حکم تعلیقی برای مجرم صادر کرد.,LAW
+Intermittent,in·tur·mit·nt,متناوب,حکمی که در فواصل زمانی مشخص اعمال می‌شود.,The court imposed intermittent community service as punishment.,دادگاه خدمت اجتماعی متناوب به عنوان مجازات تعیین کرد.,LAW
+Custody,kuhs·tuh·dee,بازداشت,نگه‌داری فرد تحت نظر مقامات.,The suspect was placed in custody after the hearing.,متهم پس از جلسه دادگاه در بازداشت قرار گرفت.,LAW
+Immediate,ih·mee·dee·uht,فوری,بدون تأخیر یا در اسرع وقت.,The lawyer called for immediate action to protect the victim.,وکیل خواستار اقدام فوری برای حفاظت از قربانی شد.,LAW
+Mind to,maynd too,قصد داشتن,داشتن نیت یا هدف برای انجام کاری.,The accused had no mind to harm the plaintiff.,متهم قصد آسیب رساندن به خواهان را نداشت.,LAW
+Ground,grawnd,مبنای قانونی,دلیلی که از یک تصمیم حقوقی حمایت می‌کند.,The decision was based on solid legal grounds.,تصمیم بر اساس دلایل قانونی محکمی گرفته شد.,LAW
+Comply with,kuhm·plai with,رعایت کردن,پایبندی به قوانین یا مقررات.,The company must comply with environmental regulations.,شرکت باید با مقررات زیست‌محیطی مطابقت داشته باشد.,LAW
+Community,kuh·myoo·ni·tee,جامعه,گروهی از افراد با علایق مشترک.,The community organized a protest against the new policy.,جامعه علیه سیاست جدید تظاهرات سازماندهی کرد.,LAW
+Convert,kuhn·vurt,تبدیل کردن,تغییر وضعیت یا شکل چیزی به چیزی دیگر.,The contract allows the buyer to convert the payment method.,قرارداد به خریدار اجازه می‌دهد روش پرداخت را تغییر دهد.,LAW
+Court of appeal,kort uhv uh·peel,دادگاه تجدیدنظر,دادگاهی که تصمیمات دادگاه‌های پایین‌تر را بررسی می‌کند.,The court of appeal overturned the previous decision.,دادگاه تجدیدنظر حکم قبلی را لغو کرد.,LAW
+Amount to,uh·mount too,معادل بودن,منجر شدن به نتیجه‌ای برابر با شرایط خاص.,The breach of contract amounted to financial loss.,نقض قرارداد منجر به خسارت مالی شد.,LAW
+Assault,uh·sawlt,حمله یا تعرض,استفاده از خشونت یا تهدید برای آسیب رساندن به دیگران.,The defendant was charged with assaulting a police officer.,متهم به ضرب و شتم یک افسر پلیس متهم شد.,LAW
+Stalking,staw·king,تعقیب مزاحم,پیگیری آزاردهنده یا مزاحمت مداوم برای فردی.,The victim reported stalking incidents to the authorities.,قربانی حوادث تعقیب را به مقامات گزارش داد.,LAW
+Confirm,kuhn·firm,تأیید کردن,اثبات یا اعلام صحت چیزی.,The judge confirmed the validity of the agreement.,قاضی اعتبار توافق را تأیید کرد.,LAW
+Offence,uh·fens,جرم,عملی که قوانین را نقض می‌کند.,The offense carries a maximum penalty of two years in prison.,این جرم حداکثر مجازات دو سال حبس دارد.,LAW
+Commit,kuh·mit,ارتکاب کردن,انجام یک عمل غیرقانونی یا مجرمانه.,The defendant committed fraud by falsifying documents.,متهم با جعل اسناد مرتکب تقلب شد.,LAW
+Accompany,uh·kuhm·puh·nee,همراهی کردن,بودن یا رفتن با کسی.,The lawyer accompanied the client during the interrogation.,وکیل در طول بازجویی همراه موکل خود بود.,LAW
+Contrary,kon·truh·ree,برخلاف,مخالف یا ضد یک موقعیت خاص.,The statement was contrary to the evidence presented.,بیانیه برخلاف شواهد ارائه‌شده بود.,LAW
+Menacing,men·uh·sing,تهدیدآمیز,نشان‌دهنده رفتار یا گفتار خطرناک.,The suspect was arrested for making menacing threats.,متهم به دلیل تهدیدهای ترسناک دستگیر شد.,LAW
+Violent,vye·uh·luhnt,خشونت‌آمیز,استفاده از زور یا خشونت شدید.,The violent act resulted in severe injuries.,عمل خشونت‌آمیز منجر به جراحات شدید شد.,LAW
+Judge,juhj,قاضی,فردی که مسئول تصمیم‌گیری در دعاوی حقوقی یا کیفری است.,The judge delivered a fair and impartial verdict.,قاضی حکم عادلانه و بی‌طرفانه‌ای صادر کرد.,LAW
+Prevent,pree·vent,جلوگیری کردن,مانع وقوع یک اتفاق شدن.,Laws are designed to prevent unlawful activities.,قوانین برای جلوگیری از فعالیت‌های غیرقانونی طراحی شده‌اند.,LAW
+Potential,puh·ten·shl,بالقوه,دارای ظرفیت برای وقوع یا تحقق چیزی.,The contract has potential risks that need addressing.,قرارداد دارای خطرات بالقوه‌ای است که باید به آنها پرداخته شود.,LAW
+Accrue,uh·kroo,انباشت,تجمع یا افزایش تدریجی.,Interest will accrue on the loan after six months.,بهره وام پس از شش ماه محاسبه خواهد شد.,LAW
+Harm,harm,آسیب,آسیب فیزیکی، مالی یا روانی به فرد یا اموال.,The company took steps to mitigate environmental harm.,شرکت اقداماتی برای کاهش آسیب‌های زیست‌محیطی انجام داد.,LAW
+Defendant,dih·fen·duhnt,متهم,فردی که علیه او در دادگاه شکایتی مطرح شده است.,The defendant was found not guilty by the jury.,هیئت منصفه متهم را بی‌گناه دانست.,LAW
+Annoy,uh·noy,آزار دادن,ایجاد ناراحتی یا مزاحمت برای فردی.,The neighbor’s loud music continues to annoy the residents.,موسیقی بلند همسایه همچنان ساکنان را آزار می‌دهد.,LAW
+Constitute,kon·stuh·toot,تشکیل دادن,ایجاد یا به وجود آوردن چیزی.,The actions constitute a breach of contract.,این اقدامات نقض قرارداد محسوب می‌شوند.,LAW
+Assize,uh·size,دادگاه جنایی,دادگاه‌هایی که به جرایم جدی رسیدگی می‌کنند.,The court of assize deals with serious criminal cases.,دادگاه عالی به پرونده‌های کیفری جدی رسیدگی می‌کند.,LAW
+Statement,stayt·muhnt,اظهار,بیان رسمی یا ارائه اطلاعات به صورت کتبی یا شفاهی.,The witness made a statement under oath.,شاهد تحت سوگند بیانیه‌ای ارائه کرد.,LAW
+Threat,thret,تهدید,اظهار یا اقدامی که قصد آسیب یا خطر را نشان می‌دهد.,The email was interpreted as a threat by the recipient.,ایمیل توسط گیرنده به‌عنوان یک تهدید تفسیر شد.,LAW
+Confront,kuhn·fruhnt,روبه‌رو شدن,مواجهه مستقیم با یک مشکل یا چالش.,The lawyer had to confront the witness during cross-examination.,وکیل مجبور بود در جریان بازجویی از شاهد مواجهه داشته باشد.,LAW
+Ethical,eh·thuh·kl,اخلاقی,مطابق با اصول و ارزش‌های اخلاقی.,The company’s policies adhere to ethical business standards.,سیاست‌های شرکت به استانداردهای اخلاقی کسب‌وکار پایبند است.,LAW
+Contest,kon·test,مجادله یا اختلاف,رقابت یا اختلاف‌نظر بین طرفین.,Both parties decided to contest the court’s ruling.,هر دو طرف تصمیم گرفتند حکم دادگاه را به چالش بکشند.,LAW
+Determinative,dih·tur·muh·nuh·tiv,تعیین‌کننده,چیزی که نقش نهایی در تصمیم‌گیری یا نتیجه دارد.,The evidence was determinative in the judge’s decision.,مدارک در تصمیم‌گیری قاضی تعیین‌کننده بود.,LAW
+Statutory,sta·choo·tuh·ree,قانونی یا بر اساس قانون,مربوط به قوانین یا مقررات تصویب‌شده.,The statutory limit for filing this case is two years.,حد قانونی برای ثبت این پرونده دو سال است.,LAW
+Provision,pruh·vizh·uhn,مقررات,بندی در یک سند قانونی که شرایط یا الزامات را مشخص می‌کند.,The provision allows employees to work remotely.,این ماده به کارکنان اجازه می‌دهد به‌صورت دورکاری کار کنند.,LAW
+Deal with,deel with,برخورد کردن با,رسیدگی یا مدیریت یک موضوع یا مشکل.,The mediator was brought in to deal with the dispute.,میانجی برای حل اختلاف آورده شد.,LAW
+Determine,dih·tur·min,تعیین کردن,مشخص کردن یا تصمیم‌گیری در مورد یک موضوع.,The court will determine the outcome of the hearing.,دادگاه نتیجه جلسه را تعیین خواهد کرد.,LAW
+Priority,prai·awr·uh·tee,اولویت,چیزی که اهمیت بیشتری دارد و باید زودتر انجام شود.,Priority was given to cases involving vulnerable individuals.,به پرونده‌های مربوط به افراد آسیب‌پذیر اولویت داده شد.,LAW
+Guidance,guy·duhns,راهنمایی,ارائه کمک یا مشاوره برای تصمیم‌گیری یا اقدام.,The judge provided guidance on interpreting the law.,قاضی راهنمایی‌هایی برای تفسیر قانون ارائه کرد.,LAW
+Fulfil,fuhl·fil,انجام دادن تعهد,برآوردن یا انجام تعهدات یا مسئولیت‌ها.,The company failed to fulfil its contractual obligations.,شرکت در انجام تعهدات قراردادی خود کوتاهی کرد.,LAW
+Judicial,joo·dish·uhl,قضایی,مرتبط با قضاوت، دادگاه یا سیستم قضایی.,Judicial independence is crucial for a fair trial.,استقلال قضایی برای یک محاکمه عادلانه حیاتی است.,LAW
+Material,muh·teer·ee·uhl,مادی,مربوط به اهمیت یا شواهد فیزیکی و ملموس.,The material evidence was presented during the trial.,مدارک مهم در طول محاکمه ارائه شد.,LAW
+Faith,feyth,ایمان,باور قوی یا اعتماد به کسی یا چیزی.,The contract was signed in good faith.,قرارداد با حسن نیت امضا شد.,LAW
+Assessment,uh·ses·muhnt,ارزیابی,فرایند بررسی یا سنجش موضوعی.,An assessment of the damages was conducted by the insurer.,ارزیابی خسارت‌ها توسط بیمه‌گر انجام شد.,LAW
+Relevant,rel·uh·vuhnt,مرتبط,مرتبط با موضوع یا شرایط خاص.,The lawyer referred to relevant sections of the law.,وکیل به بخش‌های مرتبط قانون استناد کرد.,LAW
+Various,vair·ee·uhs,متعدد,چیزهایی که از نظر نوع یا شکل متفاوت هستند.,Various stakeholders were consulted during the process.,سهامداران مختلف در این فرآیند مشورت داده شدند.,LAW
+Consider,kuhn·sid·ur,در نظر گرفتن,تفکر یا بررسی دقیق درباره چیزی.,The court will consider all evidence before making a decision.,دادگاه تمام شواهد را قبل از تصمیم‌گیری بررسی خواهد کرد.,LAW
+Coherence,koh·heer·uhns,انسجام,هماهنگی یا ارتباط منطقی بین اجزا.,Coherence between policies ensures smoother implementation.,هماهنگی بین سیاست‌ها اجرای روان‌تری را تضمین می‌کند.,LAW
+Consistency,kuhn·sis·tuhn·see,یکپارچگی,ثبات یا تطابق با اصول مشابه.,Consistency in legal interpretations is essential for justice.,ثبات در تفسیرهای قانونی برای اجرای عدالت ضروری است.,LAW
+Precisely,pruh·sahys·lee,به‌طور دقیق,با دقت بالا و وضوح کامل.,The judge asked the witness to describe the event precisely.,قاضی از شاهد خواست که رویداد را به‌طور دقیق توضیح دهد.,LAW
+Survey,sur·vay,بررسی یا ارزیابی,جمع‌آوری اطلاعات یا ارزیابی وضعیت.,A survey of public opinion was conducted before drafting the policy.,نظرسنجی از افکار عمومی قبل از تدوین سیاست انجام شد.,LAW
+Conduct,kuhn·duhkt,هدایت کردن یا انجام دادن,مدیریت یا اجرای یک فعالیت.,The lawyer’s conduct in court was professional.,رفتار وکیل در دادگاه حرفه‌ای بود.,LAW
+Attempt,uh·tempt,تلاش کردن,تلاش برای رسیدن به یک هدف، حتی اگر موفق نشود.,The defendant made an attempt to settle the case out of court.,متهم تلاش کرد پرونده را خارج از دادگاه حل‌وفصل کند.,LAW
+Ascertain,as·sur·tayn,اطمینان حاصل کردن,کسب اطلاعات دقیق یا اثبات حقیقت.,The police must ascertain the facts before proceeding.,پلیس باید حقایق را قبل از پیشروی روشن کند.,LAW
+Achieve,uh·cheev,دستیابی به هدف,رسیدن به یک هدف یا نتیجه مطلوب.,The parties hope to achieve a resolution through mediation.,طرفین امیدوارند از طریق میانجیگری به توافق برسند.,LAW
+Sophistication,suh·fis·tuh·kay·shn,پیچیدگی یا پیشرفت,توسعه یا پیچیدگی در تفکر، طراحی یا مهارت.,The sophistication of the legal argument impressed the jury.,پیچیدگی استدلال قانونی هیئت منصفه را تحت تأثیر قرار داد.,LAW
+Origin,aw·ruhn·jin,منشأ یا خاستگاه,نقطه شروع یا سرچشمه یک ایده یا عمل.,The origin of the dispute was traced to a contract error.,منشأ اختلاف به اشتباه در قرارداد بازگشت داده شد.,LAW
+Scale,skayl,مقیاس یا اندازه,اندازه‌گیری یا مقایسه کمیت یا کیفیت.,The scale of the damages required immediate action.,مقیاس خسارت‌ها نیاز به اقدام فوری داشت.,LAW
+Devise,dih·vayz,ابداع کردن,ایجاد یا طراحی چیزی جدید.,The company will devise a plan to meet compliance standards.,شرکت برنامه‌ای برای رعایت استانداردها طراحی خواهد کرد.,LAW
+Claim,klaym,ادعا,اظهار یا تقاضا برای چیزی که به فرد تعلق دارد.,The plaintiff filed a claim for damages caused by negligence.,خواهان برای خسارت‌های ناشی از سهل‌انگاری ادعا کرد.,LAW
+Occupation,ok·yoo·pay·shn,شغل,فعالیت یا حرفه‌ای که فرد انجام می‌دهد.,Her occupation as a journalist involves legal risks.,شغل او به‌عنوان خبرنگار خطرات قانونی دارد.,LAW
+Standing,stan·ding,موقعیت,وضعیت یا اعتبار فرد در جامعه یا در قانون.,The lawyer’s standing in the legal community is well-respected.,اعتبار وکیل در جامعه حقوقی بسیار مورد احترام است.,LAW
+Citizen,si·tuh·zn,شهروند,فردی که تابعیت یک کشور را دارد.,Every citizen has the right to legal representation.,هر شهروند حق دسترسی به وکیل دارد.,LAW
+Author,aw·thor,مولف یا نویسنده,فردی که اثری را نوشته یا خلق کرده است.,The author of the legal document was commended for clarity.,نویسنده سند حقوقی به دلیل شفافیت تقدیر شد.,LAW
+Rational,rash·nuhl,معقول یا منطقی,بر اساس عقلانیت و منطق.,The judge made a rational decision based on the evidence.,قاضی تصمیم منطقی بر اساس شواهد گرفت.,LAW
+Remark,ruh·mark,اظهار یا بیان,گفتار یا اظهار رسمی یا غیررسمی.,The lawyer’s remark during the trial caught everyone’s attention.,اظهارنظر وکیل در جریان محاکمه توجه همه را جلب کرد.,LAW
+Concordance,kuhn·kawr·dns,همخوانی یا تطابق,هماهنگی یا توافق بین عناصر مختلف.,The agreement reached was in concordance with the law.,توافق حاصل‌شده با قانون هماهنگ بود.,LAW
+Touchstone,tuhch·stohn,معیار ارزیابی,معیاری برای سنجش کیفیت یا درستی چیزی.,The contract serves as a touchstone for future agreements.,این قرارداد به‌عنوان معیاری برای توافق‌های آینده عمل می‌کند.,LAW
+Gravity,grav·i·tee,اهمیت یا جدیت,اهمیت زیاد یا ماهیت جدی یک موضوع.,The gravity of the situation required immediate action from the judiciary.,شدت وضعیت نیاز به اقدام فوری از قوه قضائیه داشت.,LAW
+Judiciary,joo·di·shuh·ree,قضا,سیستم یا مقام‌های قضایی مسئول اجرای قانون.,The judiciary plays a crucial role in upholding the law.,قوه قضائیه نقش مهمی در حفظ قانون ایفا می‌کند.,LAW
+Inconsistency,in·kuhn·sih·sten·see,ناسازگاری,عدم هماهنگی یا تطابق.,There was an inconsistency in the witness’s statement.,در اظهارات شاهد یک ناهماهنگی وجود داشت.,LAW
+Particularly,pahr·ti·ku·ler·lee,به‌ویژه,به‌صورت خاص یا مشخص.,The allegations against the official were particularly serious.,اتهامات علیه مقام رسمی به‌ویژه جدی بود.,LAW
+Allegation,al·uh·geɪ·shn,اتهام,ادعایی رسمی درباره رفتار نادرست یا جرم.,The allegation made against the defendant was serious and required investigation.,اتهام وارد شده علیه متهم جدی بود و نیاز به تحقیقات داشت.,LAW
+Role,rohl,نقش,وظیفه یا عملکرد مشخص در یک سیستم.,The role of the jury is to evaluate the evidence presented.,نقش هیئت منصفه ارزیابی شواهد ارائه‌شده است.,LAW
+Corruption,kuh·rup·shn,فساد,سوءاستفاده از قدرت برای منافع شخصی.,Corruption can undermine the integrity of legal systems.,فساد می‌تواند تمامیت سیستم‌های قانونی را تضعیف کند.,LAW
+Complement,kom·pluh·ment,تکمیل,چیزی که دیگری را کامل یا بهبود می‌بخشد.,The two laws complement each other effectively.,این دو قانون به‌طور مؤثری یکدیگر را تکمیل می‌کنند.,LAW
+Accountability,uh·kown·tuh·bil·uh·tee,مسئولیت‌پذیری,پاسخگویی نسبت به اعمال یا تصمیمات.,Accountability is essential for public officials.,مسئولیت‌پذیری برای مقام‌های عمومی ضروری است.,LAW
+Orient,aw·ree·ent,جهت‌گیری,تنظیم یا تعیین جهت.,We need to orient our approach to address these issues.,ما باید رویکرد خود را برای حل این مسائل جهت‌گیری کنیم.,LAW
+Branch,bran(t)ch,شاخة,بخش یا قسمت یک سازمان یا سیستم.,The legal branch is responsible for interpreting statutes.,شاخه حقوقی مسئول تفسیر مقررات است.,LAW
+Element,el·uh·muhnt,عنصر,جزئی از یک کل.,Every case must contain the key element of evidence.,هر پرونده باید حاوی عنصر کلیدی شواهد باشد.,LAW
+Resolution flourish,rez·uh·loo·shn flo͞o·rish,رشد راه‌حل,روند توسعه یا تقویت راه‌حل‌ها.,The resolution flourish after mediation helped both parties.,حل و فصل بعد از میانجیگری به هر دو طرف کمک کرد.,LAW
+Notably,noh·tuh·blee,به‌ویژه,به‌صورت برجسته یا خاص.,"Notably, the judge emphasized the importance of fairness.",قاضی به‌ویژه بر اهمیت انصاف تأکید کرد.,LAW
+Conciliation,kuhn·suh·lee·ay·shn,آشتی,تلاش برای حل اختلافات و برقراری صلح.,Conciliation is often used to resolve disputes amicably.,توافق به‌طور معمول برای حل و فصل اختلافات به کار می‌رود.,LAW
+Arbitrator,ahr·bih·truh·ter,داور,فردی که در اختلاف به عنوان قاضی بی‌طرف عمل می‌کند.,An arbitrator was appointed to facilitate the resolution process.,یک داور برای تسهیل روند حل و فصل منصوب شد.,LAW
+Merely,mer·lee,فقط,تنها یا صرفاً.,Merely following procedures does not guarantee justice.,فقط پیروی از رویه‌ها عدالت را تضمین نمی‌کند.,LAW
+Regulation,reg·yuh·lay·shn,قوانین,قواعد یا دستورالعمل‌های رسمی.,The regulation requires companies to disclose their financial records.,مقررات از شرکت‌ها می‌خواهد که سوابق مالی خود را افشا کنند.,LAW
+Manner,man·er,روش,شیوه یا طریقه انجام کاری.,The manner in which the law is enforced can vary by jurisdiction.,شیوه‌ای که قانون اجرا می‌شود می‌تواند بسته به حوزه قضائی متفاوت باشد.,LAW
+Implement,im·ple·ment,اجرا,به‌کارگیری یا انجام چیزی.,We must implement the new policies by next month.,ما باید سیاست‌های جدید را تا ماه آینده اجرا کنیم.,LAW
+Agency,ey·juhn·see,سازمان,نهادی که وظایف خاصی را انجام می‌دهد.,The agency is responsible for overseeing compliance.,این نهاد مسئول نظارت بر رعایت قوانین است.,LAW
+Interpret,in·ter·pret,تفسیر,بیان یا توضیح معنای چیزی.,Judges must interpret laws based on established precedents.,قضات باید قوانین را بر اساس رویه‌های قبلی تفسیر کنند.,LAW
+Conceive,kuhn·seev,مفروض داشتن,ایجاد یا تصور ایده‌ای در ذهن.,It is difficult to conceive of a legal system without checks and balances.,تصور یک سیستم قانونی بدون چک و بالانس‌ها دشوار است.,LAW
+Prophecy,proh·fuh·see,پیشگویی,پیش‌بینی وقایع آینده.,Some legal scholars have made a prophecy about the future of law.,برخی از حقوقدانان پیشگویی درباره آینده قانون کرده‌اند.,LAW
+Fair,fair,عادلانه,بر اساس انصاف و عدالت.,It is essential to ensure a fair trial for all defendants.,اطمینان از محاکمه عادلانه برای تمام متهمان ضروری است.,LAW
+Predict,pri·dikt,پیش‌بینی,تخمین یا پیش‌بینی چیزی در آینده.,We can predict the outcome based on past cases.,ما می‌توانیم بر اساس پرونده‌های گذشته پیش‌بینی کنیم.,LAW
+Undue,uhn·doo,غیرموجه,بدون توجیه منطقی یا لازم.,Undue influence can compromise the integrity of the legal process.,نفوذ نامناسب می‌تواند تمامیت روند قانونی را به خطر بیندازد.,LAW
+Delay,dih·lay,تاخیر,تعویق در انجام یک عمل یا رویداد.,Any delay in proceedings can affect the outcome of a case.,هر تأخیری در روندها می‌تواند بر نتیجه پرونده تأثیر بگذارد.,LAW
+Afford,uh·ford,تأمین کردن,داشتن توان مالی یا ظرفیت برای انجام چیزی.,Can you afford to take on the legal expenses?,آیا می‌توانید هزینه‌های قانونی را پرداخت کنید؟,LAW
+Cost,kawst,هزینه,مبلغ یا بهایی که باید پرداخت شود.,The cost of litigation can be quite high.,هزینه‌های دادرسی می‌تواند بسیار زیاد باشد.,LAW
+Parcel,par·suhl,بسته,محموله یا بسته‌بندی کالا.,Each parcel of evidence must be carefully examined.,هر بسته شواهد باید به دقت بررسی شود.,LAW
+Departed from,dih·pahr·tid fruhm,دور شدن از,ترک کردن یک روش یا مسیر.,The court departed from precedent in its recent ruling.,دادگاه در حکم اخیر خود از رویه قبلی منحرف شد.,LAW
+Identify,ahy·den·tify,شناسایی,تشخیص یا شناخت یک شخص، شیء یا وضعیت.,We must identify the key issues in this case.,ما باید مسائل کلیدی در این پرونده را شناسایی کنیم.,LAW
+Innocence,in·uh·suhns,بی‌گناهی,وضعیتی که در آن فرد مرتکب جرم نشده است.,The presumption of innocence is a fundamental principle of law.,فرض بر بی‌گناهی یک اصل اساسی در قانون است.,LAW
+Trial,trahyl,محاکمه,رسیدگی قضایی به یک دعوی یا اتهام.,The trial will begin next month.,محاکمه در ماه آینده آغاز خواهد شد.,LAW
+Impartial,im·pahr·shuhl,بی‌طرف,بدون تعصب یا جانبداری.,The judge must remain impartial throughout the proceedings.,قاضی باید در طول رسیدگی‌ها بی‌طرف بماند.,LAW
+Party,pahr·tee,طرف,یکی از افراد یا گروه‌های درگیر در یک موضوع یا اختلاف.,Each party will present its case in court.,هر طرف در دادگاه پرونده خود را ارائه خواهد داد.,LAW
+Deny,dih·nai,انکار کردن,رد کردن یا عدم پذیرش چیزی.,The defendant chose to deny the allegations made against him.,متهم تصمیم به انکار اتهامات وارده علیه خود گرفت.,LAW
+Accuser,uh·kyoo·zər,اتهام‌زننده,فردی که ادعایی علیه دیگری مطرح می‌کند.,The accuser must provide sufficient evidence to support their claims.,اتهام‌زننده باید شواهد کافی برای حمایت از ادعاهای خود ارائه کند.,LAW
+Burden of proof,bur·dn uhv proof,بار اثبات,مسئولیت ارائه شواهد برای اثبات یک ادعا.,The burden of proof lies with the prosecution in criminal cases.,بار اثبات بر عهده دادستان در پرونده‌های کیفری است.,LAW
+Testimony,tes·tuh·moh·nee,شهادت,اظهاراتی که یک شاهد ارائه می‌دهد.,The testimony of witnesses is critical to the case.,شهادت شهود برای پرونده بسیار حیاتی است.,LAW
+Witness,wit·ness,شاهد,فردی که واقعه‌ای را مشاهده کرده و درباره آن گواهی می‌دهد.,The witness testified about the events leading up to the incident.,شاهد درباره رویدادهای منتهی به حادثه شهادت داد.,LAW
+Circumstantial,sur·kum·stan·shuhl,مشروط,شواهدی که غیرمستقیم به یک نتیجه اشاره دارند.,Circumstantial evidence can sometimes lead to a conviction.,شواهد غیرمستقیم گاهی می‌تواند به محکومیت منجر شود.,LAW
+Inadmissible,in·ad·muh·suh·buhl,قابل قبول نیست,شواهدی که در دادگاه پذیرفته نمی‌شوند.,The judge ruled that the evidence was inadmissible in court.,قاضی حکم داد که شواهد در دادگاه غیرقابل قبول است.,LAW
+Demand,dih·mand,تقاضا,درخواست رسمی یا شدید برای چیزی.,The plaintiff made a demand for compensation following the accident.,شاکی تقاضای جبران خسارت پس از تصادف را مطرح کرد.,LAW
+Oath,oʊθ,قسم,تعهد رسمی برای گفتن حقیقت.,The witness took an oath to tell the truth.,شاهد قسم خورد که حقیقت را بگوید.,LAW
+Swore,swɔr,قسم خورده,تعهد رسمی برای انجام یا رعایت چیزی.,She swore that she saw the defendant at the scene of the crime.,او سوگند یاد کرد که متهم را در صحنه جرم دیده است.,LAW
+Dismiss the case,dihs·mis thuh kays,رد کردن پرونده,مختومه کردن پرونده توسط قاضی.,The judge decided to dismiss the case due to lack of evidence.,قاضی تصمیم گرفت پرونده را به دلیل کمبود شواهد رد کند.,LAW
+Orally,aw·ruh·lee,شفاهی,اظهارات یا شهادت به صورت کلامی.,The lawyer presented his arguments orally during the trial.,وکیل استدلال‌های خود را به‌صورت شفاهی در جریان محاکمه ارائه داد.,LAW
+Conclusive,kuhn·klu·siv,قطعی,نهایی و غیرقابل تردید.,The jury reached a conclusive decision after reviewing the evidence.,هیئت منصفه پس از بررسی شواهد به تصمیم قاطعی رسید.,LAW
+Guilty,gil·tee,گناهکار,فردی که مرتکب جرم شده است.,The defendant was found guilty of the charges against him.,متهم به اتهامات وارده گناهکار شناخته شد.,LAW
+Verdict,vur·dikt,رای,تصمیم نهایی دادگاه.,The jury returned a unanimous verdict of not guilty.,هیئت منصفه رأی قاطعی مبنی بر بی‌گناهی صادر کرد.,LAW
+Appellate,uh·pel·it,فرجامی,مرتبط با تجدیدنظر در یک حکم یا تصمیم.,The appellate court reviewed the case for any legal errors.,دادگاه تجدیدنظر پرونده را به‌دنبال هرگونه خطای قانونی بررسی کرد.,LAW
+Ruler,roo·ler,حاکم,فردی با قدرت برای مدیریت یا حکومت.,The ruler imposed strict regulations to maintain order.,رئیس قوانین سختی را برای حفظ نظم وضع کرد.,LAW
+Agreement,uh·gree·muhnt,توافق,توافق رسمی بین طرفین.,Both parties signed the agreement to finalize the contract.,هر دو طرف قرارداد را برای نهایی کردن توافق امضا کردند.,LAW
+Foresee,fohr·see,پیش‌بینی,پیش‌بینی وقوع یک رویداد.,It is difficult to foresee all potential legal issues.,پیش‌بینی تمام مشکلات قانونی بالقوه دشوار است.,LAW
+Unforeseen,uhn·fuh·seen,غیرقابل پیش‌بینی,چیزی که پیش‌بینی نشده است.,The unforeseen circumstances led to delays in the proceedings.,شرایط غیرمنتظره منجر به تأخیر در روند رسیدگی شد.,LAW
+Contingency,kuhn·tin·juhn·see,شرط احتمالی,رویدادی که ممکن است تحت شرایط خاص رخ دهد.,A contingency plan was established in case of unexpected events.,یک طرح پشتیبان برای موارد غیرمنتظره تهیه شد.,LAW
+Attainment,uh·teyn·muhnt,دستیابی,فرایند رسیدن به هدف یا نتیجه.,The attainment of justice is the ultimate goal of the legal system.,دستیابی به عدالت هدف نهایی سیستم حقوقی است.,LAW
+Purpose,pur·puhs,هدف,دلیل یا انگیزه انجام یک عمل.,The purpose of the law is to protect citizens’ rights.,هدف از قانون حفاظت از حقوق شهروندان است.,LAW
+Discharge,dis·chahrj,خارج کردن,رهایی از تعهد یا مسئولیت.,The court may discharge the defendant if the charges are dropped.,دادگاه ممکن است متهم را در صورت رد اتهامات آزاد کند.,LAW
+Lay down,lay down,تعیین کردن,مشخص کردن قوانین یا شرایط.,The lawyer will lay down the facts of the case clearly.,وکیل حقایق پرونده را به‌طور واضح بیان خواهد کرد.,LAW
+Absolute contract,ab·sol·yoot kon·trakt,قرارداد مطلق,قراردادی بدون شرایط یا محدودیت.,An absolute contract must be fulfilled as agreed by both parties.,یک قرارداد مطلق باید طبق توافقات انجام شود.,LAW
+Amount,uh·mount,مقدار,اندازه یا میزان چیزی.,The total amount claimed by the plaintiff was substantial.,مجموعه کل مبلغ ادعایی از سوی شاکی قابل توجه بود.,LAW
+Cast,kast,شکل,ایجاد یا طراحی چیزی برای یک هدف خاص.,The evidence cast doubt on the defendant’s alibi.,شواهد در مورد ادعای متهم تردید ایجاد کرد.,LAW
+Bind,bahynd,بستن,تعهد قانونی یا الزام‌آور ایجاد کردن.,Contracts bind both parties to their obligations.,قراردادها هر دو طرف را به انجام تعهداتشان ملزم می‌کند.,LAW
+Escape,ih·skayp,فرار کردن,رهایی از وضعیت یا مسئولیت خاص.,The suspect tried to escape from the police during the chase.,متهم سعی کرد در حین تعقیب از دست پلیس فرار کند.,LAW
+Futile,fyoo·tl,بی‌فایده,عملی که فاقد نتیجه مثبت باشد یا هیچ سودی نداشته باشد.,His efforts to prove his innocence were futile.,تلاش‌های او برای اثبات بی‌گناهی‌اش بی‌فایده بود.,LAW
+Alleged,uh·lejd,متهم شده,ادعایی که هنوز ثابت نشده است.,The alleged crime occurred late at night.,جرم ادعایی در اواخر شب رخ داد.,LAW
+Justification,juhs·tuh·fi·kay·shuhn,توجیه,دلیلی برای توضیح یا دفاع از یک عمل یا تصمیم.,The defendant provided a justification for his actions.,متهم توجیهی برای اعمال خود ارائه کرد.,LAW
+Harsh,hahrsh,سخت,به شدت سخت، خشن یا غیرمنصفانه.,Some laws can be perceived as harsh by the public.,برخی از قوانین ممکن است از سوی عموم به‌عنوان سختگیرانه تلقی شود.,LAW
+Guard,gahrd,نگهبانی,محافظت از چیزی یا مراقبت از آن.,The security guard was assigned to protect the property.,نگهبان امنیتی برای محافظت از اموال منصوب شد.,LAW
+Express,ik·spres,صریح,بیان مستقیم و شفاف چیزی.,The contract must express all terms clearly.,قرارداد باید تمام شرایط را به‌طور واضح بیان کند.,LAW
+Stipulation,stip·yuh·lay·shuhn,شرط,شرط یا قیدی که در یک قرارداد ذکر شده است.,The stipulation in the agreement outlined the responsibilities of each party.,شرط در توافق‌نامه مسئولیت‌های هر طرف را مشخص کرد.,LAW
+Undertake,uhn·der·teyk,تعهد کردن,قبول کردن انجام یک مسئولیت یا وظیفه.,We undertake to complete the project by the deadline.,ما متعهد می‌شویم که پروژه را تا مهلت مقرر تکمیل کنیم.,LAW
+Unconditional,uhn·kuhn·dih·shuh·nl,بدون قید و شرط,بدون هیچ پیش‌شرط یا محدودیتی.,The offer is unconditional and valid for 30 days.,این پیشنهاد بدون قید و شرط و برای مدت 30 روز معتبر است.,LAW
+Complain,kuhm·pleyn,شکایت کردن,بیان نارضایتی یا اعتراض به یک وضعیت.,"If you wish to complain, please follow the procedure outlined in the handbook.",اگر می‌خواهید شکایت کنید، لطفاً مراحل ذکر شده در کتابچه راهنما را دنبال کنید.,LAW
+Advantage,ad·van·tij,مزیت,فایده یا برتری نسبت به دیگران.,The new law provides a significant advantage to small businesses.,قانون جدید مزیت قابل توجهی به کسب‌وکارهای کوچک می‌دهد.,LAW
+For instance,fawr in·stuhns,به عنوان مثال,ذکر مثالی برای توضیح یک موضوع.,"For instance, a landlord cannot increase rent without proper notice.",به عنوان مثال، صاحب‌خانه نمی‌تواند اجاره را بدون اطلاع مناسب افزایش دهد.,LAW
+Nonetheless,nuhn·the·less,با این حال,با وجود مشکلات یا موانع.,"Nonetheless, the court ruled in favor of the plaintiff.",با این حال، دادگاه به نفع شاکی رأی داد.,LAW
+Liable,lahy·uh·buhl,مسئول,مسئولیت قانونی برای یک عمل یا پیامد آن.,The company is liable for damages caused by its products.,این شرکت به خاطر خسارت‌هایی که محصولاتش ایجاد کرده، مسئول است.,LAW
+Practice party,prak·tis pahr·tee,طرف عملی,طرفی که در یک اقدام یا قرارداد مشارکت دارد.,Each practice party must adhere to the regulations.,هر طرفی که در عمل شرکت دارد باید به مقررات پایبند باشد.,LAW
+Insert,in·surt,قرار دادن,وارد کردن یا اضافه کردن چیزی به یک محل یا سند.,Please insert your signature at the bottom of the document.,لطفاً امضای خود را در انتهای سند درج کنید.,LAW
+Extent,ik·stent,دامنه,محدوده یا میزان یک چیز.,"To a large extent, the new regulations will impact our operations.",به میزان زیادی، مقررات جدید بر عملیات ما تأثیر خواهد گذاشت.,LAW
+Embody,em·bah·dee,نمادین,بیان یا تجسم یک ایده یا مفهوم در عمل.,The mission statement should embody the organization’s values.,بیانیه مأموریت باید ارزش‌های سازمان را تجسم کند.,LAW
+Arrest,uh·rest,بازداشت,گرفتن یا متوقف کردن قانونی یک شخص به دلیل تخلف.,The police have the authority to arrest individuals suspected of a crime.,پلیس حق دارد افرادی را که مظنون به ارتکاب جرم هستند، دستگیر کند.,LAW
+Scope,skohp,دامنه,محدوده یا گستره اختیارات یا فعالیت.,The scope of the project includes several phases.,دامنه پروژه شامل چندین مرحله است.,LAW
+Property,prop·er·tee,ملکیت,دارایی یا چیزی که متعلق به کسی است.,Real estate is considered valuable property.,املاک و مستغلات به عنوان اموال با ارزش در نظر گرفته می‌شود.,LAW
+Obstruction,uhb·struk·shuhn,مانع,چیزی که جلوی انجام یک کار را می‌گیرد.,Obstruction of justice is a serious offense.,مانع‌تراشی در اجرای عدالت یک جرم جدی است.,LAW
+Execution,ek·suh·kew·shuhn,اجرا,عمل انجام یا پیاده‌سازی چیزی.,The execution of the contract began after both parties signed.,اجرای قرارداد پس از امضای هر دو طرف آغاز شد.,LAW
+Conviction,kuhn·vik·shuhn,محکومیت,حکم قانونی علیه فردی که مقصر شناخته شده است.,The conviction of the defendant was based on overwhelming evidence.,محکومیت متهم بر اساس شواهد قوی بود.,LAW
+Consequently,kon·si·kwent·lee,در نتیجه,به دنبال یک عمل یا اتفاق.,"Consequently, the court ordered the defendant to pay restitution.",بنابراین، دادگاه دستور داد که متهم خسارت پرداخت کند.,LAW
+Combination,kuhm·buh·nay·shuhn,ترکیب,ادغام چندین عنصر با هم.,The combination of factors led to the decision to settle.,ترکیب عوامل منجر به تصمیم برای تسویه شد.,LAW
+Trespass,tres·pass,تجاوز,ورود غیرمجاز به ملک یا دارایی دیگران.,Trespassers may face legal action for entering the property without permission.,متجاوزان ممکن است به دلیل ورود به املاک بدون اجازه، تحت پیگرد قانونی قرار گیرند.,LAW
+Doubt,doubt,شک,عدم اطمینان یا باور به یک چیز.,There is some doubt about the validity of the evidence presented.,در مورد اعتبار شواهد ارائه‌شده، شکی وجود دارد.,LAW
+Facet,fa·set,جنبه,یک جنبه یا بخش از یک موضوع.,Each facet of the case needs to be thoroughly examined.,هر facet از پرونده نیاز به بررسی دقیق دارد.,LAW
+Appreciate,uh·pree·shee·ayt,قدردانی کردن,تشخیص ارزش یا اهمیت چیزی.,We appreciate the support from the community in this matter.,ما از حمایت جامعه در این مورد قدردانی می‌کنیم.,LAW
+Supremacy,soo·prem·uh·see,عالی بودن,برتری یا قدرت بالاتر نسبت به دیگران.,The supremacy of the constitution is fundamental to our legal system.,عالی بودن قانون اساسی برای سیستم قانونی ما بنیادی است.,LAW
+Prerogative,pruh·rog·uh·tiv,اختیار,حق یا امتیاز ویژه برای کسی.,The president has the prerogative to veto legislation.,رئیس‌جمهور حق وتو کردن قوانین را دارد.,LAW
+Appropriation,uh·proh·pree·ay·shuhn,اختصاص,اختصاص دادن چیزی برای استفاده خاص.,The appropriation of funds must be approved by the board.,اختصاص بودجه باید توسط هیئت تأیید شود.,LAW
+Good,gʊd,کالا,چیزی که می‌توان خرید یا فروخت.,A good lawyer knows how to negotiate effectively.,یک وکیل خوب می‌داند چگونه به‌طور مؤثر مذاکره کند.,LAW
+Quantity,kwon·ti·tee,مقدار,مقدار یا حجم مشخص از یک چیز.,The quantity of evidence presented in court was overwhelming.,مقدار شواهد ارائه‌شده در دادگاه بسیار زیاد بود.,LAW
+Calculate,kal·kyuh·leyt,محاسبه کردن,تعیین مقدار یا ارزش چیزی.,We need to calculate the total damages claimed by the plaintiff.,ما باید کل خسارات ادعاشده توسط شاکی را محاسبه کنیم.,LAW
+Sub-sell,suhb·sel,زیر فروش,فروختن کالا به دیگران پس از خرید آن.,The company decided to sub-sell its excess inventory to other retailers.,شرکت تصمیم به فروش مجدد موجودی اضافی خود به سایر خرده‌فروشان گرفت.,LAW
+Entitle to,in·tahyl tu,حق‌دار کردن,دادن حق به کسی برای استفاده از چیزی.,The contract will entitle you to receive compensation for damages.,قرارداد شما را به دریافت غرامت بابت خسارات واجد شرایط می‌کند.,LAW
+Vessel,ves·uhl,کشتی,وسیله حمل‌ونقل آبی.,The vessel was inspected before departing for its journey.,کشتی قبل از عزیمت برای سفر خود بازرسی شد.,LAW
+Sailing,seyl·ing,ناوبری,حرکت قایق یا کشتی در آب.,Sailing permits are required for all recreational boats in the area.,مجوزهای دریانوردی برای تمام قایق‌های تفریحی در این منطقه الزامی است.,LAW
+Cargo,kar·goh,محصولات,کالاهایی که توسط کشتی یا وسیله نقلیه حمل می‌شوند.,The cargo must be secured properly before shipping.,بار باید قبل از ارسال به‌درستی ایمن‌سازی شود.,LAW
+Pass up,pas uhp,رد کردن,فرصت یا پیشنهادی را نپذیرفتن.,Do not pass up the opportunity to negotiate a better deal.,این فرصت را برای مذاکره بر سر یک معامله بهتر از دست ندهید.,LAW
+String,string,رشته,یک سری یا مجموعه‌ای از موارد به هم پیوسته.,The lawyer presented a string of compelling arguments in the case.,وکیل یک رشته از استدلال‌های قانع‌کننده را در این پرونده ارائه داد.,LAW
+Contractual,kuhn·trak·chuhl,قراردادی,مربوط به توافقات قانونی.,The parties entered into a contractual agreement to finalize the terms.,طرفین وارد یک توافق قراردادی برای نهایی کردن شرایط شدند.,LAW
+Description,dih·skrip·shuhn,شرح,تعریف یا توضیح مشخصات چیزی.,The description of the contract must be clear to all parties involved.,شرح قرارداد باید برای همه طرفین درگیر واضح باشد.,LAW
+Trader,trey·der,تاجر,شخصی که در تجارت کالا شرکت می‌کند.,A trader must comply with all relevant laws when conducting business.,یک تاجر باید از همه قوانین مربوطه هنگام انجام تجارت پیروی کند.,LAW
+Necessity,nuh·ses·i·tee,ضرورت,چیزی که لازم و ضروری است.,"In times of necessity, certain laws may be temporarily suspended.",در زمان‌های ضرورت، ممکن است برخی قوانین به‌طور موقت تعلیق شوند.,LAW
+Take interest,teyk in·tuh·rest,اخذ علاقه,ابراز علاقه به یک موضوع یا فعالیت.,You should take interest in the legal implications of your actions.,شما باید به پیامدهای قانونی اقدامات خود توجه کنید.,LAW
+Parallel,par·uh·lel,موازی,چیزهایی که در یک راستا بدون تقاطع حرکت می‌کنند.,The two cases run parallel to each other in the legal system.,این دو پرونده در سیستم حقوقی به‌طور موازی پیش می‌روند.,LAW
+Diverge,dih·vurj,انحراف,جدا شدن از مسیر اصلی یا اختلاف مسیر.,"As the case progressed, the arguments began to diverge significantly.",با پیشرفت پرونده، استدلال‌ها به‌طور قابل توجهی منحرف شدند.,LAW
+Unification,yoo·nuh·fi·kay·shuhn,اتحاد,عمل یکی کردن یا متحد شدن.,The unification of laws across states can simplify legal processes.,یکپارچگی قوانین در ایالت‌ها می‌تواند فرآیندهای قانونی را ساده‌تر کند.,LAW
+Set up,set uhp,راه‌اندازی,ایجاد یا شروع چیزی جدید.,You need to set up a formal agreement to protect your rights.,شما باید یک توافق رسمی تنظیم کنید تا از حقوق خود محافظت کنید.,LAW
+Membership,mem·bur·ship,عضویت,وابستگی به یک گروه یا سازمان.,Membership in a professional organization can provide valuable resources.,عضویت در یک سازمان حرفه‌ای می‌تواند منابع ارزشمندی را فراهم کند.,LAW
+Enlarge,en·lahrj,گسترش,بزرگ‌تر کردن یا افزایش دامنه.,The court may enlarge the time frame for filing an appeal.,دادگاه ممکن است زمان ثبت درخواست تجدیدنظر را گسترش دهد.,LAW
+Edition,ih·dish·uhn,نسخه,نسخه خاص از یک کتاب یا نشریه.,Each new edition of the law book includes updated statutes.,هر ویرایش جدید کتاب قانون شامل قوانین به‌روز است.,LAW
+Approve,uh·proov,تأیید,پذیرفتن یا تصویب چیزی.,The committee must approve the proposed changes before implementation.,کمیته باید تغییرات پیشنهادی را قبل از اجرای آن تأیید کند.,LAW
+Wind,wihnd,باد,جریان هوا یا نسیم.,The wind of change in regulations can impact businesses significantly.,وزش تغییر در مقررات می‌تواند تأثیر زیادی بر کسب‌وکارها داشته باشد.,LAW
+Strike,strajk,ضربه,عمل وارد کردن ضربه یا اقدام ناگهانی.,The judge decided to strike the irrelevant evidence from the record.,قاضی تصمیم گرفت شواهد غیر مرتبط را از پرونده حذف کند.,LAW
+Respective,ri·spek·tiv,متناسب,مربوط به هر فرد یا مورد خاص.,Each party is responsible for their respective obligations under the contract.,هر طرف مسئول تعهدات مربوط به خود در قرارداد است.,LAW
+Respected,ri·spek·tid,محترم,کسی که مورد احترام است.,A respected lawyer can provide essential guidance in legal matters.,یک وکیل محترم می‌تواند راهنمایی‌های ضروری در مسائل حقوقی ارائه دهد.,LAW
+Freehold,free·hohld,مالکیت آزاد,مالکیت کامل بدون محدودیت زمانی.,Owning a freehold property gives you greater control over your land.,مالکیت یک ملک آزاد به شما کنترل بیشتری بر زمین خود می‌دهد.,LAW
+Acquire for,uh·kwahyuhr fawr,اکتساب برای,به دست آوردن چیزی برای یک هدف خاص.,"To acquire for the project, we need to follow the legal procedures.",برای به دست آوردن پروژه، باید مراحل قانونی را دنبال کنید.,LAW
+Accordance with,uh·kawr·dns wihth,طبق توافق با,انجام یا پیروی از چیزی بر اساس قوانین یا توافق.,All actions must be in accordance with the established law.,تمام اقدامات باید مطابق با قوانین تعیین‌شده باشد.,LAW
+Scheme,skeem,طرح,برنامه یا نقشه‌ای برای رسیدن به هدف.,The scheme outlines the procedures for resolving disputes effectively.,طرح شامل رویه‌هایی برای حل مؤثر اختلافات است.,LAW
+Permission,per·mish·uhn,اجازه,اجازه برای انجام یک عمل خاص.,You need to obtain permission before making any alterations to the property.,شما باید قبل از انجام هر گونه تغییری در ملک، مجوز بگیرید.,LAW
+Transfer,trans·fur,انتقال,جابجایی چیزی از یک شخص به دیگری.,You can transfer the title of the property through a legal document.,شما می‌توانید عنوان ملک را از طریق یک سند قانونی منتقل کنید.,LAW
+Obtain,ob·teyn,دریافت کردن,به دست آوردن یا کسب چیزی.,"To obtain justice, you must follow the proper legal channels.",برای به دست آوردن عدالت، باید از کانال‌های قانونی مناسب پیروی کنید.,LAW
+Restrain,ri·strain,محدود کردن,جلوگیری از انجام یا کنترل چیزی.,The court may restrain a party from taking further action.,دادگاه ممکن است از یک طرف بخواهد که از انجام اقدام بیشتر خودداری کند.,LAW
+Revise,ri·vahyz,بازنگری,اصلاح یا تجدیدنظر روی چیزی.,It is crucial to revise the contract before finalizing it.,اصلاح قرارداد قبل از نهایی کردن آن بسیار حیاتی است.,LAW
+Restitution,res·ti·tyoo·shuhn,استرداد,بازگرداندن یا جبران خسارت.,Restitution may be ordered to compensate the victim for losses.,ممکن است بازپرداخت به‌منظور جبران خسارت به قربانی صادر شود.,LAW
+Admiration,ad·muh·rey·shuhn,تحسین,احساس احترام یا علاقه به کسی یا چیزی.,There is much admiration for those who uphold the law.,احترام زیادی برای کسانی که از قانون حمایت می‌کنند وجود دارد.,LAW
+Envy,en·vee,حسادت,احساس نارضایتی نسبت به موفقیت یا ویژگی‌های دیگران.,Envy can lead to legal disputes in matters of inheritance.,حسادت می‌تواند منجر به اختلافات حقوقی در مسائل ارث شود.,LAW
+Enthrall,en·thrawl,مجذوب کردن,شیفته یا گرفتار کردن کسی به چیزی.,The judge’s ruling can enthrall the public and influence future cases.,حکم قاضی می‌تواند مردم را شگفت‌زده کند و بر پرونده‌های آینده تأثیر بگذارد.,LAW
+Reject,ri·jekt,رد کردن,نپذیرفتن چیزی.,The court may reject evidence that is deemed irrelevant.,دادگاه ممکن است شواهدی را که بی‌ربط است رد کند.,LAW
+Imply,im·plahy,دلالت کردن,بیان غیرمستقیم یا اشاره به چیزی.,The contract may imply certain responsibilities for both parties.,قرارداد ممکن است مسئولیت‌های خاصی را برای هر دو طرف دلالت کند.,LAW
+Awarding,uh·wor·ding,اهدا,دادن جایزه یا پاداش به کسی.,Awarding damages is intended to compensate the injured party.,جبران خسارت برای جبران آسیب‌دیده طراحی شده است.,LAW
+Quantum meruit,kwon·tum mer·wit,مقدار عادلانه,مقدار منطقی یا عادلانه خدمات انجام شده.,The principle of quantum meruit allows recovery for work performed.,اصل ارزش کار (quantum meruit) به فرد حق می‌دهد تا برای کار انجام‌شده هزینه بگیرد.,LAW
+Stamp,stamp,مهری,مهر یا علامتی برای تأیید رسمی چیزی.,Every legal document must have an official stamp for validation.,هر سند قانونی باید برای اعتبارسنجی دارای مهر رسمی باشد.,LAW
+Lag,lag,تاخیر,به تعویق افتادن یا کندی در انجام چیزی.,The case has started to lag behind the court’s schedule.,پرونده ممکن است در زمان‌بندی دادگاه به تأخیر بیفتد.,LAW
+Woefully,woef·uh·lee,به طور وحشتناکی,به شکل ناراحت‌کننده یا ناامیدکننده.,The delay in proceedings was woefully detrimental to the defendant.,تأخیر در رسیدگی‌ها به‌طور وحشتناکی به متهم آسیب رساند.,LAW
+Remarkable,ri·mark·uh·buhl,قابل توجه,چیزی که به خاطر ویژگی‌های خاص برجسته است.,The judge made a remarkable decision that set a new precedent.,قاضی تصمیمی چشمگیر گرفت که یک رویه جدید تعیین کرد.,LAW
+Rigorous,rig·er·uhs,سختگیر,نیازمند دقت زیاد یا رعایت کامل قوانین.,The legal process is often rigorous to ensure fairness.,فرآیند قانونی معمولاً برای اطمینان از انصاف سخت‌گیرانه است.,LAW
+Enlighten,en·lahyt·uhn,روشن کردن,آگاه کردن یا توضیح چیزی برای دیگران.,It is essential to enlighten clients about their rights and responsibilities.,اطمینان از آگاهی مشتریان درباره حقوق و مسئولیت‌هایشان ضروری است.,LAW
+Accelerate,ak·sel·uh·reyt,شتاب دادن,افزایش سرعت انجام کاری.,The changes in law may accelerate the resolution of disputes.,تغییرات در قانون ممکن است به تسریع حل و فصل اختلافات کمک کند.,LAW
+Burst,burst,انفجار,ترکیدن یا باز شدن ناگهانی.,A burst of new cases can overwhelm the court system.,یک انفجار از پرونده‌های جدید می‌تواند سیستم دادگاه را تحت فشار قرار دهد.,LAW
+Factually,fak·choo·uh·lee,از نظر واقعیت,بر اساس حقایق و اطلاعات واقعی.,"Factually, the evidence presented was compelling and well-documented.",از لحاظ واقعی، شواهد ارائه‌شده بسیار قانع‌کننده و مستند بود.,LAW
+Fortunate,for·chuh·nit,خوش شانس,در شرایط خوشایند و مساعد قرار گرفتن.,It is fortunate to have a reliable legal advisor during litigation.,خوش‌شانس است که در طول دعاوی حقوقی مشاور قانونی قابل اعتمادی داشته باشیم.,LAW
+Swap,swop,تعویض,مبادله یا جایگزینی چیزی با چیز دیگر.,Parties may swap legal documents to expedite the process.,طرفین ممکن است مدارک قانونی را برای تسریع روند تعویض کنند.,LAW
+Ongoing,on·goh·ing,در حال انجام,چیزی که هنوز ادامه دارد.,The ongoing investigation revealed more evidence than expected.,تحقیقات در حال انجام شواهد بیشتری از آنچه انتظار می‌رفت فاش کرد.,LAW
+Tax,taks,مالیات,مبلغی که به دولت پرداخت می‌شود.,Tax regulations must be complied with to avoid penalties.,قوانین مالیاتی باید رعایت شوند تا از جریمه‌ها جلوگیری شود.,LAW
+Spate,speyt,سیل,هجوم یا مقدار زیاد چیزی در مدت کوتاه.,A spate of lawsuits can indicate systemic issues in the industry.,یک سری شکایات می‌تواند نشان‌دهنده مشکلات سیستمی در صنعت باشد.,LAW
+Spawn,spawn,تولید کردن,ایجاد یا تولید چیزی جدید.,The new policies may spawn innovative legal solutions.,سیاست‌های جدید ممکن است راه‌حل‌های قانونی نوآورانه‌ای ایجاد کند.,LAW
+Path-breaking,path·brey·king,شکست مرزها,ایجاد تغییرات نوآورانه.,The path-breaking decision reshaped the interpretation of the law.,تصمیمی نوآورانه تفسیر قانون را تغییر داد.,LAW
+Confer,kuhn·fur,اعطا کردن,دادن امتیاز یا حق به کسی.,"To confer rights upon an individual, proper documentation is required.",برای اعطای حقوق به یک فرد، مستندات صحیح لازم است.,LAW
+Manifestation,man·uh·fuh·stay·shuhn,بیان,بروز یا نمایش چیزی به‌طور واضح.,A manifestation of intent must be clear in contractual agreements.,تجلی نیت باید در توافق‌های قراردادی واضح باشد.,LAW
+Supervisory,soo·per·vahy·zoh·ree,نظارتی,مربوط به نظارت یا کنترل بر عملکرد دیگران.,Supervisory roles are crucial in maintaining ethical legal practices.,نقش‌های نظارتی در حفظ شیوه‌های اخلاقی قانونی بسیار مهم هستند.,LAW
+Ultra vires,uhl·truh vye·reez,خارج از اختیارات,عملی که فراتر از اختیارات قانونی یک نهاد یا مقام باشد.,Actions taken ultra vires can lead to legal challenges.,اقدامات فراتر از اختیارات قانونی می‌تواند منجر به چالش‌های قانونی شود.,LAW
+Excess,ek·ses,اضافه,میزان یا مقدار بیشتری از حد مجاز.,Excessive fees can deter individuals from seeking legal help.,هزینه‌های زیاد می‌تواند افراد را از درخواست کمک قانونی بازدارد.,LAW
+Convey,kuhn·vey,انتقال دادن,عمل جابجایی یا انتقال یک حق یا ملک به دیگران.,The contract must convey the obligations clearly to all parties.,قرارداد باید الزامات را به وضوح به تمام طرفین منتقل کند.,LAW
+Rather,rath·er,به‌جای,به معنای اینکه چیزی یا کسی به‌جای چیز دیگری ترجیح داده می‌شود.,"Rather than arguing, the parties decided to negotiate a settlement.",به‌جای بحث، طرفین تصمیم به مذاکره در مورد توافق گرفتند.,LAW
+Exercise of powers,ek·ser·sahyz uhv pow·urz,استفاده از قدرت‌ها,استفاده از اختیارات یا قدرت‌هایی که به یک مقام یا نهاد داده شده است.,The exercise of powers must adhere to established legal boundaries.,استفاده از اختیارات باید به محدودیت‌های قانونی تعیین‌شده پایبند باشد.,LAW
+Spell out,spel owt,وضوح بخشیدن,بیان واضح و دقیق نکات یا شرایط.,It is important to spell out the terms of the agreement explicitly.,مهم است که شرایط توافق را به‌طور واضح بیان کنیم.,LAW
+Spelt out,spelt owt,وضوح یافته,بیان واضح و مشخص نکات یا شرایط به طور کتبی.,The policy spelt out the necessary steps for compliance.,سیاست موارد لازم برای رعایت قوانین را به‌طور واضح بیان کرد.,LAW
+Avoid,uh·void,اجتناب کردن,اجتناب از انجام یک عمل یا فعالیت.,It is wise to avoid any actions that could lead to litigation.,عاقلانه است که از هر اقداماتی که می‌تواند منجر به دعاوی شود، خودداری کنید.,LAW
+Expedite,ek·spuh·dahyt,تسریع کردن,تسریع در انجام فرآیندها یا فعالیت‌ها.,We need to expedite the process to reach a timely resolution.,ما باید روند را تسریع کنیم تا به یک نتیجه به موقع برسیم.,LAW
+Condemn,kuhn·dem,محکوم کردن,محکوم کردن یک عمل یا رفتار به دلیل غیرقانونی یا غیراخلاقی بودن.,The court may condemn actions that violate human rights.,دادگاه ممکن است اقداماتی را که حقوق بشر را نقض می‌کند، محکوم کند.,LAW
+Exclude,ik·sklood,استثنا کردن,عمل حذف یا کنار گذاشتن یک فرد یا چیز از یک گروه یا دسته.,The judge can exclude evidence that is deemed irrelevant.,قاضی می‌تواند شواهدی را که غیر مرتبط است، رد کند.,LAW
+Otherwise,uh·thur·waiz,در غیر این صورت,بیانگر این است که در غیر این صورت، شرایط متفاوت خواهد بود.,"Otherwise, the agreement will become void after the deadline.",در غیر این صورت، توافق پس از مهلت معین باطل خواهد شد.,LAW
+Frequently,free·kwent·lee,به‌طور مکرر,به معنای اینکه چیزی به طور مکرر و مداوم اتفاق می‌افتد.,The law is frequently updated to adapt to new challenges.,قانون به‌طور مکرر به‌روزرسانی می‌شود تا با چالش‌های جدید سازگار شود.,LAW
+Purport,pur·port,مفاد داشتن,عمل نشان دادن یا بیان یک هدف یا نیت.,The document may purport to represent the interests of all parties.,این سند ممکن است به نمایندگی از منافع تمام طرف‌ها ادعا کند.,LAW
+Take charge,teyk chahrj,کنترل گرفتن,عمل مسئولیت گرفتن و هدایت یک وضعیت یا گروه.,You must take charge of your legal responsibilities.,شما باید مسئولیت‌های قانونی خود را به عهده بگیرید.,LAW
+Hire,hahyur,استخدام کردن,عمل استخدام یک فرد برای انجام کار خاص.,The company decided to hire a legal consultant for guidance.,شرکت تصمیم گرفت که یک مشاور حقوقی برای راهنمایی استخدام کند.,LAW
+Contain,kuhn·teyn,در بر داشتن,حمل یا دربر داشتن چیزی.,The contract must contain specific terms to be enforceable.,قرارداد باید شامل شرایط مشخصی باشد تا لازم‌الاجرا باشد.,LAW
+Ignorance,ig·nuh·runs,نادانی,عدم دانش یا آگاهی درباره یک موضوع.,Ignorance of the law is not an acceptable defense in court.,بی‌اطلاعی از قانون دفاع قابل قبولی در دادگاه نیست.,LAW
+Overlap,oh·vur·lap,پوشش,تداخل یا همپوشانی بین دو یا چند موضوع یا مسئله.,There may be an overlap between the two legal jurisdictions.,ممکن است همپوشانی بین دو حوزه قضائی وجود داشته باشد.,LAW
+Emergent,ih·mur·juhnt,نوظهور,عمل یا وضعیتی که به سرعت در حال رشد یا توسعه است.,Emergent issues often require immediate legal attention.,مسائل نوظهور اغلب به توجه فوری حقوقی نیاز دارند.,LAW
+Theme,theme,موضوع,موضوع یا ایده‌ای که در یک بحث یا اثر هنری مورد توجه است.,The theme of justice is central to many legal discussions.,تم عدالت در بسیاری از بحث‌های حقوقی مرکزی است.,LAW
+Divergent,dih·vur·juhnt,متنوع,مربوط به موارد یا موضوعات متفاوت یا مختلف.,Divergent opinions can complicate the decision-making process.,نظرات متنوع می‌تواند روند تصمیم‌گیری را پیچیده کند.,LAW
+Promisor,prom·ih·sor,متعهد,فردی که متعهد به انجام یک عمل خاص است.,A promisor must fulfill their obligations as outlined in the contract.,یک متعهد باید تعهدات خود را طبق قرارداد انجام دهد.,LAW
+Verify,ver·uh·fahy,تأیید کردن,عمل تأیید یا تصدیق صحت یک اطلاعات یا سند.,You should verify all the facts before proceeding with the case.,شما باید تمام حقایق را قبل از ادامه پرونده تأیید کنید.,LAW
+Substantive,suhb·stan·tiv,ماده‌ای,مربوط به مباحث اساسی یا محتوای اصلی یک موضوع.,Substantive law defines the rights and duties of individuals.,قانون ماهوی حقوق و وظایف افراد را تعریف می‌کند.,LAW
+Discourse,dis·kawrs,گفتگو,گفتگو یا تبادل نظر بین دو یا چند طرف.,The discourse surrounding legal reform is ongoing.,گفتمان مربوط به اصلاحات قانونی در حال ادامه است.,LAW
+Primary,prahy·mer·ee,اولیه,نخستین یا اصلی‌ترین چیزی که در نظر گرفته می‌شود.,The primary objective of the law is to ensure justice.,هدف اصلی قانون اطمینان از عدالت است.,LAW
+Expressly,ik·spres·lee,صریحاً,به وضوح و به طور خاص بیان شده است.,The contract expressly states the obligations of each party.,قرارداد به‌وضوح تعهدات هر طرف را بیان می‌کند.,LAW
+Designate,dih·zig·neyt,معین کردن,عمل تعیین یا مشخص کردن یک شخص یا چیز.,We need to designate a representative to speak on our behalf.,ما باید یک نماینده برای سخنرانی به نمایندگی از خود تعیین کنیم.,LAW
+Subsidiary,suhb·sid·ee·er·ee,فرعی,شرکتی که تحت کنترل یک شرکت مادر عمل می‌کند.,The subsidiary agreements support the main contract.,قراردادهای فرعی از قرارداد اصلی حمایت می‌کنند.,LAW
+Implicit,im·pli·kit,ضمنی,چیزی که به وضوح بیان نشده اما در مفهوم نهفته است.,There are implicit assumptions in every legal agreement.,در هر توافق حقوقی فرضیات ضمنی وجود دارد.,LAW
+Hierarchy,hahy·uh·rahr·kee,سلسله مراتب,ساختار یا نظم سازمانی که در آن مقام‌ها و مسئولیت‌ها طبقه‌بندی می‌شوند.,The hierarchy of laws determines which statutes take precedence.,سلسله مراتب قوانین تعیین می‌کند که کدام قوانین برتر هستند.,LAW
+Concrete,kon·krit,ملموس,چیزی که دارای شکل یا فرم فیزیکی و واقعی است.,We require concrete evidence to support our claims.,ما به شواهد عینی برای حمایت از ادعاهایمان نیاز داریم.,LAW
+Tribunal,tri·byoo·nuhl,دادگاه,مؤسسه‌ای که وظیفه رسیدگی به دعاوی حقوقی را دارد.,The tribunal will hear cases related to administrative disputes.,دادگاه به بررسی پرونده‌های مربوط به اختلافات اداری می‌پردازد.,LAW
+Addition,uh·dish·uhn,افزودن,افزودن چیزی به مجموعه‌ای از اشیاء یا اطلاعات.,"In addition to damages, the plaintiff sought an injunction.",علاوه بر خسارات، خواهان درخواست صدور حکم موقت کرد.,LAW
+Consent,kuhn·sent,رضایت,اجازه‌ای که به یک عمل یا رفتار داده می‌شود.,You must obtain consent before using someone else’s property.,شما باید قبل از استفاده از دارایی شخص دیگری اجازه بگیرید.,LAW
+Consensual,kuhn·sen·shoo·uhl,موافقتی,مربوط به توافقی که به‌طور مستقیم بین طرفین انجام می‌شود.,The parties reached a consensual agreement after negotiations.,طرفین پس از مذاکرات به توافق رضایت رسیدند.,LAW
+Preserve,pri·zurv,حفظ کردن,عمل نگهداری و حفظ چیزی برای استفاده در آینده.,It is important to preserve evidence for future reference.,حفظ شواهد برای ارجاع در آینده مهم است.,LAW
+Trace,treys,ردیابی,عمل ردیابی یا پیگیری یک رویداد، عمل یا اثر قانونی.,We need to trace the origins of the legal precedent.,ما باید ریشه‌های پیشینه قانونی را شناسایی کنیم.,LAW
+Straightforward,streyt·fawr·d,ساده و واضح,عملی که به آسانی قابل درک و بدون پیچیدگی است.,The instructions should be straightforward to avoid confusion.,دستورالعمل‌ها باید به‌گونه‌ای ساده باشد که از سردرگمی جلوگیری کند.,LAW
+Vary,vair·ee,تنوع,وجود تغییرات یا اختلاف در شرایط، قیمت‌ها یا وضعیت‌ها.,Legal requirements may vary by jurisdiction.,ملزومات قانونی ممکن است بسته به حوزه قضائی متفاوت باشد.,LAW
+Multistate,muhl·ti·steyt,چندایالتی,مربوط به چندین ایالت یا حوزه قضایی مختلف.,This case involves multistate legal issues.,این پرونده شامل مسائل حقوقی چند ایالتی است.,LAW
+Praetor peregrini,pree·tor per·eh·gree·nee,فرماندار خارجی,فرماندار یا مقام قضایی که به مسائل مربوط به اتباع خارجی رسیدگی می‌کند.,The praetor peregrini handled cases involving foreign residents.,پرایتور پرگرینی به پرونده‌های مربوط به ساکنان خارجی رسیدگی می‌کرد.,LAW
+Jus gentium,yoos jen·tee·uhm,حقوق ملت‌ها,مجموعه‌ای از اصول و قواعد حقوقی که در بین ملت‌ها پذیرفته شده است.,Jus gentium refers to international law applicable to all nations.,حق بین‌الملل به قوانین بین‌المللی اشاره دارد که برای تمام کشورها قابل اجرا است.,LAW
+Flexible,flek·suh·buhl,انعطاف‌پذیر,قابلیت تغییر یا تنظیم بر اساس شرایط.,A flexible approach to law can accommodate changing circumstances.,یک رویکرد انعطاف‌پذیر به قانون می‌تواند با شرایط متغیر سازگار شود.,LAW
+Loosely,loose·lee,سست,به طور غیررسمی یا نامنظم.,"The rules are loosely defined, allowing for some flexibility in interpretation.",قوانین به‌طور غیررسمی تعریف شده‌اند و اجازه انعطاف‌پذیری در تفسیر را می‌دهند.,LAW
+Thus,thuhs,بنابراین,به همین دلیل یا بنابراین.,"Thus, the court decided to grant the appeal based on the new evidence presented.",بنابراین، دادگاه تصمیم به پذیرش تجدیدنظر بر اساس شواهد جدید ارائه‌شده گرفت.,LAW
+Adjudicate,uh·jood·i·keyt,داوری کردن,عمل تصمیم‌گیری در مورد یک اختلاف یا پرونده قانونی.,Judges are tasked to adjudicate disputes fairly and impartially.,قضات موظفند اختلافات را به‌طور عادلانه و بی‌طرفانه حل و فصل کنند.,LAW
+Emerge,ih·murj,ظهور,عملی که در آن چیزی به طور ناگهانی یا به تدریج به وجود می‌آید یا بروز می‌کند.,New legal issues often emerge as society evolves and changes.,مسائل قانونی جدید معمولاً با تکامل و تغییر جامعه پدیدار می‌شوند.,LAW
+Field,feeld,زمینه,منطقه‌ای از مطالعه یا فعالیت خاص.,The legal field requires constant learning and adaptation to new laws.,زمینه حقوقی نیازمند یادگیری مداوم و سازگاری با قوانین جدید است.,LAW
+Basis,beys·is,پایه,مبانی یا اصول اساسی که چیزی بر اساس آن ساخته می‌شود.,The basis of the lawsuit was a breach of contract.,پایه دعوی نقص قرارداد بود.,LAW
+Perceive,per·seev,ادراک,عمل دریافتن یا درک کردن چیزی از طریق حس یا فکر.,Many people perceive the law as a tool for justice.,بسیاری از مردم قانون را به‌عنوان ابزاری برای عدالت درک می‌کنند.,LAW
+Rigid,rij·id,سخت,حالت یا وضعیتی که غیرقابل انعطاف یا تغییر است.,Some laws are too rigid and do not accommodate unique circumstances.,برخی قوانین بسیار سختگیرانه‌اند و شرایط خاص را در نظر نمی‌گیرند.,LAW
+Pioneer,pee·on·eer,پیشگام,فردی که در زمینه‌ای جدید پیشگام است یا ایده‌های نوآورانه‌ای ارائه می‌دهد.,He was a pioneer in establishing environmental law.,او در تأسیس حقوق محیط‌زیست یک پیشگام بود.,LAW
+Landmark,land·mark,نقطه عطف، سرنوشت‌ساز,نقطه‌ای که در آن یک تغییر یا پیشرفت قابل توجهی رخ می‌دهد.,The case became a landmark decision that changed the legal landscape.,این پرونده به یک تصمیم نقطه عطف تبدیل شد که منظر حقوقی را تغییر داد.,LAW
+Essay,es·ey,مقاله,نوشته‌ای تحلیلی یا تبیینی درباره یک موضوع خاص.,She wrote an essay on the importance of civil rights in modern law.,او مقاله‌ای درباره اهمیت حقوق مدنی در قانون مدرن نوشت.,LAW
+Book,book,کتاب,وسیله‌ای برای ثبت و انتقال اطلاعات به صورت نوشته یا چاپ.,She read a book about Persian history.,او کتابی درباره تاریخ پارسی خواند.,GENERAL
+House,hows,خانه,محلی برای سکونت یا زندگی افراد.,They live in a big house near the park.,آن‌ها در خانه‌ای بزرگ نزدیک پارک زندگی می‌کنند.,GENERAL
+Tree,tree,درخت,گیاهی با ساقه بلند و شاخه‌هایی که برگ تولید می‌کند.,The tree in the garden is very old.,درخت در باغ بسیار قدیمی است.,GENERAL
+Car,kaar,خودرو,وسیله نقلیه موتوری برای حمل‌ونقل.,He drives a red car to work every day.,او هر روز با یک خودروی قرمز به محل کار می‌رود.,GENERAL
+School,skool,مدرسه,مکانی برای آموزش و یادگیری.,The school organizes a trip every year.,مدرسه هر سال یک سفر ترتیب می‌دهد.,GENERAL
+Water,waa·ter,آب,مایعی ضروری برای حیات و مصرف روزانه.,She drinks water after exercising.,او پس از ورزش آب می‌نوشد.,GENERAL
+Food,food,غذا,مواد خوراکی که برای تغذیه مصرف می‌شود.,They prepared delicious food for the party.,آن‌ها برای مهمانی غذای خوشمزه‌ای آماده کردند.,GENERAL
+Sun,sun,خورشید,ستاره‌ای که منبع نور و گرمای زمین است.,The sun rises early in the morning.,خورشید صبح زود طلوع می‌کند.,GENERAL
+Moon,moon,ماه,جرم آسمانی که در شب نور منعکس می‌کند.,The moon was full last night.,ماه شب گذشته کامل بود.,GENERAL
+Star,staar,ستاره,جرم آسمانی درخشان در آسمان شب.,She loves watching stars at night.,او عاشق تماشای ستاره‌ها در شب است.,GENERAL
+Sky,sky,آسمان,فضای بالای زمین که ابرها و ستارگان در آن دیده می‌شوند.,The sky was clear and blue today.,آسمان امروز صاف و آبی بود.,GENERAL
+Cloud,klowd,ابر,توده‌ای از قطرات آب یا یخ در آسمان.,Dark clouds covered the sky before the rain.,ابرهای تیره قبل از باران آسمان را پوشاندند.,GENERAL
+Rain,reyn,باران,قطرات آب که از آسمان به زمین می‌بارند.,It started to rain in the afternoon.,بعدازظهر باران شروع به باریدن کرد.,GENERAL
+Wind,wind,باد,جریان هوای طبیعی در سطح زمین.,The wind was strong near the sea.,باد نزدیک دریا قوی بود.,GENERAL
+Fire,fayr,آتش,فرآیندی که با سوختن ایجاد گرما و نور می‌کند.,They sat around the fire to keep warm.,آن‌ها دور آتش نشستند تا گرم شوند.,GENERAL
+Earth,urth,زمین,سیاره‌ای که محل زندگی انسان‌هاست.,The Earth is our home planet.,زمین سیاره خانه ماست.,GENERAL
+Sea,see,دریا,بدنه بزرگی از آب شور که بخشی از سطح زمین را می‌پوشاند.,They sailed across the sea.,آن‌ها در دریا قایقرانی کردند.,GENERAL
+River,ri·ver,رودخانه,جریان آب طبیعی که در زمین جاری است.,The river flows through the city.,رودخانه از میان شهر جاری است.,GENERAL
+Mountain,mown·tin,کوه,برآمدگی بزرگ و مرتفع از سطح زمین.,They climbed the mountain last weekend.,آن‌ها آخر هفته گذشته کوه را صعود کردند.,GENERAL
+Forest,for·ist,جنگل,منطقه‌ای با تعداد زیادی درخت و گیاه.,The forest is home to many animals.,جنگل خانه بسیاری از حیوانات است.,GENERAL
+City,si·tee,شهر,منطقه‌ای با جمعیت زیاد و زیرساخت‌های شهری.,She lives in a busy city.,او در یک شهر شلوغ زندگی می‌کند.,GENERAL
+Village,vil·ij,روستا,منطقه‌ای کوچک‌تر از شهر با جمعیت کمتر.,The village is quiet and peaceful.,روستا آرام و ساکت است.,GENERAL
+Road,rohd,جاده,مسیر ساخته‌شده برای تردد وسایل نقلیه یا افراد.,The road to the village is narrow.,جاده به سمت روستا باریک است.,GENERAL
+Bridge,bridj,پل,سازه‌ای برای عبور از موانع مانند رودخانه یا دره.,The bridge connects the two towns.,پل دو شهر را به هم متصل می‌کند.,GENERAL
+Door,dor,در,ورودی یا خروجی یک ساختمان یا اتاق.,She opened the door to the garden.,او در به سمت باغ را باز کرد.,GENERAL
+Window,win·doh,پنجره,دهانه‌ای در دیوار برای نور یا تهویه.,The window lets in fresh air.,پنجره هوای تازه را وارد می‌کند.,GENERAL
+Table,tey·bl,میز,سطحی صاف برای قرار دادن اشیا یا کار.,They sat around the table for dinner.,آن‌ها برای شام دور میز نشستند.,GENERAL
+Chair,chair,صندلی,وسیله‌ای برای نشستن با پشتی و پایه.,He bought a new chair for his office.,او یک صندلی جدید برای دفترش خرید.,GENERAL
+Bed,bed,تخت,وسیله‌ای برای خوابیدن یا استراحت.,The bed is very comfortable.,تخت بسیار راحت است.,GENERAL
+Light,lite,نور,انرژی که امکان دیدن را فراهم می‌کند.,She turned on the light in the room.,او نور اتاق را روشن کرد.,GENERAL
+Time,taym,زمان,مفهومی برای اندازه‌گیری مدت وقایع.,Time passes quickly when you’re happy.,زمان وقتی خوشحال هستی سریع می‌گذرد.,GENERAL
+Day,day,روز,بخشی از زمان که نور خورشید وجود دارد.,It was a sunny day.,روز آفتابی بود.,GENERAL
+Night,nite,شب,بخشی از زمان که تاریک است.,The night was calm and quiet.,شب آرام و ساکت بود.,GENERAL
+Morning,mor·ning,صبح,بخش اولیه روز پس از طلوع آفتاب.,She drinks coffee every morning.,او هر صبح قهوه می‌نوشد.,GENERAL
+Evening,eev·ning,عصر,بخش پایانی روز قبل از شب.,They went for a walk in the evening.,آن‌ها عصر برای پیاده‌روی رفتند.,GENERAL
+Friend,frend,دوست,فردی که با او رابطه صمیمی دارید.,He is my best friend.,او بهترین دوست من است.,GENERAL
+Family,fam·i·lee,خانواده,گروهی از افراد با پیوند خونی یا عاطفی.,Family is important to her.,خانواده برای او مهم است.,GENERAL
+Love,luv,عشق,احساس عمیق محبت یا وابستگی.,They fell in love last summer.,آن‌ها تابستان گذشته عاشق شدند.,GENERAL
+Work,wurk,کار,فعالیتی که برای کسب درآمد یا هدف انجام می‌شود.,She enjoys her work as a teacher.,او از کارش به‌عنوان معلم لذت می‌برد.,GENERAL
+Play,play,بازی,فعالیتی برای سرگرمی یا لذت.,The children play in the park.,کودکان در پارک بازی می‌کنند.,GENERAL
+Run,run,دویدن,حرکت سریع با پاها.,He runs every morning to stay fit.,او هر صبح برای تناسب اندام می‌دود.,GENERAL
+Walk,wawk,راه رفتن,حرکت آرام با پاها.,They walk to school together.,آن‌ها با هم به مدرسه پیاده می‌روند.,GENERAL
+Eat,eet,خوردن,مصرف غذا برای تغذیه.,She eats healthy food every day.,او هر روز غذای سالم می‌خورد.,GENERAL
+Drink,drink,نوشیدن,مصرف مایعات برای رفع تشنگی.,He drinks water after playing football.,او پس از بازی فوتبال آب می‌نوشد.,GENERAL
+Sleep,sleep,خوابیدن,حالت استراحت بدن و ذهن.,She sleeps eight hours every night.,او هر شب هشت ساعت می‌خوابد.,GENERAL
+Dream,dreem,رویا,تصاویر یا افکار در خواب.,He had a strange dream last night.,او دیشب رویای عجیبی دید.,GENERAL
+Sing,sing,آواز خواندن,تولید صدا با استفاده از حنجره.,She loves to sing traditional songs.,او عاشق خواندن آهنگ‌های سنتی است.,GENERAL
+Dance,dans,رقصیدن,حرکت بدن به صورت ریتمیک.,They danced at the wedding party.,آن‌ها در جشن عروسی رقصیدند.,GENERAL
+Laugh,laf,خندیدن,بیان شادی با صدا.,The joke made everyone laugh.,جوک همه را به خنده انداخت.,GENERAL
+Cry,kry,گریه کردن,بیان غم یا درد با اشک.,She cried after watching a sad movie.,او پس از تماشای یک فیلم غم‌انگیز گریه کرد.,GENERAL
+Happy,hap·ee,خوشحال,احساس شادی و رضایت.,He was happy to see his friends.,او از دیدن دوستانش خوشحال بود.,GENERAL
+Sad,sad,ناراحت,احساس غم یا اندوه.,She felt sad after losing her pet.,او پس از گم کردن حیوان خانگی‌اش ناراحت شد.,GENERAL
+Big,big,بزرگ,دارای اندازه یا حجم زیاد.,They live in a big house.,آن‌ها در یک خانه بزرگ زندگی می‌کنند.,GENERAL
+Small,smawl,کوچک,دارای اندازه یا حجم کم.,The cat is small and cute.,گربه کوچک و دوست‌داشتنی است.,GENERAL
+Long,long,بلند,دارای طول زیاد.,The road is very long.,جاده بسیار طولانی است.,GENERAL
+Short,short,کوتاه,دارای طول کم.,She has short hair.,او موهای کوتاه دارد.,GENERAL
+Hot,hot,گرم,دارای دمای بالا.,The soup is too hot to eat.,سوپ برای خوردن خیلی گرم است.,GENERAL
+Cold,kohld,سرد,دارای دمای پایین.,The water is cold in the morning.,آب صبح‌ها سرد است.,GENERAL
+Fast,fast,سریع,با سرعت زیاد.,The car is very fast.,خودرو بسیار سریع است.,GENERAL
+Slow,sloh,آهسته,با سرعت کم.,The turtle moves slowly.,لاک‌پشت آهسته حرکت می‌کند.,GENERAL
+High,hy,بلند,در ارتفاع زیاد.,The mountain is very high.,کوه بسیار بلند است.,GENERAL
+Low,loh,پایین,در ارتفاع کم.,The bridge is low over the river.,پل روی رودخانه پایین است.,GENERAL
+New,nyoo,جدید,تازه ساخته‌شده یا کشف‌شده.,She bought a new dress.,او یک پیراهن جدید خرید.,GENERAL
+Old,ohld,قدیمی,دارای سن یا قدمت زیاد.,The house is old but beautiful.,خانه قدیمی اما زیباست.,GENERAL
+Good,gud,خوب,دارای کیفیت بالا یا مطلوب.,This book is very good.,این کتاب خیلی خوب است.,GENERAL
+Bad,bad,بد,دارای کیفیت پایین یا نامطلوب.,The weather was bad yesterday.,هوا دیروز بد بود.,GENERAL
+Right,rite,درست,صحیح یا مناسب.,His answer was right.,پاسخ او درست بود.,GENERAL
+Wrong,rong,غلط,نادرست یا نامناسب.,She chose the wrong color.,او رنگ اشتباهی را انتخاب کرد.,GENERAL
+TRUE,troo,صحیح,مطابق با واقعیت.,His story is true.,داستان او صحیح است.,GENERAL
+FALSE,fawls,غلط,مخالف واقعیت.,The rumor was false.,شایعه غلط بود.,GENERAL
+Life,life,زندگی,وضعیت حیات و وجود.,Life is full of surprises.,زندگی پر از شگفتی‌هاست.,GENERAL
+Death,deth,مرگ,پایان حیات یک موجود زنده.,Death is a part of life.,مرگ بخشی از زندگی است.,GENERAL
+Hand,hand,دست,عضوی از بدن برای گرفتن اشیا.,She held the book in her hand.,او کتاب را در دستش نگه داشت.,GENERAL
+Foot,foot,پا,عضوی از بدن برای راه رفتن.,His foot was sore after running.,پایش پس از دویدن درد می‌کرد.,GENERAL
+Eye,eye,چشم,عضوی برای دیدن.,Her eyes are blue.,چشمانش آبی هستند.,GENERAL
+Ear,eer,گوش,عضوی برای شنیدن.,He has a good ear for music.,او گوش خوبی برای موسیقی دارد.,GENERAL
+Heart,hart,قلب,عضوی برای پمپاژ خون و نماد احساسات.,Her heart was full of love.,قلبش پر از عشق بود.,GENERAL
+Mind,miynd,ذهن,مرکز تفکر و آگاهی.,He changed his mind about the trip.,او نظرش درباره سفر عوض کرد.,GENERAL
+Word,wurd,کلمه,واحدی از زبان برای بیان معنا.,She couldn’t find the right word.,او نتوانست کلمه مناسب را پیدا کند.,GENERAL
+Talk,tawk,صحبت کردن,ارتباط کلامی با دیگران.,They talked for hours.,آن‌ها ساعت‌ها صحبت کردند.,GENERAL
+Listen,lis·n,گوش دادن,توجه به صداها یا سخنان.,She listens to music every evening.,او هر عصر به موسیقی گوش می‌دهد.,GENERAL
+See,see,دیدن,درک تصاویر با چشم.,He saw a beautiful sunset.,او غروب زیبایی را دید.,GENERAL
+Know,noh,دانستن,آگاهی یا شناخت از چیزی.,She knows how to play the piano.,او بلد است پیانو بنوازد.,GENERAL
+Think,think,فکر کردن,استفاده از ذهن برای تحلیل یا تصمیم‌گیری.,He thinks about his future a lot.,او زیاد به آینده‌اش فکر می‌کند.,GENERAL
+Feel,feel,احساس کردن,درک عواطف یا لمس اشیا.,She felt happy after the news.,او پس از شنیدن خبر خوشحال شد.,GENERAL
+Give,giv,دادن,انتقال چیزی به دیگری.,He gave her a gift.,او به او هدیه‌ای داد.,GENERAL
+Take,teyk,گرفتن,دریافت چیزی از دیگری.,She took the book from the shelf.,او کتاب را از قفسه برداشت.,GENERAL
+Make,make,ساختن,ایجاد یا تولید چیزی.,They made a beautiful cake.,آن‌ها یک کیک زیبا درست کردند.,GENERAL
+Find,fynd,پیدا کردن,کشف یا به دست آوردن چیزی.,He found his keys under the table.,او کلیدهایش را زیر میز پیدا کرد.,GENERAL
+Ask,ask,پرسیدن,درخواست اطلاعات یا چیزی.,She asked for help with her homework.,او برای تکالیفش کمک خواست.,GENERAL
+Answer,an·ser,پاسخ دادن,ارائه جواب به یک پرسش.,He answered the question correctly.,او به سوال درست پاسخ داد.,GENERAL
+Read,reed,خواندن,درک محتوای نوشته‌شده.,She reads a book every night.,او هر شب کتاب می‌خواند.,GENERAL
+Write,rite,نوشتن,ثبت کلمات یا افکار روی کاغذ.,He wrote a letter to his friend.,او برای دوستش نامه نوشت.,GENERAL
+Learn,lurn,یاد گرفتن,کسب دانش یا مهارت.,She learned to speak Persian.,او یاد گرفت پارسی صحبت کند.,GENERAL
+Teach,teech,آموزش دادن,انتقال دانش به دیگران.,He teaches math at school.,او در مدرسه ریاضی تدریس می‌کند.,GENERAL
+Buy,by,خریدن,دریافت کالا در ازای پول.,She bought a new phone.,او یک تلفن جدید خرید.,GENERAL
+Sell,sel,فروختن,دادن کالا در ازای پول.,He sold his old car.,او خودروی قدیمی‌اش را فروخت.,GENERAL
+Money,mun·ee,پول,وسیله‌ای برای مبادله کالا و خدمات.,She saved money for a trip.,او برای سفر پول پس‌انداز کرد.,GENERAL
+Job,job,شغل,فعالیتی که برای درآمد انجام می‌شود.,He has a new job in the city.,او شغل جدیدی در شهر دارد.,GENERAL
+Home,hohm,خانه,محل زندگی یا احساس آرامش.,She feels happy at home.,او در خانه احساس خوشحالی می‌کند.,GENERAL
+World,wurld,جهان,مجموعه زمین و موجودات آن.,The world is full of wonders.,جهان پر از شگفتی‌هاست.,GENERAL
+Air,air,هوا,جو اطراف زمین که تنفس می‌کنیم.,The air is fresh in the mountains.,هوا در کوهستان تازه است.,GENERAL
+Animal,an·i·mal,حیوان,موجود زنده‌ای که حرکت می‌کند و غذا می‌خورد.,"She loves animals, especially cats.",او حیوانات، به‌ویژه گربه‌ها را دوست دارد.,GENERAL
+Apple,ap·l,سیب,میوه‌ای گرد و شیرین یا ترش.,He ate a red apple.,او یک سیب قرمز خورد.,GENERAL
+Arm,aarm,بازو,بخشی از بدن بین شانه و دست.,Her arm was sore after lifting weights.,بازویش پس از بلند کردن وزنه‌ها درد می‌کرد.,GENERAL
+Baby,bay·bee,نوزاد,کودک تازه متولدشده.,The baby smiled at her.,نوزاد به او لبخند زد.,GENERAL
+Bag,bag,کیسه,وسیله‌ای برای حمل اشیا.,She carried a heavy bag.,او یک کیسه سنگین حمل کرد.,GENERAL
+Ball,ball,توپ,شیء گرد برای بازی یا ورزش.,The children played with a ball.,کودکان با یک توپ بازی کردند.,GENERAL
+Bird,burd,پرنده,موجودی با پر و بال که پرواز می‌کند.,A bird was singing in the tree.,پرنده‌ای در درخت آواز می‌خواند.,GENERAL
+Boat,boht,قایق,وسیله‌ای برای حرکت روی آب.,They rowed a boat on the lake.,آن‌ها روی دریاچه قایق پارو زدند.,GENERAL
+Bone,bohn,استخوان,بخشی سخت از بدن موجودات زنده.,The dog chewed on a bone.,سگ استخوانی را جوید.,GENERAL
+Box,boks,جعبه,ظرفی با دیواره‌های محکم برای نگهداری اشیا.,She put her books in a box.,او کتاب‌هایش را در جعبه گذاشت.,GENERAL
+Boy,boy,پسر,کودک یا جوان مذکر.,The boy kicked the ball.,پسر به توپ لگد زد.,GENERAL
+Bread,bred,نان,غذایی از آرد که پخته می‌شود.,She baked fresh bread.,او نان تازه پخت.,GENERAL
+Brother,bruth·er,برادر,مردی که هم‌خون یا نزدیک به شماست.,My brother helped me with homework.,برادرم در تکالیف به من کمک کرد.,GENERAL
+Cat,kat,گربه,حیوان خانگی کوچک و نرم.,The cat slept on the chair.,گربه روی صندلی خوابید.,GENERAL
+Child,chyld,کودک,انسان در سنین پایین.,The child was playing in the park.,کودک در پارک بازی می‌کرد.,GENERAL
+Clock,klok,ساعت,وسیله‌ای برای نشان دادن زمان.,The clock shows it’s time to go.,ساعت نشان می‌دهد وقت رفتن است.,GENERAL
+Clothes,klohz,لباس,پوشاکی برای بدن انسان.,She bought new clothes for the party.,او برای مهمانی لباس جدید خرید.,GENERAL
+Coat,koht,کت,لباس بیرونی برای گرما یا محافظت.,He wore a warm coat in winter.,او در زمستان کت گرم پوشید.,GENERAL
+Coffee,kaw·fee,قهوه,نوشیدنی تهیه‌شده از دانه‌های برشته.,She drinks coffee every morning.,او هر صبح قهوه می‌نوشد.,GENERAL
+Color,kul·er,رنگ,ویژگی بصری اشیا مانند قرمز یا آبی.,Her favorite color is blue.,رنگ مورد علاقه‌اش آبی است.,GENERAL
+Cow,kow,گاو,حیوانی بزرگ که شیر تولید می‌کند.,The cow was grazing in the field.,گاو در دشت چرا می‌کرد.,GENERAL
+Dog,dog,سگ,حیوان خانگی وفادار و دوست‌داشتنی.,The dog barked at the stranger.,سگ به غریبه پارس کرد.,GENERAL
+Egg,eg,تخم‌مرغ,محصولی از پرندگان که برای غذا استفاده می‌شود.,She cooked an egg for breakfast.,او برای صبحانه تخم‌مرغ پخت.,GENERAL
+Face,fays,صورت,بخش جلویی سر انسان.,Her face lit up with a smile.,صورتش با لبخند روشن شد.,GENERAL
+Farm,farm,مزرعه,محلی برای کشاورزی یا پرورش حیوانات.,They work on a farm every summer.,آن‌ها هر تابستان در مزرعه کار می‌کنند.,GENERAL
+Father,fah·ther,پدر,والد مذکر یک کودک.,My father taught me to ride a bike.,پدرم به من دوچرخه‌سواری یاد داد.,GENERAL
+Field,feeld,دشت,زمین باز برای کشاورزی یا فعالیت.,The children ran in the field.,کودکان در دشت دویدند.,GENERAL
+Fish,fish,ماهی,موجودی که در آب زندگی می‌کند.,He caught a big fish in the lake.,او یک ماهی بزرگ در دریاچه صید کرد.,GENERAL
+Flower,flow·er,گل,بخشی از گیاه با رنگ و عطر زیبا.,She picked a flower from the garden.,او گلی از باغ چید.,GENERAL
+Fruit,froot,میوه,بخشی از گیاه که خوراکی و معمولاً شیرین است.,He ate some fruit for a snack.,او برای میان‌وعده میوه خورد.,GENERAL
+Garden,gar·dn,باغ,محلی برای پرورش گیاهان یا گل‌ها.,The garden is full of colorful flowers.,باغ پر از گل‌های رنگارنگ است.,GENERAL
+Girl,gurl,دختر,کودک یا جوان مونث.,The girl was reading a book.,دختر کتابی می‌خواند.,GENERAL
+Grass,gras,علف,گیاهی کوتاه که زمین را می‌پوشاند.,The grass was wet after the rain.,علف‌ها پس از باران خیس بودند.,GENERAL
+Ground,grownd,زمین,سطحی که روی آن راه می‌رویم.,He sat on the ground to rest.,او برای استراحت روی زمین نشست.,GENERAL
+Hair,hair,مو,رشته‌های نازک روی سر یا بدن.,"She has long, black hair.",او موهای بلند و سیاه دارد.,GENERAL
+Hat,hat,کلاه,پوششی برای سر جهت محافظت یا زیبایی.,He wore a hat to stay cool.,او برای خنک ماندن کلاه پوشید.,GENERAL
+Head,hed,سر,بخش بالایی بدن که مغز در آن قرار دارد.,She nodded her head in agreement.,او سرش را به نشانه توافق تکان داد.,GENERAL
+Horse,hors,اسب,حیوانی بزرگ برای سواری یا کار.,The horse galloped across the field.,اسب در دشت تاخت.,GENERAL
+Ice,ice,یخ,آب منجمد شده به حالت جامد.,She put ice in her drink.,او در نوشیدنی‌اش یخ گذاشت.,GENERAL
+Island,eye·land,جزیره,قطعه زمین احاطه‌شده توسط آب.,They visited a beautiful island.,آن‌ها از یک جزیره زیبا بازدید کردند.,GENERAL
+Key,kee,کلید,وسیله‌ای برای باز کردن قفل.,He lost the key to his car.,او کلید ماشینش را گم کرد.,GENERAL
+King,king,پادشاه,حاکم یک کشور یا قلمرو.,The king ruled wisely.,پادشاه با حکمت سلطنت کرد.,GENERAL
+Kitchen,kit·chn,آشپزخانه,محلی برای پخت‌وپز غذا.,She cooked dinner in the kitchen.,او در آشپزخانه شام پخت.,GENERAL
+Lake,layk,دریاچه,بدنه‌ای از آب شیرین احاطه‌شده با خشکی.,The lake was calm and clear.,دریاچه آرام و شفاف بود.,GENERAL
+Leg,leg,پا,عضوی از بدن برای حرکت یا ایستادن.,His leg hurt after the game.,پایش پس از بازی درد می‌کرد.,GENERAL
+Letter,let·er,نامه,پیام نوشته‌شده برای ارتباط.,She wrote a letter to her friend.,او برای دوستش نامه نوشت.,GENERAL
+Man,man,مرد,انسان بالغ مذکر.,The man helped carry the bags.,مرد به حمل کیسه‌ها کمک کرد.,GENERAL
+Milk,milk,شیر,مایعی مغذی از گاو یا دیگر حیوانات.,She drinks milk every morning.,او هر صبح شیر می‌نوشد.,GENERAL
+Mother,muth·er,مادر,والد مونث یک کودک.,My mother made a delicious cake.,مادرم یک کیک خوشمزه درست کرد.,GENERAL
+Name,naym,نام,کلمه‌ای که برای شناسایی فرد یا چیز استفاده می‌شود.,Her name is Sara.,نام او سارا است.,GENERAL
+Night,nite,شب,زمان تاریکی بین غروب و طلوع.,The night was starry and cool.,شب پرستاره و خنک بود.,GENERAL
+Paper,pey·per,کاغذ,ماده‌ای نازک برای نوشتن یا چاپ.,He wrote a note on paper.,او یادداشتی روی کاغذ نوشت.,GENERAL
+Park,park,پارک,محلی عمومی برای تفریح یا استراحت.,They walked in the park.,آن‌ها در پارک قدم زدند.,GENERAL
+Party,par·tee,مهمانی,جمع شدن افراد برای جشن یا سرگرمی.,The party was fun and lively.,مهمانی شاد و پرجنب‌وجوش بود.,GENERAL
+Person,per·sn,شخص,فرد انسانی.,She is a kind person.,او شخص مهربانی است.,GENERAL
+Picture,pik·cher,تصویر,نمایش بصری مانند نقاشی یا عکس.,He took a picture of the sunset.,او از غروب عکس گرفت.,GENERAL
+Place,plays,مکان,نقطه یا منطقه‌ای خاص.,This is a nice place to relax.,اینجا مکان خوبی برای استراحت است.,GENERAL
+Plant,plant,گیاه,موجود زنده‌ای که از خاک تغذیه می‌کند.,She watered the plants in the garden.,او گیاهان باغ را آبیاری کرد.,GENERAL
+Rain,reyn,باران,قطرات آب که از آسمان می‌بارند.,The rain made the streets wet.,باران خیابان‌ها را خیس کرد.,GENERAL
+Ring,ring,حلقه,شیء دایره‌ای برای انگشت یا تزئین.,She wore a gold ring.,او یک حلقه طلا پوشید.,GENERAL
+Room,room,اتاق,فضایی در ساختمان برای استفاده خاص.,The room was bright and cozy.,اتاق روشن و دنج بود.,GENERAL
+School,skool,مدرسه,محلی برای آموزش و یادگیری.,The school has a big library.,مدرسه یک کتابخانه بزرگ دارد.,GENERAL
+Sea,see,دریا,بدنه بزرگی از آب شور.,They swam in the sea.,آن‌ها در دریا شنا کردند.,GENERAL
+Season,see·zn,فصل,بخشی از سال مانند بهار یا زمستان.,Spring is my favorite season.,بهار فصل مورد علاقه من است.,GENERAL
+Shoe,shoo,کفش,پوششی برای پا جهت محافظت.,He bought new shoes for running.,او کفش‌های جدیدی برای دویدن خرید.,GENERAL
+Sister,sis·ter,خواهر,زنی که هم‌خون یا نزدیک به شماست.,My sister is a great cook.,خواهرم آشپز فوق‌العاده‌ای است.,GENERAL
+Snow,snoh,برف,بلورهای یخ که از آسمان می‌بارند.,The snow covered the mountains.,برف کوه‌ها را پوشاند.,GENERAL
+Song,song,آهنگ,ترکیبی از موسیقی و کلمات.,She sang a beautiful song.,او یک آهنگ زیبا خواند.,GENERAL
+Soup,soop,سوپ,غذایی مایع که از جوشاندن مواد تهیه می‌شود.,He ate hot soup for dinner.,او برای شام سوپ گرم خورد.,GENERAL
+Street,street,خیابان,مسیر عمومی در شهر برای تردد.,The street was busy with cars.,خیابان پر از ماشین بود.,GENERAL
+Table,tey·bl,میز,سطحی صاف برای غذا یا کار.,She set the table for dinner.,او میز را برای شام چید.,GENERAL
+Teacher,tee·cher,معلم,فردی که دانش یا مهارت را آموزش می‌دهد.,The teacher explained the lesson clearly.,معلم درس را به‌وضوح توضیح داد.,GENERAL
+Team,teem,تیم,گروهی که برای هدفی مشترک کار می‌کنند.,The team won the match.,تیم در مسابقه برنده شد.,GENERAL
+Time,taym,زمان,مفهومی برای اندازه‌گیری مدت رویدادها.,She checked the time on her watch.,او زمان را روی ساعتش چک کرد.,GENERAL
+Town,town,شهر,منطقه‌ای کوچکتر از شهر بزرگ با جمعیت متوسط.,They live in a small town.,آن‌ها در یک شهر کوچک زندگی می‌کنند.,GENERAL
+Toy,toi,اسباب‌بازی,شیء برای بازی کودکان.,The child played with a toy car.,کودک با یک ماشین اسباب‌بازی بازی کرد.,GENERAL
+Train,treyn,قطار,وسیله نقلیه روی ریل برای حمل مسافر یا بار.,The train arrived on time.,قطار به‌موقع رسید.,GENERAL
+Tree,tree,درخت,گیاهی با ساقه بلند و شاخه‌ها.,The tree bloomed with flowers.,درخت پر از گل شد.,GENERAL
+Wall,wawl,دیوار,سازه‌ای برای جداسازی یا محافظت.,They painted the wall blue.,آن‌ها دیوار را آبی رنگ کردند.,GENERAL
+Water,waa·ter,آب,مایعی ضروری برای حیات.,He poured water into the glass.,او آب را در لیوان ریخت.,GENERAL
+Wave,weyv,موج,حرکت نوسانی آب یا هوا.,The waves crashed on the shore.,موج‌ها به ساحل برخورد کردند.,GENERAL
+Way,wey,راه,مسیر یا روش انجام چیزی.,She found a new way to solve the problem.,او راه جدیدی برای حل مشکل پیدا کرد.,GENERAL
+Week,week,هفته,دوره‌ای هفت‌روزه در تقویم.,They planned a trip for next week.,آن‌ها برای هفته آینده سفری برنامه‌ریزی کردند.,GENERAL
+Wind,wind,باد,جریان هوای طبیعی.,The wind blew the leaves away.,باد برگ‌ها را برد.,GENERAL
+Window,win·doh,پنجره,دهانه‌ای در دیوار برای نور یا تهویه.,She looked out the window at the rain.,او از پنجره به باران نگاه کرد.,GENERAL
+Woman,wu·mn,زن,انسان بالغ مونث.,The woman was reading a book.,زن کتابی می‌خواند.,GENERAL
+Wood,wuud,چوب,ماده سخت از ساقه درختان.,They built a house with wood.,آن‌ها با چوب خانه‌ای ساختند.,GENERAL
+Year,yeer,سال,دوره‌ای حدود ۳۶۵ روز.,Last year was very exciting.,سال گذشته خیلی هیجان‌انگیز بود.,GENERAL
+Zoo,zoo,باغ‌وحش,محلی برای نگهداری و نمایش حیوانات.,They visited the zoo with their class.,آن‌ها با کلاسشان از باغ‌وحش بازدید کردند.,GENERAL
+Bread,bred,نان,غذایی از آرد که پخته می‌شود.,She made bread for breakfast.,او برای صبحانه نان درست کرد.,GENERAL
+Chair,chair,صندلی,وسیله‌ای برای نشستن.,He sat on a wooden chair.,او روی یک صندلی چوبی نشست.,GENERAL
+Cup,kup,فنجان,ظرفی کوچک برای نوشیدن مایعات.,She drank tea from a cup.,او از یک فنجان چای نوشید.,GENERAL
+Door,dor,در,ورودی یا خروجی یک فضا.,He knocked on the door.,او به در ضربه زد.,GENERAL
+Fork,fork,چنگال,ابزاری برای خوردن غذا.,She used a fork to eat her salad.,او برای خوردن سالادش از چنگال استفاده کرد.,GENERAL
+Glass,glas,لیوان,ظرفی شفاف برای نوشیدن.,He filled the glass with juice.,او لیوان را با آبمیوه پر کرد.,GENERAL
+Knife,nyf,چاقو,ابزاری برای بریدن یا خوردن.,She cut the bread with a knife.,او نان را با چاقو برید.,GENERAL
+Plate,pleyt,بشقاب,ظرفی صاف برای سرو غذا.,The plate was full of food.,بشقاب پر از غذا بود.,GENERAL
+Spoon,spoon,قاشق,ابزاری برای خوردن مایعات یا غذای نرم.,He ate his soup with a spoon.,او سوپش را با قاشق خورد.,GENERAL
+Street,street,خیابان,مسیر عمومی در شهر برای تردد.,They walked down the street.,آن‌ها در خیابان قدم زدند.,GENERAL
+Airplane,air·pleyn,هواپیما,وسیله نقلیه هوایی برای سفر.,The airplane flew over the mountains.,هواپیما بالای کوه‌ها پرواز کرد.,GENERAL
+Answer,an·ser,پاسخ,جوابی به یک سوال یا مسئله.,She gave a clear answer.,او پاسخ روشنی داد.,GENERAL
+Art,aart,هنر,خلق آثار زیبا یا معنادار.,He loves to create art.,او عاشق خلق هنر است.,GENERAL
+Bag,bag,کیسه,ظرفی برای حمل اشیا.,She packed her bag for the trip.,او کیسه‌اش را برای سفر بست.,GENERAL
+Beach,beech,ساحل,منطقه شنی کنار دریا یا دریاچه.,They played on the beach all day.,آن‌ها تمام روز در ساحل بازی کردند.,GENERAL
+Bell,bel,زنگ,وسیله‌ای برای تولید صدا.,The bell rang at noon.,زنگ در ظهر به صدا درآمد.,GENERAL
+Bicycle,by·si·kl,دوچرخه,وسیله نقلیه دوچرخ با پدال.,He rides a bicycle to school.,او با دوچرخه به مدرسه می‌رود.,GENERAL
+Boat,boht,قایق,وسیله‌ای برای حرکت روی آب.,They took a boat to the island.,آن‌ها با قایق به جزیره رفتند.,GENERAL
+Bottle,bot·l,بطری,ظرفی برای نگهداری مایعات.,She filled the bottle with water.,او بطری را با آب پر کرد.,GENERAL
+Box,boks,جعبه,ظرفی با دیواره‌های محکم.,He opened the box to find a gift.,او جعبه را باز کرد و هدیه‌ای یافت.,GENERAL
+Bridge,bridj,پل,سازه‌ای برای عبور از موانع.,They crossed the bridge to the city.,آن‌ها از پل به شهر رفتند.,GENERAL
+Bus,bus,اتوبوس,وسیله نقلیه عمومی برای حمل مسافران.,She took the bus to work.,او با اتوبوس به محل کار رفت.,GENERAL
+Candle,kan·dl,شمع,منبع نور از موم و فتیله.,She lit a candle in the dark.,او در تاریکی شمعی روشن کرد.,GENERAL
+Carpet,kar·pit,فرش,پوشش کف برای گرما یا تزئین.,The carpet in the room is soft.,فرش اتاق نرم است.,GENERAL
+Castle,kas·l,قلعه,ساختمانی بزرگ و مستحکم تاریخی.,They visited an old castle.,آن‌ها از یک قلعه قدیمی بازدید کردند.,GENERAL
+Chair,chair,صندلی,وسیله‌ای برای نشستن.,She sat on a comfortable chair.,او روی یک صندلی راحت نشست.,GENERAL
+City,si·tee,شهر,منطقه‌ای با جمعیت زیاد و زیرساخت.,The city is full of lights at night.,شهر در شب پر از نور است.,GENERAL
+Clock,klok,ساعت,وسیله‌ای برای نشان دادن زمان.,The clock ticked loudly.,ساعت بلند تیک‌تاک می‌کرد.,GENERAL
+Cloud,klowd,ابر,توده‌ای از قطرات آب در آسمان.,The clouds moved slowly across the sky.,ابرها به‌آرامی در آسمان حرکت کردند.,GENERAL
+Coat,koht,کت,لباس بیرونی برای گرما.,He wore a thick coat in the snow.,او در برف یک کت ضخیم پوشید.,GENERAL
+Coin,koyn,سکه,پول فلزی برای مبادله.,She found a coin on the ground.,او یک سکه روی زمین پیدا کرد.,GENERAL
+Desk,desk,میز تحریر,سطحی برای نوشتن یا کار.,He studied at his desk all night.,او تمام شب پشت میز تحریرش درس خواند.,GENERAL
+Dinner,din·er,شام,وعده غذایی اصلی عصر یا شب.,They had dinner together.,آن‌ها با هم شام خوردند.,GENERAL
+Doctor,dok·ter,پزشک,فردی که بیماری‌ها را درمان می‌کند.,The doctor checked her health.,پزشک سلامتی او را بررسی کرد.,GENERAL
+Dream,dreem,رویا,تصاویر یا افکار در خواب.,She had a dream about flying.,او رویایی درباره پرواز دید.,GENERAL
+Dress,dres,پیراهن,لباسی زنانه برای پوشیدن.,She wore a red dress to the party.,او یک پیراهن قرمز در مهمانی پوشید.,GENERAL
+Egg,eg,تخم‌مرغ,محصولی خوراکی از پرندگان.,He fried an egg for breakfast.,او برای صبحانه تخم‌مرغ سرخ کرد.,GENERAL
+Elevator,el·uh·vey·ter,آسانسور,دستگاهی برای جابه‌جایی بین طبقات.,They took the elevator to the top floor.,آن‌ها با آسانسور به طبقه بالا رفتند.,GENERAL
+Engine,en·jin,موتور,دستگاهی برای تولید انرژی.,The car’s engine was loud.,موتور ماشین بلند بود.,GENERAL
+Eye,eye,چشم,عضوی برای دیدن.,Her eyes sparkled with joy.,چشمانش از شادی درخشید.,GENERAL
+Face,fays,صورت,بخش جلویی سر انسان.,He washed his face in the morning.,او صبح صورتش را شست.,GENERAL
+Factory,fak·tuh·ree,کارخانه,محلی برای تولید کالاها.,The factory produces cars.,کارخانه خودرو تولید می‌کند.,GENERAL
+Farm,farm,مزرعه,محلی برای کشاورزی یا دامداری.,They grow vegetables on the farm.,آن‌ها در مزرعه سبزیجات پرورش می‌دهند.,GENERAL
+Fence,fens,حصار,سازه‌ای برای جداسازی یا محافظت.,The fence keeps the animals safe.,حصار حیوانات را ایمن نگه می‌دارد.,GENERAL
+Fire,fayr,آتش,فرآیندی که گرما و نور تولید می‌کند.,The fire warmed the room.,آتش اتاق را گرم کرد.,GENERAL
+Flag,flag,پرچم,پارچه‌ای با نماد یک کشور یا گروه.,The flag was flying high.,پرچم بالا در اهتزاز بود.,GENERAL
+Floor,flor,کف,سطح داخلی یک اتاق یا ساختمان.,The floor was made of wood.,کف از چوب ساخته شده بود.,GENERAL
+Flower,flow·er,گل,بخشی از گیاه با رنگ و عطر.,She planted flowers in the garden.,او در باغ گل کاشت.,GENERAL
+Food,food,غذا,مواد خوراکی برای تغذیه.,They shared their food with friends.,آن‌ها غذایشان را با دوستان تقسیم کردند.,GENERAL
+Friend,frend,دوست,فردی با رابطه صمیمی.,He called his friend to chat.,او به دوستش زنگ زد تا گپ بزند.,GENERAL
+Game,gaym,بازی,فعالیتی برای سرگرمی یا رقابت.,They played a fun game together.,آن‌ها با هم یک بازی سرگرم‌کننده انجام دادند.,GENERAL
+Gate,gayt,دروازه,ورودی بزرگ یا حصار.,The gate was locked at night.,دروازه در شب قفل بود.,GENERAL
+Gift,gift,هدیه,چیزی که به دیگری اهدا می‌شود.,She gave him a gift for his birthday.,او برای تولدش به او هدیه داد.,GENERAL
+Glove,gluv,دستکش,پوششی برای محافظت از دست.,He wore gloves in the cold.,او در سرما دستکش پوشید.,GENERAL
+Gold,gold,طلا,فلزی گران‌بها و درخشان.,She wore a gold necklace.,او یک گردنبند طلا پوشید.,GENERAL
+Grass,gras,علف,گیاهی کوتاه که زمین را می‌پوشاند.,The grass was green and soft.,علف سبز و نرم بود.,GENERAL
+Guitar,gi·taar,گیتار,سازی با سیم برای نواختن موسیقی.,He played a song on his guitar.,او با گیتارش آهنگی نواخت.,GENERAL
+Hand,hand,دست,عضوی برای گرفتن اشیا.,She held his hand tightly.,او دست او را محکم گرفت.,GENERAL
+Hat,hat,کلاه,پوششی برای سر.,She wore a hat to the beach.,او در ساحل کلاه پوشید.,GENERAL
+Hill,hil,تپه,برآمدگی کوچک‌تر از کوه.,They climbed the hill to see the view.,آن‌ها تپه را برای دیدن منظره بالا رفتند.,GENERAL
+Hole,hohl,سوراخ,فضایی خالی در یک سطح.,The dog dug a hole in the yard.,سگ در حیاط سوراخی کنده بود.,GENERAL
+Horse,hors,اسب,حیوانی برای سواری یا کار.,She rode a horse in the field.,او در دشت اسب‌سواری کرد.,GENERAL
+Hospital,hos·pi·tl,بیمارستان,محلی برای درمان بیماران.,He visited his friend in the hospital.,او در بیمارستان به دوستش سر زد.,GENERAL
+Hotel,hoh·tel,هتل,محلی برای اقامت مسافران.,They stayed in a hotel by the sea.,آن‌ها در هتلی کنار دریا اقامت کردند.,GENERAL
+Hour,ow·er,ساعت,واحدی برای اندازه‌گیری زمان.,The meeting lasted one hour.,جلسه یک ساعت طول کشید.,GENERAL
+Idea,eye·dee·uh,ایده,فکری جدید یا خلاقانه.,She had a great idea for a story.,او ایده‌ای عالی برای یک داستان داشت.,GENERAL
+Iron,eye·ern,آهن,فلزی محکم برای ساخت اشیا.,The gate was made of iron.,دروازه از آهن ساخته شده بود.,GENERAL
+Jacket,jak·it,ژاکت,لباسی کوتاه برای گرما.,He wore a jacket in the rain.,او در باران ژاکت پوشید.,GENERAL
+Jar,jaar,کوزه,ظرفی برای نگهداری مواد.,She kept cookies in a jar.,او کلوچه‌ها را در کوزه نگه داشت.,GENERAL
+Journey,jur·nee,سفر,حرکت از یک مکان به مکان دیگر.,Their journey was long but exciting.,سفرشان طولانی اما هیجان‌انگیز بود.,GENERAL
+Joy,joy,شادی,احساس خوشحالی شدید.,Her face was full of joy.,صورتش پر از شادی بود.,GENERAL
+Key,kee,کلید,وسیله‌ای برای باز کردن قفل.,She found the key under the mat.,او کلید را زیر پادری پیدا کرد.,GENERAL
+Kitchen,kit·chn,آشپزخانه,محلی برای پخت‌وپز.,They remodeled the kitchen.,آن‌ها آشپزخانه را بازسازی کردند.,GENERAL
+Kite,kyt,بادبادک,وسیله‌ای برای پرواز در باد.,The children flew a kite in the park.,کودکان در پارک بادبادک هوا کردند.,GENERAL
+Lamp,lamp,چراغ,منبع نور مصنوعی.,The lamp lit up the room.,چراغ اتاق را روشن کرد.,GENERAL
+Leaf,leef,برگ,بخشی از گیاه برای فتوسنتز.,The leaf fell from the tree.,برگ از درخت افتاد.,GENERAL
+Letter,let·er,نامه,پیام نوشته‌شده برای ارتباط.,He received a letter from his sister.,او از خواهرش نامه دریافت کرد.,GENERAL
+Library,ly·brer·ee,کتابخانه,محلی برای نگهداری کتاب‌ها.,She studied in the library.,او در کتابخانه درس خواند.,GENERAL
+Light,lite,نور,انرژی که امکان دیدن را فراهم می‌کند.,The light was bright in the room.,نور در اتاق روشن بود.,GENERAL
+Lock,lok,قفل,وسیله‌ای برای ایمن کردن اشیا.,He put a lock on the door.,او روی در قفل گذاشت.,GENERAL
+Map,map,نقشه,نمایش تصویری یک منطقه.,She used a map to find the way.,او برای پیدا کردن مسیر از نقشه استفاده کرد.,GENERAL
+Market,mar·kit,بازار,محلی برای خرید و فروش کالا.,They went to the market to buy fruit.,آن‌ها برای خرید میوه به بازار رفتند.,GENERAL
+Mirror,mir·er,آینه,سطحی برای بازتاب تصویر.,She looked in the mirror before leaving.,او قبل از رفتن در آینه نگاه کرد.,GENERAL
+Money,mun·ee,پول,وسیله‌ای برای مبادله کالا.,He saved money to buy a car.,او برای خرید ماشین پول پس‌انداز کرد.,GENERAL
+Moon,moon,ماه,جرم آسمانی که نور منعکس می‌کند.,The moon shone brightly at night.,ماه در شب به‌روشنی می‌درخشید.,GENERAL
+Mountain,mown·tin,کوه,برآمدگی بزرگ از سطح زمین.,They hiked up the mountain.,آن‌ها به کوه پیاده‌روی کردند.,GENERAL
+Music,myoo·zik,موسیقی,ترکیب صداها برای لذت یا هنر.,She listens to music every day.,او هر روز به موسیقی گوش می‌دهد.,GENERAL
+Nest,nest,آشیانه,محلی که پرندگان برای تخم‌گذاری می‌سازند.,The bird built a nest in the tree.,پرنده در درخت آشیانه ساخت.,GENERAL
+News,nyooz,خبر,اطلاعات جدید درباره رویدادها.,He watched the news on TV.,او اخبار را در تلویزیون تماشا کرد.,GENERAL
+Ocean,oh·shn,اقیانوس,بدنه عظیم آب شور.,The ocean was calm and blue.,اقیانوس آرام و آبی بود.,GENERAL
+Office,of·is,دفتر,محلی برای کار اداری.,She works in a big office.,او در یک دفتر بزرگ کار می‌کند.,GENERAL
+Oil,oyl,نفت,مایعی برای سوخت یا آشپزی.,They used oil to cook dinner.,آن‌ها برای پخت شام از روغن استفاده کردند.,GENERAL
+Orange,or·inj,پرتقال,میوه‌ای نارنجی و آبدار.,He ate an orange for breakfast.,او برای صبحانه پرتقال خورد.,GENERAL
+Paint,paynt,رنگ,ماده‌ای برای رنگ‌آمیزی سطوح.,She painted the wall red.,او دیوار را قرمز رنگ کرد.,GENERAL
+Paper,pey·per,کاغذ,ماده‌ای نازک برای نوشتن.,He drew a picture on paper.,او روی کاغذ تصویری کشید.,GENERAL
+Park,park,پارک,محلی عمومی برای تفریح.,They had a picnic in the park.,آن‌ها در پارک پیک‌نیک کردند.,GENERAL
+Pen,pen,خودکار,ابزاری برای نوشتن با جوهر.,She wrote with a blue pen.,او با یک خودکار آبی نوشت.,GENERAL
+Phone,fohn,تلفن,دستگاهی برای ارتباط صوتی.,He called his friend on the phone.,او با تلفن به دوستش زنگ زد.,GENERAL
+Photo,foh·toh,عکس,تصویری ثبت‌شده با دوربین.,She took a photo of the flowers.,او از گل‌ها عکس گرفت.,GENERAL
+Pillow,pil·oh,بالش,وسیله‌ای نرم برای استراحت سر.,The pillow was soft and comfortable.,بالش نرم و راحت بود.,GENERAL
+Plane,pleyn,هواپیما,وسیله نقلیه هوایی.,The plane landed safely.,هواپیما با ایمنی فرود آمد.,GENERAL
+Plate,pleyt,بشقاب,ظرفی صاف برای سرو غذا.,She put the cake on a plate.,او کیک را روی بشقاب گذاشت.,GENERAL
+Pool,pool,استخر,محلی برای شنا یا ذخیره آب.,They swam in the pool.,آن‌ها در استخر شنا کردند.,GENERAL
+Rain,reyn,باران,قطرات آب که از آسمان می‌بارند.,The rain stopped in the evening.,باران عصر متوقف شد.,GENERAL
+Road,rohd,جاده,مسیر برای تردد وسایل نقلیه.,The road was busy with traffic.,جاده پر از ترافیک بود.,GENERAL
+Rock,rok,سنگ,ماده سخت طبیعی از زمین.,He collected rocks from the beach.,او از ساحل سنگ جمع کرد.,GENERAL
+Roof,roof,سقف,پوشش بالای ساختمان.,The roof was covered with snow.,سقف با برف پوشیده شده بود.,GENERAL
+Room,room,اتاق,فضایی در ساختمان برای استفاده خاص.,She decorated her room with flowers.,او اتاقش را با گل‌ها تزیین کرد.,GENERAL
+Rope,rohp,طناب,نخی محکم برای بستن یا کشیدن.,He tied the box with a rope.,او جعبه را با طناب بست.,GENERAL
