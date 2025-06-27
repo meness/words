@@ -2,7 +2,6 @@ import { ImageResponse } from 'next/og';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { CSSProperties } from 'react';
-import { envs } from '~common/consts/envs.const';
 import { Word } from '~common/types/word.type';
 import { combineCsvData } from '~helpers/database.helper';
 import { CsvService } from '~services/csv.service';
@@ -155,9 +154,7 @@ const Poster = ({ word }: PosterProps) => (
 const Image = async ({ params }: { params: { word: string } }) => {
   const { word } = params;
   const data = await fetchWord(decodeURIComponent(word));
-  const yekanBakhFont = await readFile(
-    join(process.cwd(), `${envs.isDevelopment ? '/public' : ''}/assets/fonts/yekan-bakh-no-en-regular.woff`)
-  );
+  const yekanBakhFont = await readFile(join(process.cwd(), '/public/assets/fonts/yekan-bakh-no-en-regular.woff'));
 
   try {
     return new ImageResponse(<Poster word={data} />, {
