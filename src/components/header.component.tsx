@@ -40,7 +40,7 @@ const ExamModal = dynamic(() => import('./exam-modal.component').then((module) =
 type FeaturesDropdownItem = { id: string; icon: IconType; description: string; label: string };
 
 const featuresDropdownItems: FeaturesDropdownItem[] = [
-  { id: 'words', icon: RiEnglishInput, description: 'تعداد کلمات به زودی افزایش می‌یابد.', label: '۵۱۷ کلمه' },
+  { id: 'words', icon: RiEnglishInput, description: 'تعداد کلمات به زودی افزایش می‌یابد.', label: '۷۶۲ کلمه' },
   { id: 'training', icon: MdChecklist, description: 'کلمات را به ۳ روش ساده تمرین کنید.', label: 'تمرین کلمات' },
   { id: 'exams', icon: PiExam, description: 'به ۲ روش از خود آزمون بگیرید.', label: 'آزمون' },
   {
