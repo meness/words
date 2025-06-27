@@ -25,7 +25,7 @@ const columns: TableHeaderKeyLabel<TrainingWord[]>[] = [
   { key: 'trained', label: '✅' },
   { key: 'word', label: 'کلمه' },
   { key: 'pronunciation', label: 'تلفظ' },
-  { key: 'meaning', label: 'معنای حقوقی' },
+  { key: 'meaning', label: 'معنی' },
   { key: 'description', label: 'توضیح' }
 ];
 

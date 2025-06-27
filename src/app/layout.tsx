@@ -30,17 +30,17 @@ const AppLayout = ({ children }: PropsWithChildren) => (
 );
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const ogTitle = 'تمرین رایگان کلمات انگلیسی و یادگیری کلمات انگلیسی بیشتر';
+  const ogTitle = 'یادگیری سریع زبان انگلیسی و تمرین رایگان';
   const description =
-    'کلمات انگلیسی بیشتری یاد بگیرید. کاملاً رایگان آزمون بدهید و با تمرین آنلاین بهتر انگلیسی صحبت کنید.';
+    'سریع کلمات انگلیسی یاد بگیرید. کاملا رایگان آزمون بدهید و با تمرین آنلاین بهتر انگلیسی صحبت کنید';
 
   return {
     title: {
-      default: 'آموزش زبان انگلیسی',
-      template: '%s | آموزش زبان انگلیسی'
+      default: 'یادگیری سریع زبان انگلیسی',
+      template: '%s | انگلیسی سریع'
     },
     description,
-    keywords: ['آموزش زبان انگلیسی', 'معنی کلمات'],
+    keywords: ['آموزش زبان انگلیسی', 'معنی کلمات', 'ترجمه کلمات', 'یادگیری سریع زبان انگلیسی'],
     openGraph: {
       locale: 'fa-IR',
       type: 'website',

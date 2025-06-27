@@ -124,7 +124,7 @@ const TrainContent = ({
               className="my-2"
               transition={{ duration: 0.2 }}>
               <p>
-                <span className="text-gray-500 select-none">معنی حقوقی:</span>&nbsp;
+                <span className="text-gray-500 select-none">معنی:</span>&nbsp;
                 {currentTrainingWord.meaning}
               </p>
               <Divider className="my-2" />

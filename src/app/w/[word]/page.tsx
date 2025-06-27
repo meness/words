@@ -117,7 +117,7 @@ export const generateMetadata = async ({ params }: PageParams<{ word: string }>)
   const { word } = await params;
   const decodedWord = decodeURIComponent(word);
   const [foundWord] = await fetchWord(decodedWord);
-  const title = `معنی ${foundWord?.word ?? decodedWord}`;
+  const title = `معنی و ترجمه کلمه ${foundWord?.word ?? decodedWord} به فارسی`;
   const description = `${foundWord?.word ?? decodedWord} به معنی ${foundWord?.meaning} است. ${foundWord?.description}`;
 
   return {
@@ -133,7 +133,7 @@ export const generateMetadata = async ({ params }: PageParams<{ word: string }>)
     openGraph: {
       locale: 'fa-IR',
       type: 'website',
-      title: `${title} | آموزش زبان انگلیسی`,
+      title: `${title} | انگلیسی سریع`,
       description
     }
   };
