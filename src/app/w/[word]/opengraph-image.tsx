@@ -1,6 +1,4 @@
 import { ImageResponse } from 'next/og';
-import { readFile } from 'node:fs/promises';
-import { join } from 'node:path';
 import { CSSProperties } from 'react';
 import { Word } from '~common/types/word.type';
 import { combineCsvData } from '~helpers/database.helper';
@@ -12,6 +10,7 @@ export const size = {
   height: 630
 };
 export const contentType = 'image/jpg';
+export const runtime = 'edge';
 
 type PosterProps = { word: Word | undefined };
 
@@ -154,7 +153,9 @@ const Poster = ({ word }: PosterProps) => (
 const Image = async ({ params }: { params: { word: string } }) => {
   const { word } = params;
   const data = await fetchWord(decodeURIComponent(word));
-  const yekanBakhFont = await readFile(join(process.cwd(), '/public/assets/fonts/yekan-bakh-no-en-regular.woff'));
+  const yekanBakhFontData = await fetch(
+    new URL('public/assets/fonts/yekan-bakh-no-en-regular.woff', import.meta.url)
+  ).then((response) => response.arrayBuffer());
 
   try {
     return new ImageResponse(<Poster word={data} />, {
@@ -165,7 +166,7 @@ const Image = async ({ params }: { params: { word: string } }) => {
       fonts: [
         {
           name: 'YekanBakh',
-          data: yekanBakhFont,
+          data: yekanBakhFontData,
           style: 'normal',
           weight: 400
         }
@@ -193,7 +194,7 @@ const Image = async ({ params }: { params: { word: string } }) => {
         fonts: [
           {
             name: 'YekanBakh',
-            data: yekanBakhFont,
+            data: yekanBakhFontData,
             style: 'normal',
             weight: 400
           }
