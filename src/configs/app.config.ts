@@ -1,9 +1,4 @@
 export const app = {
   rowsPerPage: 50,
-  developerEmail: 'aesshoferi@gmail.com',
-  meta: {
-    description:
-      'دایره لغات حقوقی خود را گسترش دهید! با تمرین کلمات انگلیسی تخصصی حقوق، مناسب برای تمامی زیرشاخه‌ها به‌ویژه تجارت بین‌الملل، کاملاً رایگان آزمون بدهید و مهارت‌های خود را تقویت کنید.',
-    title: 'تمرین رایگان کلمات انگلیسی تخصصی حقوق – افزایش دایره لغات حقوقی'
-  }
+  developerEmail: 'aesshoferi@gmail.com'
 };

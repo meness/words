@@ -7,7 +7,6 @@ import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import { twJoin } from 'tailwind-merge';
 import { MainContainer } from '~components/main-container.component';
-import { app } from '~configs/app.config';
 import { ui } from '~configs/ui.config';
 import { ThemeProvider } from '~providers/theme.provider';
 
@@ -30,20 +29,27 @@ const AppLayout = ({ children }: PropsWithChildren) => (
   </html>
 );
 
-export const metadata: Metadata = {
-  title: {
-    default: 'آموزش زبان انگلیسی',
-    template: '%s | آموزش زبان انگلیسی'
-  },
-  description: app.meta.description,
-  openGraph: {
-    locale: 'fa-IR',
-    type: 'website',
-    title: app.meta.title,
-    description: app.meta.description,
-    images: [{ url: 'https://wwwords.ir/assets/images/metatag.jpg', alt: app.meta.title, type: 'image/jpeg' }]
-  },
-  twitter: { site: 'wwwords_ir', card: 'summary_large_image' }
+export const generateMetadata = async (): Promise<Metadata> => {
+  const ogTitle = 'تمرین رایگان کلمات انگلیسی و یادگیری کلمات انگلیسی بیشتر';
+  const description =
+    'کلمات انگلیسی بیشتری یاد بگیرید. کاملاً رایگان آزمون بدهید و با تمرین آنلاین بهتر انگلیسی صحبت کنید.';
+
+  return {
+    title: {
+      default: 'آموزش زبان انگلیسی',
+      template: '%s | آموزش زبان انگلیسی'
+    },
+    description,
+    keywords: ['آموزش زبان انگلیسی', 'معنی کلمات'],
+    openGraph: {
+      locale: 'fa-IR',
+      type: 'website',
+      title: ogTitle,
+      description,
+      images: [{ url: 'https://wwwords.ir/assets/images/metatag.jpg', alt: ogTitle, type: 'image/jpeg' }]
+    },
+    twitter: { site: 'wwwords_ir', card: 'summary_large_image' }
+  };
 };
 
 export default AppLayout;
