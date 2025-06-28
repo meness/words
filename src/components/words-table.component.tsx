@@ -19,6 +19,7 @@ import { app } from '~configs/app.config';
 import { deleteTrainingEntity, storeTrainingEntity } from '~helpers/database.helper';
 import { useTrainings } from '~hooks/use-trainings.hook';
 import { formatDecimal } from '~utils/number.util';
+import { WordsTableEmptyContent } from './words-table-empty-content.component';
 
 const columns: TableHeaderKeyLabel<TrainingWord[]>[] = [
   { key: 'id', label: '#' },
@@ -145,7 +146,7 @@ export const WordsTable = ({ isLoading, words }: WordsTableProps) => {
             color="primary"
           />
         }
-        emptyContent="چیزی برای نمایش وجود ندارد!"
+        emptyContent={<WordsTableEmptyContent />}
         items={list.items}>
         {(item) => (
           <TableRow key={`${item.id}/${item.trained}`}>
