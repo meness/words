@@ -1,12 +1,12 @@
 import { Alert } from '@heroui/alert';
 import { Chip, ChipProps } from '@heroui/chip';
 import { Tooltip as NextTooltip } from '@heroui/tooltip';
-import { Bar, ComposedChart, Line, ResponsiveContainer, Tooltip, TooltipProps, XAxis, YAxis } from 'recharts';
+import { Bar, ComposedChart, Line, ResponsiveContainer, Tooltip, TooltipContentProps, XAxis, YAxis } from 'recharts';
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 import { useExamsLineChartData } from '~hooks/use-exams-line-chart-data.hook';
 import { formatDecimal } from '~utils/number.util';
 
-type CustomTooltipProps = TooltipProps<ValueType, NameType>;
+type CustomTooltipProps = TooltipContentProps<ValueType, NameType>;
 
 const CustomTooltip = ({ active, payload }: CustomTooltipProps) => (
   <NextTooltip
@@ -75,7 +75,7 @@ export const ExamsLineChart = () => {
           dataKey="total"
           hide
         />
-        <Tooltip content={<CustomTooltip />} />
+        <Tooltip content={CustomTooltip} />
         <Bar
           dataKey="total"
           barSize={30}
