@@ -14,7 +14,7 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => (
     content={
       <div className="flex flex-col space-y-1.5">
         {payload?.map((entry, index) => {
-          let color: ChipProps['color'] = 'primary';
+          let color: ChipProps['color'] = 'secondary';
           if (entry.dataKey === 'mistakes') {
             color = 'danger';
           } else if (entry.dataKey === 'accuracies') {
