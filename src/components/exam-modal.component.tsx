@@ -241,6 +241,8 @@ export const ExamModal = ({ isOpen, onClose, words, examType }: ExamModalProps) 
     } else {
       setIsExamCompleted(true);
     }
+
+    setChosenAnswer(null);
   };
 
   const randomAnswers = useMemo(() => {
