@@ -33,7 +33,7 @@ const WordPage = async ({ params }: PageParams<{ word: string }>) => {
   }
 
   return (
-    <div className="my-7 flex flex-col items-center justify-center space-y-6 bg-gray-100 p-4">
+    <div className="my-7 flex flex-col items-center justify-center space-y-6 p-4">
       {/* Main Word Card */}
       <Card
         shadow="md"

@@ -10,7 +10,7 @@ export const Stats = ({ isLoading, value, children }: StatsProps) => (
   <Skeleton
     isLoaded={!isLoading}
     classNames={{ base: 'rounded-large w-fit before:w-fit' }}>
-    <Card className="from-secondary-100 to-secondary-200 aspect-square w-[240px] border-none bg-gradient-to-br">
+    <Card className="from-secondary-100 dark:from-secondary-500 to-secondary-200 dark:to-secondary-900 aspect-square w-[240px] border-none bg-gradient-to-br">
       <CardBody className="items-center justify-center pb-0">
         <CircularProgress
           classNames={{
