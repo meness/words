@@ -46,7 +46,9 @@ export const generateMetadata = async (): Promise<Metadata> => {
       type: 'website',
       title: ogTitle,
       description,
-      images: [{ url: 'https://wwwords.ir/assets/images/metatag.jpg', alt: ogTitle, type: 'image/jpeg' }]
+      images: [
+        { url: `${process.env.NEXT_PUBLIC_BASE_URL}/assets/images/metatag.jpg`, alt: ogTitle, type: 'image/jpeg' }
+      ]
     },
     twitter: { site: 'wwwords_ir', card: 'summary_large_image' }
   };
