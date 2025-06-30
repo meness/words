@@ -30,7 +30,7 @@ const GlobalError = ({ reset }: ErrorBoundaryProps) => (
           <Card
             classNames={{
               footer: 'justify-center gap-4',
-              base: 'gap-10 max-w-5xl bg-foreground-500',
+              base: 'gap-10 max-w-5xl',
               body: 'text-center flex flex-col gap-3',
               header: 'text-3xl flex justify-center font-bold'
             }}>
