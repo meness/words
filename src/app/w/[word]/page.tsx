@@ -135,6 +135,9 @@ export const generateMetadata = async ({ params }: PageParams<{ word: string }>)
       type: 'website',
       title: `${title} | انگلیسی سریع`,
       description
+    },
+    alternates: {
+      canonical: process.env.NEXT_PUBLIC_BASE_URL + route.word(decodedWord)
     }
   };
 };
