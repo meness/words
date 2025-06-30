@@ -5,10 +5,24 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
+import { WebSite, WithContext } from 'schema-dts';
 import { twJoin } from 'tailwind-merge';
 import { MainContainer } from '~components/main-container.component';
 import { ui } from '~configs/ui.config';
 import { ThemeProvider } from '~providers/theme.provider';
+
+const title = 'یادگیری سریع زبان انگلیسی';
+
+const description = 'سریع کلمات انگلیسی یاد بگیرید. کاملا رایگان آزمون بدهید و با تمرین آنلاین بهتر انگلیسی صحبت کنید';
+
+const jsonLd: WithContext<WebSite> = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  url: process.env.NEXT_PUBLIC_BASE_URL,
+  name: title,
+  description,
+  inLanguage: ['fa-IR']
+};
 
 const AppLayout = ({ children }: PropsWithChildren) => (
   <html
@@ -25,18 +39,22 @@ const AppLayout = ({ children }: PropsWithChildren) => (
         mode="production"
       />
       <SpeedInsights debug={false} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd)
+        }}
+      />
     </body>
   </html>
 );
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const ogTitle = 'یادگیری سریع زبان انگلیسی و تمرین رایگان';
-  const description =
-    'سریع کلمات انگلیسی یاد بگیرید. کاملا رایگان آزمون بدهید و با تمرین آنلاین بهتر انگلیسی صحبت کنید';
 
   return {
     title: {
-      default: 'یادگیری سریع زبان انگلیسی',
+      default: title,
       template: '%s | انگلیسی سریع'
     },
     description,
