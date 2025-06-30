@@ -2,12 +2,61 @@ import { Card, CardBody, CardHeader } from '@heroui/card';
 import { Link } from '@heroui/link';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { WebPage, WithContext } from 'schema-dts';
 import { route } from '~common/consts/route.const';
 import { PageParams } from '~common/types/page-params.type';
 import { Word } from '~common/types/word.type';
+import { app } from '~configs/app.config';
 import { combineCsvData } from '~helpers/database.helper';
 import { CsvService } from '~services/csv.service';
 import { getRandomWordsExcludingIndex } from '~utils/array.util';
+
+const jsonLd = (word: Word): WithContext<WebPage> => {
+  const title = `معنی و ترجمه کلمه ${word.word} به فارسی`;
+  const description = `${word.word} به معنی ${word.meaning} است. ${word.description}`;
+  const keywords = [
+    `معنی ${word.word}`,
+    `ترجمه ${word.word}`,
+    `تلفظ ${word.word}`,
+    `${word.word} meaning`,
+    `${word.word} pronunciation`
+  ];
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    url: process.env.NEXT_PUBLIC_BASE_URL + route.word(word.word),
+    name: title,
+    description,
+    dateModified: app.lastModifiedWordsDate.toISOString(),
+    inLanguage: ['fa-IR'],
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'صفحه اصلی',
+          item: process.env.NEXT_PUBLIC_BASE_URL
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: word.word,
+          item: process.env.NEXT_PUBLIC_BASE_URL + route.word(word.word)
+        }
+      ]
+    },
+    mainEntity: {
+      '@type': 'DefinedTerm',
+      '@id': process.env.NEXT_PUBLIC_BASE_URL + route.word(word.word),
+      name: word.word,
+      alternateName: word.meaning,
+      description
+    },
+    keywords
+  };
+};
 
 const fetchWord = async (word: string): Promise<[Word | null, Array<Word> | null]> => {
   const words = await CsvService.getWords();
@@ -109,6 +158,12 @@ const WordPage = async ({ params }: PageParams<{ word: string }>) => {
           </Card>
         ))}
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd(wordData))
+        }}
+      />
     </div>
   );
 };
