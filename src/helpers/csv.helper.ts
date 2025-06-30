@@ -1,3 +1,4 @@
+import { commonColors } from '@heroui/theme';
 import { WordCsv } from '~common/types/word-csv.type';
 
 export const parseWordsCsv = (data: string): WordCsv => {
@@ -50,6 +51,7 @@ export const parseWordsCsv = (data: string): WordCsv => {
       description: fields[3] || '',
       example: fields[4] || '',
       translation: fields[5] || '',
+      tags: fields[6].split(',') || [],
       id: index + 1
     };
   });
@@ -59,3 +61,13 @@ export const parseWordsCsv = (data: string): WordCsv => {
     rows: parsedRows
   };
 };
+
+export const translateTags = (tags: string[]) =>
+  tags.map((tag) => {
+    switch (tag.toLowerCase()) {
+      case 'law':
+        return { tag, label: 'حقوقی', color: commonColors.green[500] };
+      default:
+        return { tag, label: 'عمومی', color: commonColors.blue[500] };
+    }
+  });

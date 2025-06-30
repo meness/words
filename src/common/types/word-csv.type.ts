@@ -7,6 +7,7 @@ export type WordCsv = {
     description: string;
     example: string;
     translation: string;
+    tags: string[];
     id: number;
   }[];
 };

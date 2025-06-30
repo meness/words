@@ -6,4 +6,5 @@ export type Word = {
   meaning: string;
   example: string;
   translation: string;
+  tags: string[];
 };
