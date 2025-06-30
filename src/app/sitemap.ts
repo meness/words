@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { app } from '~configs/app.config';
 import { combineCsvData } from '~helpers/database.helper';
 import { CsvService } from '~services/csv.service';
 
@@ -17,14 +18,16 @@ const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const wordsSitemap: MetadataRoute.Sitemap = words.map((word) => ({
     url: `${process.env.NEXT_PUBLIC_BASE_URL}/w/${encodeURIComponent(word.word).toLowerCase()}`,
     changeFrequency: 'monthly',
-    priority: 0.8
+    priority: 0.8,
+    lastModified: app.lastModifiedWordsDate
   }));
 
   const homeSitemap: MetadataRoute.Sitemap = [
     {
       url: process.env.NEXT_PUBLIC_BASE_URL,
       changeFrequency: 'monthly',
-      priority: 1.0
+      priority: 1.0,
+      lastModified: app.lastModifiedWordsDate
     }
   ];
 
