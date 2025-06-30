@@ -18,10 +18,11 @@ const description = 'سریع کلمات انگلیسی یاد بگیرید. ک�
 const jsonLd: WithContext<WebSite> = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${process.env.NEXT_PUBLIC_BASE_URL}/#website`,
   url: process.env.NEXT_PUBLIC_BASE_URL,
   name: title,
   description,
-  inLanguage: ['fa-IR']
+  inLanguage: 'fa-IR'
 };
 
 const AppLayout = ({ children }: PropsWithChildren) => (
@@ -30,6 +31,14 @@ const AppLayout = ({ children }: PropsWithChildren) => (
     dir="rtl"
     lang="fa-IR"
     className={twJoin(ui.fonts.yekanBakh.variable, ui.fonts.inter.variable)}>
+    <head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd)
+        }}
+      />
+    </head>
     <body>
       <ThemeProvider>
         <MainContainer>{children}</MainContainer>
@@ -39,12 +48,6 @@ const AppLayout = ({ children }: PropsWithChildren) => (
         mode="production"
       />
       <SpeedInsights debug={false} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd)
-        }}
-      />
     </body>
   </html>
 );
