@@ -126,10 +126,10 @@ const WordPage = async ({ params }: PageParams<{ word: string }>) => {
                 </Chip>
               ))}
             </ul>
-            <p className="mt-2 text-lg">
+            <p className="mt-1 text-lg">
               به معنی <strong className="font-bold">{wordData.meaning}</strong>
             </p>
-            <h3 className="mt-1 text-sm text-gray-200">{wordData.description}</h3>
+            <p className="mt-1 text-sm text-gray-200">{wordData.description}</p>
           </CardHeader>
           <CardBody
             as="section"
@@ -153,67 +153,69 @@ const WordPage = async ({ params }: PageParams<{ word: string }>) => {
 
         {/* Random Word Card */}
         <h2 className="text-center text-lg font-semibold">«چند کلمه انگلیسی جدید که می‌توانید امروز یاد بگیرید»</h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {randomWords?.map((randomWord) => (
-            <Link
-              key={randomWord.id}
-              href={route.word(randomWord.word)}>
-              <Card
-                shadow="md"
-                radius="lg"
-                fullWidth
-                as="article"
-                className="h-full overflow-hidden bg-white">
-                <CardHeader
-                  as="header"
-                  className="flex flex-col items-start bg-gradient-to-r from-gray-500 to-gray-700 p-6 text-white">
-                  <h3
-                    className="font-inter flex w-full flex-col text-3xl font-extrabold"
-                    dir="ltr">
-                    {randomWord.word}
-                    <span className="text-medium">{randomWord.pronunciation}</span>
-                  </h3>
-                  <ul className="flex items-center gap-1">
-                    {translateTags(randomWord.tags).map(({ label, color, tag }) => (
-                      <Chip
-                        key={tag}
-                        as="li"
-                        color="default"
-                        size="sm"
-                        className="text-white uppercase"
-                        style={{ backgroundColor: color }}
-                        variant="solid">
-                        {label}
-                      </Chip>
-                    ))}
-                  </ul>
-                  <p className="mt-2 text-lg">
-                    به معنی <strong className="font-bold">{randomWord.meaning}</strong>
-                  </p>
-                  <div className="mt-1 text-sm text-gray-200">{randomWord.description}</div>
-                </CardHeader>
-                <CardBody
-                  as="section"
-                  className="p-6">
-                  <dl className="flex flex-col gap-4">
-                    <div className="border-l-4 border-blue-500 pl-4 text-gray-800">
-                      <dt className="font-semibold">مثال</dt>
-                      <dd
-                        className="font-inter font-medium"
-                        dir="ltr">
-                        {randomWord.example}
-                      </dd>
-                    </div>
-                    <div className="border-l-4 border-green-500 pl-4 text-gray-800">
-                      <dt className="font-semibold">ترجمه</dt>
-                      <dd className="font-medium">{randomWord.translation}</dd>
-                    </div>
-                  </dl>
-                </CardBody>
-              </Card>
-            </Link>
+            <li key={randomWord.id}>
+              <Link
+                href={route.word(randomWord.word)}
+                className="h-full w-full">
+                <Card
+                  shadow="md"
+                  radius="lg"
+                  fullWidth
+                  as="article"
+                  className="h-full overflow-hidden bg-white">
+                  <CardHeader
+                    as="header"
+                    className="flex flex-col items-start bg-gradient-to-r from-gray-500 to-gray-700 p-6 text-white">
+                    <h3
+                      className="font-inter flex w-full flex-col text-start text-3xl font-extrabold"
+                      dir="ltr">
+                      {randomWord.word}
+                      <span className="text-medium">{randomWord.pronunciation}</span>
+                    </h3>
+                    <ul className="flex items-center gap-1">
+                      {translateTags(randomWord.tags).map(({ label, color, tag }) => (
+                        <Chip
+                          key={tag}
+                          as="li"
+                          color="default"
+                          size="sm"
+                          className="text-white uppercase"
+                          style={{ backgroundColor: color }}
+                          variant="solid">
+                          {label}
+                        </Chip>
+                      ))}
+                    </ul>
+                    <p className="mt-1 text-lg">
+                      به معنی <strong className="font-bold">{randomWord.meaning}</strong>
+                    </p>
+                    <p className="mt-1 text-sm text-gray-200">{randomWord.description}</p>
+                  </CardHeader>
+                  <CardBody
+                    as="section"
+                    className="p-6">
+                    <dl className="flex flex-col gap-4">
+                      <div className="border-l-4 border-blue-500 pl-4 text-gray-800">
+                        <dt className="font-semibold">مثال</dt>
+                        <dd
+                          className="font-inter font-medium"
+                          dir="ltr">
+                          {randomWord.example}
+                        </dd>
+                      </div>
+                      <div className="border-l-4 border-green-500 pl-4 text-gray-800">
+                        <dt className="font-semibold">ترجمه</dt>
+                        <dd className="font-medium">{randomWord.translation}</dd>
+                      </div>
+                    </dl>
+                  </CardBody>
+                </Card>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </>
   );
