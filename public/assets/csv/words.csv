@@ -557,8 +557,8 @@ Good,gud,خوب,دارای کیفیت بالا یا مطلوب.,This book is ver
 Bad,bad,بد,دارای کیفیت پایین یا نامطلوب.,The weather was bad yesterday.,هوا دیروز بد بود.,GENERAL
 Right,rite,درست,صحیح یا مناسب.,His answer was right.,پاسخ او درست بود.,GENERAL
 Wrong,rong,غلط,نادرست یا نامناسب.,She chose the wrong color.,او رنگ اشتباهی را انتخاب کرد.,GENERAL
-TRUE,troo,صحیح,مطابق با واقعیت.,His story is true.,داستان او صحیح است.,GENERAL
-FALSE,fawls,غلط,مخالف واقعیت.,The rumor was false.,شایعه غلط بود.,GENERAL
+True,troo,صحیح,مطابق با واقعیت.,His story is true.,داستان او صحیح است.,GENERAL
+False,fawls,غلط,مخالف واقعیت.,The rumor was false.,شایعه غلط بود.,GENERAL
 Life,life,زندگی,وضعیت حیات و وجود.,Life is full of surprises.,زندگی پر از شگفتی‌هاست.,GENERAL
 Death,deth,مرگ,پایان حیات یک موجود زنده.,Death is a part of life.,مرگ بخشی از زندگی است.,GENERAL
 Hand,hand,دست,عضوی از بدن برای گرفتن اشیا.,She held the book in her hand.,او کتاب را در دستش نگه داشت.,GENERAL
