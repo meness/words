@@ -157,9 +157,9 @@ const HomePage = () => {
         <Skeleton
           isLoaded={!isLoading}
           classNames={{ base: 'rounded-b-large w-full' }}>
-          <CardFooter className="text-tiny flex items-center justify-between select-none">
+          <CardFooter className="text-small flex items-center justify-between select-none">
             <p>
-              <span className="font-bold">{formatDecimal(words.length)}</span> کلمه در اختیار شماست.
+              <span className="font-bold">{formatDecimal(app.wordsCount)}</span> کلمه در اختیار شماست.
             </p>
             <Button
               as={Link}

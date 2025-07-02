@@ -1,8 +1,14 @@
-import { Card, CardBody, CardHeader } from '@heroui/card';
+import { Card, CardBody, CardFooter, CardHeader } from '@heroui/card';
 import { Chip } from '@heroui/chip';
+import { Divider } from '@heroui/divider';
+import { Link } from '@heroui/link';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import { twJoin } from 'tailwind-merge';
+import { route } from '~common/consts/route.const';
 import { Word } from '~common/types/word.type';
+import { app } from '~configs/app.config';
 import { translateTags } from '~helpers/csv.helper';
+import { formatDecimal } from '~utils/number.util';
 
 type WordCardProps = { word: Word; isPrimary?: boolean };
 
@@ -75,5 +81,20 @@ export const WordCard = ({ word, isPrimary }: WordCardProps) => (
         </div>
       </dl>
     </CardBody>
+    {isPrimary && (
+      <>
+        <Divider />
+        <Link
+          color="secondary"
+          href={route.home}>
+          <CardFooter className="text-small flex flex-row items-center justify-between gap-2">
+            <p>
+              کلمه {word.word} و {formatDecimal(app.wordsCount - 1)} کلمه دیگر را تمرین کنید و از خودتان آزمون بگیرید.
+            </p>
+            <FaExternalLinkAlt className="shrink-0" />
+          </CardFooter>
+        </Link>
+      </>
+    )}
   </Card>
 );

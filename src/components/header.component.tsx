@@ -28,7 +28,9 @@ import { PiExam } from 'react-icons/pi';
 import { RiEnglishInput } from 'react-icons/ri';
 import { examOption } from '~common/consts/exam-option.const';
 import { EXAM_TYPE } from '~common/enums/exam-type.enum';
+import { app } from '~configs/app.config';
 import { useWords } from '~hooks/use-words.hook';
+import { formatDecimal } from '~utils/number.util';
 import { Logo } from './logo.component';
 
 const ThemeDropdown = dynamic(() => import('./theme-dropdown.component').then((module) => module.ThemeDropdown), {
@@ -40,7 +42,12 @@ const ExamModal = dynamic(() => import('./exam-modal.component').then((module) =
 type FeaturesDropdownItem = { id: string; icon: IconType; description: string; label: string };
 
 const featuresDropdownItems: FeaturesDropdownItem[] = [
-  { id: 'words', icon: RiEnglishInput, description: 'تعداد کلمات به زودی افزایش می‌یابد.', label: '۷۶۲ کلمه' },
+  {
+    id: 'words',
+    icon: RiEnglishInput,
+    description: 'تعداد کلمات به زودی افزایش می‌یابد.',
+    label: `${formatDecimal(app.wordsCount)} کلمه`
+  },
   { id: 'training', icon: MdChecklist, description: 'کلمات را به ۳ روش ساده تمرین کنید.', label: 'تمرین کلمات' },
   { id: 'exams', icon: PiExam, description: 'به ۲ روش از خود آزمون بگیرید.', label: 'آزمون' },
   {
