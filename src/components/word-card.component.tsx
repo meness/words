@@ -87,9 +87,10 @@ export const WordCard = ({ word, isPrimary }: WordCardProps) => (
         <Link
           color="secondary"
           href={route.home}>
-          <CardFooter className="text-small flex flex-row items-center justify-between gap-2">
+          <CardFooter className="text-small flex flex-row items-center justify-between gap-4">
             <p>
-              کلمه {word.word} و {formatDecimal(app.wordsCount - 1)} کلمه دیگر را تمرین کنید و از خودتان آزمون بگیرید.
+              کلمه {word.word} و {formatDecimal(app.wordsCount - 1)} کلمه انگلیسی دیگر را تمرین کنید و از خودتان آزمون
+              بگیرید.
             </p>
             <FaExternalLinkAlt className="shrink-0" />
           </CardFooter>
